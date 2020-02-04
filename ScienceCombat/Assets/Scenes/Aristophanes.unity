@@ -582,6 +582,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1767825662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7342460227786585869, guid: c26ffef0b95c957439715889fa55b178,
+    type: 3}
+  m_PrefabInstance: {fileID: 1911496765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1767825670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767825662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9822f4a60b425bc4588ece693ec48e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationLength: 0
+  playerAlt: AltMove1
+  forwardOffset: 1
 --- !u!1 &1845395876
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +711,11 @@ PrefabInstance:
         type: 3}
       propertyPath: fireRate
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7579460038755259431, guid: c26ffef0b95c957439715889fa55b178,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4348502451221930574, guid: c26ffef0b95c957439715889fa55b178,
         type: 3}
