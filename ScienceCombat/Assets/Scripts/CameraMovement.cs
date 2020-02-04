@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    //lookat postion for camera
     public Transform lookAt;
 
     // Start is called before the first frame update
