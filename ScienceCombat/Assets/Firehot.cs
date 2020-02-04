@@ -9,7 +9,7 @@ public class Firehot : MonoBehaviour
     private float currentDamage;
     void Resize() //object scale approaches finalSize as current damage approaches 0
     {
-
+        //merge test
         float resizeAmount = (damage - currentDamage) / damage;
         gameObject.transform.localScale = Vector3.one * finalSize * resizeAmount;
     }
