@@ -31,6 +31,11 @@ public class Health : MonoBehaviour
 
     }
 
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+    }
+
     IEnumerator UpdatePoison() {
         while (isPoisioned && totalPoisionDmg >= 1)    {
             health -= 1;
