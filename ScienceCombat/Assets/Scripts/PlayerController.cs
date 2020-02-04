@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed;
     public float Speed
+      
     {
         get
         {
@@ -17,9 +18,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
+    public float value;
     public Rigidbody rigidBody;
-    [SerializeField] private string playerHOR, PlayerVer, PlayerInter, PlayerFire;
+    [SerializeField] private string playerHOR, PlayerVer;
     [SerializeField] private float rotationSpeed;
     public bool isCaptured { get { return speed == 0; } }
 
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
         // If the stick is not at rest.
         if (Mathf.Abs(Input.GetAxis(playerHOR)) > 0.01f || Mathf.Abs(Input.GetAxis(PlayerVer)) > 0.01f)
         {
+            value = Mathf.Abs(Input.GetAxis(playerHOR));
             // Setting the rotation of the player to turn towards the direction of the joystick.
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(joystickDirection, transform.up), rotationSpeed);
         }
