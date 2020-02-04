@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4021928315233479210}
   - component: {fileID: 7485386369505990953}
   - component: {fileID: 6414926300758431371}
+  - component: {fileID: 8354203029763016837}
   - component: {fileID: 8462336313658548316}
   - component: {fileID: -5953830276917063028}
   - component: {fileID: 1597101239}
@@ -82,6 +83,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8354203029763016837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979943166543833243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfe632095c897047b87071ca6fc22ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFire: Fire1
+  smokePrefab: {fileID: 4492038971490589009, guid: 0f051c00429d9294e80acfc52f216125,
+    type: 3}
 --- !u!65 &8462336313658548316
 BoxCollider:
   m_ObjectHideFlags: 0
