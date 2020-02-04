@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2421331766900598686}
   - component: {fileID: 2421331766900598680}
   - component: {fileID: 2421331766900598687}
+  - component: {fileID: 516136918316852869}
   m_Layer: 0
   m_Name: Biologist
   m_TagString: Untagged
@@ -125,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virus: {fileID: 6001971122949251976, guid: b9ce5a0f79c33394db63abeceeb7e8c5, type: 3}
-  playerFire: Fire1
+  playerFire: Fire2
   verticalVelocity: 5
   horizontalVelocity: 10
   fireRate: 0.3
@@ -144,10 +145,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rigidBody: {fileID: 2421331766900598673}
-  playerHOR: Horizontal
-  PlayerVer: Vertical
+  playerHOR: Horizontal2
+  PlayerVer: Vertical2
   PlayerInter: PickUp
-  PlayerFire: Fire1
+  PlayerFire: Fire2
   rotationSpeed: 0.1
 --- !u!114 &2421331766900598687
 MonoBehaviour:
@@ -162,8 +163,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seeds: {fileID: 2720676404203417896, guid: c66ae8cc400a40a478c05d59eaa7c71b, type: 3}
-  playerFire: AltMove1
+  playerFire: AltMove2
   verticalVelocity: 5
   horizontalVelocity: 5
   fireRate: 1
   playerController: {fileID: 2421331766900598680}
+--- !u!114 &516136918316852869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421331766900598672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2920560339513c047a873b638ee7b6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isPoisioned: 0

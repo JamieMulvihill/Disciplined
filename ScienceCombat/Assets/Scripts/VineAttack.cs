@@ -5,7 +5,7 @@ using UnityEngine;
 public class VineAttack : MonoBehaviour
 {
     public GameObject seeds;
-    [SerializeField] private string playerFire;
+    [SerializeField] private string playerAlt2;
     [SerializeField] private float verticalVelocity;
     [SerializeField] private float horizontalVelocity;
     [SerializeField] private float fireRate = 1f;
@@ -20,7 +20,7 @@ public class VineAttack : MonoBehaviour
         if (FindObjectsOfType<Vines>().Length + FindObjectsOfType<Seeds>().Length >= 1 ) return;
 
 
-        if (Mathf.Abs(Input.GetAxis(playerFire)) > 0.01f)
+        if (Input.GetButtonDown(playerAlt2))
         {
             if (Time.time > fireRate + lastShot)
             {
