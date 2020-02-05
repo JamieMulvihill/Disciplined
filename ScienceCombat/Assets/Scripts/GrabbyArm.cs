@@ -5,6 +5,7 @@ using UnityEngine;
 public class GrabbyArm : MonoBehaviour
 {
     [SerializeField] private float animationLength;
+    [SerializeField] private float armReach;
     [SerializeField] private string playerAlt;
     [SerializeField] private float forwardOffset;
     private GameObject hitGuy;
@@ -12,14 +13,17 @@ public class GrabbyArm : MonoBehaviour
     {
         if (Input.GetButtonDown(playerAlt))
         {
-
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 10) && hit.collider != null)
+            RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, armReach);
+            for(int hitIndex = 0; hitIndex < hits.Length; hitIndex++)
             {
-                if (hit.collider.gameObject.tag != "Engineer")
+                //hits[hitIndex]
+                if (hits[hitIndex].collider != null)
                 {
-                    hitGuy = hit.collider.gameObject;
-                    return true;
+                    if (hits[hitIndex].collider.gameObject.GetComponent<PlayerController>())
+                    {
+                        hitGuy = hits[hitIndex].collider.gameObject;
+                        return true;
+                    }
                 }
             }
         }
@@ -45,7 +49,7 @@ public class GrabbyArm : MonoBehaviour
                 //GetComponent<PlayerController>().Speed =
                 return;
             }
-            hitGuy.transform.position = Vector3.Lerp(hitGuy.transform.position, transform.position + transform.forward * forwardOffset, Time.deltaTime * 3f);
+            hitGuy.transform.position = Vector3.Lerp(hitGuy.transform.position, transform.position + transform.forward * forwardOffset, Time.deltaTime * 50);
         }
     }
 }
