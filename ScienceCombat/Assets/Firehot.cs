@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Firehot : MonoBehaviour
 {
-    [SerializeField] private float damage;
-    [SerializeField] private float finalSize;
-    [SerializeField] private float falloff;
+    private float damage = 10f;
+    private float finalSize = 10f;
+    private float falloff = 10f;
     private float currentDamage;
+    public void Initialise(float inputDamage, float inputFinalSize, float inputFalloff)
+    {
+        damage = inputDamage;
+        finalSize = inputFinalSize;
+        falloff = inputFalloff;
+    }
     void Resize() //object scale approaches finalSize as current damage approaches 0
     {
         //merge test
