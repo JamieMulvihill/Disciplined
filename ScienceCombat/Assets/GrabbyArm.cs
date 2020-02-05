@@ -36,13 +36,13 @@ public class GrabbyArm : MonoBehaviour
     {
         if (Grab() || hitGuy != null)
         {
-            transform.position
+            //transform.position
             if (Vector3.Distance(hitGuy.transform.position, transform.position + transform.forward * forwardOffset) < 1f)
             {
                         // hitGuy
 
                         hitGuy = null;
-                GetComponent<PlayerController>().Speed =
+                //GetComponent<PlayerController>().Speed =
                 return;
             }
             hitGuy.transform.position = Vector3.Lerp(hitGuy.transform.position, transform.position + transform.forward * forwardOffset, Time.deltaTime * 3f);
