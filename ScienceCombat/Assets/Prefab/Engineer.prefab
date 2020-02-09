@@ -126,10 +126,14 @@ MonoBehaviour:
   projectile: {fileID: 22400591502661269, guid: f8a3d263f4980e049be218ab9cd412c5,
     type: 3}
   upOffset: 0
-  forwardOffset: 0
+  forwardOffset: 1
   verticalVelocity: 0
-  horizontalVelocity: 0
-  fireRate: 0.0012
+  horizontalVelocity: 10
+  fireRate: 0.01
+  FVR: 0.5
+  damage: 10
+  finalSize: 1
+  falloff: 20
 --- !u!114 &7563178316773504775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,9 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  value: 0
   rigidBody: {fileID: 4348502451221930574}
   playerHOR: Horizontal
   PlayerVer: Vertical
-  PlayerInter: PickUp
-  PlayerFire: Fire1
   rotationSpeed: 0.1

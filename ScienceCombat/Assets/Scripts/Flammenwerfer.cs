@@ -11,7 +11,13 @@ public class Flammenwerfer : MonoBehaviour
     [SerializeField] private float verticalVelocity;    // vertical launch velocity (up)
     [SerializeField] private float horizontalVelocity;  // horizontal launch velocity (forward)
     [SerializeField] private float fireRate = 0.25f;    // 
+    [SerializeField] private float FVR = 0.0f;         // FlameVelocityRetention - carries velocity from player to fireball; 1 = full retention
+
     private float lastTime = 0.0f;                      // the time when a projectile was last launched
+    // fireball variables
+    [SerializeField] private float damage;
+    [SerializeField] private float finalSize;
+    [SerializeField] private float falloff;
 
     void Update()
     {
@@ -24,18 +30,22 @@ public class Flammenwerfer : MonoBehaviour
         {
 
             GameObject inst = Instantiate(projectile);
-            inst.AddComponent<Rigidbody>();
+            //fireball.damage = damage;
+            //fireball.finalSize = finalSize;
+            //fireball.falloff = falloff;
+            inst.GetComponent<Firehot>().Initialise(damage, finalSize, falloff);
+
             Rigidbody rigidBody = inst.GetComponent<Rigidbody>();
 
             spawnPosition.y += upOffset;
-            rigidBody.transform.position = spawnPosition;
+            rigidBody.transform.position = spawnPosition + forwardVector * forwardOffset;
 
             //set projectile velocity
             {
                 float x = horizontalVelocity * forwardVector.x;
                 float y = verticalVelocity;
                 float z = horizontalVelocity * forwardVector.z;
-                rigidBody.velocity = new Vector3(x, y, z);
+                rigidBody.velocity = new Vector3(x, y, z) + GetComponent<Rigidbody>().velocity * FVR;
             }
 
             lastTime = Time.time;
