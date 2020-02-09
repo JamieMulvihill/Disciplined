@@ -11,14 +11,13 @@ GameObject:
   - component: {fileID: 4021928315233479210}
   - component: {fileID: 7485386369505990953}
   - component: {fileID: 6414926300758431371}
-  - component: {fileID: 8354203029763016837}
   - component: {fileID: 8462336313658548316}
-  - component: {fileID: -5953830276917063028}
   - component: {fileID: 1597101239}
   - component: {fileID: 8762258732350080664}
+  - component: {fileID: -14018881203251506}
   m_Layer: 0
   m_Name: Chemist
-  m_TagString: Untagged
+  m_TagString: Chemist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,21 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &8354203029763016837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5979943166543833243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dfe632095c897047b87071ca6fc22ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerFire: Fire1
-  smokePrefab: {fileID: 4492038971490589009, guid: 0f051c00429d9294e80acfc52f216125,
-    type: 3}
 --- !u!65 &8462336313658548316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,25 +95,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5953830276917063028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5979943166543833243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a44cf41e8ad2ed43ab13ccfe26c37cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acid: {fileID: 7313066496164053662, guid: c91ec678445046545abd3bc3658ab792, type: 3}
-  playerFire: Fire1
-  verticalVelocity: 1
-  horizontalVelocity: 10
-  fireRate: 0.3
-  momentum: 2
-  playerSelector: {fileID: 0}
 --- !u!54 &1597101239
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -162,4 +127,25 @@ MonoBehaviour:
   playerHOR: Horizontal
   PlayerVer: Vertical
   rotationSpeed: 0.1
-  projectileLauncher: {fileID: 0}
+  health: 0
+  projectileLauncher: {fileID: -4087858310874561992, guid: 7d7ae7656d4af1249b9bfa51d5749031,
+    type: 3}
+--- !u!114 &-14018881203251506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979943166543833243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: Fire1
+  projectilePrefab: {fileID: 5950373702657677660, guid: 9ef572f88a7725a408a7714aed9578b1,
+    type: 3}
+  verticalVelocity: 4
+  horizontalVelocity: 7
+  fireRate: 0.25
+  momentum: 0

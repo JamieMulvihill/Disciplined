@@ -43,11 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerButton: 
+  triggerButton: Fire1
   projectilePrefab: {fileID: 5950373702657677660, guid: 9ef572f88a7725a408a7714aed9578b1,
     type: 3}
-  projectile: {fileID: 5950373702657677660, guid: 9ef572f88a7725a408a7714aed9578b1,
-    type: 3}
-  verticalVelocity: 0
-  horizontalVelocity: 0
-  fireRate: 1
+  verticalVelocity: 10
+  horizontalVelocity: 10
+  fireRate: 0.5

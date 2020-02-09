@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Scientist : MonoBehaviour
 {
-
     [SerializeField] private float speed;
     [SerializeField] private string playerHOR, PlayerVer;
     [SerializeField] private float rotationSpeed;
-    [SerializeField] private ProjectileLauncher projectileLauncher;
-    
+
+    [SerializeField] private float health;
 
     void Start()
     {
@@ -33,6 +32,11 @@ public class Scientist : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
     }
 
 }

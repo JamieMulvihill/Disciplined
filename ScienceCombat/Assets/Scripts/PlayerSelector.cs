@@ -6,18 +6,12 @@ public class PlayerSelector : MonoBehaviour
 {
     public int targetedPlayer = 1;
 
-    GameObject player1;
-    GameObject player2;
-    GameObject player3;
-    GameObject player4;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        player1 = GameObject.FindWithTag("Physicist");
-        player2 = GameObject.FindWithTag("Biologist");
-        player3 = GameObject.FindWithTag("Chemist");
-        player4 = GameObject.FindWithTag("Engineer");
+        
     }
 
     // Update is called once per frame
