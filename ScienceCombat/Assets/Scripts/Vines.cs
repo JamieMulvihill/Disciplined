@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Vines : MonoBehaviour{
 
-    private List<PlayerController> players = new List<PlayerController>();
-    private List<float> reset = new List<float>();
-    float height = 10;
-    bool hit;
+    private Scientist scientist;
+    private float originalSpeed;
+
+    float height;
 
 
     private void Start()
@@ -22,14 +22,10 @@ public class Vines : MonoBehaviour{
     }
 
     IEnumerator deleteSelf() {
-        yield return new WaitForSeconds(8);
-        if (!hit){
-            int count = 0;
-            foreach (var playerController in players){
-                playerController.Speed = reset[count++];
-                playerController.GetComponent<Rigidbody>().isKinematic = false;
-            }
 
+       yield return new WaitForSeconds(8);
+        if (scientist == null)
+        {
             Destroy(gameObject);
         }
     }
@@ -38,30 +34,20 @@ public class Vines : MonoBehaviour{
 
     private void OnCollisionEnter(Collision collision){
 
-        if (collision.gameObject.tag != "Biologist" && collision.gameObject.tag != "Ground" &&
-            collision.gameObject.GetComponent<PlayerController>() != null &&!collision.gameObject.GetComponent<PlayerController>().isCaptured) {
+        if (collision.gameObject.tag != "Biologist" && collision.gameObject.tag != "Ground" && scientist == null ) {
 
-            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
-            players.Add(playerController);
-            reset.Add(playerController.Speed);
-            StartCoroutine(DEATH(playerController, playerController.Speed));
+            scientist = collision.gameObject.GetComponent<Scientist>();
+            originalSpeed = scientist.speed;
+            StartCoroutine(Capture(scientist));
         }
     }
-    IEnumerator DEATH(PlayerController capturedPlayer, float speed) {
-        hit = true;
-        capturedPlayer.Speed = 0;
-        capturedPlayer.GetComponent<Rigidbody>().isKinematic = true;
-        capturedPlayer.gameObject.transform.position = transform.position + transform.up * height;
-        height += capturedPlayer.GetComponent<MeshFilter>().mesh.bounds.max.y*2;
-        yield return new WaitForSeconds(5);
-        capturedPlayer.GetComponent<Rigidbody>().isKinematic = false;
-        capturedPlayer.Speed = speed;
-        int count = 0;
-        foreach (var playerController in players){
-            playerController.Speed = reset[count++];
-            playerController.GetComponent<Rigidbody>().isKinematic = false;
-        }
-
+    IEnumerator Capture(Scientist capturedScientist) {
+        capturedScientist.speed = 0;
+        capturedScientist.GetComponent<Rigidbody>().isKinematic = true;
+        capturedScientist.gameObject.transform.position = transform.position + transform.up * height;
+        yield return new WaitForSeconds(10);
+        capturedScientist.GetComponent<Rigidbody>().isKinematic = false;
+        capturedScientist.speed = originalSpeed;
         Destroy(gameObject);
     }
 

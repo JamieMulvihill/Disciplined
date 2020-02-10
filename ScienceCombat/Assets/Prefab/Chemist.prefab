@@ -11,14 +11,14 @@ GameObject:
   - component: {fileID: 4021928315233479210}
   - component: {fileID: 7485386369505990953}
   - component: {fileID: 6414926300758431371}
-  - component: {fileID: 8354203029763016837}
   - component: {fileID: 8462336313658548316}
-  - component: {fileID: -5953830276917063028}
   - component: {fileID: 1597101239}
-  - component: {fileID: 1597101240}
+  - component: {fileID: 8762258732350080664}
+  - component: {fileID: -14018881203251506}
+  - component: {fileID: -5755307870195844768}
   m_Layer: 0
   m_Name: Chemist
-  m_TagString: Untagged
+  m_TagString: Chemist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,21 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &8354203029763016837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5979943166543833243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dfe632095c897047b87071ca6fc22ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerFire: Fire1
-  smokePrefab: {fileID: 4492038971490589009, guid: 0f051c00429d9294e80acfc52f216125,
-    type: 3}
 --- !u!65 &8462336313658548316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,24 +96,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5953830276917063028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5979943166543833243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a44cf41e8ad2ed43ab13ccfe26c37cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acid: {fileID: 7313066496164053662, guid: c91ec678445046545abd3bc3658ab792, type: 3}
-  playerFire: Fire1
-  verticalVelocity: 1
-  horizontalVelocity: 10
-  fireRate: 0.3
-  momentum: 2
 --- !u!54 &1597101239
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -145,7 +112,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &1597101240
+--- !u!114 &8762258732350080664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,13 +121,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 5979943166543833243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dda637b844f75b343a774525a1e45864, type: 3}
+  m_Script: {fileID: 11500000, guid: f17a087ebc2d60a48814bbb427551b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  rigidBody: {fileID: 1597101239}
   playerHOR: Horizontal
   PlayerVer: Vertical
-  PlayerInter: PickUp2
-  PlayerFire: Fire1
-  rotationSpeed: 0.5
+  rotationSpeed: 0.1
+  health: 0
+  projectileLauncher: {fileID: -4087858310874561992, guid: 7d7ae7656d4af1249b9bfa51d5749031,
+    type: 3}
+--- !u!114 &-14018881203251506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979943166543833243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: Fire1
+  projectilePrefab: {fileID: 22400591502661274, guid: f8a3d263f4980e049be218ab9cd412c5,
+    type: 3}
+  verticalVelocity: 4
+  horizontalVelocity: 7
+  fireRate: 0.25
+--- !u!114 &-5755307870195844768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979943166543833243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2920560339513c047a873b638ee7b6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isPoisioned: 0

@@ -13,13 +13,13 @@ GameObject:
   - component: {fileID: 2421331766900598675}
   - component: {fileID: 2421331766900598674}
   - component: {fileID: 2421331766900598673}
-  - component: {fileID: 2421331766900598686}
-  - component: {fileID: 2421331766900598680}
-  - component: {fileID: 2421331766900598687}
   - component: {fileID: 516136918316852869}
+  - component: {fileID: 2561076147106239768}
+  - component: {fileID: 8273870170743248177}
+  - component: {fileID: -5611754430015116259}
   m_Layer: 0
   m_Name: Biologist
-  m_TagString: Untagged
+  m_TagString: Biologist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,61 +113,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &2421331766900598686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2421331766900598672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd37029f1af1462488f2976edd31164f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  virus: {fileID: 6001971122949251976, guid: b9ce5a0f79c33394db63abeceeb7e8c5, type: 3}
-  playerFire: Fire2
-  verticalVelocity: 5
-  horizontalVelocity: 10
-  fireRate: 0.3
-  pc: {fileID: 2421331766900598680}
---- !u!114 &2421331766900598680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2421331766900598672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dda637b844f75b343a774525a1e45864, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  rigidBody: {fileID: 2421331766900598673}
-  playerHOR: Horizontal2
-  PlayerVer: Vertical2
-  PlayerInter: PickUp
-  PlayerFire: Fire2
-  rotationSpeed: 0.1
---- !u!114 &2421331766900598687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2421331766900598672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ea156591892183409477e72851711cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seeds: {fileID: 2720676404203417896, guid: c66ae8cc400a40a478c05d59eaa7c71b, type: 3}
-  playerFire: AltMove2
-  verticalVelocity: 5
-  horizontalVelocity: 5
-  fireRate: 1
-  playerController: {fileID: 2421331766900598680}
 --- !u!114 &516136918316852869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,3 +127,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   isPoisioned: 0
+--- !u!114 &2561076147106239768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421331766900598672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1e7651751acd24290a10a80ef71ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  playerHOR: Horizontal
+  PlayerVer: Vertical
+  rotationSpeed: 0.5
+  isCaptured: 0
+  health: 100
+--- !u!114 &8273870170743248177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421331766900598672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: Fire1
+  projectilePrefab: {fileID: 1703458805908143051, guid: b9ce5a0f79c33394db63abeceeb7e8c5,
+    type: 3}
+  verticalVelocity: 4
+  horizontalVelocity: 7
+  fireRate: 0.25
+--- !u!114 &-5611754430015116259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421331766900598672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: Fire2
+  projectilePrefab: {fileID: 5388313906294673447, guid: c66ae8cc400a40a478c05d59eaa7c71b,
+    type: 3}
+  verticalVelocity: 4
+  horizontalVelocity: 7
+  fireRate: 1
