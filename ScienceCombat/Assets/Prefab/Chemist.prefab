@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8762258732350080664}
   - component: {fileID: -14018881203251506}
   - component: {fileID: -5755307870195844768}
+  - component: {fileID: -4063628478309644423}
   m_Layer: 0
   m_Name: Chemist
   m_TagString: Chemist
@@ -128,6 +129,7 @@ MonoBehaviour:
   playerHOR: Horizontal
   PlayerVer: Vertical
   rotationSpeed: 0.1
+  isCaptured: 0
   health: 0
   projectileLauncher: {fileID: -4087858310874561992, guid: 7d7ae7656d4af1249b9bfa51d5749031,
     type: 3}
@@ -143,12 +145,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerButton: Fire1
-  projectilePrefab: {fileID: 22400591502661274, guid: f8a3d263f4980e049be218ab9cd412c5,
+  projectilePrefab: {fileID: -3746896607812541188, guid: c91ec678445046545abd3bc3658ab792,
     type: 3}
+  triggerButton: Fire1
   verticalVelocity: 4
   horizontalVelocity: 7
+  upOffset: 2
+  forwardOffset: 2
   fireRate: 0.25
+  momentumScalar: 1
 --- !u!114 &-5755307870195844768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,3 +168,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   isPoisioned: 0
+--- !u!114 &-4063628478309644423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979943166543833243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfe632095c897047b87071ca6fc22ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFire: Fire2
+  smokePrefab: {fileID: 5772507418558543763, guid: 90a857e7556f44d4a8aea3e89bdd165c,
+    type: 3}

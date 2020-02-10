@@ -157,12 +157,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerButton: Fire1
   projectilePrefab: {fileID: 1703458805908143051, guid: b9ce5a0f79c33394db63abeceeb7e8c5,
     type: 3}
+  triggerButton: Fire1
   verticalVelocity: 4
   horizontalVelocity: 7
+  upOffset: 2
+  forwardOffset: 2
   fireRate: 0.25
+  momentumScalar: 1
 --- !u!114 &-5611754430015116259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,9 +178,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerButton: Fire2
   projectilePrefab: {fileID: 5388313906294673447, guid: c66ae8cc400a40a478c05d59eaa7c71b,
     type: 3}
+  triggerButton: Fire2
   verticalVelocity: 4
   horizontalVelocity: 7
+  upOffset: 2
+  forwardOffset: 2
   fireRate: 1
+  momentumScalar: 1
