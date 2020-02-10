@@ -143,9 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerButton: Fire1
-  projectilePrefab: {fileID: 5950373702657677660, guid: 9ef572f88a7725a408a7714aed9578b1,
+  projectilePrefab: {fileID: 22400591502661274, guid: f8a3d263f4980e049be218ab9cd412c5,
     type: 3}
   verticalVelocity: 4
   horizontalVelocity: 7
   fireRate: 0.25
-  momentum: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Collider[] hitObjecets;
-    [SerializeField] private float damage;
+    [SerializeField] protected float damage;
     [SerializeField] private float damageRadius;
 
     // Start is called before the first frame update
@@ -14,12 +14,17 @@ public class Projectile : MonoBehaviour
 
     }
 
+    protected virtual void AreaOfEffect(GameObject hitPlayer)
+    {
+        //Debug.Log("Base class AreaOfEffect function.");
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Chemist")
         {
-            collision.gameObject.GetComponent<Scientist>().TakeDamage(damage);
+            AreaOfEffect(collision.gameObject);
+            //collision.gameObject.GetComponent<Scientist>().TakeDamage(damage);
         }
         Destroy(gameObject);
     }
