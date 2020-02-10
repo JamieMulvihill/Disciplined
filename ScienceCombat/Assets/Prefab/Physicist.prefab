@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 2466507813489192651}
   - component: {fileID: 2466507813489192648}
   - component: {fileID: 2466507813489192649}
-  - component: {fileID: 2466507813489192646}
   - component: {fileID: 2466507813489192647}
   - component: {fileID: 4570229121583392855}
   - component: {fileID: 3423044513703123039}
   - component: {fileID: -8722950184395974396}
+  - component: {fileID: 4541228889225816936}
   m_Layer: 0
   m_Name: Physicist
   m_TagString: Untagged
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d1a2483332f91f44f8b2c74c660ea517, type: 2}
+  - {fileID: 2100000, guid: 923eca8eeb30b8e4780696bb587b14d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,25 +98,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2466507813489192646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2466507813489192644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dda637b844f75b343a774525a1e45864, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  rigidBody: {fileID: 2466507813489192647}
-  playerHOR: Horizontal
-  PlayerVer: Vertical
-  PlayerInter: PickUp
-  PlayerFire: Fire1
-  rotationSpeed: 0.5
 --- !u!54 &2466507813489192647
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -148,6 +129,7 @@ MonoBehaviour:
   magnitude: 100
   radius: 0
   playerFire: Fire1
+  scientist: {fileID: 4541228889225816936}
 --- !u!114 &3423044513703123039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a034fecafa159eb4488e0f15008b105b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAlt: AltMove1
+  playerAlt1: Fire2
+  meshSize: 1
+  scientist: {fileID: 4541228889225816936}
 --- !u!114 &-8722950184395974396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,8 +158,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  poisionDmg: 10
   isPoisioned: 0
+--- !u!114 &4541228889225816936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2466507813489192644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1e7651751acd24290a10a80ef71ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  playerHOR: Horizontal
+  PlayerVer: Vertical
+  rotationSpeed: 0.5
+  isCaptured: 0
+  health: 100
 --- !u!1 &4570229121499305032
 GameObject:
   m_ObjectHideFlags: 0
