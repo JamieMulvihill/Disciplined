@@ -301,7 +301,7 @@ MonoBehaviour:
   hand: {fileID: 1381813078}
   animationLength: 1
   armReach: 15
-  playerAlt: AltMove1
+  playerAlt: Fire2
   forwardOffset: 1
   armSpeed: 50
   lifespan: 40
@@ -326,7 +326,7 @@ MonoBehaviour:
   upOffset: 0
   forwardOffset: 1
   fireRate: 0.01
-  momentumScalar: 0.5
+  momentumScalar: 1
 --- !u!114 &7342011452161184036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +352,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 298965608010553281}
     m_Modifications:
+    - target: {fileID: 2222601858409622067, guid: a7c24e8b7120625428967062b3e82993,
+        type: 3}
+      propertyPath: m_Name
+      value: Flames
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222601858409622067, guid: a7c24e8b7120625428967062b3e82993,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2222601858409622064, guid: a7c24e8b7120625428967062b3e82993,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -405,16 +415,6 @@ PrefabInstance:
     - target: {fileID: 2222601858409622064, guid: a7c24e8b7120625428967062b3e82993,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2222601858409622067, guid: a7c24e8b7120625428967062b3e82993,
-        type: 3}
-      propertyPath: m_Name
-      value: Flames
-      objectReference: {fileID: 0}
-    - target: {fileID: 2222601858409622067, guid: a7c24e8b7120625428967062b3e82993,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2222601858409622065, guid: a7c24e8b7120625428967062b3e82993,
