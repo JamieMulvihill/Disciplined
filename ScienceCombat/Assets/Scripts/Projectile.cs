@@ -21,12 +21,17 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Chemist")
+        hitObjecets = Physics.OverlapSphere(transform.position, damageRadius);
+        foreach (Collider hit in hitObjecets)
         {
-            AreaOfEffect(collision.gameObject);
-            //collision.gameObject.GetComponent<Scientist>().TakeDamage(damage);
+
+            if (hit.tag != gameObject.tag)
+            {
+                AreaOfEffect(hit.gameObject);
+                Destroy(gameObject);
+            }
         }
-        Destroy(gameObject);
+
     }
 
     private void OnDrawGizmos()

@@ -11,7 +11,7 @@ public class Flammenwerfer : MonoBehaviour
     [SerializeField] private float verticalVelocity;    // vertical launch velocity (up)
     [SerializeField] private float horizontalVelocity;  // horizontal launch velocity (forward)
     [SerializeField] private float fireRate = 0.25f;    // 
-    [SerializeField] private float FVR = 0.0f;         // FlameVelocityRetention - carries velocity from player to fireball; 1 = full retention
+    [SerializeField] private float momentumScalar = 0.0f;         // FlameVelocityRetention - carries velocity from player to fireball; 1 = full retention
 
     private float lastTime = 0.0f;                      // the time when a projectile was last launched
     // fireball variables
@@ -21,36 +21,36 @@ public class Flammenwerfer : MonoBehaviour
 
     void Update()
     {
-        Werf(gameObject.transform.forward.normalized, gameObject.transform.position);
+        //Werf(gameObject.transform.forward.normalized, gameObject.transform.position);
     }
-    public void Werf(Vector3 forwardVector, Vector3 spawnPosition) //it werfs flammen (fireballs)
-    {
-        // if the current time is [fireRate] seconds later than [lastTime]
-        if (Time.time > fireRate + lastTime)
-        {
+    //public void Werf(Vector3 forwardVector, Vector3 spawnPosition) //it werfs flammen (fireballs)
+    //{
+    //    // if the current time is [fireRate] seconds later than [lastTime]
+    //    if (Time.time > fireRate + lastTime)
+    //    {
 
-            GameObject inst = Instantiate(projectile);
-            //fireball.damage = damage;
-            //fireball.finalSize = finalSize;
-            //fireball.falloff = falloff;
-            inst.GetComponent<Firehot>().Initialise(damage, finalSize, falloff);
+    //        GameObject inst = Instantiate(projectile);
+    //        //fireball.damage = damage;
+    //        //fireball.finalSize = finalSize;
+    //        //fireball.falloff = falloff;
+    //        //inst.GetComponent<Firehot>().Initialise(damage, finalSize, falloff);
 
-            Rigidbody rigidBody = inst.GetComponent<Rigidbody>();
+    //        Rigidbody rigidBody = inst.GetComponent<Rigidbody>();
 
-            spawnPosition.y += upOffset;
-            rigidBody.transform.position = spawnPosition + forwardVector * forwardOffset;
+    //        spawnPosition.y += upOffset;
+    //        rigidBody.transform.position = spawnPosition + forwardVector * forwardOffset;
 
-            //set projectile velocity
-            {
-                float x = horizontalVelocity * forwardVector.x;
-                float y = verticalVelocity;
-                float z = horizontalVelocity * forwardVector.z;
-                rigidBody.velocity = new Vector3(x, y, z) + GetComponent<Rigidbody>().velocity * FVR;
-            }
+    //        //set projectile velocity
+    //        {
+    //            float x = horizontalVelocity * forwardVector.x;
+    //            float y = verticalVelocity;
+    //            float z = horizontalVelocity * forwardVector.z;
+    //            rigidBody.velocity = new Vector3(x, y, z) + GetComponent<Rigidbody>().velocity;
+    //        }
 
-            lastTime = Time.time;
-        }
-    }
+    //        lastTime = Time.time;
+    //    }
+    //}
     //private void OnColiderEnter(Collider other) 
     //{
     //    Destroy(other);

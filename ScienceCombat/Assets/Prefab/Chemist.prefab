@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1597101239}
   - component: {fileID: 8762258732350080664}
   - component: {fileID: -14018881203251506}
+  - component: {fileID: -5755307870195844768}
   m_Layer: 0
   m_Name: Chemist
   m_TagString: Chemist
@@ -148,3 +149,17 @@ MonoBehaviour:
   verticalVelocity: 4
   horizontalVelocity: 7
   fireRate: 0.25
+--- !u!114 &-5755307870195844768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979943166543833243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2920560339513c047a873b638ee7b6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isPoisioned: 0

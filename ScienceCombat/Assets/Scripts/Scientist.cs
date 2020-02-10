@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Scientist : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    public float speed;
+   
     [SerializeField] private string playerHOR, PlayerVer;
     [SerializeField] private float rotationSpeed;
-
+    public bool isCaptured = false;
     [SerializeField] private float health;
 
     void Start()
