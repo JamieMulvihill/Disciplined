@@ -109,7 +109,7 @@ MonoBehaviour:
   damage: 12.07
   damageRadius: 0
   maxDamage: 12.71
-  finalSize: 0.7
+  finalSize: 2
   falloff: 16.44
 --- !u!54 &1621856750815403705
 Rigidbody:
