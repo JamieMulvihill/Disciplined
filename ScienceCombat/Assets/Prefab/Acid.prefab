@@ -95,6 +95,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   damageRadius: 2
+  acidSplodgePrefab: {fileID: -549957862138658434, guid: d9427c3246467bd4ba64441d93ef0ec8,
+    type: 3}
 --- !u!135 &6020374650777046031
 SphereCollider:
   m_ObjectHideFlags: 0
