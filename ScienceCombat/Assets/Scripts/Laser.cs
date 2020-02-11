@@ -49,7 +49,7 @@ public class Laser : MonoBehaviour
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, magnitude))
             {    
-                if (hit.collider != null && hit.collider.gameObject.tag != "Fireball") {
+                if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid") {
                   
                     
                     line.transform.localScale = new Vector3(radius, radius, Mathf.Lerp(0, hit.distance, 1f));

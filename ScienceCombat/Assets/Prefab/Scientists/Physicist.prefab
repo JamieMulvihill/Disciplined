@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 4541228889225816936}
   m_Layer: 0
   m_Name: Physicist
-  m_TagString: Untagged
+  m_TagString: Physicist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,8 +131,13 @@ MonoBehaviour:
   laserDamage: 15
   playerFire: Fire1
   scientist: {fileID: 4541228889225816936}
-  laserBeam: {fileID: 0}
-  laserSpawn: {fileID: 0}
+  laserBeam: {fileID: 8128173818677469542, guid: 0cc90c9d253fe2f48b0ecb8a07243b58,
+    type: 3}
+  laserSpawn: {fileID: 4835831033698525903, guid: 1e57723b5b9abcb4c92817eb79853eca,
+    type: 3}
+  laserHit: {fileID: 4835831033698525903, guid: 1e57723b5b9abcb4c92817eb79853eca,
+    type: 3}
+  laserSpeed: 200
 --- !u!114 &3423044513703123039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +185,7 @@ MonoBehaviour:
   rotationSpeed: 0.5
   isCaptured: 0
   health: 100
-  healthManager: {fileID: 0}
+  healthManager: {fileID: -8722950184395974396}
 --- !u!1 &4570229121499305032
 GameObject:
   m_ObjectHideFlags: 0

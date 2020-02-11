@@ -44,7 +44,7 @@ public class GrabbyArm : MonoBehaviour
                 //hits[hitIndex]
                 if (hits[hitIndex].collider != null)
                 {
-                    if (hits[hitIndex].collider.gameObject.GetComponent<PlayerController>())
+                    if (hits[hitIndex].collider.gameObject.GetComponent<Scientist>())
                     {
                         hitGuy = hits[hitIndex].collider.gameObject;
                         return true;

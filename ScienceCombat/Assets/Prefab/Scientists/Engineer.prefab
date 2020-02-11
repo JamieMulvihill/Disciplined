@@ -187,6 +187,8 @@ GameObject:
   - component: {fileID: 2454519284302377393}
   - component: {fileID: -1042767354191632361}
   - component: {fileID: 7342011452161184036}
+  - component: {fileID: 4714355647961977760}
+  - component: {fileID: 1005572830}
   m_Layer: 0
   m_Name: Engineer
   m_TagString: Engineer
@@ -345,6 +347,35 @@ MonoBehaviour:
   rotationSpeed: 0.5
   isCaptured: 0
   health: 0
+  healthManager: {fileID: 1005572830}
+--- !u!114 &4714355647961977760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830673993139359091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2920560339513c047a873b638ee7b6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isPoisioned: 0
+--- !u!114 &1005572830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830673993139359091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2920560339513c047a873b638ee7b6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isPoisioned: 0
 --- !u!1001 &8971861915740992809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -417,6 +448,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5434106058873163778, guid: a7c24e8b7120625428967062b3e82993,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434106058873163778, guid: a7c24e8b7120625428967062b3e82993,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434106058873163778, guid: a7c24e8b7120625428967062b3e82993,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434106058873163778, guid: a7c24e8b7120625428967062b3e82993,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2222601858409622065, guid: a7c24e8b7120625428967062b3e82993,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -466,26 +517,6 @@ PrefabInstance:
         type: 3}
       propertyPath: LightsModule.maxLights
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5434106058873163778, guid: a7c24e8b7120625428967062b3e82993,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 5434106058873163778, guid: a7c24e8b7120625428967062b3e82993,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5434106058873163778, guid: a7c24e8b7120625428967062b3e82993,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 5434106058873163778, guid: a7c24e8b7120625428967062b3e82993,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 2795923884016536872, guid: a7c24e8b7120625428967062b3e82993,
         type: 3}

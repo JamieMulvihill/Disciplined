@@ -10,6 +10,8 @@ TagManager:
   - Chemist
   - Manager
   - Engineer
+  - Fireball
+  - Acid
   layers:
   - Default
   - TransparentFX
