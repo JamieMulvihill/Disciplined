@@ -5,33 +5,47 @@ using UnityEngine;
 public class camManager : MonoBehaviour
 {
     [Header("Game Objects")]
-    public GameObject topCamera;
-    public GameObject orbitCamera;
+    [SerializeField] private GameObject topCH;
+    [SerializeField] private GameObject orbitCH;
 
-    [Header("Bools")]
-    public bool orbitCam;
+    public GameObject camera;
+    public GameObject manager;
+
+    [Header("Scripts")]
+    private Manager managerScript;
+    private OrbitCam orbitScript;
+
+    [Header("Floats")]
+    [SerializeField] private float speed;
+
 
     void Start()
     {
-        orbitCam = false;
+        managerScript = manager.GetComponent<Manager>();
+        orbitScript = orbitCH.GetComponent<OrbitCam>();
+
+        orbitCH.GetComponent<OrbitCam>().enabled = false;
     }
 
     void Update()
     {
-        if(orbitCam == false)
+        if (managerScript.orbitCam == false) //make it not move
         {
-            if(orbitCamera == true)
+            if (orbitScript.enabled == true)
             {
-                orbitCamera.SetActive(false);
-                topCamera.SetActive(true);
+                orbitCH.GetComponent<OrbitCam>().enabled = false;
             }
-        } else if(orbitCam == true)
+            camera.transform.position = Vector3.Lerp(camera.transform.position, topCH.transform.position, Time.deltaTime * speed);
+            camera.transform.rotation = Quaternion.Lerp(camera.transform.rotation, topCH.transform.rotation, Time.deltaTime * speed);
+        }
+        else if (managerScript.orbitCam == true) // make it move
         {
-            if(topCamera == true)
+            if (orbitScript.enabled == false)
             {
-                orbitCamera.SetActive(true);
-                topCamera.SetActive(false);
+                orbitCH.GetComponent<OrbitCam>().enabled = true;
             }
+            camera.transform.position = Vector3.Lerp(camera.transform.position, orbitCH.transform.position, Time.deltaTime * speed);
+            camera.transform.rotation = Quaternion.Lerp(camera.transform.rotation, orbitCH.transform.rotation, Time.deltaTime * speed);
         }
     }
 }

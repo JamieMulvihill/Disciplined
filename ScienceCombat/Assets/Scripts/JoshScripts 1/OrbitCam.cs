@@ -5,25 +5,36 @@ using UnityEngine;
 public class OrbitCam : MonoBehaviour
 {
     [Header("Game Objects")]
-    public GameObject camPivot;
-    public GameObject target;
+    [SerializeField] private GameObject camPivot;
+    [SerializeField] private GameObject target;
+
+    public GameObject manager;
 
     [Header("Floats")]
     [SerializeField] private float time;
 
-    void Start()
-    {
-        
-    }
+    [Header("Scripts")]
+    private Manager managerScript;
 
+    private void Start()
+    {
+        managerScript = manager.gameObject.GetComponent<Manager>();
+    }
     void Update()
     {
-        transform.LookAt(target.transform);
-        Orbit();
+        this.transform.LookAt(target.transform);
+        if (managerScript.orbitAnticlockwise == false)
+            Orbit();
+        else
+            OrbitACW();
     }
 
     void Orbit()
     {
+        transform.RotateAround(camPivot.transform.position, Vector3.up, time * Time.deltaTime);
+    }
+    void OrbitACW()
+    {
         transform.RotateAround(camPivot.transform.position, Vector3.down, time * Time.deltaTime);
-    }   
+    }
 }
