@@ -128,7 +128,7 @@ MonoBehaviour:
   speed: 10
   playerHOR: Horizontal
   PlayerVer: Vertical
-  rotationSpeed: 0.1
+  rotationSpeed: 0.5
   isCaptured: 0
   health: 0
   projectileLauncher: {fileID: -4087858310874561992, guid: 7d7ae7656d4af1249b9bfa51d5749031,
@@ -181,5 +181,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerFire: Fire2
-  smokePrefab: {fileID: 5772507418558543763, guid: 90a857e7556f44d4a8aea3e89bdd165c,
+  smokePrefab: {fileID: 8644326735496483049, guid: 90a857e7556f44d4a8aea3e89bdd165c,
     type: 3}
