@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float health;
+    [SerializeField] public float health;
     private float totalPoisionDmg = 30;
     private float currentPoisionDmg = 0;
     public bool isPoisioned;

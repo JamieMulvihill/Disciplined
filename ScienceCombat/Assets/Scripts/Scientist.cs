@@ -10,7 +10,7 @@ public class Scientist : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     public bool isCaptured = false;
     [SerializeField] private float health;
-
+    [SerializeField] private Health healthManager;
     void Start()
     {
         
@@ -32,7 +32,9 @@ public class Scientist : MonoBehaviour
 
     void Update()
     {
-        
+        if (healthManager.health <= 0) {
+            Destroy(gameObject);
+        }
     }
 
     public void TakeDamage(float damage)
