@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Seeds : MonoBehaviour
+public class Seeds : Projectile
 {
     [SerializeField] private GameObject vines;
     // Start is called before the first frame update
-    private void OnCollisionEnter(Collision collision)
+   protected override void AreaOfEffect(GameObject hitPlayer)
     {
-        GameObject inst;
-        inst = Instantiate(vines, transform.position, transform.rotation);
+      
+        Instantiate(vines, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

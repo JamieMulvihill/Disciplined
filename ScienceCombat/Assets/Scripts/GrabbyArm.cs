@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GrabbyArm : MonoBehaviour
 {
+    [SerializeField] GameObject hand; // the object which collides with a player which is to be grabbed
     [SerializeField] private float animationLength;
     [SerializeField] private float armReach;
     private float armProgress = 0f; // represents the current distance reached while a grab attack is being performed
@@ -22,6 +23,13 @@ public class GrabbyArm : MonoBehaviour
     //debug variables
     private Transform cylinderBaseTransform;
     [SerializeField] GameObject cylinder;
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<Scientist>())
+        {
+            hitGuy = other.gameObject;
+        }
+    }
     bool Grab()
     {
         //GetComponent<PlayerController>().Speed = 0f;
@@ -36,7 +44,7 @@ public class GrabbyArm : MonoBehaviour
                 //hits[hitIndex]
                 if (hits[hitIndex].collider != null)
                 {
-                    if (hits[hitIndex].collider.gameObject.GetComponent<PlayerController>())
+                    if (hits[hitIndex].collider.gameObject.GetComponent<Scientist>())
                     {
                         hitGuy = hits[hitIndex].collider.gameObject;
                         return true;
@@ -49,7 +57,7 @@ public class GrabbyArm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        originalSpeed = GetComponent<PlayerController>().Speed;
+        originalSpeed = GetComponent<Scientist>().speed;
         remainingLifespan = lifespan;
     }
 
@@ -114,6 +122,7 @@ public class GrabbyArm : MonoBehaviour
             retracting = true;
         }
         cylinder.transform.localPosition = new Vector3(0f, 0f, armProgress);
+        hand.transform.localPosition = new Vector3(0f, 0f, armProgress*2);
         cylinder.transform.localScale = new Vector3(cylinder.transform.localScale.x, armProgress, cylinder.transform.localScale.z);
     }
 }

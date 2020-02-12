@@ -8,6 +8,10 @@ TagManager:
   - Virus
   - Ground
   - Chemist
+  - Manager
+  - Engineer
+  - Fireball
+  - Acid
   layers:
   - Default
   - TransparentFX
