@@ -18,13 +18,16 @@ public class PipeItems : MonoBehaviour
     [Header("Ints")]
     private int entranceCounter;
     private int PLCounter;
-    private int time;
+    private int speed;
     private int chosenPipeLine;
+
+    [Header("Bools")]
+    private bool waited;
 
     [Header("Scripts")]
     private PipeLineWaypoints plw;
-    //private ParticleSystem particles;
     private Manager managerScript;
+    //private ParticleSystem particles;
 
     //[Header("Colours")]
     //private Color lightBlue;
@@ -49,8 +52,9 @@ public class PipeItems : MonoBehaviour
 
         entranceCounter = 1;
         PLCounter = 0;
-        time = 5;
+        speed = 5;
         chosenPipeLine = 0;
+        waited = false;
     }
 
     void ChoosePipeLine()
@@ -76,7 +80,7 @@ public class PipeItems : MonoBehaviour
 
     void Update()
     {
-        T.position = Vector3.MoveTowards(T.position, goToT.position, time * Time.deltaTime);
+        T.position = Vector3.MoveTowards(T.position, goToT.position, speed * Time.deltaTime);
 
         if (chosenPipeLine == 0 && T.position == goToT.position)
         {
@@ -89,11 +93,11 @@ public class PipeItems : MonoBehaviour
                 entranceCounter++;
             }
 
-            if (goToT == plw.entranceWPs[2].transform)
+            if (goToT == plw.entranceWPs[plw.entranceWPs.Length - 1].transform)
             {
                 goToT = plw.conducter.transform;
             }
-            else if (goToT != plw.entranceWPs[2].transform && goToT != plw.conducter.transform)
+            else if (goToT != plw.entranceWPs[plw.entranceWPs.Length - 1].transform && goToT != plw.conducter.transform)
             {
                 goToT = plw.entranceWPs[entranceCounter].transform;
             }
@@ -110,24 +114,30 @@ public class PipeItems : MonoBehaviour
         {
             case 1:
                 //PipeLine 1
-                if (T.position == goToT.position && PLCounter != 14)
+                if (T.position == goToT.position && PLCounter != plw.PL1WPs.Length)
                 {
                     goToT = plw.PL1WPs[PLCounter].transform;
                     PLCounter++;
-                } else if (T.position == goToT.position && PLCounter == 13)
+                } else if (T.position == goToT.position && PLCounter == plw.PL1WPs.Length)
                 {
-                    plw.pipeAnims[0].SetTrigger("isItemSpawning");
-                    print("its happening");
-                } else if (T.position == goToT.position && PLCounter == 14)
-                {
-                    time = 20;
-                    goToT = plw.PL1endPoint.transform;
+                    plw.pipeAnims[0].SetBool("Spit", true);
+                    goToT.position = T.position;
+                    StartCoroutine(Delay());
+                    if (waited == true)
+                    {
+                        goToT = plw.PL1endPoint.transform;
+                        speed = 20;
+                    }
                 }
-                
-                //if(T.position == plw.PL1WPs[13])
+
+                //if (PLCounter == plw.PL1WPs.Length - 1)
+                //{
+                //    plw.pipeAnims[0].SetBool("Spit", true);
+                //}
 
                 if (T.position == goToT.position && goToT == plw.PL1endPoint.transform)
                 {
+                    plw.pipeAnims[0].SetBool("Spit", false);
                     StartCoroutine(DestroyItem());
                 }
 
@@ -135,22 +145,30 @@ public class PipeItems : MonoBehaviour
 
             case 2:
                 //PipeLine 2
-                if (T.position == goToT.position && PLCounter != 16)
+                if (T.position == goToT.position && PLCounter != plw.PL2WPs.Length)
                 {
                     goToT = plw.PL2WPs[PLCounter].transform;
                     PLCounter++;
-                } else if (T.position == goToT.position && PLCounter == 15)
+                } else if (T.position == goToT.position && PLCounter == plw.PL2WPs.Length)
                 {
-                    plw.pipeAnims[1].SetTrigger("isItemSpawning");
-                    print("its happening");
-                } else if (T.position == goToT.position && PLCounter == 16)
-                {
-                    time = 20;
-                    goToT = plw.PL2endPoint.transform;
+                    plw.pipeAnims[1].SetBool("Spit", true);
+                    goToT.position = T.position;
+                    StartCoroutine(Delay());
+                    if(waited == true)
+                    {
+                        goToT = plw.PL2endPoint.transform;
+                        speed = 20;
+                    } 
                 }
+
+                //if (PLCounter == plw.PL2WPs.Length - 1)
+                //{
+                //    plw.pipeAnims[1].SetBool("Spit", true);
+                //}
 
                 if (T.position == goToT.position && goToT == plw.PL2endPoint.transform)
                 {
+                    plw.pipeAnims[1].SetBool("Spit", false);
                     StartCoroutine(DestroyItem());
                 }
 
@@ -158,27 +176,41 @@ public class PipeItems : MonoBehaviour
 
             case 3:
                 //PipeLine 3
-                if (T.position == goToT.position && PLCounter != 14)
+                if (T.position == goToT.position && PLCounter != plw.PL3WPs.Length)
                 {
                     goToT = plw.PL3WPs[PLCounter].transform;
                     PLCounter++;
-                } else if (T.position == goToT.position && PLCounter == 13)
+                } else if (T.position == goToT.position && PLCounter == plw.PL3WPs.Length)
                 {
-                    plw.pipeAnims[2].SetTrigger("isItemSpawning");
-                    print("its happening");
-                } else if (T.position == goToT.position && PLCounter == 14)
-                {
-                    time = 20;
-                    goToT = plw.PL3endPoint.transform;
+                    plw.pipeAnims[2].SetBool("Spit", true);
+                    goToT.position = T.position;
+                    StartCoroutine(Delay());
+                    if (waited == true)
+                    {
+                        goToT = plw.PL3endPoint.transform;
+                        speed = 20;
+                    }
                 }
+
+                //if (PLCounter == plw.PL3WPs.Length - 1)
+                //{
+                //    plw.pipeAnims[2].SetBool("Spit", true);
+                //}
 
                 if (T.position == goToT.position && goToT == plw.PL3endPoint.transform)
                 {
+                    plw.pipeAnims[2].SetBool("Spit", false);
                     StartCoroutine(DestroyItem());
                 }
 
                 break;
         }
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(0.45f);
+        waited = true;
     }
 
     IEnumerator DestroyItem()

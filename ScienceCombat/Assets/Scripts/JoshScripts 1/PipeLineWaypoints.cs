@@ -7,22 +7,17 @@ public class PipeLineWaypoints : MonoBehaviour
     [Header("GameObjects")]
     [SerializeField] private GameObject item;
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject[] pipeHeads = new GameObject[3];
+    public GameObject[] pipeHeads = new GameObject[3];
 
     [Header("Waypoints")]
-    public GameObject[] entranceWPs = new GameObject[3];
-    public GameObject[] PL1WPs = new GameObject[14];
-    public GameObject[] PL2WPs = new GameObject[16];
-    public GameObject[] PL3WPs = new GameObject[14];
+    public GameObject[] entranceWPs = new GameObject[5];
+    public GameObject[] PL1WPs = new GameObject[23];
+    public GameObject[] PL2WPs = new GameObject[28];
+    public GameObject[] PL3WPs = new GameObject[25];
     public GameObject PL1endPoint;
     public GameObject PL2endPoint;
     public GameObject PL3endPoint;
     public GameObject conducter;
-
-    [Header("Bools")]
-    public bool pL1anim;
-    public bool pL2anim;
-    public bool pL3anim;
 
     [Header("Scripts")]
     private Manager managerScript;
@@ -35,12 +30,8 @@ public class PipeLineWaypoints : MonoBehaviour
         managerScript = this.gameObject.GetComponent<Manager>();
         for(int i = 0; i < 3; i++)
         {
-            pipeAnims[i] = pipeHeads[i].GetComponent<Animator>();
+            pipeAnims[i] = pipeHeads[i].GetComponentInChildren<Animator>();
         }
-
-        pL1anim = false;
-        pL2anim = false;
-        pL3anim = false;
     }
 
     private void Update()
@@ -56,27 +47,6 @@ public class PipeLineWaypoints : MonoBehaviour
             managerScript.spawnPlayer = false;
             SpawnPlayer();
         }
-
-        //if(pL1anim == true)
-        //{
-        //    //pipeAnims[0].ResetTrigger("isItemSpawning");
-        //    pL1anim = false;
-        //    pipeAnims[0].SetTrigger("isItemSpawning");
-        //}
-
-        //if (pL2anim == true)
-        //{
-        //    //pipeAnims[1].ResetTrigger("isItemSpawning");
-        //    pL2anim = false;
-        //    pipeAnims[1].SetTrigger("isItemSpawning");
-        //}
-
-        //if (pL3anim == true)
-        //{
-        //    //pipeAnims[2].ResetTrigger("isItemSpawning");
-        //    pL3anim = false;
-        //    pipeAnims[2].SetTrigger("isItemSpawning");
-        //}
     }
 
     void SpawnItem()
