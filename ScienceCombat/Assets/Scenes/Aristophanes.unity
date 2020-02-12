@@ -642,6 +642,25 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2454519284302377393, guid: e56b0a08bb66c1c46aa1abeb274a7369,
+        type: 3}
+      propertyPath: lifespan
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519284302377393, guid: e56b0a08bb66c1c46aa1abeb274a7369,
+        type: 3}
+      propertyPath: armSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519284302377393, guid: e56b0a08bb66c1c46aa1abeb274a7369,
+        type: 3}
+      propertyPath: forwardOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381813078, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
 --- !u!1 &1845395876
@@ -748,6 +767,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Biologist
       objectReference: {fileID: 0}
+    - target: {fileID: 2421331766900598672, guid: e62cfa9c82b590b42991202f7f157ed4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2421331766900598685, guid: e62cfa9c82b590b42991202f7f157ed4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -840,7 +864,7 @@ PrefabInstance:
     - target: {fileID: 2466507813489192650, guid: 52465b71ad2580b4097cba71226a9a1e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.99
+      value: 5.92
       objectReference: {fileID: 0}
     - target: {fileID: 2466507813489192650, guid: 52465b71ad2580b4097cba71226a9a1e,
         type: 3}
