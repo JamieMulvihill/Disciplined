@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998268182266850678}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2466507813489192650}
@@ -210,7 +210,7 @@ MonoBehaviour:
   magnitude: 100
   radius: 0
   laserDamage: 15
-  playerFire: Fire1
+  playerFire: Fire2
   scientist: {fileID: 4541228889225816936}
   laserBeam: {fileID: 8128173818677469542, guid: 0cc90c9d253fe2f48b0ecb8a07243b58,
     type: 3}
@@ -231,8 +231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a034fecafa159eb4488e0f15008b105b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAlt1: Fire2
-  meshSize: 1
+  playerAlt1: AltMove2
+  meshSize: 0.5
   scientist: {fileID: 4541228889225816936}
 --- !u!114 &-8722950184395974396
 MonoBehaviour:
@@ -247,6 +247,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  maxHealth: 100
+  redValue: 0
+  healthSegment: 0
+  greenGuiValue: 0
   isPoisioned: 0
 --- !u!114 &4541228889225816936
 MonoBehaviour:
@@ -261,12 +265,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  playerHOR: Horizontal
-  PlayerVer: Vertical
+  playerHOR: Horizontal2
+  PlayerVer: Vertical2
   rotationSpeed: 0.5
   isCaptured: 0
-  health: 100
   healthManager: {fileID: -8722950184395974396}
+  healthSprite: {fileID: 6219464151573839684}
 --- !u!1 &4570229121499305032
 GameObject:
   m_ObjectHideFlags: 0
