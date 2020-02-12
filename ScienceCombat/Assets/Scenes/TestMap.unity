@@ -2093,12 +2093,12 @@ PrefabInstance:
     - target: {fileID: 2561076147106239768, guid: e62cfa9c82b590b42991202f7f157ed4,
         type: 3}
       propertyPath: PlayerVer
-      value: Vertical3
+      value: Vertical2
       objectReference: {fileID: 0}
     - target: {fileID: 2561076147106239768, guid: e62cfa9c82b590b42991202f7f157ed4,
         type: 3}
       propertyPath: playerHOR
-      value: Horizontal3
+      value: Horizontal2
       objectReference: {fileID: 0}
 =======
 >>>>>>> Josh
@@ -2111,12 +2111,22 @@ PrefabInstance:
     - target: {fileID: 8273870170743248177, guid: e62cfa9c82b590b42991202f7f157ed4,
         type: 3}
       propertyPath: triggerButton
-      value: Fire3
+      value: Fire2
       objectReference: {fileID: 0}
     - target: {fileID: -5611754430015116259, guid: e62cfa9c82b590b42991202f7f157ed4,
         type: 3}
       propertyPath: triggerButton
       value: AltMove2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5611754430015116259, guid: e62cfa9c82b590b42991202f7f157ed4,
+        type: 3}
+      propertyPath: verticalVelocity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5611754430015116259, guid: e62cfa9c82b590b42991202f7f157ed4,
+        type: 3}
+      propertyPath: horizontalVelocity
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7587577354793890047, guid: e62cfa9c82b590b42991202f7f157ed4,
         type: 3}
@@ -3914,7 +3924,7 @@ GameObject:
   - component: {fileID: 153034266}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14372,6 +14382,16 @@ PrefabInstance:
         type: 3}
       propertyPath: playerAlt
       value: AltMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519284302377393, guid: e56b0a08bb66c1c46aa1abeb274a7369,
+        type: 3}
+      propertyPath: forwardOffset
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454519284302377393, guid: e56b0a08bb66c1c46aa1abeb274a7369,
+        type: 3}
+      propertyPath: lifespan
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -1042767354191632361, guid: e56b0a08bb66c1c46aa1abeb274a7369,
         type: 3}
@@ -40115,7 +40135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1499737439
 CapsuleCollider:
   m_ObjectHideFlags: 0
