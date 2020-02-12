@@ -6,7 +6,8 @@ public class GrabbyArm : MonoBehaviour
 {
     [SerializeField] GameObject hand; // the object which collides with a player which is to be grabbed
     [SerializeField] private float animationLength;
-    [SerializeField] private float armReach;
+    [SerializeField] private float maxArmReach;
+    private float armReach;
     private float armProgress = 0f; // represents the current distance reached while a grab attack is being performed
     [SerializeField] private string playerAlt;
     [SerializeField] private float forwardOffset;
@@ -23,6 +24,26 @@ public class GrabbyArm : MonoBehaviour
     //debug variables
     private Transform cylinderBaseTransform;
     [SerializeField] GameObject cylinder;
+    private float GetArmSpace()
+    {
+        if (Input.GetButtonDown(playerAlt))
+        {
+            RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, maxArmReach);
+            for (int hitIndex = 0; hitIndex < hits.Length; hitIndex++)
+            {
+                //hits[hitIndex]
+                if (hits[hitIndex].collider != null && hits[hitIndex].collider.gameObject.tag != "Fireball" && hits[hitIndex].collider.gameObject.tag != "Acid" && hits[hitIndex].collider.gameObject != hand && hits[hitIndex].collider.gameObject != cylinder)
+                {
+                    //if (hits[hitIndex].collider.gameObject.GetComponent<Scientist>())
+                    //{
+                    //hitGuy = hits[hitIndex].collider.gameObject;
+                    return Vector3.Distance(transform.position, hits[hitIndex].point) - forwardOffset;
+                    //}
+                }
+            }
+        }
+        return maxArmReach - forwardOffset;
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Scientist>())
@@ -78,6 +99,7 @@ public class GrabbyArm : MonoBehaviour
         if (Input.GetButtonDown(playerAlt) && remainingLifespan > 0f)
         {
             usingArm = true;
+            armReach = GetArmSpace();
         }
         if (usingArm)
         {
