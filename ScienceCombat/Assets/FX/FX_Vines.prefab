@@ -40,7 +40,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313404956010757720}
   serializedVersion: 6
-  lengthInSec: 6
+  lengthInSec: 8
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -4874,6 +4874,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8762647027857813429}
+  - component: {fileID: 6832199185761738245}
+  - component: {fileID: -7324809037642815618}
   m_Layer: 0
   m_Name: FX_Vines
   m_TagString: Untagged
@@ -4889,7 +4891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8762647027857813428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.36, y: 0, z: 2.71}
+  m_LocalPosition: {x: 6.36, y: 0.594, z: 2.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8762647029402964131}
@@ -4897,6 +4899,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6832199185761738245
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8762647027857813428}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7324809037642815618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8762647027857813428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7684a862853cd449b0edca239dc630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8762647028097518133
 GameObject:
   m_ObjectHideFlags: 0
@@ -4937,7 +4964,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8762647028097518133}
   serializedVersion: 6
-  lengthInSec: 2
+  lengthInSec: 6
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -9712,7 +9739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8762647029402964131
 Transform:
   m_ObjectHideFlags: 0
@@ -9736,7 +9763,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8762647029402964130}
   serializedVersion: 6
-  lengthInSec: 8
+  lengthInSec: 10
   simulationSpeed: 2
   stopAction: 0
   cullingMode: 0

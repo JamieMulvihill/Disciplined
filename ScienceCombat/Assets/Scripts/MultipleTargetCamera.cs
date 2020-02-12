@@ -75,4 +75,13 @@ public class MultipleTargetCamera : MonoBehaviour
         }
         return bounds.center;
     }
+    public void RemoveDeadPlayer(Transform deadPlayerTransform) {
+        for (int i = 0; i < targets.Count; i++)
+        {
+            if (targets[i] == deadPlayerTransform) {
+                targets.Remove(targets[i]);
+            }
+        }
+        GetCentrePoint();
+    }
 }
