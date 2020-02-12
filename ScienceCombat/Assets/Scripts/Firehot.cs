@@ -18,7 +18,7 @@ public class Firehot : Projectile
         Health playerHealth = hitPlayer.gameObject.GetComponent<Health>();
         if (playerHealth != null)
         {
-            playerHealth.health -= damage * Time.deltaTime;
+            playerHealth.TakeDamage(damage * Time.deltaTime);
         }
     }
     void Resize() //object scale approaches finalSize as current damage approaches 0

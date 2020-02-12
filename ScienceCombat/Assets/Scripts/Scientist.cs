@@ -9,14 +9,13 @@ public class Scientist : MonoBehaviour
     [SerializeField] private string playerHOR, PlayerVer;
     [SerializeField] private float rotationSpeed;
     public bool isCaptured = false;
-    [SerializeField] private float health;
     [SerializeField] private Health healthManager;
     [SerializeField] private SpriteRenderer healthSprite;
 
     void Start()
     {
        
-        healthSprite.color = new Color(healthManager.damageGuiValue / 255, healthManager.healthGuiValue / 255, 0 / 255, 1f);
+        healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
     }
 
     void FixedUpdate()
@@ -35,16 +34,10 @@ public class Scientist : MonoBehaviour
 
     void Update()
     {
-        healthSprite.color = new Color(healthManager.damageGuiValue / 255, healthManager.healthGuiValue / 255, 0 / 255, 1f);
+        healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
         
         if (healthManager.health <= 0) {
             Destroy(gameObject);
         }
     }
-
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-    }
-
 }

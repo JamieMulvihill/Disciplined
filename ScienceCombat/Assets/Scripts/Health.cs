@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] public float health = 100;
-    public float damageGuiValue = 0;
-    public float damageConversion;
-    public float healthConversion;
-    public float healthGuiValue;
+    [SerializeField] public float health;
+    [SerializeField] public float maxHealth = 100;
+    public float redValue = 0;
+    public float healthSegment;
+    public float greenGuiValue;
     private float totalPoisionDmg = 30;
     private float currentPoisionDmg = 0;
     public bool isPoisioned;
@@ -18,8 +18,9 @@ public class Health : MonoBehaviour
     void Start()
     {
         isPoisioned = false;
-        healthGuiValue = 255;
-        healthConversion = (healthGuiValue / health);
+        health = maxHealth;
+        greenGuiValue = 255;
+        healthSegment = (greenGuiValue / health);
     }
 
     // Update is called once per frame
@@ -39,25 +40,24 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (damageGuiValue < 255)
-        {
-            damageGuiValue += healthConversion;
-        }
-        else { healthGuiValue -= healthConversion; }
-
         health -= damage;
+        if (health > 50f)
+        {
+            redValue = healthSegment * (maxHealth - health ) * 2;
+        }
+        else { greenGuiValue = healthSegment * (health) * 2; }
+
     }
 
     IEnumerator UpdatePoison() {
         while (isPoisioned && totalPoisionDmg >= 1)    {
             health -= 1;
             totalPoisionDmg -= 1;
-            if (damageGuiValue < 255)
+            if (health > 50f)
             {
-                damageGuiValue += healthConversion;
+                redValue = healthSegment * (maxHealth - health) * 2; 
             }
-            else { healthGuiValue -= healthConversion; }
-
+            else { greenGuiValue = healthSegment * (health) * 2; }
             yield return new WaitForSeconds(.5f); 
         }
 
