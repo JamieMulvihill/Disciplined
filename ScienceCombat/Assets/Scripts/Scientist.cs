@@ -20,6 +20,8 @@ public class Scientist : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isCaptured) return;
+
         Vector3 joystickDirection = new Vector3(Input.GetAxis(playerHOR), 0, Input.GetAxis(PlayerVer));
 
         // If the stick is not at rest.
@@ -37,6 +39,9 @@ public class Scientist : MonoBehaviour
         healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
         
         if (healthManager.health <= 0) {
+            Camera gameCam = Camera.main;
+            MultipleTargetCamera multipleTargetCamera = gameCam.GetComponent<MultipleTargetCamera>();
+            multipleTargetCamera.RemoveDeadPlayer(gameObject.transform);
             Destroy(gameObject);
         }
     }

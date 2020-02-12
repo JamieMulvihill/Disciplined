@@ -6,10 +6,11 @@ public class Seeds : Projectile
 {
     [SerializeField] private GameObject vines;
     // Start is called before the first frame update
-   protected override void AreaOfEffect(GameObject hitPlayer)
-    {
-      
-        Instantiate(vines, transform.position, transform.rotation);
-        Destroy(gameObject);
+   protected override void AreaOfEffect(GameObject hitPlayer){
+        if (hitPlayer.tag == "Ground")
+        {
+            Instantiate(vines, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

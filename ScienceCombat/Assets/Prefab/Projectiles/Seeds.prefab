@@ -123,5 +123,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  damageRadius: 5
-  vines: {fileID: 646117286371248911, guid: dd0705ed34e85f44eb9c91656b515a97, type: 3}
+  damageRadius: 0.5
+  vines: {fileID: 8762647027857813428, guid: a41a73011c09adc47babae367b260f95, type: 3}

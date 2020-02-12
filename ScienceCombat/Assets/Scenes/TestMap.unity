@@ -2083,6 +2083,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2421331766900598684, guid: e62cfa9c82b590b42991202f7f157ed4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3341752633814986369, guid: aba5c745d0d206640895b6395b605390,
+        type: 3}
     - target: {fileID: 2561076147106239768, guid: e62cfa9c82b590b42991202f7f157ed4,
         type: 3}
       propertyPath: PlayerVer
@@ -2106,15 +2112,19 @@ PrefabInstance:
     - target: {fileID: -5611754430015116259, guid: e62cfa9c82b590b42991202f7f157ed4,
         type: 3}
       propertyPath: triggerButton
-      value: Fire3
+      value: AltMove2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587577354793890047, guid: e62cfa9c82b590b42991202f7f157ed4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2421331766900598680, guid: e62cfa9c82b590b42991202f7f157ed4,
         type: 3}
       propertyPath: rotationSpeed
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -5611754430015116259, guid: e62cfa9c82b590b42991202f7f157ed4, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e62cfa9c82b590b42991202f7f157ed4, type: 3}
 --- !u!1 &95938745
 GameObject:
@@ -14346,6 +14356,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3986865776209372922, guid: e56b0a08bb66c1c46aa1abeb274a7369,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3341752633814986369, guid: aba5c745d0d206640895b6395b605390,
+        type: 3}
     - target: {fileID: 2454519284302377393, guid: e56b0a08bb66c1c46aa1abeb274a7369,
         type: 3}
       propertyPath: playerAlt
@@ -14366,11 +14382,6 @@ PrefabInstance:
       propertyPath: healthManager
       value: 
       objectReference: {fileID: 2138790131}
-    - target: {fileID: 7087030280711053082, guid: e56b0a08bb66c1c46aa1abeb274a7369,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8859763589579088440, guid: e56b0a08bb66c1c46aa1abeb274a7369,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -14400,6 +14411,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087030280711053082, guid: e56b0a08bb66c1c46aa1abeb274a7369,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
@@ -16932,6 +16948,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2466507813489192651, guid: 52465b71ad2580b4097cba71226a9a1e,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3341752633814986369, guid: aba5c745d0d206640895b6395b605390,
+        type: 3}
     - target: {fileID: 4570229121583392855, guid: 52465b71ad2580b4097cba71226a9a1e,
         type: 3}
       propertyPath: playerFire
@@ -16962,15 +16984,15 @@ PrefabInstance:
       propertyPath: healthSprite
       value: 
       objectReference: {fileID: 1432504071}
-    - target: {fileID: 4570229121499305039, guid: 52465b71ad2580b4097cba71226a9a1e,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1948495623547059413, guid: 52465b71ad2580b4097cba71226a9a1e,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570229121499305039, guid: 52465b71ad2580b4097cba71226a9a1e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6219464151573839684, guid: 52465b71ad2580b4097cba71226a9a1e,
         type: 3}
