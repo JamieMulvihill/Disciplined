@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ProjectileLauncher : MonoBehaviour
 {
-    [SerializeField] private Projectile projectilePrefab;
-    [SerializeField] private string triggerButton;
-    private Projectile projectile;
-    [SerializeField] private float verticalVelocity;
-    [SerializeField] private float horizontalVelocity;
-    [SerializeField] private float upOffset;                    // spawn position offset (up)
-    [SerializeField] private float forwardOffset;               // spawn position offset (forward)
-    [SerializeField] private float fireRate = 1f;
-    [SerializeField] private float momentumScalar = 0.0f;       // carries velocity from player to projectile; 1.0 = full retention
+    [SerializeField] protected Projectile projectilePrefab;
+    [SerializeField] protected string triggerButton;
+    protected Projectile projectile;
+    [SerializeField] protected float verticalVelocity;
+    [SerializeField] protected float horizontalVelocity;
+    [SerializeField] protected float upOffset;                    // spawn position offset (up)
+    [SerializeField] protected float forwardOffset;               // spawn position offset (forward)
+    [SerializeField] protected float fireRate = 1f;
+    [SerializeField] protected float momentumScalar = 0.0f;       // carries velocity from player to projectile; 1.0 = full retention
     private float lastShotTime = 0.0f;
 
     // Start is called before the first frame update
