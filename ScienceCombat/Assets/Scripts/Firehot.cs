@@ -13,7 +13,14 @@ public class Firehot : Projectile
     //    finalSize = inputFinalSize;
     //    falloff = inputFalloff;
     //}
-    
+    protected override void AreaOfEffect(GameObject hitPlayer)
+    {
+        Health playerHealth = hitPlayer.gameObject.GetComponent<Health>();
+        if (playerHealth != null)
+        {
+            playerHealth.health -= damage * Time.deltaTime;
+        }
+    }
     void Resize() //object scale approaches finalSize as current damage approaches 0
     {
         //merge test
@@ -28,6 +35,9 @@ public class Firehot : Projectile
     // Update is called once per frame
     void FixedUpdate()
     {
+        // decrease damage by falloff * seconds
+        // resize fireball
+        // if damage is negative, destroy fireball
         damage -= falloff * Time.deltaTime;
         Resize();
         if (damage < 0f)
