@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] public float health;
+    [SerializeField] public float health = 100;
+    public float damageGuiValue = 0;
+    public float damageConversion;
+    public float healthConversion;
+    public float healthGuiValue;
     private float totalPoisionDmg = 30;
     private float currentPoisionDmg = 0;
     public bool isPoisioned;
@@ -14,6 +18,8 @@ public class Health : MonoBehaviour
     void Start()
     {
         isPoisioned = false;
+        healthGuiValue = 255;
+        healthConversion = (healthGuiValue / health);
     }
 
     // Update is called once per frame
@@ -33,13 +39,24 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (damageGuiValue < 255)
+        {
+            damageGuiValue += healthConversion;
+        }
+        else { healthGuiValue -= healthConversion; }
+
         health -= damage;
     }
 
     IEnumerator UpdatePoison() {
         while (isPoisioned && totalPoisionDmg >= 1)    {
             health -= 1;
-            totalPoisionDmg -= 1;    
+            totalPoisionDmg -= 1;
+            if (damageGuiValue < 255)
+            {
+                damageGuiValue += healthConversion;
+            }
+            else { healthGuiValue -= healthConversion; }
 
             yield return new WaitForSeconds(.5f); 
         }

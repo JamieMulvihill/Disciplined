@@ -11,9 +11,12 @@ public class Scientist : MonoBehaviour
     public bool isCaptured = false;
     [SerializeField] private float health;
     [SerializeField] private Health healthManager;
+    [SerializeField] private SpriteRenderer healthSprite;
+
     void Start()
     {
-        
+       
+        healthSprite.color = new Color(healthManager.damageGuiValue / 255, healthManager.healthGuiValue / 255, 0 / 255, 1f);
     }
 
     void FixedUpdate()
@@ -32,6 +35,8 @@ public class Scientist : MonoBehaviour
 
     void Update()
     {
+        healthSprite.color = new Color(healthManager.damageGuiValue / 255, healthManager.healthGuiValue / 255, 0 / 255, 1f);
+        
         if (healthManager.health <= 0) {
             Destroy(gameObject);
         }
