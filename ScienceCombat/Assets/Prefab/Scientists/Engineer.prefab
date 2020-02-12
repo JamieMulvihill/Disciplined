@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1381813082
 Transform:
   m_ObjectHideFlags: 0
@@ -303,11 +303,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 1381813078}
   animationLength: 1
-  armReach: 15
-  playerAlt: Fire2
-  forwardOffset: 1
-  armSpeed: 50
-  lifespan: 40
+  maxArmReach: 30
+  playerAlt: AltMove
+  forwardOffset: 2
+  armSpeed: 10
+  lifespan: 10
   cylinder: {fileID: 1985717066}
 --- !u!114 &4738175806081341987
 MonoBehaviour:
