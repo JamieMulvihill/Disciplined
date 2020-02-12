@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6941388417627210862}
-  - component: {fileID: 1071505127685941524}
   m_Layer: 0
   m_Name: Pipe_Head
   m_TagString: Untagged
@@ -32,25 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1071505127685941524
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6201344699093530237}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c6677306fd48b2c40ac61803c811eae0, type: 3}
-  m_Controller: {fileID: 9100000, guid: 7d822ea18361e314cb8800596d7d7b1f, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5056108934255605858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,16 +38,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6941388417627210862}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: eb6be6b89c610974493d2f6190bdd772,
-        type: 3}
-      propertyPath: m_Name
-      value: Pipe_Head_Anim
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: eb6be6b89c610974493d2f6190bdd772,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 7d822ea18361e314cb8800596d7d7b1f, type: 2}
     - target: {fileID: -4216859302048453862, guid: eb6be6b89c610974493d2f6190bdd772,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -133,6 +103,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 99.99997
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eb6be6b89c610974493d2f6190bdd772,
+        type: 3}
+      propertyPath: m_Name
+      value: Pipe_Head_Anim
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: eb6be6b89c610974493d2f6190bdd772,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6810e326ad5742944b07594b774c9304, type: 2}
     - target: {fileID: 7561110372842451503, guid: eb6be6b89c610974493d2f6190bdd772,
         type: 3}
       propertyPath: m_AABB.m_Center.x
