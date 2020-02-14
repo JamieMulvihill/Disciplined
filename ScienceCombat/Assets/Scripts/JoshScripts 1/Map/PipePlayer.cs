@@ -35,6 +35,7 @@ public class PipePlayer : MonoBehaviour
         T.position = plw.entranceWPs[0].transform.position;
         goToT = plw.entranceWPs[1].transform;
 
+        entranceCounter = 1;
         speed = 5;
     }
 
@@ -46,7 +47,7 @@ public class PipePlayer : MonoBehaviour
         {
             if (goToT == plw.conducter.transform)
             {
-                cSpawnScript.SpawnPlayer();
+                SpawnRealPlayer();
                 Destroy(this.gameObject);
             }
             else
@@ -63,5 +64,10 @@ public class PipePlayer : MonoBehaviour
                 goToT = plw.entranceWPs[entranceCounter].transform;
             }
         }
+    }
+
+    private void SpawnRealPlayer()
+    {
+        cSpawnScript.SpawnPlayer();
     }
 }

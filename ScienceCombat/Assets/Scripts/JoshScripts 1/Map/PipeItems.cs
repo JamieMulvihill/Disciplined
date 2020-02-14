@@ -8,7 +8,9 @@ public class PipeItems : MonoBehaviour
     private GameObject goFrom;
     private GameObject goTo;
 
+    [Header("Game Objects")]
     private GameObject manager;
+    [SerializeField] private GameObject particle;
 
     [Header("Transform")]
     private Transform T;
@@ -20,6 +22,7 @@ public class PipeItems : MonoBehaviour
     private int PLCounter;
     private int speed;
     private int chosenPipeLine;
+    public int rarity;
 
     [Header("Bools")]
     private bool waited;
@@ -27,12 +30,12 @@ public class PipeItems : MonoBehaviour
     [Header("Scripts")]
     private PipeLineWaypoints plw;
     private Manager managerScript;
-    //private ParticleSystem particles;
+    private ParticleSystem particles;
 
-    //[Header("Colours")]
-    //private Color lightBlue;
-    //private Color pink;
-    //private Color orange;
+    [Header("Colours")]
+    private Color gold;
+    private Color silver;
+    private Color bronze;
 
 
     private void Start()
@@ -40,42 +43,39 @@ public class PipeItems : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("Manager");
         managerScript = manager.GetComponent<Manager>();
         plw = manager.GetComponent<PipeLineWaypoints>();
-        //particles = this.gameObject.GetComponentInChildren<ParticleSystem>();
+        particles = particle.GetComponent<ParticleSystem>();
 
         T = this.transform;
         T.position = plw.entranceWPs[0].transform.position;
         goToT = plw.entranceWPs[1].transform;
 
-        //lightBlue = new Color(0, 171, 197);
-        //pink = new Color(253, 71, 255);
-        //orange = new Color(255, 154, 0);
+        gold = new Color(255, 255, 0);
+        silver = new Color(222, 222, 222);
+        bronze = new Color(255, 143, 0);
 
         entranceCounter = 1;
         PLCounter = 0;
         speed = 5;
         chosenPipeLine = 0;
         waited = false;
+
+        switch (rarity)
+        {
+            case 0:
+                particles.startColor = bronze;
+                break;
+            case 1:
+                particles.startColor = silver;
+                break;
+            case 2:
+                particles.startColor = gold;
+                break;
+        }
     }
 
     void ChoosePipeLine()
     {
         chosenPipeLine = Random.Range(1, 4);
-
-        //if (managerScript.activateItemParticles == true)
-        //{
-        //    switch (chosenPipeLine)
-        //    {
-        //        case 1:
-        //            particles.startColor = lightBlue;
-        //            break;
-        //        case 2:
-        //            particles.startColor = pink;
-        //            break;
-        //        case 3:
-        //            particles.startColor = orange;
-        //            break;
-        //    }
-        //}
     }
 
     void Update()
@@ -106,6 +106,15 @@ public class PipeItems : MonoBehaviour
         {
             CheckPathing();
         }
+
+        if (managerScript.activateItemParticles == true)
+        {
+            particle.SetActive(true);
+        }
+        else
+        {
+            particle.SetActive(false);
+        }
     }
 
     void CheckPathing()
@@ -129,11 +138,6 @@ public class PipeItems : MonoBehaviour
                         speed = 20;
                     }
                 }
-
-                //if (PLCounter == plw.PL1WPs.Length - 1)
-                //{
-                //    plw.pipeAnims[0].SetBool("Spit", true);
-                //}
 
                 if (T.position == goToT.position && goToT == plw.PL1endPoint.transform)
                 {
@@ -161,11 +165,6 @@ public class PipeItems : MonoBehaviour
                     } 
                 }
 
-                //if (PLCounter == plw.PL2WPs.Length - 1)
-                //{
-                //    plw.pipeAnims[1].SetBool("Spit", true);
-                //}
-
                 if (T.position == goToT.position && goToT == plw.PL2endPoint.transform)
                 {
                     plw.pipeAnims[1].SetBool("Spit", false);
@@ -191,11 +190,6 @@ public class PipeItems : MonoBehaviour
                         speed = 20;
                     }
                 }
-
-                //if (PLCounter == plw.PL3WPs.Length - 1)
-                //{
-                //    plw.pipeAnims[2].SetBool("Spit", true);
-                //}
 
                 if (T.position == goToT.position && goToT == plw.PL3endPoint.transform)
                 {
