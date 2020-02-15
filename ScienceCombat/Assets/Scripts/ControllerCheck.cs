@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControllerCheck : MonoBehaviour
 {
-    public string[] names = Input.GetJoystickNames();
+    public string[] names;
 
     private void Start()
     {
