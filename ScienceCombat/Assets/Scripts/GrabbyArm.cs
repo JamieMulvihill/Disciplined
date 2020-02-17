@@ -90,11 +90,13 @@ public class GrabbyArm : MonoBehaviour
         {
             hand.SetActive(true);
             cylinder.SetActive(true);
+            GetComponent<Scientist>().isCaptured = true;
         }
         else
         {
             hand.SetActive(false);
             cylinder.SetActive(false);
+            GetComponent<Scientist>().isCaptured = false;
         }
         if (Input.GetButtonDown(playerAlt) && remainingLifespan > 0f)
         {
@@ -135,6 +137,12 @@ public class GrabbyArm : MonoBehaviour
             if (armProgress < armReach && !retracting)
             {
                 armProgress += Time.deltaTime * armSpeed;
+
+                //if it is at or beyond reach of arm NOW... set to retracting
+                if (armProgress >= armReach)
+                {
+                    retracting = true;
+                }
             }
             if (armProgress > 0f && retracting)
             {
