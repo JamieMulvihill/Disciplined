@@ -36,14 +36,10 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        hitObjecets = Physics.OverlapSphere(transform.position, damageRadius);
-        foreach (Collider hit in hitObjecets)
+        
+        if (collision.gameObject.tag != gameObject.tag)
         {
-
-            if (hit.tag != gameObject.tag)
-            {
-                AreaOfEffect(hit.gameObject);
-            }
+            AreaOfEffect(gameObject);
         }
 
     }
