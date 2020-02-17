@@ -22,9 +22,12 @@ public class CharacterSpawn : MonoBehaviour
     [Header("Bools")]
     private bool spawningPlayer;
     private bool waited;
+    private bool coRoutineNotStarted = false;
 
     [Header("Transform")]
-    private Transform realT;
+    public Transform realT;
+
+    float delayTime = 0;
 
     void Start()
     {
@@ -50,25 +53,22 @@ public class CharacterSpawn : MonoBehaviour
 
         if (spawningPlayer == true)
         {
-            spawnerAnim.SetBool("SpawnPlayer", true);
             realT.position = target.transform.position;
-           
-            StartCoroutine(Delay());
-            if (waited == true)
-            {
-                spawnerAnim.SetBool("SpawnPlayer", false);
-                waited = false;
-                print("stopping spawn anim");
+            Debug.Log("Working??");
+            coRoutineNotStarted = true;
+            //StartCoroutine(Delay());
+            if (Time.time - delayTime > 2.5f) {
                 spawningPlayer = false;
-                //newestPlayer.GetComponent<Laser>().enabled = true;
-                //newestPlayer.GetComponent<Scientist>().enabled = true;
             }
+            //if (waited == true)
+            //{
+            //    waited = false;
+               
+            //    //newestPlayer.GetComponent<Laser>().enabled = true;
+            //    //newestPlayer.GetComponent<Scientist>().enabled = true;
+            //}
         }
     }
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    //There is a bug with the animation here,
-    //SpawnPlayer will not repeat more than once regardless of being set back to being false -_-
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     public void SpawnFetus()
     {
@@ -78,9 +78,10 @@ public class CharacterSpawn : MonoBehaviour
     public void SpawnPlayer() // for spawning different scientists, just pass in player desired
     {
         newestPlayer = Instantiate(managerScript.queuedRespawns.Dequeue());
-        print("Player Dequeued");
         realT = newestPlayer.transform;
         spawningPlayer = true;
+        spawnerAnim.Play("Spawn");
+        delayTime = Time.time;
         //get all components of player being spawned, probably use a switch or something
         //disable all components
         //newestPlayer.GetComponent<Laser>().enabled = false;
@@ -91,5 +92,6 @@ public class CharacterSpawn : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         waited = true;
+        coRoutineNotStarted = false;
     }
 }
