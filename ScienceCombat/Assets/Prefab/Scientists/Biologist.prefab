@@ -151,6 +151,7 @@ MonoBehaviour:
   isCaptured: 0
   healthManager: {fileID: 516136918316852869}
   healthSprite: {fileID: 0}
+  controllerIndex: 0
 --- !u!114 &8273870170743248177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1703458805908143051, guid: b9ce5a0f79c33394db63abeceeb7e8c5,
     type: 3}
-  triggerButton: Fire1
+  triggerButton: 
   verticalVelocity: 4
   horizontalVelocity: 7
   upOffset: 2
@@ -186,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5388313906294673447, guid: c66ae8cc400a40a478c05d59eaa7c71b,
     type: 3}
-  triggerButton: Fire2
+  triggerButton: 
   verticalVelocity: 4
   horizontalVelocity: 7
   upOffset: 2

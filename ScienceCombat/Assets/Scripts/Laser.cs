@@ -11,7 +11,7 @@ public class Laser : MonoBehaviour
     [SerializeField] private float radius;
     [SerializeField] private float laserDamage = 15;
     LineRenderer line;
-    [SerializeField] private string playerFire;
+    public string playerFire;
     [SerializeField] private Scientist scientist;
     public ParticleSystem laserBeam;
     public ParticleSystem laserSpawn;
@@ -20,6 +20,8 @@ public class Laser : MonoBehaviour
 
     void Start()
     {
+        //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
+
         laserSpawn = Instantiate(laserSpawn, gameObject.transform.position + gameObject.transform.forward, Quaternion.identity);
         laserBeam = Instantiate(laserBeam, gameObject.transform.position + gameObject.transform.forward, Quaternion.identity);
         laserHit = Instantiate(laserHit, gameObject.transform.position + gameObject.transform.forward, Quaternion.identity);
@@ -93,5 +95,10 @@ public class Laser : MonoBehaviour
             return start;
         }
         return current;
+    }
+
+    public void DisignateController(int controllerIndex)
+    {
+        playerFire = "Fire" + controllerIndex.ToString();
     }
 }

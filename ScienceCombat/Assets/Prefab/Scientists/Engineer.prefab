@@ -323,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 22400591502661274, guid: f8a3d263f4980e049be218ab9cd412c5,
     type: 3}
-  triggerButton: Fire1
+  triggerButton: 
   verticalVelocity: 0
   horizontalVelocity: 5
   upOffset: 0
@@ -339,14 +339,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830673993139359091}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 22400591502661274, guid: f8a3d263f4980e049be218ab9cd412c5,
     type: 3}
-  triggerButton: Fire1
+  triggerButton: 
   verticalVelocity: 0
   horizontalVelocity: 5
   upOffset: 0
@@ -366,12 +366,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  playerHOR: Horizontal
-  PlayerVer: Vertical
+  playerHOR: Horizontal1
+  PlayerVer: Vertical1
   rotationSpeed: 0.5
   isCaptured: 0
   healthManager: {fileID: 0}
   healthSprite: {fileID: 0}
+  controllerIndex: 1
 --- !u!114 &4714355647961977760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,16 +428,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 298965608010553281}
     m_Modifications:
-    - target: {fileID: 2222601858409622067, guid: a7c24e8b7120625428967062b3e82993,
-        type: 3}
-      propertyPath: m_Name
-      value: Flames
-      objectReference: {fileID: 0}
-    - target: {fileID: 2222601858409622067, guid: a7c24e8b7120625428967062b3e82993,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2222601858409622064, guid: a7c24e8b7120625428967062b3e82993,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -490,6 +481,16 @@ PrefabInstance:
     - target: {fileID: 2222601858409622064, guid: a7c24e8b7120625428967062b3e82993,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222601858409622067, guid: a7c24e8b7120625428967062b3e82993,
+        type: 3}
+      propertyPath: m_Name
+      value: Flames
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222601858409622067, guid: a7c24e8b7120625428967062b3e82993,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5434106058873163778, guid: a7c24e8b7120625428967062b3e82993,

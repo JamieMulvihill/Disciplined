@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SmokeAttack : MonoBehaviour
 {
-    [SerializeField] private string playerFire;
+    public string playerFire;
 
     public Smoke smokePrefab;
     private Smoke smoke;
@@ -13,7 +13,7 @@ public class SmokeAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
     }
 
     private void Awake()
@@ -37,5 +37,9 @@ public class SmokeAttack : MonoBehaviour
 
     }
 
-   
+    public void DisignateController(int controllerIndex)
+    {
+        playerFire = "AltMove" + controllerIndex.ToString();
+    }
+
 }

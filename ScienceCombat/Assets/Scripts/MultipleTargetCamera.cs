@@ -42,7 +42,7 @@ public class MultipleTargetCamera : MonoBehaviour
 
     void Zoom() {
 
-        Debug.Log(GetGreatestDistance());
+        //Debug.Log(GetGreatestDistance());
         // set the cameras field of view and zoom values based of the Lerp calculations of the greastest distance points divided by the zoom limiter 
         float newZoom = Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / zoomLimiter);
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, newZoom, Time.deltaTime);

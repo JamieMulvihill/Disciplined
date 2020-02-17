@@ -79,6 +79,7 @@ public class GrabbyArm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
         originalSpeed = GetComponent<Scientist>().speed;
         remainingLifespan = lifespan;
     }
@@ -165,5 +166,10 @@ public class GrabbyArm : MonoBehaviour
         cylinder.transform.localPosition = new Vector3(0f, 0f, (armProgress + forwardOffset) / 2);
         hand.transform.localPosition = new Vector3(0f, 0f, (armProgress + forwardOffset));
         cylinder.transform.localScale = new Vector3(cylinder.transform.localScale.x, (armProgress + forwardOffset) / 2, cylinder.transform.localScale.z);
+    }
+
+    public void DisignateController(int controllerIndex)
+    {
+        playerAlt = "AltMove" + controllerIndex.ToString();
     }
 }

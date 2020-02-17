@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Dash : MonoBehaviour{
 
-    [SerializeField] private string playerAlt1;
+    public string playerAlt1;
     [SerializeField] private float meshSize = 1;
     [SerializeField] private Scientist scientist;
+
+    private void Start()
+    {
+        //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
+    }
 
     void Update(){
        if (scientist.isCaptured) return;
@@ -25,5 +30,10 @@ public class Dash : MonoBehaviour{
            }
        }
 
+    }
+
+    public void DisignateController(int controllerIndex)
+    {
+        playerAlt1 = "AltMove" + controllerIndex.ToString();
     }
 }

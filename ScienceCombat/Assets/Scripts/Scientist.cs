@@ -11,6 +11,7 @@ public class Scientist : MonoBehaviour
     public bool isCaptured = false;
     [SerializeField] private Health healthManager;
     [SerializeField] private SpriteRenderer healthSprite;
+    public int controllerIndex;
 
     void Start()
     {
@@ -48,6 +49,7 @@ public class Scientist : MonoBehaviour
 
     public void DisignateController(int controllerIndex)
     {
+        this.controllerIndex = controllerIndex;
         playerHOR = "Horizontal" + controllerIndex.ToString();
         PlayerVer = "Vertical" + controllerIndex.ToString();
     }

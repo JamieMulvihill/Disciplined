@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileLauncher : MonoBehaviour
 {
     [SerializeField] protected Projectile projectilePrefab;
-    [SerializeField] protected string triggerButton;
+    public string triggerButton;
     protected Projectile projectile;
     [SerializeField] protected float verticalVelocity;
     [SerializeField] protected float horizontalVelocity;
@@ -18,7 +18,7 @@ public class ProjectileLauncher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
     }
 
     // Update is called once per frame
@@ -48,5 +48,10 @@ public class ProjectileLauncher : MonoBehaviour
                 lastShotTime = Time.time;
             }
         }
+    }
+
+    public void DisignateController(int controllerIndex)
+    {
+        triggerButton = "Fire" + controllerIndex.ToString();
     }
 }
