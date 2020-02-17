@@ -24,5 +24,10 @@ public class MenuButtons : MonoBehaviour
         print("Play");
     }
 
+    private void Exit()
+    {
+        Application.Quit();
+    }
+
 
 }
