@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e4c20ec15371f64cb0a7336136ce007, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e84720f366f2384eb1208ccfb58fd3d, type: 3}
   m_Name: Biologist
   m_EditorClassIdentifier: 
   Scientist: {fileID: 2421331766900598672, guid: e62cfa9c82b590b42991202f7f157ed4,

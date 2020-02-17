@@ -146,14 +146,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 176393069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4fbc0cf2593072428e5950af3b5d7fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 37b7ed51d89576d4a82d00f83cabbb17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playabeCharacters:
-  - {fileID: 11400000, guid: 3ad264ccfe6e94e44a3c3bf97763c28f, type: 2}
-  - {fileID: 11400000, guid: e0bf72869d4c9614bab0b770d54b7654, type: 2}
-  - {fileID: 11400000, guid: 9f74b6340e2a43b41ba18754415f44b8, type: 2}
-  - {fileID: 11400000, guid: 4c40ecee61fb26e4dae9d284b7cb4d18, type: 2}
+  - {fileID: 11400000, guid: 9f7e80225106b8d4eb3cd7e237dd051c, type: 2}
+  - {fileID: 11400000, guid: 8578f2dd6dbe01940a7c76ba3b7d6e94, type: 2}
+  - {fileID: 11400000, guid: 0cee77eb6836a63459509bea1c312ae7, type: 2}
+  - {fileID: 11400000, guid: facda54132054494a9b2603729ec54c4, type: 2}
 --- !u!4 &176393073
 Transform:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 208927609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52261814c9989b94a8447452d7201382, type: 3}
+  m_Script: {fileID: 11500000, guid: 734c627ed959e2e4bb528eae625d86c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterSelector: {fileID: 176393069}
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 295729882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52261814c9989b94a8447452d7201382, type: 3}
+  m_Script: {fileID: 11500000, guid: 734c627ed959e2e4bb528eae625d86c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterSelector: {fileID: 176393069}
@@ -578,7 +578,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 362866484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52261814c9989b94a8447452d7201382, type: 3}
+  m_Script: {fileID: 11500000, guid: 734c627ed959e2e4bb528eae625d86c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterSelector: {fileID: 176393069}
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1451118705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688f8819e64c0f94487b7b892c45d91d, type: 3}
+  m_Script: {fileID: 11500000, guid: 227316e188cd1924abbab36751b2b7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chosenPlayers:
@@ -995,7 +995,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1993869664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52261814c9989b94a8447452d7201382, type: 3}
+  m_Script: {fileID: 11500000, guid: 734c627ed959e2e4bb528eae625d86c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterSelector: {fileID: 176393069}
