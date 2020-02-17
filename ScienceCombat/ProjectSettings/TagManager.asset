@@ -12,6 +12,13 @@ TagManager:
   - Engineer
   - Fireball
   - Acid
+  - Hand
+  - Smoke
+  - Seeds
+  - Physicist
+  - Undefined
+  - Vines
+  - Spawner
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ public class Scientist : MonoBehaviour
 {
     public float speed;
    
-    [SerializeField] private string playerHOR, PlayerVer;
+    public string playerHOR, PlayerVer;
     [SerializeField] private float rotationSpeed;
     public bool isCaptured = false;
     [SerializeField] private Health healthManager;
@@ -44,5 +44,11 @@ public class Scientist : MonoBehaviour
             multipleTargetCamera.RemoveDeadPlayer(gameObject.transform);
             Destroy(gameObject);
         }
+    }
+
+    public void DisignateController(int controllerIndex)
+    {
+        playerHOR = "Horizontal" + controllerIndex.ToString();
+        PlayerVer = "Vertical" + controllerIndex.ToString();
     }
 }

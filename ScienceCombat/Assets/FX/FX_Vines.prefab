@@ -4878,7 +4878,7 @@ GameObject:
   - component: {fileID: -7324809037642815618}
   m_Layer: 0
   m_Name: FX_Vines
-  m_TagString: Untagged
+  m_TagString: Vines
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
