@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+ScienceCombat/Library/
+ScienceCombat/obj/
+ScienceCombat/Temp/
