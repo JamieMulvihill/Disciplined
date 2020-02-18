@@ -49,7 +49,8 @@ public class PipeLineWaypoints : MonoBehaviour
         if (managerScript.pipelineInMotion == true)
         {
             pipelineInMotion = true;
-        } else
+        }
+        else
         {
             pipelineInMotion = false;
         }
@@ -70,13 +71,6 @@ public class PipeLineWaypoints : MonoBehaviour
             StartCoroutine(SendIt(isObjectPlayer));
         }
 
-        if (managerScript.playerHasDied == true)
-        {
-            managerScript.playerHasDied = false;
-            managerScript.queuedRespawns.Enqueue(playerClones[0]);
-            //change to which player has died
-        }
-
         if (canSpawn == true && pipelineInMotion == true)
         {
             StartCoroutine(SendIt(isObjectPlayer));
@@ -90,6 +84,12 @@ public class PipeLineWaypoints : MonoBehaviour
         {
             isObjectPlayer = false;
         }
+    }
+
+    public void EnqueueClone(int playerIndex)
+    {
+            managerScript.queuedRespawns.Enqueue(playerClones[playerIndex]);
+            //change to which player has died
     }
 
     void SpawnItem()

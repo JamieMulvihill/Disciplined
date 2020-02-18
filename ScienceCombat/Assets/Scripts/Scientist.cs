@@ -13,11 +13,13 @@ public class Scientist : MonoBehaviour
     [SerializeField] private SpriteRenderer healthSprite;
     public int controllerIndex;
 
+    [SerializeField] private GameObject [] scientistPrefabs;
+
     private GameObject manager;
 
     void Start()
     {
-        manager = GameObject.FindWithTag("Manager");
+        manager = GameObject.FindGameObjectWithTag("Manager");
         healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
     }
 
@@ -45,7 +47,25 @@ public class Scientist : MonoBehaviour
             Camera gameCam = Camera.main;
             MultipleTargetCamera multipleTargetCamera = gameCam.GetComponent<MultipleTargetCamera>();
             multipleTargetCamera.RemoveDeadPlayer(gameObject.transform);
-            manager.GetComponent<Manager>().queuedRespawns.Enqueue(gameObject);
+
+            
+
+            switch(gameObject.tag)
+            {
+                case "Biologist":
+                    manager.GetComponent<PipeLineWaypoints>().EnqueueClone(0);
+                    break;
+                case "Chemist":
+                    manager.GetComponent<PipeLineWaypoints>().EnqueueClone(1);
+                    break;
+                case "Engineer":
+                    manager.GetComponent<PipeLineWaypoints>().EnqueueClone(2);
+                    break;
+                case "Physicist":
+                    manager.GetComponent<PipeLineWaypoints>().EnqueueClone(3);
+                    break;
+            }
+
             Destroy(gameObject);
         }
     }

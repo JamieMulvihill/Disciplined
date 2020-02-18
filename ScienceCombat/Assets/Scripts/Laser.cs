@@ -56,10 +56,7 @@ public class Laser : MonoBehaviour
                 if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid"){
 
                     line.transform.localScale = new Vector3(radius, radius, Mathf.Lerp(0, hit.distance, 1f));
-                    Debug.Log(hit.distance);
-                    Debug.Log(enemy);
                     if (enemy != null){
-                        print("Hit GameObject");
                         Health enemyHealth = enemy.GetComponent<Health>();
                         if (enemyHealth != null){
                             laserHit.Play();
