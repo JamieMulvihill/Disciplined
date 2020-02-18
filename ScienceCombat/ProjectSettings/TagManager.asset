@@ -12,6 +12,10 @@ TagManager:
   - Engineer
   - Fireball
   - Acid
+  - Physicist
+  - Smoke
+  - Seeds
+  - Environment
   layers:
   - Default
   - TransparentFX
