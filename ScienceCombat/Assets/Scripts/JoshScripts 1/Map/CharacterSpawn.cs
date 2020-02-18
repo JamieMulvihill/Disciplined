@@ -64,7 +64,7 @@ public class CharacterSpawn : MonoBehaviour
             if (Time.time - delayTime > 3.5f)
             {
                 spawningPlayer = false;
-                yeeting = true;
+                //yeeting = true;
             }
         }
 

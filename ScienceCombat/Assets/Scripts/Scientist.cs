@@ -13,9 +13,11 @@ public class Scientist : MonoBehaviour
     [SerializeField] private SpriteRenderer healthSprite;
     public int controllerIndex;
 
+    private GameObject manager;
+
     void Start()
     {
-       
+        manager = GameObject.FindWithTag("Manager");
         healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
     }
 
@@ -43,6 +45,7 @@ public class Scientist : MonoBehaviour
             Camera gameCam = Camera.main;
             MultipleTargetCamera multipleTargetCamera = gameCam.GetComponent<MultipleTargetCamera>();
             multipleTargetCamera.RemoveDeadPlayer(gameObject.transform);
+            manager.GetComponent<Manager>().queuedRespawns.Enqueue(gameObject);
             Destroy(gameObject);
         }
     }
