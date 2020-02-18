@@ -176,7 +176,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1597101239
 Rigidbody:
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: -3746896607812541188, guid: c91ec678445046545abd3bc3658ab792,
     type: 3}
-  triggerButton: 
+  triggerButton: Fire3
   verticalVelocity: 4
   horizontalVelocity: 7
   upOffset: 2
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfe632095c897047b87071ca6fc22ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerFire: 
+  playerFire: AltMove3
   smokePrefab: {fileID: 8644326735496483049, guid: 90a857e7556f44d4a8aea3e89bdd165c,
     type: 3}
 --- !u!114 &1744561779
@@ -261,10 +261,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  playerHOR: Horizontal1
-  PlayerVer: Vertical1
+  playerHOR: Horizontal3
+  PlayerVer: Vertical3
   rotationSpeed: 0.5
   isCaptured: 0
   healthManager: {fileID: -5755307870195844768}
-  healthSprite: {fileID: 0}
-  controllerIndex: 0
+  healthSprite: {fileID: 5849653096946661855}
+  controllerIndex: 3
+  scientistPrefabs:
+  - {fileID: 2421331766900598672, guid: e62cfa9c82b590b42991202f7f157ed4, type: 3}
+  - {fileID: 5979943166543833243}
+  - {fileID: 1830673993139359091, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
+  - {fileID: 2466507813489192644, guid: 52465b71ad2580b4097cba71226a9a1e, type: 3}

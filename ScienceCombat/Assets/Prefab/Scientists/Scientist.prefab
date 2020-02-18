@@ -126,3 +126,13 @@ MonoBehaviour:
   playerHOR: Horizontal
   PlayerVer: Vertical
   rotationSpeed: 2
+  isCaptured: 0
+  healthManager: {fileID: 0}
+  healthSprite: {fileID: 0}
+  controllerIndex: 0
+  scientistPrefabs:
+  - {fileID: 2421331766900598672, guid: e62cfa9c82b590b42991202f7f157ed4, type: 3}
+  - {fileID: 5979943166543833243, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e, type: 3}
+  - {fileID: 1830673993139359091, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
+  - {fileID: 2466507813489192644, guid: 52465b71ad2580b4097cba71226a9a1e, type: 3}
+  manager: {fileID: 0}
