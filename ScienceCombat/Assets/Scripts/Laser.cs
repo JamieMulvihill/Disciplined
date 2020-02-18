@@ -17,7 +17,7 @@ public class Laser : MonoBehaviour
     public ParticleSystem laserSpawn;
     public ParticleSystem laserHit;
     public float laserSpeed = 200f;
-
+    public GameObject enemy;
     void Start()
     {
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
@@ -42,8 +42,7 @@ public class Laser : MonoBehaviour
             line.enabled = true;
             laserSpawn.transform.position = gameObject.transform.position + gameObject.transform.forward;
             laserSpawn.Play();
-            //laserBeam.transform.position = gameObject.transform.forward * (30* Time.deltaTime);
-            //laserBeam.Play();
+           
             if(!laserBeam.IsAlive())
             {
                 laserBeam.Play();
@@ -51,31 +50,33 @@ public class Laser : MonoBehaviour
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, magnitude))
             {    
-                if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid") {
-                  
-                    
+                enemy = hit.collider.gameObject;
+                if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid")
+                {
+
                     line.transform.localScale = new Vector3(radius, radius, Mathf.Lerp(0, hit.distance, 1f));
-                    
-                    
+
                     print("Collided");
-                    GameObject enemy = hit.collider.gameObject;
-                    if (enemy != null) {
+                    if (enemy != null)
+                    {
                         print("Hit GameObject");
                         Health enemyHealth = enemy.GetComponent<Health>();
-                        if (enemyHealth != null) {
+                        if (enemyHealth != null){
                             laserHit.Play();
                             laserHit.transform.position = hit.point;
                             laserBeam.transform.position = LaserEffect(gameObject.transform.position + gameObject.transform.forward, Vector3.MoveTowards(laserBeam.transform.position, hit.point, .5f), hit.point);
                             enemyHealth.TakeDamage(laserDamage * Time.deltaTime);
                         }
+                        else{
+                            laserHit.Stop();
+                            laserBeam.Stop();
+                        }
                     }
+                   
                 }
+               
             }
-            else{
-                laserHit.Stop();
-                laserBeam.Stop();
-                line.transform.localScale = new Vector3(radius, radius, Mathf.Lerp(0, magnitude, 1f));     
-            }
+           
         }
         else
         {
