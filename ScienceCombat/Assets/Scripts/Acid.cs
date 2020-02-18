@@ -22,6 +22,13 @@ public class Acid : Projectile
 
     }
 
-   
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+                AreaOfEffect(collision.gameObject);
+                Destroy(gameObject);
+        
+
+    }
 
 }
