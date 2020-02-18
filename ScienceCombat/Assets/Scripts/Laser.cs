@@ -18,13 +18,14 @@ public class Laser : MonoBehaviour
     public ParticleSystem laserHit;
     public float laserSpeed = 200f;
     public GameObject enemy;
+    private Vector3 laserPosition;
     void Start()
     {
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
-
-        laserSpawn = Instantiate(laserSpawn, gameObject.transform.position + gameObject.transform.forward, Quaternion.identity);
-        laserBeam = Instantiate(laserBeam, gameObject.transform.position + gameObject.transform.forward, Quaternion.identity);
-        laserHit = Instantiate(laserHit, gameObject.transform.position + gameObject.transform.forward, Quaternion.identity);
+        laserPosition = transform.GetChild(1).transform.position;
+        laserSpawn = Instantiate(laserSpawn, laserPosition + gameObject.transform.forward, Quaternion.identity);
+        laserBeam = Instantiate(laserBeam, laserPosition + gameObject.transform.forward, Quaternion.identity);
+        laserHit = Instantiate(laserHit, laserPosition + gameObject.transform.forward, Quaternion.identity);
         line = GetComponentInChildren<LineRenderer>();
         line.enabled = false;
     }
@@ -36,11 +37,12 @@ public class Laser : MonoBehaviour
 
         if (Mathf.Abs(Input.GetAxis(playerFire)) > 0.01f)
         {
+            laserPosition = transform.GetChild(1).transform.position;
             RaycastHit hit;
-            Debug.DrawRay(transform.position, transform.forward * magnitude, Color.green, .1f);
+            Debug.DrawRay(laserPosition, transform.forward * magnitude, Color.green, .1f);
 
             line.enabled = true;
-            laserSpawn.transform.position = gameObject.transform.position + gameObject.transform.forward;
+            laserSpawn.transform.position = laserPosition + gameObject.transform.forward;
             laserSpawn.Play();
            
             if(!laserBeam.IsAlive())
@@ -48,23 +50,21 @@ public class Laser : MonoBehaviour
                 laserBeam.Play();
             }
 
-            if (Physics.Raycast(transform.position, transform.forward, out hit, magnitude))
+            if (Physics.Raycast(laserPosition, transform.forward, out hit, magnitude))
             {    
                 enemy = hit.collider.gameObject;
-                if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid")
-                {
+                if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid"){
 
                     line.transform.localScale = new Vector3(radius, radius, Mathf.Lerp(0, hit.distance, 1f));
-
-                    print("Collided");
-                    if (enemy != null)
-                    {
+                    Debug.Log(hit.distance);
+                    Debug.Log(enemy);
+                    if (enemy != null){
                         print("Hit GameObject");
                         Health enemyHealth = enemy.GetComponent<Health>();
                         if (enemyHealth != null){
                             laserHit.Play();
                             laserHit.transform.position = hit.point;
-                            laserBeam.transform.position = LaserEffect(gameObject.transform.position + gameObject.transform.forward, Vector3.MoveTowards(laserBeam.transform.position, hit.point, .5f), hit.point);
+                            laserBeam.transform.position = LaserEffect(laserPosition + gameObject.transform.forward, Vector3.MoveTowards(laserBeam.transform.position, hit.point, .5f), hit.point);
                             enemyHealth.TakeDamage(laserDamage * Time.deltaTime);
                         }
                         else{
@@ -72,22 +72,17 @@ public class Laser : MonoBehaviour
                             laserBeam.Stop();
                         }
                     }
-                   
-                }
-               
-            }
-           
+                } 
+            } 
         }
-        else
-        {
-            laserBeam.transform.position = gameObject.transform.position + gameObject.transform.forward;
-            laserSpawn.transform.position = gameObject.transform.position + gameObject.transform.forward;
+        else {
+            laserBeam.transform.position = laserPosition + gameObject.transform.forward;
+            laserSpawn.transform.position = laserPosition + gameObject.transform.forward;
             line.enabled = false;
             laserSpawn.Stop();
             laserBeam.Stop();
             laserHit.Stop();
         }
-
     }
 
     Vector3 LaserEffect(Vector3 start, Vector3 current, Vector3 target) {

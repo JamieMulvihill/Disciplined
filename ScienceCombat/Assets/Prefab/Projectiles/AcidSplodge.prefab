@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleEffectPrefab: {fileID: 8155196106680444618, guid: 8c63f6c26e73d5e4183bccad76392943,
     type: 3}
-  duration: 5
-  radius: 5
+  duration: 3.53
+  radius: 2.38
   damageInterval: 0.5
   damage: 1
 --- !u!135 &-1206074485136314438
