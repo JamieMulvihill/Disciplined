@@ -4,21 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Biologist
-  - Virus
-  - Ground
   - Chemist
-  - Manager
-  - Engineer
-  - Fireball
-  - Acid
-  - Hand
-  - Smoke
-  - Seeds
   - Physicist
-  - Undefined
   - Vines
-  - Spawner
+  - Hand
+  - Engineer
+  - Biologist
+  - Fireball
   layers:
   - Default
   - TransparentFX

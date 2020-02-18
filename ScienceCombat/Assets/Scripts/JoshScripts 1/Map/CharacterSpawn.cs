@@ -7,6 +7,7 @@ public class CharacterSpawn : MonoBehaviour
     [Header("Game Objects")]
     [SerializeField] private GameObject realPlayer;
     [SerializeField] private GameObject fakePlayer;
+    [SerializeField] private GameObject yeetPlatform;
     private GameObject manager;
 
     public GameObject spawner;
@@ -21,13 +22,15 @@ public class CharacterSpawn : MonoBehaviour
 
     [Header("Bools")]
     private bool spawningPlayer;
-    private bool waited;
-    private bool coRoutineNotStarted = false;
+    private bool yeeting;
 
     [Header("Transform")]
     public Transform realT;
 
-    float delayTime = 0;
+    [Header("Floats")]
+    private float delayTime;
+    private float speed;
+
 
     void Start()
     {
@@ -40,7 +43,9 @@ public class CharacterSpawn : MonoBehaviour
         realT = realPlayer.transform;
 
         spawningPlayer = false;
-        waited = false;
+        yeeting = false;
+        delayTime = 0;
+        speed = 10;
     }
 
     void Update()
@@ -53,20 +58,19 @@ public class CharacterSpawn : MonoBehaviour
 
         if (spawningPlayer == true)
         {
-            realT.position = target.transform.position;
-            Debug.Log("Working??");
-            coRoutineNotStarted = true;
-            //StartCoroutine(Delay());
-            if (Time.time - delayTime > 2.5f) {
+            if (Time.time - delayTime < 2.5f)
+                realT.position = target.transform.position;
+
+            if (Time.time - delayTime > 3.5f)
+            {
                 spawningPlayer = false;
+                yeeting = true;
             }
-            //if (waited == true)
-            //{
-            //    waited = false;
-               
-            //    //newestPlayer.GetComponent<Laser>().enabled = true;
-            //    //newestPlayer.GetComponent<Scientist>().enabled = true;
-            //}
+        }
+
+        if(yeeting == true)
+        {
+            Yeet();
         }
     }
 
@@ -79,6 +83,7 @@ public class CharacterSpawn : MonoBehaviour
     {
         newestPlayer = Instantiate(managerScript.queuedRespawns.Dequeue());
         realT = newestPlayer.transform;
+        newestPlayer.GetComponent<Rigidbody>().useGravity = false;
         spawningPlayer = true;
         spawnerAnim.Play("Spawn");
         delayTime = Time.time;
@@ -88,10 +93,34 @@ public class CharacterSpawn : MonoBehaviour
         //newestPlayer.GetComponent<Scientist>().enabled = false;
     }
 
-    IEnumerator Delay()
+    void Yeet()
     {
-        yield return new WaitForSeconds(2.5f);
-        waited = true;
-        coRoutineNotStarted = false;
+        if(realT.position != yeetPlatform.transform.position)
+            realT.position = Vector3.Lerp(realT.position, yeetPlatform.transform.position, speed * Time.deltaTime);
+        else
+        {
+            yeeting = false;
+            CalculateLanding();
+        }
+    }
+
+    void CalculateLanding()
+    {
+        Vector2 XZ = Random.insideUnitCircle * 13;
+        realT.position = new Vector3(XZ.x, yeetPlatform.transform.position.y, XZ.y);
+        print(realT.position);
+        RaycastHit hit;
+        if (Physics.Raycast(realT.position, realT.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
+        {
+            if(hit.transform.tag == "Environment")
+            {
+                realT.position = yeetPlatform.transform.position;
+                CalculateLanding();
+            }
+        }
+        else
+        {
+            newestPlayer.GetComponent<Rigidbody>().useGravity = true;
+        }
     }
 }
