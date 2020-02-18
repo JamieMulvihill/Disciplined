@@ -31,6 +31,8 @@ public class CharacterSpawn : MonoBehaviour
     private float delayTime;
     private float speed;
 
+    public Camera camera;
+
 
     void Start()
     {
@@ -82,11 +84,15 @@ public class CharacterSpawn : MonoBehaviour
     public void SpawnPlayer() // for spawning different scientists, just pass in player desired
     {
         newestPlayer = Instantiate(managerScript.queuedRespawns.Dequeue());
+        camera.GetComponent<MultipleTargetCamera>().targets.Add(newestPlayer.transform);
+        //newestPlayer.GetComponent<Rigidbody>().useGravity(true);
         realT = newestPlayer.transform;
         newestPlayer.GetComponent<Rigidbody>().useGravity = false;
         spawningPlayer = true;
         spawnerAnim.Play("Spawn");
         delayTime = Time.time;
+
+
         //get all components of player being spawned, probably use a switch or something
         //disable all components
         //newestPlayer.GetComponent<Laser>().enabled = false;
