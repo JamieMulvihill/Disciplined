@@ -85,9 +85,8 @@ public class CharacterSpawn : MonoBehaviour
     {
         newestPlayer = Instantiate(managerScript.queuedRespawns.Dequeue());
         camera.GetComponent<MultipleTargetCamera>().targets.Add(newestPlayer.transform);
-        //newestPlayer.GetComponent<Rigidbody>().useGravity(true);
         realT = newestPlayer.transform;
-        newestPlayer.GetComponent<Rigidbody>().useGravity = false;
+        //newestPlayer.GetComponent<Rigidbody>().useGravity = false;
         spawningPlayer = true;
         spawnerAnim.Play("Spawn");
         delayTime = Time.time;

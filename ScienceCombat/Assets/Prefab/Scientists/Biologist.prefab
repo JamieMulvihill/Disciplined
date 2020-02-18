@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  playerHOR: Horizontal2
-  PlayerVer: Vertical2
+  playerHOR: Horizontal
+  PlayerVer: Vertical
   rotationSpeed: 0.5
   isCaptured: 0
   healthManager: {fileID: 516136918316852869}
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1703458805908143051, guid: b9ce5a0f79c33394db63abeceeb7e8c5,
     type: 3}
-  triggerButton: Fire2
+  triggerButton: Fire
   verticalVelocity: 2
   horizontalVelocity: 4
   upOffset: 2
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5388313906294673447, guid: c66ae8cc400a40a478c05d59eaa7c71b,
     type: 3}
-  triggerButton: AltMove2
+  triggerButton: AltMove
   verticalVelocity: -10
   horizontalVelocity: 4
   upOffset: 2

@@ -211,7 +211,7 @@ MonoBehaviour:
   magnitude: 100
   radius: 0
   laserDamage: 15
-  playerFire: Fire4
+  playerFire: Fire2
   scientist: {fileID: 4541228889225816936}
   laserBeam: {fileID: 8128173818677469542, guid: 0cc90c9d253fe2f48b0ecb8a07243b58,
     type: 3}
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a034fecafa159eb4488e0f15008b105b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAlt1: AltMove4
+  playerAlt1: AltMove2
   meshSize: 0.5
   scientist: {fileID: 4541228889225816936}
 --- !u!114 &-8722950184395974396
@@ -274,6 +274,7 @@ MonoBehaviour:
   healthManager: {fileID: -8722950184395974396}
   healthSprite: {fileID: 6219464151573839684}
   controllerIndex: 0
+  scientistPrefabs: []
 --- !u!1 &4570229121499305032
 GameObject:
   m_ObjectHideFlags: 0

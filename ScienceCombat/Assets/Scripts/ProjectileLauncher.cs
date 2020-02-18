@@ -24,6 +24,7 @@ public class ProjectileLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!gameObject.GetComponent<Scientist>().isCaptured)
         // If the trigger is pressed.
         if (Mathf.Abs(Input.GetAxis(triggerButton)) > 0.01f)            
         {
