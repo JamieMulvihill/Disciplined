@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lambert1
+  m_Name: CounterTop
   m_Shader: {fileID: 4800000, guid: 17bdf4add867f6c40b38143f7025bcea, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -39,12 +39,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _LightMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ea11b50b8514a3248aae119478619166, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8cbd1e38f47c0fe4681395954accb466, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -59,33 +55,28 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: -9.4
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimAmount: 0.506
-    - _RimThreshold: 0.194
+    - _RimAmount: 0.427
+    - _RimThreshold: 0.016
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColor: {r: 0.32156864, g: 0.32156864, b: 0.32156864, a: 1}
-    - _Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
+    - _AmbientColor: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
+    - _Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _RimColor: {r: 0.72305536, g: 0.3662527, b: 0.19120172, a: 1}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _SpecularColor: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
+    - _RimColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.1}
+    - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
