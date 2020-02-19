@@ -63,7 +63,7 @@ public class CharacterSpawn : MonoBehaviour
             if (Time.time - delayTime < 2.5f)
                 realT.position = target.transform.position;
 
-            if (Time.time - delayTime > 3.5f)
+            if (Time.time - delayTime > 4f)
             {
                 spawningPlayer = false;
                 //yeeting = true;
@@ -113,7 +113,6 @@ public class CharacterSpawn : MonoBehaviour
     {
         Vector2 XZ = Random.insideUnitCircle * 13;
         realT.position = new Vector3(XZ.x, yeetPlatform.transform.position.y, XZ.y);
-        print(realT.position);
         RaycastHit hit;
         if (Physics.Raycast(realT.position, realT.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
         {
@@ -122,10 +121,10 @@ public class CharacterSpawn : MonoBehaviour
                 realT.position = yeetPlatform.transform.position;
                 CalculateLanding();
             }
-        }
-        else
-        {
-            newestPlayer.GetComponent<Rigidbody>().useGravity = true;
+            else
+            {
+                newestPlayer.GetComponent<Rigidbody>().useGravity = true;
+            }
         }
     }
 }
