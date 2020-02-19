@@ -39,7 +39,7 @@ public class Projectile : MonoBehaviour
         
         if (collision.gameObject.tag != gameObject.tag)
         {
-            AreaOfEffect(gameObject);
+            AreaOfEffect(collision.gameObject);
         }
 
     }

@@ -96,7 +96,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2421331766900598673
 Rigidbody:
@@ -145,9 +145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  playerHOR: Horizontal
-  PlayerVer: Vertical
   rotationSpeed: 0.5
+  playerHOR: Horizontal1
+  PlayerVer: Vertical1
   isCaptured: 0
   healthManager: {fileID: 516136918316852869}
   healthSprite: {fileID: 3565358536781622942}
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1703458805908143051, guid: b9ce5a0f79c33394db63abeceeb7e8c5,
     type: 3}
-  triggerButton: Fire
+  triggerButton: Fire1
   verticalVelocity: 2
   horizontalVelocity: 4
   upOffset: 2
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5388313906294673447, guid: c66ae8cc400a40a478c05d59eaa7c71b,
     type: 3}
-  triggerButton: AltMove
+  triggerButton: AltMove1
   verticalVelocity: -10
   horizontalVelocity: 4
   upOffset: 2

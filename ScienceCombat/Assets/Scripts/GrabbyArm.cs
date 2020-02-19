@@ -4,41 +4,61 @@ using UnityEngine;
 
 public class GrabbyArm : MonoBehaviour
 {
-    [SerializeField] GameObject hand; // the object which collides with a player which is to be grabbed
-    [SerializeField] private float animationLength;
-    [SerializeField] private float maxArmReach;
-    private float armReach;
-    private float armProgress = 0f; // represents the current distance reached while a grab attack is being performed
-    [SerializeField] private string playerAlt;
+    [SerializeField] GameObject hand;               // the object which collides with a player which is to be grabbed
     [SerializeField] private float forwardOffset;
-    [SerializeField] private float armSpeed;
-    [SerializeField] private float lifespan; // represents how many seconds a grabby arm may be used before it breaks
-    private float remainingLifespan; // represents how many seconds a grabby arm may be used before it breaks
-    bool usingArm = false; // if false, arm will be put away next turn
-    bool retracting = false; // equal to true when arm is being retracted toward the player
-
+    [SerializeField] private string playerAlt;      // button to use the grab attack
     private float originalSpeed;
-    private GameObject hitGuy;
+    private float originalRotationSpeed;
+    private GameObject hitGuy;                      // the guy currently caught by grabby arm
 
+    //cooldown variables
+    [SerializeField] private float cooldown;        // how long in seconds the player must wait to be able to use the grabby arm after its been used
+    private bool onCooldown = false;                // represents whether or not more time must elapse before the grabby arm can be used again
+    private float cooldownCheckRate = 0.1f;         // how often it should check whether cooldown should start ticking. Setting this too big may result in longer cooldowns than expected.
+    [SerializeField] private float lifespan;        // represents how many seconds a grabby arm may be used before it breaks (immediately end use of grabby arm)
+    private float remainingLifespan;                // represents the remaining amount of seconds a grabby arm may be used before it breaks. Resets when cooldown ends
+
+    //arm limit variables
+    [SerializeField] private float animationLength;
+    [SerializeField] private float maxArmReach;     // represents the maximum possible reach of the grab attack
+    private float armReach;                         // represents how far the arm may extend under the current context (such as a wall being in the way)
+    private float armProgress = 0f;                 // represents the current distance reached while a grab attack is being performed
+    bool usingArm = false;                          // if false, arm will be put away next turn
+    bool retracting = false;                        // equal to true when arm is being retracted toward the player
+    [SerializeField] private float armSpeed;        // affects how fast the arm extends
 
     //debug variables
     private Transform cylinderBaseTransform;
-    [SerializeField] GameObject cylinder;
-    private float GetArmSpace()
+    [SerializeField] GameObject armVisual;          // just a cylinder representing the arm at the base of the hand
+
+    IEnumerator Cooldown() // Always running. If onCooldown is true, will wait [cooldown] seconds and then set onCooldown back to false
+    {
+        while (gameObject)
+        {
+            yield return new WaitForSeconds(0.1f);
+            if (onCooldown)
+            {
+                yield return new WaitForSeconds(cooldown);
+                onCooldown = false;
+            }
+        }
+    }
+    void Awake()
+    {
+        StartCoroutine(Cooldown());
+        originalSpeed = GetComponent<Scientist>().speed;
+        originalRotationSpeed = GetComponent<Scientist>().rotationSpeed;
+    }
+    private float GetArmSpace() // returns the maximum distance the arm may extend without passing through walls
     {
         if (Input.GetButtonDown(playerAlt))
         {
             RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, maxArmReach);
             for (int hitIndex = 0; hitIndex < hits.Length; hitIndex++)
             {
-                //hits[hitIndex]
-                if (hits[hitIndex].collider != null && hits[hitIndex].collider.gameObject.tag != "Fireball" && hits[hitIndex].collider.gameObject.tag != "Acid" && hits[hitIndex].collider.gameObject != hand && hits[hitIndex].collider.gameObject != cylinder)
+                if (hits[hitIndex].collider != null && hits[hitIndex].collider.gameObject.tag != "Fireball" && hits[hitIndex].collider.gameObject.tag != "Acid" && hits[hitIndex].collider.gameObject != hand && hits[hitIndex].collider.gameObject != armVisual)
                 {
-                    //if (hits[hitIndex].collider.gameObject.GetComponent<Scientist>())
-                    //{
-                    //hitGuy = hits[hitIndex].collider.gameObject;
                     return Vector3.Distance(transform.position, hits[hitIndex].point) - forwardOffset;
-                    //}
                 }
             }
         }
@@ -46,37 +66,17 @@ public class GrabbyArm : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Scientist>())
+        if (other.gameObject.tag != "Engineer" && other.gameObject.tag != "Biologist" && other.gameObject.tag != "Physicist" && other.gameObject.tag != "Chemist")
+        {
+            return;
+        }
+        if (other.gameObject.GetComponent<Scientist>().isCaptured == false)
         {
             hitGuy = other.gameObject;
             hitGuy.GetComponent<Scientist>().isCaptured = true;
+            hand.GetComponent<Collider>().enabled = false;
         }
     }
-    //bool Grab()
-    //{
-    //    //GetComponent<PlayerController>().Speed = 0f;
-        
-
-
-    //    if (Input.GetButtonDown(playerAlt))
-    //    {
-    //        RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, armReach);
-    //        for(int hitIndex = 0; hitIndex < hits.Length; hitIndex++)
-    //        {
-    //            //hits[hitIndex]
-    //            if (hits[hitIndex].collider != null)
-    //            {
-    //                if (hits[hitIndex].collider.gameObject.GetComponent<Scientist>())
-    //                {
-    //                    hitGuy = hits[hitIndex].collider.gameObject;
-    //                    return true;
-    //                }
-    //            }
-    //        }
-    //    }
-    //    return false;
-    //}
-    // Start is called before the first frame update
     void Start()
     {
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
@@ -87,24 +87,40 @@ public class GrabbyArm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GetComponent<Scientist>().isCaptured && usingArm)
+        {
+            retracting = false;
+            armProgress = 0f;
+            usingArm = false;
+            onCooldown = true;
+        }
+        // make arm and hand active when using arm.
         if (usingArm)
         {
             hand.SetActive(true);
-            cylinder.SetActive(true);
-            GetComponent<Scientist>().isCaptured = true;
+            armVisual.SetActive(true);
         }
         else
         {
             hand.SetActive(false);
-            cylinder.SetActive(false);
-            GetComponent<Scientist>().isCaptured = false;
+            armVisual.SetActive(false); 
+            if (GetComponent<Scientist>().isCaptured == false)
+            {
+                GetComponent<Scientist>().speed = originalSpeed;
+                GetComponent<Scientist>().rotationSpeed = originalRotationSpeed;
+            }
+            remainingLifespan = lifespan;
+            retracting = false;
         }
-        if (Input.GetButtonDown(playerAlt) && remainingLifespan > 0f)
+        if (Input.GetButtonDown(playerAlt) && remainingLifespan > 0f && !onCooldown)
         {
             usingArm = true;
             armReach = GetArmSpace();
+            GetComponent<Scientist>().speed = 0f;
+            GetComponent<Scientist>().rotationSpeed = 0f;
+            hand.GetComponent<Collider>().enabled = true;
         }
-        if (usingArm)
+        if (usingArm && hitGuy == null)
         {
             if (Input.GetButtonUp(playerAlt))
             {
@@ -119,6 +135,7 @@ public class GrabbyArm : MonoBehaviour
                 retracting = false;
                 armProgress = 0f;
                 usingArm = false;
+                onCooldown = true;
             }
         }
         // decreases remainingLifespan while arm is out and puts the arm away if remainingLifespan hits 0
@@ -127,7 +144,10 @@ public class GrabbyArm : MonoBehaviour
             remainingLifespan -= Time.deltaTime;
             if (remainingLifespan <= 0f)
             {
+                retracting = false;
+                armProgress = 0f;
                 usingArm = false;
+                onCooldown = true;
             }
         }
         // if arm is out
@@ -159,13 +179,12 @@ public class GrabbyArm : MonoBehaviour
             {
                 hitGuy.GetComponent<Scientist>().isCaptured = false;
                 hitGuy = null;
-                //GetComponent<PlayerController>().Speed =
                 return;
             }
         }
-        cylinder.transform.localPosition = new Vector3(0f, 0f, (armProgress + forwardOffset) / 2);
+        armVisual.transform.localPosition = new Vector3(0f, 0f, (armProgress + forwardOffset) / 2);
         hand.transform.localPosition = new Vector3(0f, 0f, (armProgress + forwardOffset));
-        cylinder.transform.localScale = new Vector3(cylinder.transform.localScale.x, (armProgress + forwardOffset) / 2, cylinder.transform.localScale.z);
+        armVisual.transform.localScale = new Vector3(armVisual.transform.localScale.x, (armProgress + forwardOffset) / 2, armVisual.transform.localScale.z);
     }
 
     public void DisignateController(int controllerIndex)

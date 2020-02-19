@@ -178,7 +178,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2466507813489192647
 Rigidbody:
@@ -267,9 +267,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  rotationSpeed: 0.5
   playerHOR: Horizontal2
   PlayerVer: Vertical2
-  rotationSpeed: 0.5
   isCaptured: 0
   healthManager: {fileID: -8722950184395974396}
   healthSprite: {fileID: 6219464151573839684}

@@ -261,9 +261,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  rotationSpeed: 0.5
   playerHOR: Horizontal3
   PlayerVer: Vertical3
-  rotationSpeed: 0.5
   isCaptured: 0
   healthManager: {fileID: -5755307870195844768}
   healthSprite: {fileID: 5849653096946661855}

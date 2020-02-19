@@ -5,9 +5,9 @@ using UnityEngine;
 public class Scientist : MonoBehaviour
 {
     public float speed;
+    public float rotationSpeed;
    
     public string playerHOR, PlayerVer;
-    [SerializeField] private float rotationSpeed;
     public bool isCaptured = false;
     [SerializeField] private Health healthManager;
     [SerializeField] private SpriteRenderer healthSprite;
