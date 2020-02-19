@@ -11,22 +11,18 @@ public class Acid : Projectile
 
     protected override void AreaOfEffect(GameObject hitPlayer)
     {
-        //Health playerHealth = hitPlayer.GetComponent<Health>();
-        //if (playerHealth != null)
-        //{
-        //    Debug.Log("Child class AreaOfEffect function.");
-        //    playerHealth.TakeDamage(damage);
-        //}
-
-        Instantiate(acidSplodgePrefab, transform.position, Quaternion.identity);
+        if (hitPlayer.tag != "Virus" && hitPlayer.tag != "Vines" && hitPlayer.tag != "Acid" && hitPlayer.tag != "Fireball")
+        {
+            Instantiate(acidSplodgePrefab, transform.position, Quaternion.identity);
+        }
 
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         
-                AreaOfEffect(collision.gameObject);
-                Destroy(gameObject);
+         AreaOfEffect(collision.gameObject);
+         Destroy(gameObject);
         
 
     }

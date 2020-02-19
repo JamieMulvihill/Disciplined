@@ -6,6 +6,8 @@ public class Health : MonoBehaviour
 {
     [SerializeField] public float health;
     [SerializeField] public float maxHealth = 100;
+    [SerializeField] private Material red;
+    private Material currentMaterial;
     public float redValue = 0;
     public float healthSegment;
     public float greenGuiValue;
@@ -17,6 +19,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentMaterial = GetComponent<MeshRenderer>().material;
         isPoisioned = false;
         health = maxHealth;
         greenGuiValue = 255;
@@ -41,6 +44,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        StartCoroutine(FlashRed());
         if (health > 50f)
         {
             redValue = healthSegment * (maxHealth - health ) * 2;
@@ -48,7 +52,13 @@ public class Health : MonoBehaviour
         else { greenGuiValue = healthSegment * (health) * 2; }
 
     }
-
+    IEnumerator FlashRed()
+    {
+        GetComponent<MeshRenderer>().material = red;
+        yield return new WaitForSeconds(0.3f);
+        GetComponent<MeshRenderer>().material = currentMaterial;
+        //yield return new WaitForSeconds(0.3f);
+    }
     IEnumerator UpdatePoison() {
         while (isPoisioned && totalPoisionDmg >= 1)    {
             health -= 1;

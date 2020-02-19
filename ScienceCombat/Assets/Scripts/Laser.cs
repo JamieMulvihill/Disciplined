@@ -53,7 +53,7 @@ public class Laser : MonoBehaviour
             if (Physics.Raycast(laserPosition, transform.forward, out hit, magnitude)) {    
 
                 enemy = hit.collider.gameObject;
-                if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid"){
+                if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid" && hit.collider.tag != "Virus" && hit.collider.tag != "Vines"){
                     line.transform.localScale = new Vector3(radius, radius, Mathf.Lerp(0, hit.distance, 1f));
                     if (enemy != null){
                         Health enemyHealth = enemy.GetComponent<Health>();

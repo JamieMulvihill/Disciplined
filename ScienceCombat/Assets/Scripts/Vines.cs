@@ -28,20 +28,20 @@ public class Vines : MonoBehaviour{
     {
         if (other.gameObject.tag != "Biologist" && other.gameObject.tag != "Ground" && scientist == null)
         {
-            transform.GetChild(0).position = other.transform.position;
-            transform.GetChild(0).gameObject.SetActive(true);
             scientist = other.gameObject.GetComponent<Scientist>();
-            originalSpeed = scientist.speed;
             if (scientist)
             {
                 scientist.isCaptured = true;
+                //originalSpeed = scientist.speed;
                 StartCoroutine(Capture(scientist));
+                transform.GetChild(0).position = other.transform.position;
+                transform.GetChild(0).gameObject.SetActive(true);
             }
         }
     }
 
    IEnumerator Capture(Scientist capturedScientist) {
-        capturedScientist.speed = 0;
+       // capturedScientist.speed = 0;
         capturedScientist.GetComponent<Rigidbody>().isKinematic = true;
        // capturedScientist.gameObject.transform.position = transform.position;
         //capturedScientist.gameObject.transform.position = Vector3.MoveTowards(capturedScientist.gameObject.transform.position, transform.position, .5f);
@@ -49,7 +49,7 @@ public class Vines : MonoBehaviour{
         capturedScientist.isCaptured = false;
         scientist = null;
         capturedScientist.GetComponent<Rigidbody>().isKinematic = false;
-        capturedScientist.speed = originalSpeed;
+       // capturedScientist.speed = originalSpeed;
         Destroy(gameObject);
    }
 
