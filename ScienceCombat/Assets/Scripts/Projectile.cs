@@ -21,16 +21,16 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        hitObjecets = Physics.OverlapSphere(transform.position, damageRadius);
-        foreach (Collider hit in hitObjecets)
-        {
+        //hitObjecets = Physics.OverlapSphere(transform.position, damageRadius);
+        //foreach (Collider hit in hitObjecets)
+        //{
 
-            if (hit.tag != gameObject.tag)
+            if (collision.gameObject.tag != gameObject.tag) //(hit.tag != gameObject.tag)
             {
-                AreaOfEffect(hit.gameObject);
+                AreaOfEffect(collision.gameObject);
                 Destroy(gameObject);
             }
-        }
+        //}
 
     }
 

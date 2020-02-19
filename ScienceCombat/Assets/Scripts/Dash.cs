@@ -16,7 +16,7 @@ public class Dash : MonoBehaviour{
     void Update(){
        if (scientist.isCaptured) return;
 
-       if (Input.GetButtonDown(playerAlt1))
+       if (Input.GetButtonDown(playerAlt1) && GetComponent<Scientist>().isCaptured == false)
        {
 
            RaycastHit hit;

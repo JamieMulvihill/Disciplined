@@ -112,7 +112,7 @@ public class GrabbyArm : MonoBehaviour
             remainingLifespan = lifespan;
             retracting = false;
         }
-        if (Input.GetButtonDown(playerAlt) && remainingLifespan > 0f && !onCooldown)
+        if (Input.GetButtonDown(playerAlt) && remainingLifespan > 0f && !onCooldown && GetComponent<Scientist>().isCaptured == false)
         {
             usingArm = true;
             armReach = GetArmSpace();

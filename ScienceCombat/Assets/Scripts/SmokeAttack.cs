@@ -26,7 +26,7 @@ public class SmokeAttack : MonoBehaviour
     {
 
 
-        if (Mathf.Abs(Input.GetAxis(playerFire)) > 0.01f && !smoke)
+        if (Mathf.Abs(Input.GetAxis(playerFire)) > 0.01f && !smoke && GetComponent<Scientist>().isCaptured == false)
         {
             Vector3 SpawnPoint = transform.position;
 

@@ -32,18 +32,21 @@ public class Vines : MonoBehaviour{
             transform.GetChild(0).gameObject.SetActive(true);
             scientist = other.gameObject.GetComponent<Scientist>();
             originalSpeed = scientist.speed;
-            scientist.isCaptured = true;
-            StartCoroutine(Capture(scientist));
+            if (scientist)
+            {
+                scientist.isCaptured = true;
+                StartCoroutine(Capture(scientist));
+            }
         }
     }
 
    IEnumerator Capture(Scientist capturedScientist) {
         capturedScientist.speed = 0;
         capturedScientist.GetComponent<Rigidbody>().isKinematic = true;
-        capturedScientist.isCaptured = false;
        // capturedScientist.gameObject.transform.position = transform.position;
         //capturedScientist.gameObject.transform.position = Vector3.MoveTowards(capturedScientist.gameObject.transform.position, transform.position, .5f);
         yield return new WaitForSeconds(6);
+        capturedScientist.isCaptured = false;
         scientist = null;
         capturedScientist.GetComponent<Rigidbody>().isKinematic = false;
         capturedScientist.speed = originalSpeed;

@@ -35,7 +35,7 @@ public class Laser : MonoBehaviour
         if (scientist.isCaptured) return;
 
 
-        if (Mathf.Abs(Input.GetAxis(playerFire)) > 0.01f)
+        if (Mathf.Abs(Input.GetAxis(playerFire)) > 0.01f && GetComponent<Scientist>().isCaptured == false)
         {
             laserPosition = transform.GetChild(1).transform.position;
             RaycastHit hit;

@@ -20,7 +20,7 @@ public class Flammenwerfer : ProjectileLauncher
         while (gameObject)
         {
             yield return new WaitForSeconds(updateDelay);
-            if (Mathf.Abs(Input.GetAxis(triggerButton)) > 0.01f)
+            if (Mathf.Abs(Input.GetAxis(triggerButton)) > 0.01f && GetComponent<Scientist>().isCaptured == false)
             {
                 flameVisual.SetActive(true);
             }
