@@ -50,11 +50,10 @@ public class Laser : MonoBehaviour
                 laserBeam.Play();
             }
 
-            if (Physics.Raycast(laserPosition, transform.forward, out hit, magnitude))
-            {    
+            if (Physics.Raycast(laserPosition, transform.forward, out hit, magnitude)) {    
+
                 enemy = hit.collider.gameObject;
                 if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid"){
-
                     line.transform.localScale = new Vector3(radius, radius, Mathf.Lerp(0, hit.distance, 1f));
                     if (enemy != null){
                         Health enemyHealth = enemy.GetComponent<Health>();
@@ -65,6 +64,7 @@ public class Laser : MonoBehaviour
                             enemyHealth.TakeDamage(laserDamage * Time.deltaTime);
                         }
                         else{
+                            laserBeam.transform.position = Vector3.zero;
                             laserHit.Stop();
                             laserBeam.Stop();
                         }
