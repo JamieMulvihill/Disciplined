@@ -55,7 +55,7 @@ public class Health : MonoBehaviour
     IEnumerator FlashRed()
     {
         GetComponent<MeshRenderer>().material = red;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.15f);
         GetComponent<MeshRenderer>().material = currentMaterial;
         //yield return new WaitForSeconds(0.3f);
     }

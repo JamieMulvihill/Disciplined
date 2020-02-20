@@ -61,8 +61,8 @@ public class MultipleTargetCamera : MonoBehaviour
         return Mathf.Sqrt(distance);
     }
 
-    Vector3 GetCentrePoint() {
-
+    Vector3 GetCentrePoint()
+    {
         if (targets.Count == 1) {
             return targets[0].position;
         }
@@ -73,7 +73,7 @@ public class MultipleTargetCamera : MonoBehaviour
         for (int i = 0; i < targets.Count; i++) {
             bounds.Encapsulate(targets[i].position);
         }
-        return bounds.center;
+        return new Vector3(bounds.center.x, 0f, bounds.center.z);
     }
     public void RemoveDeadPlayer(Transform deadPlayerTransform) {
         for (int i = 0; i < targets.Count; i++)

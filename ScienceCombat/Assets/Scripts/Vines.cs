@@ -43,7 +43,7 @@ public class Vines : MonoBehaviour{
    IEnumerator Capture(Scientist capturedScientist) {
        // capturedScientist.speed = 0;
         capturedScientist.GetComponent<Rigidbody>().isKinematic = true;
-       // capturedScientist.gameObject.transform.position = transform.position;
+        //capturedScientist.gameObject.transform.position = transform.position;
         //capturedScientist.gameObject.transform.position = Vector3.MoveTowards(capturedScientist.gameObject.transform.position, transform.position, .5f);
         yield return new WaitForSeconds(6);
         capturedScientist.isCaptured = false;

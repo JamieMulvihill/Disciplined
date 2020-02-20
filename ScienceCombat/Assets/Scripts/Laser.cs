@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Phil's branch test.
-// Phil's second branch test.
-
 public class Laser : MonoBehaviour
 {
     [SerializeField] private float magnitude;
@@ -32,23 +29,18 @@ public class Laser : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+
         if (scientist.isCaptured) return;
 
-
+        laserPosition = transform.GetChild(1).transform.position;
         if (Mathf.Abs(Input.GetAxis(playerFire)) > 0.01f && GetComponent<Scientist>().isCaptured == false)
         {
-            laserPosition = transform.GetChild(1).transform.position;
             RaycastHit hit;
             Debug.DrawRay(laserPosition, transform.forward * magnitude, Color.green, .1f);
 
             line.enabled = true;
             laserSpawn.transform.position = laserPosition + gameObject.transform.forward;
             laserSpawn.Play();
-           
-            if(!laserBeam.IsAlive())
-            {
-                laserBeam.Play();
-            }
 
             if (Physics.Raycast(laserPosition, transform.forward, out hit, magnitude)) {    
 
@@ -57,14 +49,15 @@ public class Laser : MonoBehaviour
                     line.transform.localScale = new Vector3(radius, radius, Mathf.Lerp(0, hit.distance, 1f));
                     if (enemy != null){
                         Health enemyHealth = enemy.GetComponent<Health>();
-                        if (enemyHealth != null){
+                        if (enemyHealth != null) {
                             laserHit.Play();
+                            laserBeam.Play();
                             laserHit.transform.position = hit.point;
                             laserBeam.transform.position = LaserEffect(laserPosition + gameObject.transform.forward, Vector3.MoveTowards(laserBeam.transform.position, hit.point, .5f), hit.point);
                             enemyHealth.TakeDamage(laserDamage * Time.deltaTime);
                         }
                         else{
-                            laserBeam.transform.position = Vector3.zero;
+                            laserBeam.transform.position = laserPosition;
                             laserHit.Stop();
                             laserBeam.Stop();
                         }
@@ -73,6 +66,7 @@ public class Laser : MonoBehaviour
             } 
         }
         else {
+
             laserBeam.transform.position = laserPosition + gameObject.transform.forward;
             laserSpawn.transform.position = laserPosition + gameObject.transform.forward;
             line.enabled = false;
@@ -93,5 +87,11 @@ public class Laser : MonoBehaviour
     public void DisignateController(int controllerIndex)
     {
         playerFire = "Fire" + controllerIndex.ToString();
+    }
+    private void OnDestroy()
+    {
+        Destroy(laserSpawn);
+        Destroy(laserBeam);
+        Destroy(laserHit);
     }
 }

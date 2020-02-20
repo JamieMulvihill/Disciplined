@@ -248,8 +248,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2920560339513c047a873b638ee7b6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 5
   maxHealth: 100
+  red: {fileID: 0}
   redValue: 0
   healthSegment: 0
   greenGuiValue: 0
@@ -268,6 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rotationSpeed: 0.5
+  death: {fileID: 373376667848133127, guid: 4d1b6f45613ceec4ca879489456402fc, type: 3}
   playerHOR: Horizontal
   PlayerVer: Vertical
   isCaptured: 0
@@ -409,11 +411,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2466507813489192650}
     m_Modifications:
-    - target: {fileID: 5345917229019240601, guid: 20d3c991dcd2d78499aee83418c98c79,
-        type: 3}
-      propertyPath: m_Name
-      value: LaserGun
-      objectReference: {fileID: 0}
     - target: {fileID: 8965499991544294026, guid: 20d3c991dcd2d78499aee83418c98c79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -483,6 +480,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5345917229019240601, guid: 20d3c991dcd2d78499aee83418c98c79,
+        type: 3}
+      propertyPath: m_Name
+      value: LaserGun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20d3c991dcd2d78499aee83418c98c79, type: 3}

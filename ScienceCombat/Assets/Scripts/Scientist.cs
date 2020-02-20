@@ -6,7 +6,7 @@ public class Scientist : MonoBehaviour
 {
     public float speed;
     public float rotationSpeed;
-   
+    public GameObject death;
     public string playerHOR, PlayerVer;
     public bool isCaptured = false;
     [SerializeField] private Health healthManager;
@@ -75,5 +75,9 @@ public class Scientist : MonoBehaviour
         this.controllerIndex = controllerIndex;
         playerHOR = "Horizontal" + controllerIndex.ToString();
         PlayerVer = "Vertical" + controllerIndex.ToString();
+    }
+    private void OnDestroy()
+    {
+        Instantiate(death, transform.position, transform.rotation);
     }
 }

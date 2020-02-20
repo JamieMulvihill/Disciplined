@@ -111,6 +111,7 @@ MonoBehaviour:
   maxDamage: 14
   finalSize: 2
   falloff: 16.44
+  minSize: 0.3
 --- !u!54 &1621856750815403705
 Rigidbody:
   m_ObjectHideFlags: 0

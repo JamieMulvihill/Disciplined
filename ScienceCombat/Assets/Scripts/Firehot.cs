@@ -5,7 +5,8 @@ public class Firehot : Projectile
 {
     [SerializeField]private float maxDamage = 10f;
     [SerializeField]private float finalSize = 10f;
-    [SerializeField]private float falloff = 10f;
+    [SerializeField] private float falloff = 10f;
+    [SerializeField] private float minSize = 0f;
 
     //public void Initialise(float inputDamage, float inputFinalSize, float inputFalloff)
     //{
@@ -24,7 +25,7 @@ public class Firehot : Projectile
     void Resize() //object scale approaches finalSize as current damage approaches 0
     {
         //merge test
-        float resizeAmount = (maxDamage - damage) / maxDamage;
+        float resizeAmount = Mathf.Min(minSize + ((maxDamage - damage) / maxDamage), finalSize);
         gameObject.transform.localScale = Vector3.one * finalSize * resizeAmount;
     }
     void Awake()
