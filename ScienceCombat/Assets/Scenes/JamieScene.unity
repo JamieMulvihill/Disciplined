@@ -10100,7 +10100,7 @@ MonoBehaviour:
   - {fileID: 1362853984}
   offset: {x: 0, y: 25, z: -24}
   smoothTime: 0.5
-  minZoom: 85
+  minZoom: 100
   maxZoom: 20
   cameraNearClamp: 7
   zoomLimiter: 80
@@ -14385,7 +14385,7 @@ PrefabInstance:
     - target: {fileID: 4021928315233479210, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1.77
       objectReference: {fileID: 0}
     - target: {fileID: 4021928315233479210, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e,
         type: 3}
@@ -20350,7 +20350,7 @@ PrefabInstance:
     - target: {fileID: 2466507813489192650, guid: 52465b71ad2580b4097cba71226a9a1e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.6444197
+      value: 3.72
       objectReference: {fileID: 0}
     - target: {fileID: 2466507813489192650, guid: 52465b71ad2580b4097cba71226a9a1e,
         type: 3}
@@ -20360,7 +20360,7 @@ PrefabInstance:
     - target: {fileID: 2466507813489192650, guid: 52465b71ad2580b4097cba71226a9a1e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.8694146
+      value: 2.06
       objectReference: {fileID: 0}
     - target: {fileID: 2466507813489192650, guid: 52465b71ad2580b4097cba71226a9a1e,
         type: 3}
@@ -36528,7 +36528,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: aba5c745d0d206640895b6395b605390,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.35
+      value: -2.07
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: aba5c745d0d206640895b6395b605390,
         type: 3}

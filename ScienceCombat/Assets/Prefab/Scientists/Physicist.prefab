@@ -128,7 +128,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2466507813489192644}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 1661403258344622796, guid: b780b6dc5ccda3c478bf5c93a1c518ff, type: 3}
 --- !u!23 &2466507813489192648
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 923eca8eeb30b8e4780696bb587b14d4, type: 2}
+  - {fileID: 2100000, guid: b7f05c33547f66848bde8b677e8a8592, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magnitude: 100
   radius: 0
-  laserDamage: 15
+  laserDamage: 40
   playerFire: Fire
   scientist: {fileID: 4541228889225816936}
   laserBeam: {fileID: 8128173818677469542, guid: 0cc90c9d253fe2f48b0ecb8a07243b58,
@@ -411,6 +411,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2466507813489192650}
     m_Modifications:
+    - target: {fileID: 5345917229019240601, guid: 20d3c991dcd2d78499aee83418c98c79,
+        type: 3}
+      propertyPath: m_Name
+      value: LaserGun
+      objectReference: {fileID: 0}
     - target: {fileID: 8965499991544294026, guid: 20d3c991dcd2d78499aee83418c98c79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -480,11 +485,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5345917229019240601, guid: 20d3c991dcd2d78499aee83418c98c79,
-        type: 3}
-      propertyPath: m_Name
-      value: LaserGun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20d3c991dcd2d78499aee83418c98c79, type: 3}
