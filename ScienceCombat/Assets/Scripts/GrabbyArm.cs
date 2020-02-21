@@ -79,6 +79,7 @@ public class GrabbyArm : MonoBehaviour
     }
     void Start()
     {
+        playerAlt += GetComponent<Scientist>().controllerIndex.ToString();
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
         originalSpeed = GetComponent<Scientist>().speed;
         remainingLifespan = lifespan;

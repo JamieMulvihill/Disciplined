@@ -21,7 +21,7 @@ public class Dash : MonoBehaviour{
        {
 
            RaycastHit hit;
-           if (Physics.Raycast(transform.position, transform.forward, out hit, 10) && hit.collider != null)
+           if (Physics.Raycast(transform.position, transform.forward, out hit, 10, ~(1 << 8)) && hit.collider != null)
            {
                transform.position = hit.point - (transform.forward * (meshSize));
            }

@@ -52,6 +52,17 @@ public class Vines : MonoBehaviour{
        // capturedScientist.speed = originalSpeed;
         Destroy(gameObject);
    }
-
+    private void LateUpdate()
+    {
+        if(scientist)
+        {
+            if(!scientist.isCaptured)
+            {
+                scientist.GetComponent<Rigidbody>().isKinematic = false;
+                scientist = null;
+                Destroy(gameObject);
+            }
+        }
+    }
 
 }

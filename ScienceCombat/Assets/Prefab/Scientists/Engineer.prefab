@@ -354,7 +354,7 @@ MonoBehaviour:
   isCaptured: 0
   healthManager: {fileID: 4714355647961977760}
   healthSprite: {fileID: 1285842078}
-  controllerIndex: 3
+  controllerIndex: 1
   scientistPrefabs:
   - {fileID: 2421331766900598672, guid: e62cfa9c82b590b42991202f7f157ed4, type: 3}
   - {fileID: 5979943166543833243, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e, type: 3}
@@ -472,7 +472,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8859763589579088440}
   - component: {fileID: 1285842078}
-  - component: {fileID: 240508772600581092}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Health Bar
@@ -543,20 +542,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &240508772600581092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8953820332985746847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35e376c38249b694ba404f20cf282b46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  count: 0
-  breakFree: 0
 --- !u!1001 &8971861915740992809
 PrefabInstance:
   m_ObjectHideFlags: 0

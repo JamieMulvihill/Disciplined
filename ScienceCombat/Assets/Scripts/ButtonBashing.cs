@@ -36,6 +36,7 @@ public class ButtonBashing : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(ID);
         last_x = x;
         last_y = y;
         last_a = a;
