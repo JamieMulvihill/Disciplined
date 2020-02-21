@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 4738175806081341987}
   - component: {fileID: 7342011452161184036}
   - component: {fileID: 4714355647961977760}
+  - component: {fileID: 1636545157230184984}
   m_Layer: 0
   m_Name: Engineer
   m_TagString: Engineer
@@ -210,6 +211,7 @@ Transform:
   - {fileID: 7087030280711053081}
   - {fileID: 1985717069}
   - {fileID: 1381813082}
+  - {fileID: 8256442224083663668}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -302,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 1381813078}
   forwardOffset: 2
-  playerAlt: AltMove1
+  playerAlt: B
   cooldown: 2
   lifespan: 3
   animationLength: 1
@@ -323,7 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 22400591502661274, guid: f8a3d263f4980e049be218ab9cd412c5,
     type: 3}
-  triggerButton: Fire1
+  triggerButton: RT
   verticalVelocity: 0
   horizontalVelocity: 5
   upOffset: 0
@@ -347,12 +349,12 @@ MonoBehaviour:
   speed: 10
   rotationSpeed: 0.5
   death: {fileID: 373376667848133127, guid: 4d1b6f45613ceec4ca879489456402fc, type: 3}
-  playerHOR: Horizontal1
-  PlayerVer: Vertical1
+  playerHOR: Horizontal
+  PlayerVer: Vertical
   isCaptured: 0
   healthManager: {fileID: 4714355647961977760}
   healthSprite: {fileID: 1285842078}
-  controllerIndex: 1
+  controllerIndex: 3
   scientistPrefabs:
   - {fileID: 2421331766900598672, guid: e62cfa9c82b590b42991202f7f157ed4, type: 3}
   - {fileID: 5979943166543833243, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e, type: 3}
@@ -377,6 +379,89 @@ MonoBehaviour:
   healthSegment: 0
   greenGuiValue: 0
   isPoisioned: 0
+--- !u!114 &1636545157230184984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830673993139359091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e376c38249b694ba404f20cf282b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  breakFree: 30
+--- !u!1 &3412460489673993350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8256442224083663668}
+  - component: {fileID: 2832976884372897735}
+  - component: {fileID: 2703207484861195325}
+  - component: {fileID: 12967749438557084}
+  m_Layer: 0
+  m_Name: Punch Hitbox
+  m_TagString: Punch Hitbox
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8256442224083663668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412460489673993350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 298965608010553281}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2832976884372897735
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412460489673993350}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &2703207484861195325
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412460489673993350}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &12967749438557084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412460489673993350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a3b900d4e70e4b8d8e6f6d120c12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: RB
+  damage: 10
+  cooldown: 0.5
 --- !u!1 &8953820332985746847
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8859763589579088440}
   - component: {fileID: 1285842078}
+  - component: {fileID: 240508772600581092}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -457,6 +543,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &240508772600581092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8953820332985746847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e376c38249b694ba404f20cf282b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  breakFree: 0
 --- !u!1001 &8971861915740992809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -464,6 +564,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 298965608010553281}
     m_Modifications:
+    - target: {fileID: 2222601858409622067, guid: a7c24e8b7120625428967062b3e82993,
+        type: 3}
+      propertyPath: m_Name
+      value: Flames
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222601858409622067, guid: a7c24e8b7120625428967062b3e82993,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2222601858409622064, guid: a7c24e8b7120625428967062b3e82993,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -517,16 +627,6 @@ PrefabInstance:
     - target: {fileID: 2222601858409622064, guid: a7c24e8b7120625428967062b3e82993,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2222601858409622067, guid: a7c24e8b7120625428967062b3e82993,
-        type: 3}
-      propertyPath: m_Name
-      value: Flames
-      objectReference: {fileID: 0}
-    - target: {fileID: 2222601858409622067, guid: a7c24e8b7120625428967062b3e82993,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5434106058873163778, guid: a7c24e8b7120625428967062b3e82993,

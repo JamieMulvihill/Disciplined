@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2263808269612588289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5788805700894501714}
+  - component: {fileID: 1837239029620775058}
+  - component: {fileID: 3417396075640910107}
+  - component: {fileID: 650081273752737731}
+  m_Layer: 0
+  m_Name: Punch Hitbox
+  m_TagString: Punch Hitbox
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5788805700894501714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2263808269612588289}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4021928315233479210}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1837239029620775058
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2263808269612588289}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &3417396075640910107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2263808269612588289}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &650081273752737731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2263808269612588289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a3b900d4e70e4b8d8e6f6d120c12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: RB
+  damage: 10
+  cooldown: 0.5
 --- !u!1 &2316181817823467311
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +166,7 @@ GameObject:
   - component: {fileID: -5755307870195844768}
   - component: {fileID: -4063628478309644423}
   - component: {fileID: 1744561779}
+  - component: {fileID: 1373923441962097307}
   m_Layer: 0
   m_Name: Chemist
   m_TagString: Chemist
@@ -116,6 +186,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1227350266496972132}
+  - {fileID: 5788805700894501714}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -208,7 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: -3746896607812541188, guid: c91ec678445046545abd3bc3658ab792,
     type: 3}
-  triggerButton: Fire3
+  triggerButton: RT
   verticalVelocity: 4
   horizontalVelocity: 7
   upOffset: 2
@@ -246,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfe632095c897047b87071ca6fc22ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerFire: AltMove3
+  playerFire: B
   smokePrefab: {fileID: 8644326735496483049, guid: 90a857e7556f44d4a8aea3e89bdd165c,
     type: 3}
 --- !u!114 &1744561779
@@ -264,14 +335,28 @@ MonoBehaviour:
   speed: 10
   rotationSpeed: 0.5
   death: {fileID: 373376667848133127, guid: 4d1b6f45613ceec4ca879489456402fc, type: 3}
-  playerHOR: Horizontal3
-  PlayerVer: Vertical3
+  playerHOR: Horizontal
+  PlayerVer: Vertical
   isCaptured: 0
   healthManager: {fileID: -5755307870195844768}
   healthSprite: {fileID: 5849653096946661855}
-  controllerIndex: 3
+  controllerIndex: 2
   scientistPrefabs:
   - {fileID: 2421331766900598672, guid: e62cfa9c82b590b42991202f7f157ed4, type: 3}
   - {fileID: 5979943166543833243}
   - {fileID: 1830673993139359091, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
   - {fileID: 2466507813489192644, guid: 52465b71ad2580b4097cba71226a9a1e, type: 3}
+--- !u!114 &1373923441962097307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979943166543833243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e376c38249b694ba404f20cf282b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  breakFree: 30

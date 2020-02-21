@@ -19,6 +19,8 @@ public class Scientist : MonoBehaviour
 
     void Start()
     {
+        playerHOR += GetComponent<Scientist>().controllerIndex.ToString();
+        PlayerVer += GetComponent<Scientist>().controllerIndex.ToString();
         manager = GameObject.FindGameObjectWithTag("Manager");
         healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
     }

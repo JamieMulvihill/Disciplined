@@ -18,6 +18,7 @@ public class Laser : MonoBehaviour
     private Vector3 laserPosition;
     void Start()
     {
+        playerFire += GetComponent<Scientist>().controllerIndex.ToString();
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
         laserPosition = transform.GetChild(1).transform.position;
         laserSpawn = Instantiate(laserSpawn, laserPosition + gameObject.transform.forward, Quaternion.identity);

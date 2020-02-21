@@ -10,6 +10,7 @@ public class Dash : MonoBehaviour{
 
     private void Start()
     {
+        playerAlt1 += GetComponent<Scientist>().controllerIndex.ToString();
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
     }
 

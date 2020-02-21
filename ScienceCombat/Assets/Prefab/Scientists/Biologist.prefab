@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8273870170743248177}
   - component: {fileID: -5611754430015116259}
   - component: {fileID: 406599809}
+  - component: {fileID: 400240608452044193}
   m_Layer: 0
   m_Name: Biologist
   m_TagString: Biologist
@@ -37,6 +38,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7587577354793890047}
+  - {fileID: 7772802498229583203}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -149,12 +151,12 @@ MonoBehaviour:
   speed: 10
   rotationSpeed: 0.5
   death: {fileID: 373376667848133127, guid: 4d1b6f45613ceec4ca879489456402fc, type: 3}
-  playerHOR: Horizontal2
-  PlayerVer: Vertical2
+  playerHOR: Horizontal
+  PlayerVer: Vertical
   isCaptured: 0
   healthManager: {fileID: 516136918316852869}
   healthSprite: {fileID: 3565358536781622942}
-  controllerIndex: 2
+  controllerIndex: 1
   scientistPrefabs:
   - {fileID: 2421331766900598672}
   - {fileID: 5979943166543833243, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e, type: 3}
@@ -174,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 7871893638157571021, guid: b9ce5a0f79c33394db63abeceeb7e8c5,
     type: 3}
-  triggerButton: Fire2
+  triggerButton: RT
   verticalVelocity: 2
   horizontalVelocity: 4
   upOffset: 2
@@ -195,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5388313906294673447, guid: c66ae8cc400a40a478c05d59eaa7c71b,
     type: 3}
-  triggerButton: AltMove2
+  triggerButton: B
   verticalVelocity: -10
   horizontalVelocity: 4
   upOffset: 2
@@ -221,6 +223,89 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &400240608452044193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421331766900598672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e376c38249b694ba404f20cf282b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  breakFree: 30
+--- !u!1 &5355314842550422642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7772802498229583203}
+  - component: {fileID: 7861424798749056574}
+  - component: {fileID: 1001203745293881772}
+  - component: {fileID: 3733274141430407466}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Punch Hitbox
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7772802498229583203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355314842550422642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2421331766900598685}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7861424798749056574
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355314842550422642}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1001203745293881772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355314842550422642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3733274141430407466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355314842550422642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a3b900d4e70e4b8d8e6f6d120c12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: RB
+  damage: 10
+  cooldown: 0.5
 --- !u!1 &8816173927810961796
 GameObject:
   m_ObjectHideFlags: 0

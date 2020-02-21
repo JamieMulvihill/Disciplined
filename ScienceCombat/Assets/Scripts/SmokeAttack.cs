@@ -13,6 +13,7 @@ public class SmokeAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerFire += GetComponent<Scientist>().controllerIndex.ToString();
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
     }
 

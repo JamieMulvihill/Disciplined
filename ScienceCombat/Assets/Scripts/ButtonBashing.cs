@@ -4,41 +4,68 @@ using UnityEngine;
 
 public class ButtonBashing : MonoBehaviour
 {
-    public string X;
-    public string Y;
-    public string A;
-    public string B;
-    public string LT;
-    public string RT;
-    public string LB;
-    public string RB;
+    private bool last_x;
+    private bool last_y;
+    private bool last_a;
+    private bool last_b;
+    private bool last_lt;
+    private bool last_rt;
+    private bool last_lb;
+    private bool last_rb;
 
-    private int count;
+    private bool x;
+    private bool y;
+    private bool a;
+    private bool b;
+    private bool lt;
+    private bool rt;
+    private bool lb;
+    private bool rb;
+
+    public int count;
     public int breakFree;
     private Scientist scientist;
+    private string ID;
 
-    // Start is called before the first frame update
     void Start()
     {
         count = 0;
         scientist = GetComponent<Scientist>();
+        ID = scientist.controllerIndex.ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        last_x = x;
+        last_y = y;
+        last_a = a;
+        last_b = b;
+        last_lt = lt;
+        last_rt = rt;
+        last_lb = lb;
+        last_rb = rb;
+
+        x = buttonPressed("X" + ID);
+        y = buttonPressed("Y" + ID);
+        a = buttonPressed("A" + ID);
+        b = buttonPressed("B" + ID);
+        lt = buttonPressed("LT" + ID);
+        rt = buttonPressed("RT" + ID);
+        lb = buttonPressed("LB" + ID);
+        rb = buttonPressed("RB" + ID);
+
         if (scientist.isCaptured)
         {
-            if (buttonPressed(X) ||
-               buttonPressed(Y) ||
-               buttonPressed(A) ||
-               buttonPressed(B) ||
-               buttonPressed(LT) ||
-               buttonPressed(RT) ||
-               buttonPressed(LB) ||
-               buttonPressed(RB))
+            if ((x && !last_x) ||
+               (y && !last_y) ||
+               (a && !last_a) ||
+               (b && !last_b) ||
+               (lt && !last_lt) ||
+               (rt && !last_rt) ||
+               (lb && !last_lb) ||
+               (rb && !last_rb))
             {
-                if (count++ > breakFree)
+                if (++count == breakFree)
                 {
                     scientist.isCaptured = false;
                     count = 0;

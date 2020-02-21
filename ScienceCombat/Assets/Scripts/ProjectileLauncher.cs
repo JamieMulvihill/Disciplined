@@ -18,6 +18,7 @@ public class ProjectileLauncher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        triggerButton += GetComponent<Scientist>().controllerIndex.ToString();
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
     }
 

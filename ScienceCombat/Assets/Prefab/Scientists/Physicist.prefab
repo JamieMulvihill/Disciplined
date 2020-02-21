@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &352181562588764123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6300535090220680618}
+  - component: {fileID: 8545750362032176874}
+  - component: {fileID: 7253853828719973685}
+  - component: {fileID: 6559975835600347745}
+  m_Layer: 0
+  m_Name: Punch Hitbox
+  m_TagString: Punch Hitbox
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6300535090220680618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352181562588764123}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2466507813489192650}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8545750362032176874
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352181562588764123}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &7253853828719973685
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352181562588764123}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6559975835600347745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352181562588764123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a3b900d4e70e4b8d8e6f6d120c12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: RB
+  damage: 10
+  cooldown: 0.5
 --- !u!1 &998268182266850678
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +166,7 @@ GameObject:
   - component: {fileID: 3423044513703123039}
   - component: {fileID: -8722950184395974396}
   - component: {fileID: 4541228889225816936}
+  - component: {fileID: 3136616758162024980}
   m_Layer: 0
   m_Name: Physicist
   m_TagString: Physicist
@@ -118,6 +188,7 @@ Transform:
   - {fileID: 1948495623547059413}
   - {fileID: 4122451288645655745}
   - {fileID: 4570229121499305039}
+  - {fileID: 6300535090220680618}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -211,7 +282,7 @@ MonoBehaviour:
   magnitude: 100
   radius: 0
   laserDamage: 40
-  playerFire: Fire
+  playerFire: RT
   scientist: {fileID: 4541228889225816936}
   laserBeam: {fileID: 8128173818677469542, guid: 0cc90c9d253fe2f48b0ecb8a07243b58,
     type: 3}
@@ -233,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a034fecafa159eb4488e0f15008b105b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAlt1: AltMove
+  playerAlt1: B
   meshSize: 0.5
   scientist: {fileID: 4541228889225816936}
 --- !u!114 &-8722950184395974396
@@ -275,8 +346,22 @@ MonoBehaviour:
   isCaptured: 0
   healthManager: {fileID: -8722950184395974396}
   healthSprite: {fileID: 6219464151573839684}
-  controllerIndex: 0
+  controllerIndex: 4
   scientistPrefabs: []
+--- !u!114 &3136616758162024980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2466507813489192644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e376c38249b694ba404f20cf282b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  breakFree: 30
 --- !u!1 &4570229121499305032
 GameObject:
   m_ObjectHideFlags: 0
