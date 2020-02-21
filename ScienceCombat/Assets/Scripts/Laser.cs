@@ -41,7 +41,7 @@ public class Laser : MonoBehaviour
             line.enabled = true;
             laserSpawn.transform.position = laserPosition + gameObject.transform.forward;
             laserSpawn.Play();
-
+            Debug.Log("TEstCommit");
             if (Physics.Raycast(laserPosition, transform.forward, out hit, magnitude)) {    
 
                 enemy = hit.collider.gameObject;
