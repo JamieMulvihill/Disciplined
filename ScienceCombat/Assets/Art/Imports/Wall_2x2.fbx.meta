@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 1940463ea4b89714da81525ceab704ab
+guid: 39be05cc1a8131249b48593f9b53a094
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal1Shiny
-    second: {fileID: 2100000, guid: 923eca8eeb30b8e4780696bb587b14d4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal2Dull
-    second: {fileID: 2100000, guid: 35313295af0f08d438863a92cd52abf5, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -44,7 +34,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
