@@ -11,6 +11,16 @@ TagManager:
   - Engineer
   - Biologist
   - Fireball
+  - Environment
+  - Manager
+  - Punch Hitbox
+  - Virus
+  - Smoke
+  - Acid
+  - Seeds
+  - Ground
+  - Health Bar
+  - Projectile
   layers:
   - Default
   - TransparentFX
