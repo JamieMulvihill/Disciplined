@@ -32,7 +32,7 @@ public class ButtonBashing : MonoBehaviour
         count = 0;
         scientist = GetComponent<Scientist>();
         ID = scientist.controllerIndex.ToString();
-    }
+    }//
 
     void Update()
     {
