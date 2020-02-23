@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 373376666133148847}
   - component: {fileID: 373376666133148753}
   - component: {fileID: 373376666133148752}
+  - component: {fileID: 2261762036711877694}
   m_Layer: 0
   m_Name: Ash
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373376666133148846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.24, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 373376667848133128}
@@ -4893,6 +4894,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2261762036711877694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373376666133148846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e57c0c7917d57f47acb2a3e6f92b71c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &373376667848133127
 GameObject:
   m_ObjectHideFlags: 0
@@ -4936,6 +4949,7 @@ GameObject:
   - component: {fileID: 373376667908135126}
   - component: {fileID: 373376667908135128}
   - component: {fileID: 373376667908135127}
+  - component: {fileID: 2213317011144944818}
   m_Layer: 0
   m_Name: Flames
   m_TagString: Untagged
@@ -9781,3 +9795,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2213317011144944818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373376667908135125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e57c0c7917d57f47acb2a3e6f92b71c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

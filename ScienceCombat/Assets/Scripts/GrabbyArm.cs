@@ -70,7 +70,8 @@ public class GrabbyArm : MonoBehaviour
         {
             return;
         }
-        if (other.gameObject.GetComponent<Scientist>().isCaptured == false)
+        // I added UsingArm to this check because it was colliding with players and capturing them even though the Arm wasnt launched??
+        if (other.gameObject.GetComponent<Scientist>().isCaptured == false && usingArm)
         {
             hitGuy = other.gameObject;
             hitGuy.GetComponent<Scientist>().isCaptured = true;

@@ -78,7 +78,7 @@ public class Scientist : MonoBehaviour
         playerHOR = "Horizontal" + controllerIndex.ToString();
         PlayerVer = "Vertical" + controllerIndex.ToString();
     }
-    private void OnDestroy()
+    private void OnDisable()
     {
         Instantiate(death, transform.position, transform.rotation);
     }

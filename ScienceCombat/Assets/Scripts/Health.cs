@@ -61,11 +61,11 @@ public class Health : MonoBehaviour
     }
     IEnumerator UpdatePoison() {
         while (isPoisioned && totalPoisionDmg >= 1)    {
-            health -= 1;
-            totalPoisionDmg -= 1;
+            health -= 5;
+            totalPoisionDmg -= 5;
             if (health > 50f)
             {
-                redValue = healthSegment * (maxHealth - health) * 2; 
+                redValue = healthSegment * (maxHealth - health) * 2;
             }
             else { greenGuiValue = healthSegment * (health) * 2; }
             yield return new WaitForSeconds(.5f); 

@@ -8,7 +8,7 @@ public class PetriDish : Projectile
 
     protected override void AreaOfEffect(GameObject hitPlayer)
     {
-        if (hitPlayer.tag != "Virus" && hitPlayer.tag != "Vines" && hitPlayer.tag != "Acid" && hitPlayer.tag != "Fireball")
+        if (hitPlayer.tag != "Virus" && hitPlayer.tag != "Vines" && hitPlayer.tag != "Acid" && hitPlayer.tag != "Fireball" && hitPlayer.tag != "Punch Hitbox")
         {
             Instantiate(virus, transform.position, Quaternion.identity);
         }
