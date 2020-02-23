@@ -346,7 +346,7 @@ MonoBehaviour:
   isCaptured: 0
   healthManager: {fileID: -8722950184395974396}
   healthSprite: {fileID: 6219464151573839684}
-  controllerIndex: 1
+  controllerIndex: 4
   scientistPrefabs: []
 --- !u!114 &3136616758162024980
 MonoBehaviour:

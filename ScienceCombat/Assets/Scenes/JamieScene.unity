@@ -14377,6 +14377,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chemist
       objectReference: {fileID: 0}
+    - target: {fileID: 5979943166543833243, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4021928315233479210, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e,
         type: 3}
       propertyPath: m_LocalPosition.x
