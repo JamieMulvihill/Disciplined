@@ -36,6 +36,11 @@ public class ButtonBashing : MonoBehaviour
 
     void Update()
     {
+        // If player is using keyboard, don't let them button bash.
+        if (ID == "0")
+            return;
+
+
         Debug.Log(ID);
         last_x = x;
         last_y = y;
