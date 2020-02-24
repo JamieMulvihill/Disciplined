@@ -146,14 +146,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 176393069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37b7ed51d89576d4a82d00f83cabbb17, type: 3}
+  m_Script: {fileID: 11500000, guid: fbff981887f539243b66c8fb373d3fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playabeCharacters:
-  - {fileID: 11400000, guid: 9f7e80225106b8d4eb3cd7e237dd051c, type: 2}
-  - {fileID: 11400000, guid: 8578f2dd6dbe01940a7c76ba3b7d6e94, type: 2}
-  - {fileID: 11400000, guid: 0cee77eb6836a63459509bea1c312ae7, type: 2}
-  - {fileID: 11400000, guid: facda54132054494a9b2603729ec54c4, type: 2}
+  - {fileID: 11400000, guid: 005cbeefddbcd314096da2f60b5ba58b, type: 2}
+  - {fileID: 11400000, guid: 1926c8b8a1b70444094f3d9699c7b9e0, type: 2}
+  - {fileID: 11400000, guid: 9d1432394a225924c943f6119dc7d493, type: 2}
+  - {fileID: 11400000, guid: 99ec487c5216a404cbd34cee597dccfb, type: 2}
 --- !u!4 &176393073
 Transform:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 208927609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734c627ed959e2e4bb528eae625d86c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ba5c474a7512c4468a9915471aea710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterSelector: {fileID: 176393069}
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 295729882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734c627ed959e2e4bb528eae625d86c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ba5c474a7512c4468a9915471aea710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterSelector: {fileID: 176393069}
@@ -457,8 +457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
+  m_HorizontalAxis: Horizontal0
+  m_VerticalAxis: Vertical0
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -578,7 +578,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 362866484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734c627ed959e2e4bb528eae625d86c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ba5c474a7512c4468a9915471aea710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterSelector: {fileID: 176393069}
@@ -874,7 +874,7 @@ GameObject:
   - component: {fileID: 1451118706}
   m_Layer: 0
   m_Name: PlayerContainer
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1451118705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 227316e188cd1924abbab36751b2b7bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 8273eb81fc933024d8531a792e39967b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chosenPlayers:
@@ -995,7 +995,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1993869664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734c627ed959e2e4bb528eae625d86c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ba5c474a7512c4468a9915471aea710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterSelector: {fileID: 176393069}

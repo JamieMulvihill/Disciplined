@@ -23,6 +23,7 @@ public class Scientist : MonoBehaviour
         PlayerVer += GetComponent<Scientist>().controllerIndex.ToString();
         manager = GameObject.FindGameObjectWithTag("Manager");
         healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
+        Camera.main.GetComponent<MultipleTargetCamera>().AddPlayer(gameObject.transform);
     }
 
     void FixedUpdate()
@@ -50,8 +51,6 @@ public class Scientist : MonoBehaviour
             MultipleTargetCamera multipleTargetCamera = gameCam.GetComponent<MultipleTargetCamera>();
             multipleTargetCamera.RemoveDeadPlayer(gameObject.transform);
 
-            
-
             switch(gameObject.tag)
             {
                 case "Biologist":
@@ -72,12 +71,12 @@ public class Scientist : MonoBehaviour
         }
     }
 
-    public void DisignateController(int controllerIndex)
-    {
-        this.controllerIndex = controllerIndex;
-        playerHOR = "Horizontal" + controllerIndex.ToString();
-        PlayerVer = "Vertical" + controllerIndex.ToString();
-    }
+    //public void DisignateController(int controllerIndex)
+    //{
+    //    this.controllerIndex = controllerIndex;
+    //    playerHOR = "Horizontal" + controllerIndex.ToString();
+    //    PlayerVer = "Vertical" + controllerIndex.ToString();
+    //}
     private void OnDisable()
     {
         Instantiate(death, transform.position, transform.rotation);

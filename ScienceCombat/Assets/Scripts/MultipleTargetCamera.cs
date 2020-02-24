@@ -14,6 +14,7 @@ public class MultipleTargetCamera : MonoBehaviour
     public float zoomLimiter;
     private Camera cam;
     public GameObject centre;
+    public float lonely = 15;
     private void Start(){
         cam = GetComponent<Camera>();
     }
@@ -32,7 +33,7 @@ public class MultipleTargetCamera : MonoBehaviour
         // call the get centrepoint function and store the result, add the offset value and store new postion
         Vector3 centrePoint = GetCentrePoint();
         centre.transform.position = centrePoint; ///***** centre is used to debug the cameras cetre point with a game object, nothing else****
-        float standardOffset = -30f;
+        float standardOffset = -24f;
         if (centrePoint.z < -cameraNearClamp) {
             offset.z = standardOffset + (-centrePoint.z - cameraNearClamp);
         }
@@ -49,7 +50,8 @@ public class MultipleTargetCamera : MonoBehaviour
     }
 
     float GetGreatestDistance() {
-
+        if (targets.Count == 1)
+            return lonely;
         // create a bounding box around the first elemnt of the list of transforms
         // Use the encapulate function to add the remaining transforms to the bounding box
         var bounds = new Bounds(targets[0].position, Vector3.zero);
@@ -58,6 +60,7 @@ public class MultipleTargetCamera : MonoBehaviour
         }
         // get the distnce of the two furthest away points of the box using pythageros
         float distance = (bounds.size.z * bounds.size.z) + (bounds.size.x * bounds.size.x);
+        Debug.Log(Mathf.Sqrt(distance));
         return Mathf.Sqrt(distance);
     }
 
@@ -74,6 +77,7 @@ public class MultipleTargetCamera : MonoBehaviour
             bounds.Encapsulate(targets[i].position);
         }
         return new Vector3(bounds.center.x, 0f, bounds.center.z);
+        //return bounds.center;
     }
     public void RemoveDeadPlayer(Transform deadPlayerTransform) {
         for (int i = 0; i < targets.Count; i++)
@@ -83,5 +87,8 @@ public class MultipleTargetCamera : MonoBehaviour
             }
         }
         GetCentrePoint();
+    }
+    public void AddPlayer(Transform playerTransform) {
+        targets.Add(playerTransform);
     }
 }

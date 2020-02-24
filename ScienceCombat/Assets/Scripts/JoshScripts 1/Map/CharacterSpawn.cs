@@ -84,7 +84,6 @@ public class CharacterSpawn : MonoBehaviour
     public void SpawnPlayer() // for spawning different scientists, just pass in player desired
     {
         newestPlayer = Instantiate(managerScript.queuedRespawns.Dequeue());
-        camera.GetComponent<MultipleTargetCamera>().targets.Add(newestPlayer.transform);
         realT = newestPlayer.transform;
         //newestPlayer.GetComponent<Rigidbody>().useGravity = false;
         spawningPlayer = true;
