@@ -326,6 +326,7 @@ MonoBehaviour:
   healthSegment: 0
   greenGuiValue: 0
   isPoisioned: 0
+  lastAcidDamageTime: 0
 --- !u!114 &4541228889225816936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,8 +347,12 @@ MonoBehaviour:
   isCaptured: 0
   healthManager: {fileID: -8722950184395974396}
   healthSprite: {fileID: 6219464151573839684}
-  controllerIndex: 1
-  scientistPrefabs: []
+  controllerIndex: 2
+  scientistPrefabs:
+  - {fileID: 2421331766900598672, guid: e62cfa9c82b590b42991202f7f157ed4, type: 3}
+  - {fileID: 5979943166543833243, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e, type: 3}
+  - {fileID: 1830673993139359091, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
+  - {fileID: 2466507813489192644}
 --- !u!114 &3136616758162024980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,7 +514,7 @@ PrefabInstance:
     - target: {fileID: 8965499991544294026, guid: 20d3c991dcd2d78499aee83418c98c79,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.443
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8965499991544294026, guid: 20d3c991dcd2d78499aee83418c98c79,
         type: 3}
