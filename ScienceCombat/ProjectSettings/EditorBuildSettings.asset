@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/CharacterSelectScreen.unity
+    guid: e491063f8927ed64b8dc0fa200d41bcb
+  - enabled: 1
     path: Assets/Scenes/JamieScene.unity
     guid: bce14e76dc7b28844a6671f3be18a2c4
   m_configObjects: {}

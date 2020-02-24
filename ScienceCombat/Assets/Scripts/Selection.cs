@@ -95,7 +95,7 @@ public class Selection : MonoBehaviour
         {
             if (Input.GetKeyDown($"joystick {playerNum} button 1"))
             {
-                SceneManager.LoadScene("phil");
+                SceneManager.LoadScene("JamieScene");
             }
         }
     }

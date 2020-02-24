@@ -34,7 +34,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2421331766900598672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -12.59}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7587577354793890047}
@@ -156,7 +156,7 @@ MonoBehaviour:
   isCaptured: 0
   healthManager: {fileID: 516136918316852869}
   healthSprite: {fileID: 3565358536781622942}
-  controllerIndex: 3
+  controllerIndex: 2
   scientistPrefabs:
   - {fileID: 2421331766900598672}
   - {fileID: 5979943166543833243, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e, type: 3}

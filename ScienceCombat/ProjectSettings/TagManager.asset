@@ -21,6 +21,7 @@ TagManager:
   - Ground
   - Health Bar
   - Projectile
+  - Spawner
   layers:
   - Default
   - TransparentFX
