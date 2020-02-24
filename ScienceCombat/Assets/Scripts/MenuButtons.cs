@@ -20,7 +20,7 @@ public class MenuButtons : MonoBehaviour
 
     private void Play()
     {
-        SceneManager.LoadScene("TestMap");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         print("Play");
     }
 
