@@ -10,7 +10,6 @@ public class Virus : MonoBehaviour
    
     void Start()
     {
-       
         gameObject.GetComponent<SphereCollider>().radius = radius;
         StartCoroutine(deleteSelf());
     }

@@ -11,6 +11,7 @@ public class AcidSplodge : MonoBehaviour
     [SerializeField] private float damage;
     private float lastTime;
     private GameObject particleEffect;
+    private Collider[] hitObjecets;
 
     void Start()
     {
@@ -29,19 +30,36 @@ public class AcidSplodge : MonoBehaviour
     private void OnTriggerStay(Collider collision)
     {
         
-        // Comparing strings is expensive...
-        if ((collision.gameObject.tag == "Biologist") ||
-            (collision.gameObject.tag == "Physicist") ||
-            (collision.gameObject.tag == "Engineer"))
+        hitObjecets = Physics.OverlapSphere(transform.position, radius);
+        foreach (Collider hit in hitObjecets)
         {
-            if (Time.time > damageInterval + lastTime)
+
+            if ((hit.gameObject.tag == "Biologist") ||
+            (hit.gameObject.tag == "Physicist") ||
+            (hit.gameObject.tag == "Engineer"))
             {
-                // Getting component every frame...
-                Health playerHealth = collision.GetComponent<Health>();
-                playerHealth.TakeDamage(damage);
-                lastTime = Time.time;
+                // calling getcomponent way too much here...
+                Health playerHealth = hit.GetComponent<Health>();
+                if (Time.time > damageInterval + playerHealth.lastAcidDamageTime)
+                {
+                    playerHealth.TakeDamage(damage);
+                    playerHealth.lastAcidDamageTime = Time.time;
+                }
             }
         }
+        //// Comparing strings is expensive...
+        //if ((collision.gameObject.tag == "Biologist") ||
+        //    (collision.gameObject.tag == "Physicist") ||
+        //    (collision.gameObject.tag == "Engineer"))
+        //{
+        //    if (Time.time > damageInterval + lastTime)
+        //    {
+        //        // Getting component every frame...
+        //        Health playerHealth = collision.GetComponent<Health>();
+        //        playerHealth.TakeDamage(damage);
+        //        lastTime = Time.time;
+        //    }
+        //}
     }
 
     IEnumerator deleteSelf()

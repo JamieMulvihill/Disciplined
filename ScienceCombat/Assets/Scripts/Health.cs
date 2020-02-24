@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     private float currentPoisionDmg = 0;
     public bool isPoisioned;
     private bool runningCoroutine = false;
+    public float lastAcidDamageTime = 0;
 
     // Start is called before the first frame update
     void Start()
