@@ -18,6 +18,15 @@ public class Manager : MonoBehaviour
     public bool spawnPlayer;
     public bool playerHasDied;
 
+    [Header("Quarantines")]
+    public bool zone1;
+    public bool zone2;
+    public bool zone3;
+    public bool zone4;
+    public bool zone5;
+    [Range(1, 5)]
+    public int quarantineSpeed;
+
     [Header("Activation")]
     public bool activateItemParticles;
 
@@ -37,6 +46,11 @@ public class Manager : MonoBehaviour
         spawnItem = false;
         spawnPlayer = false;
         activateItemParticles = false;
+        zone1 = false;
+        zone2 = false;
+        zone3 = false;
+        zone4 = false;
+        zone5 = false;
 
         // add players to list
     }
