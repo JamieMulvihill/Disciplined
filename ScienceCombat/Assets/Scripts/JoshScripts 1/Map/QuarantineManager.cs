@@ -5,12 +5,16 @@ using UnityEngine;
 public class QuarantineManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] zones = new GameObject[9];
+    [SerializeField] private GameObject[] gas = new GameObject[5];
+    [SerializeField] private GameObject gasPrefab;
+    private GameObject activeGas;
 
     private bool isQuarantining;
     private bool areaDetermined;
-    public bool allZonesDown;
 
     private int zoneToMove;
+
+    private float delayTime;
 
     private Manager managerScript;
     private Quarantine[] quarantineScript = new Quarantine[9];
@@ -28,90 +32,218 @@ public class QuarantineManager : MonoBehaviour
 
     void Update()
     {
-        if(managerScript.zone1 == true)
+        if (managerScript.canQuarantine == true && isQuarantining == false)
         {
-            quarantineScript[0].raiseWalls = true;
-        }
-        else
-        {
-            quarantineScript[0].raiseWalls = false;
+            if (managerScript.zone1 == true)
+            {
+                managerScript.canQuarantine = false;
+                isQuarantining = true;
+                managerScript.zone1 = false;
+                int zone = 0;
+                Quarantine(zone);
+            }
+
+            if (managerScript.zone2 == true)
+            {
+                managerScript.canQuarantine = false;
+                isQuarantining = true;
+                managerScript.zone2 = false;
+                int zone = 1;
+                Quarantine(zone);
+            }
+
+            if (managerScript.zone3 == true)
+            {
+                managerScript.canQuarantine = false;
+                isQuarantining = true;
+                managerScript.zone3 = false;
+                int zone = 2;
+                Quarantine(zone);
+            }
+
+            if (managerScript.zone4 == true)
+            {
+                managerScript.canQuarantine = false;
+                isQuarantining = true;
+                managerScript.zone4 = false;
+                int zone = 3;
+                Quarantine(zone);
+            }
+
+            if (managerScript.zone5 == true)
+            {
+                managerScript.canQuarantine = false;
+                isQuarantining = true;
+                managerScript.zone5 = false;
+                int zone = 4;
+                Quarantine(zone);
+            }
         }
 
-        if(managerScript.zone2 == true)
-        {
-            quarantineScript[1].raiseWalls = true;
-        }
-        else
-        {
-            quarantineScript[1].raiseWalls = false;
-        }
 
-        if (managerScript.zone3 == true)
-        {
-            quarantineScript[2].raiseWalls = true;
-        }
-        else
-        {
-            quarantineScript[2].raiseWalls = false;
-        }
 
-        if (managerScript.zone4 == true)
-        {
-            quarantineScript[3].raiseWalls = true;
-        }
-        else
-        {
-            quarantineScript[3].raiseWalls = false;
-        }
+        //    if (managerScript.zone1 == true)
+        //{
+        //    quarantineScript[0].raiseWalls = true;
+        //}
+        //else
+        //{
+        //    quarantineScript[0].raiseWalls = false;
+        //}
 
-        if (managerScript.zone5 == true)
-        {
-            quarantineScript[4].raiseWalls = true;
-        }
-        else
-        {
-            quarantineScript[4].raiseWalls = false;
-        }
+        //if(managerScript.zone2 == true)
+        //{
+        //    quarantineScript[1].raiseWalls = true;
+        //}
+        //else
+        //{
+        //    quarantineScript[1].raiseWalls = false;
+        //}
 
-        if (managerScript.zone1 == true || managerScript.zone2 == true)
-        {
-            quarantineScript[5].raiseWalls = true;
-        }
-        else
-        {
-            quarantineScript[5].raiseWalls = false;
-        }
+        //if (managerScript.zone3 == true)
+        //{
+        //    quarantineScript[2].raiseWalls = true;
+        //}
+        //else
+        //{
+        //    quarantineScript[2].raiseWalls = false;
+        //}
 
-        if (managerScript.zone1 == true || managerScript.zone4 == true)
-        {
-            quarantineScript[6].raiseWalls = true;
-        }
-        else
-        {
-            quarantineScript[6].raiseWalls = false;
-        }
+        //if (managerScript.zone4 == true)
+        //{
+        //    quarantineScript[3].raiseWalls = true;
+        //}
+        //else
+        //{
+        //    quarantineScript[3].raiseWalls = false;
+        //}
 
-        if (managerScript.zone2 == true || managerScript.zone3 == true)
-        {
-            quarantineScript[7].raiseWalls = true;
-        }
-        else
-        {
-            quarantineScript[7].raiseWalls = false;
-        }
+        //if (managerScript.zone5 == true)
+        //{
+        //    quarantineScript[4].raiseWalls = true;
+        //}
+        //else
+        //{
+        //    quarantineScript[4].raiseWalls = false;
+        //}
 
-        if (managerScript.zone3 == true || managerScript.zone5 == true)
+        //if (managerScript.zone1 == true || managerScript.zone2 == true)
+        //{
+        //    quarantineScript[5].raiseWalls = true;
+        //}
+        //else
+        //{
+        //    quarantineScript[5].raiseWalls = false;
+        //}
+
+        //if (managerScript.zone1 == true || managerScript.zone4 == true)
+        //{
+        //    quarantineScript[6].raiseWalls = true;
+        //}
+        //else
+        //{
+        //    quarantineScript[6].raiseWalls = false;
+        //}
+
+        //if (managerScript.zone2 == true || managerScript.zone3 == true)
+        //{
+        //    quarantineScript[7].raiseWalls = true;
+        //}
+        //else
+        //{
+        //    quarantineScript[7].raiseWalls = false;
+        //}
+
+        //if (managerScript.zone3 == true || managerScript.zone5 == true)
+        //{
+        //    quarantineScript[8].raiseWalls = true;
+        //}
+        //else
+        //{
+        //    quarantineScript[8].raiseWalls = false;
+        //}
+    }
+
+    void Quarantine(int quarantinedZone)
+    {
+        switch (quarantinedZone)
         {
-            quarantineScript[8].raiseWalls = true;
-        }
-        else
-        {
-            quarantineScript[8].raiseWalls = false;
+            case 0:
+                quarantineScript[0].raiseWalls = true;
+                quarantineScript[5].raiseWalls = true;
+                quarantineScript[6].raiseWalls = true;
+                break;
+
+            case 1:
+                quarantineScript[1].raiseWalls = true;
+                quarantineScript[5].raiseWalls = true;
+                quarantineScript[7].raiseWalls = true;
+                break;
+
+            case 2:
+                quarantineScript[2].raiseWalls = true;
+                quarantineScript[7].raiseWalls = true;
+                quarantineScript[8].raiseWalls = true;
+                break;
+
+            case 3:
+                quarantineScript[3].raiseWalls = true;
+                quarantineScript[6].raiseWalls = true;
+                break;
+
+            case 4:
+                quarantineScript[4].raiseWalls = true;
+                quarantineScript[8].raiseWalls = true;
+                break;
         }
     }
 
-    void Timer(int _zoneToLower)
+    void DeQuarantine()
     {
-        //pass in zone to lower and after a period of time (quaranting time) then lower the zone
+        switch (zoneToMove)
+        {
+            case 0:
+                quarantineScript[0].raiseWalls = false;
+                quarantineScript[5].raiseWalls = false;
+                quarantineScript[6].raiseWalls = false;
+                break;
+
+            case 1:
+                quarantineScript[1].raiseWalls = false;
+                quarantineScript[5].raiseWalls = false;
+                quarantineScript[7].raiseWalls = false;
+                break;
+
+            case 2:
+                quarantineScript[2].raiseWalls = false;
+                quarantineScript[7].raiseWalls = false;
+                quarantineScript[8].raiseWalls = false;
+                break;
+
+            case 3:
+                quarantineScript[3].raiseWalls = false;
+                quarantineScript[6].raiseWalls = false;
+                break;
+
+            case 4:
+                quarantineScript[4].raiseWalls = false;
+                quarantineScript[8].raiseWalls = false;
+                break;
+        }
+        isQuarantining = false;
+        managerScript.canQuarantine = true;
+    }
+
+    public void Cleanse(int _activeZone)
+    {
+        activeGas = Instantiate(gasPrefab, gas[_activeZone].transform.position, gas[_activeZone].transform.rotation);
+        Invoke("DestroyGasObject", 5);
+        zoneToMove = _activeZone;
+        Invoke("DeQuarantine", 6);
+    }
+
+    void DestroyGasObject()
+    {
+        Destroy(activeGas);
     }
 }

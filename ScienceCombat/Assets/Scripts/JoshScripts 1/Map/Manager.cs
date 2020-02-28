@@ -19,6 +19,7 @@ public class Manager : MonoBehaviour
     public bool playerHasDied;
 
     [Header("Quarantines")]
+    public bool canQuarantine;
     public bool zone1;
     public bool zone2;
     public bool zone3;
@@ -51,6 +52,7 @@ public class Manager : MonoBehaviour
         zone3 = false;
         zone4 = false;
         zone5 = false;
+        canQuarantine = true;
 
         // add players to list
     }

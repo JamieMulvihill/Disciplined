@@ -6,14 +6,18 @@ public class Quarantine : MonoBehaviour
 {
     public bool raiseWalls;
     public bool up;
+    public bool gasSent;
 
     private int speed;
+    [SerializeField] private int wallNum;
 
     private Vector3 peak;
     private Vector3 trough;
+    private Vector3 gasCheck;
 
     private Manager managerScript;
     private QuarantineManager QMScript;
+
 
     private void Start()
     {
@@ -21,7 +25,9 @@ public class Quarantine : MonoBehaviour
         QMScript = GameObject.FindGameObjectWithTag("Manager").GetComponent<QuarantineManager>();
         peak = new Vector3(0, 2.38f, 0);
         trough = new Vector3(0, 0, 0);
+        gasCheck = new Vector3(0, 2.35f, 0);
         raiseWalls = false;
+        gasSent = false;
     }
 
     private void Update()
@@ -29,9 +35,9 @@ public class Quarantine : MonoBehaviour
         speed = managerScript.quarantineSpeed;
 
         if (this.gameObject.transform.position.y == trough.y)
-            up = false;
-        else
-            up = true;
+        { 
+            gasSent = false;
+        }
 
         if (raiseWalls == true)
         {
@@ -45,18 +51,22 @@ public class Quarantine : MonoBehaviour
 
     void RaiseWalls()
     {
-        if (this.gameObject.transform.position.y == peak.y)
+        if (this.gameObject.transform.position.y == peak.y && gasSent == false)
         {
-            //release gas
+            gasSent = true;
+            if (wallNum < 5)
+            {
+                QMScript.Cleanse(wallNum);
+            }
         }
         else
         {
-            this.gameObject.transform.position = Vector3.Lerp(this.gameObject.transform.position, peak, speed * Time.deltaTime);
+            this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, peak, speed * Time.deltaTime);
         }
     }
 
     void LowerWalls()
     {
-        this.gameObject.transform.position = Vector3.Lerp(this.gameObject.transform.position, trough, speed * Time.deltaTime);
+        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, trough, speed * Time.deltaTime);
     }
 }
