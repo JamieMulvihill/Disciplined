@@ -20,6 +20,7 @@ public class Manager : MonoBehaviour
 
     [Header("Quarantines")]
     public bool canQuarantine;
+    public bool auto;
     public bool zone1;
     public bool zone2;
     public bool zone3;
@@ -52,6 +53,7 @@ public class Manager : MonoBehaviour
         zone3 = false;
         zone4 = false;
         zone5 = false;
+        auto = false;
         canQuarantine = true;
 
         // add players to list
