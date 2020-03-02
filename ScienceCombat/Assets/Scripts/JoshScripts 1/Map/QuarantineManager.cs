@@ -5,7 +5,10 @@ using UnityEngine;
 public class QuarantineManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] zones = new GameObject[9];
+    [SerializeField] private GameObject[] playerChecks = new GameObject[5];
     [SerializeField] private GameObject sucker;
+
+    public Queue<GameObject> playersToKill;
 
     private bool isQuarantining;
     private bool areaDetermined;
@@ -17,14 +20,17 @@ public class QuarantineManager : MonoBehaviour
 
     private Manager managerScript;
     private Quarantine[] quarantineScript = new Quarantine[9];
+    private Sucker suckyScript;
 
     void Start()
     {
-        for(int i = 0; i < zones.Length; i++)
+        playersToKill = new Queue<GameObject>();
+        for (int i = 0; i < zones.Length; i++)
         {
             quarantineScript[i] = zones[i].GetComponent<Quarantine>();
         }
         managerScript = this.gameObject.GetComponent<Manager>();
+        suckyScript = sucker.gameObject.GetComponent<Sucker>();
         isQuarantining = false;
         areaDetermined = false;
     }
@@ -82,7 +88,6 @@ public class QuarantineManager : MonoBehaviour
             {
                 managerScript.canQuarantine = false;
                 isQuarantining = true;
-                //int rand = Random.Range(0, 5);
                 int rand = Random.Range(0, 5);
                 while (rand == lastNum)
                 {
@@ -166,15 +171,7 @@ public class QuarantineManager : MonoBehaviour
 
     public void KillZone(int _activeZone)
     {
-
-        Invoke("DestroyGasObject", 5);
-        zoneToMove = _activeZone;
-        Invoke("DeQuarantine", 10);
-    }
-
-    void MoveSucker()
-    {
-
+        playerChecks[_activeZone].SetActive(true);
     }
 }
 
