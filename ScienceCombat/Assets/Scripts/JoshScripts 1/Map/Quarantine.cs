@@ -56,7 +56,7 @@ public class Quarantine : MonoBehaviour
             gasSent = true;
             if (wallNum < 5)
             {
-                QMScript.Cleanse(wallNum);
+                QMScript.KillZone(wallNum);
             }
         }
         else
