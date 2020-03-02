@@ -5,9 +5,7 @@ using UnityEngine;
 public class QuarantineManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] zones = new GameObject[9];
-    [SerializeField] private GameObject[] gas = new GameObject[5];
-    [SerializeField] private GameObject gasPrefab;
-    private GameObject activeGas;
+    [SerializeField] private GameObject sucker;
 
     private bool isQuarantining;
     private bool areaDetermined;
@@ -166,16 +164,18 @@ public class QuarantineManager : MonoBehaviour
         managerScript.canQuarantine = true;
     }
 
-    public void Cleanse(int _activeZone)
+    public void KillZone(int _activeZone)
     {
-        activeGas = Instantiate(gasPrefab, gas[_activeZone].transform.position, gas[_activeZone].transform.rotation);
+
         Invoke("DestroyGasObject", 5);
         zoneToMove = _activeZone;
-        Invoke("DeQuarantine", 6);
+        Invoke("DeQuarantine", 10);
     }
 
-    void DestroyGasObject()
+    void MoveSucker()
     {
-        Destroy(activeGas);
+
     }
 }
+
+

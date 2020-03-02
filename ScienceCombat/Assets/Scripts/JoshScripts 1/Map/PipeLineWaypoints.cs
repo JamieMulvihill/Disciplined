@@ -14,6 +14,7 @@ public class PipeLineWaypoints : MonoBehaviour
     public GameObject[] PL1WPs = new GameObject[23];
     public GameObject[] PL2WPs = new GameObject[28];
     public GameObject[] PL3WPs = new GameObject[30];
+    public GameObject[] roundabout = new GameObject[14];
     public GameObject PL1endPoint;
     public GameObject PL2endPoint;
     public GameObject PL3endPoint;
@@ -89,13 +90,11 @@ public class PipeLineWaypoints : MonoBehaviour
     public void EnqueueClone(int playerIndex)
     {
             managerScript.queuedRespawns.Enqueue(playerClones[playerIndex]);
-            //change to which player has died
     }
 
     void SpawnItem()
     {
         int rand = Random.Range(0, 3);
-        //print("Rarity: " + rand);
         GameObject newItem = Instantiate(items[rand]);
         newItem.GetComponent<PipeItems>().rarity = rand;
     }
