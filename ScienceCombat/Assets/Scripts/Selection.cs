@@ -15,12 +15,16 @@ public class Selection : MonoBehaviour
     float lastInput = 0.0f;
     bool selectedPlayer = false;
     public int playerNum;
+
+    public GameObject Mesh;
+
     // Start is called before the first frame update
     void Start()
     {
 
         selector = characterSelector.GetComponent<CharacterSelect>();
         characterSprite.sprite = selector.playabeCharacters[indexPosition].ScientistSprite;
+        
     }
 
     // Update is called once per frame
@@ -81,8 +85,12 @@ public class Selection : MonoBehaviour
     }
     void SelectingChoice()
     {
+
         if (!selectedPlayer)
         {
+            Mesh.GetComponent<MeshFilter>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<MeshFilter>().sharedMesh;
+            Mesh.GetComponent<MeshRenderer>().sharedMaterial = selector.playabeCharacters[indexPosition].Scientist.GetComponent<MeshRenderer>().sharedMaterial;
+
             if (Input.GetKeyDown($"joystick {playerNum} button 0"))
             {
                 selectedPlayer = true;
