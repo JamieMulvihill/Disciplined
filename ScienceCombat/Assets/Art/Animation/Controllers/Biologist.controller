@@ -31,7 +31,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Chemist
+  m_Name: Biologist
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: run
@@ -39,7 +39,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -126,7 +126,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: fccb7ba7ce25a464e9253f3ef8f6e33d,
+  m_Motion: {fileID: -203655887218126122, guid: 0c581fd4b97d68f4fa4e16aabe560c25,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 

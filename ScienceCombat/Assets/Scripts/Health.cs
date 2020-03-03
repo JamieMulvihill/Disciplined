@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentMaterial = GetComponent<MeshRenderer>().material;
+        currentMaterial = GetComponent<SkinnedMeshRenderer>().material;
         isPoisioned = false;
         health = maxHealth;
         greenGuiValue = 255;

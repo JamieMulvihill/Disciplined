@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: -8722950184395974396}
   - component: {fileID: 4541228889225816936}
   - component: {fileID: 3136616758162024980}
+  - component: {fileID: -629383095029980615}
   m_Layer: 0
   m_Name: Physicist
   m_TagString: Physicist
@@ -357,6 +358,7 @@ MonoBehaviour:
   - {fileID: 5979943166543833243, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e, type: 3}
   - {fileID: 1830673993139359091, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
   - {fileID: 2466507813489192644}
+  anim: {fileID: 0}
 --- !u!114 &3136616758162024980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +373,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   count: 0
   breakFree: 30
+--- !u!95 &-629383095029980615
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2466507813489192644}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4570229121499305032
 GameObject:
   m_ObjectHideFlags: 0

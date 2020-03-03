@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 29beb44b6422e9049866bb8d17497209
+guid: 0c581fd4b97d68f4fa4e16aabe560c25
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Running
+    second: BioRun
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -35,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Running
+      name: BioRun
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0

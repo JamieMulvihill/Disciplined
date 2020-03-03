@@ -16,6 +16,7 @@ public class Scientist : MonoBehaviour
     public int controllerIndex;
     public Grant grant;
     [SerializeField] private GameObject [] scientistPrefabs;
+    public Animator anim;
 
     private GameObject manager;
 
@@ -39,9 +40,15 @@ public class Scientist : MonoBehaviour
         {
             // Setting the rotation of the player to turn towards the direction of the joystick.
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(joystickDirection, transform.up), rotationSpeed);
+            anim.SetBool("run", true);
+        }
+        else
+        {
+            anim.SetBool("run", false);
         }
         // Setting the velocity of the player
         gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, gameObject.GetComponent<Rigidbody>().velocity.y, 0) + transform.forward * new Vector3(Mathf.Abs(joystickDirection.x), 0, Mathf.Abs(joystickDirection.z)).magnitude * speed;
+        
     }
 
     void Update()

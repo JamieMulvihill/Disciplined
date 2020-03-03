@@ -88,8 +88,8 @@ public class Selection : MonoBehaviour
 
         if (!selectedPlayer)
         {
-            Mesh.GetComponent<MeshFilter>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<MeshFilter>().sharedMesh;
-            Mesh.GetComponent<MeshRenderer>().sharedMaterial = selector.playabeCharacters[indexPosition].Scientist.GetComponent<MeshRenderer>().sharedMaterial;
+            //Mesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+            //Mesh.GetComponent<MeshRenderer>().sharedMaterial = selector.playabeCharacters[indexPosition].Scientist.GetComponent<MeshRenderer>().sharedMaterial;
 
             if (Input.GetKeyDown($"joystick {playerNum} button 0"))
             {
