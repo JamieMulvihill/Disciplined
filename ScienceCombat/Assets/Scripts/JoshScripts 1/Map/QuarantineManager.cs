@@ -11,7 +11,7 @@ public class QuarantineManager : MonoBehaviour
     public Queue<GameObject> playersToKill;
 
     private bool isQuarantining;
-    private bool areaDetermined;
+    public bool playersInQueue;
 
     private int zoneToMove;
     private int lastNum;
@@ -32,7 +32,7 @@ public class QuarantineManager : MonoBehaviour
         managerScript = this.gameObject.GetComponent<Manager>();
         suckyScript = sucker.gameObject.GetComponent<Sucker>();
         isQuarantining = false;
-        areaDetermined = false;
+        playersInQueue = false;
     }
 
     void Update()
@@ -172,7 +172,10 @@ public class QuarantineManager : MonoBehaviour
     public void KillZone(int _activeZone)
     {
         playerChecks[_activeZone].SetActive(true);
+        //playerChecks[_activeZone].SetActive(false);
+        //if (playersInQueue == false)
+        //{
+        //    Invoke("DeQuarantine", 5);
+        //}
     }
 }
-
-
