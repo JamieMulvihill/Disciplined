@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckForPlayers : MonoBehaviour
 {
-    private GameObject manager;
+    [SerializeField] private GameObject manager;
     private QuarantineManager QMScript;
 
 
@@ -17,6 +17,8 @@ public class CheckForPlayers : MonoBehaviour
         if(other.gameObject.tag == "Biologist" || other.gameObject.tag == "Chemist" || other.gameObject.tag == "Engineer" || other.gameObject.tag == "Physicist")
         {
             QMScript.playersToKill.Enqueue(other.gameObject);
+            QMScript.playersInQueue = true;
+            print("Player Queued");
         }
     }
 }
