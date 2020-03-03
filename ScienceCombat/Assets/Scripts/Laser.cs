@@ -32,7 +32,7 @@ public class Laser : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() {
+    void FixedUpdate() {
 
         if (scientist.isCaptured) return;
 
@@ -47,33 +47,40 @@ public class Laser : MonoBehaviour
             Debug.DrawRay(laserPosition, transform.forward * magnitude, Color.green, .1f);
 
             line.enabled = true;
-            inst.transform.position = laserPosition + gameObject.transform.forward;
+            inst.transform.position = laserPosition + transform.forward;
             //laserSpawn.transform.position = laserPosition + gameObject.transform.forward;
             //laserSpawn.Play();
             if (Physics.Raycast(laserPosition, transform.forward, out hit, magnitude)) {    
 
                 enemy = hit.collider.gameObject;
-                if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid" && hit.collider.tag != "Virus" && hit.collider.tag != "Vines"){
+                inst.transform.GetChild(1).transform.position = laserPosition + transform.forward;
+                if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid" && hit.collider.tag != "Virus" && hit.collider.tag != "Vines" && hit.collider.tag != "PunchHitbox")
+                {
                     line.transform.localScale = new Vector3(radius, radius, Mathf.Lerp(0, hit.distance, 1f));
-                    if (enemy != null){
+                    if (enemy != null)
+                    {
                         Health enemyHealth = enemy.GetComponent<Health>();
-                        if (enemyHealth != null) {
+                        if (enemyHealth != null)
+                        {
                             //laserHit.Play();
-                           // laserBeam.Play();
                             //laserHit.transform.position = hit.point;
-                            inst.transform.GetChild(0).transform.position = LaserEffect(laserPosition + gameObject.transform.forward, Vector3.MoveTowards(inst.transform.GetChild(0).transform.position, hit.point, .5f), hit.point);
+                            inst.transform.GetChild(0).transform.position = LaserEffect(laserPosition, Vector3.MoveTowards(inst.transform.GetChild(0).transform.position, hit.point, .5f), hit.point);
+                            inst.transform.GetChild(2).gameObject.SetActive(true);
+                            inst.transform.GetChild(2).transform.position = hit.point;
                             //laserBeam.transform.position = LaserEffect(laserPosition + gameObject.transform.forward, Vector3.MoveTowards(laserBeam.transform.position, hit.point, .5f), hit.point);
                             enemyHealth.TakeDamage(laserDamage * Time.deltaTime);
                         }
-                        else{
-                            Destroy(inst.transform.GetChild(0));
+                        else
+                        {
+                            inst.transform.GetChild(2).gameObject.SetActive(false);
+                            inst.transform.GetChild(0).transform.position = laserPosition + transform.forward;
                             //laserBeam.transform.position = laserPosition;
                             //laserHit.Stop();
                             //laserBeam.Stop();
                         }
                     }
-                } 
-            } 
+                }
+            }
         }
         else {
             isOn = false;
@@ -101,8 +108,9 @@ public class Laser : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Destroy(laserSpawn);
-        Destroy(laserBeam);
-        Destroy(laserHit);
+        Destroy(inst);
+        //Destroy(laserSpawn);
+        //Destroy(laserBeam);
+        //Destroy(laserHit);
     }
 }
