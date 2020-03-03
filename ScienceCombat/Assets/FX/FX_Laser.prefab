@@ -119,6 +119,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserForRayCast
       objectReference: {fileID: 0}
+    - target: {fileID: 8128173818677469537, guid: 0cc90c9d253fe2f48b0ecb8a07243b58,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8128173818677469536, guid: 0cc90c9d253fe2f48b0ecb8a07243b58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -132,7 +137,7 @@ PrefabInstance:
     - target: {fileID: 8128173818677469536, guid: 0cc90c9d253fe2f48b0ecb8a07243b58,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.03
+      value: 0.908
       objectReference: {fileID: 0}
     - target: {fileID: 8128173818677469536, guid: 0cc90c9d253fe2f48b0ecb8a07243b58,
         type: 3}

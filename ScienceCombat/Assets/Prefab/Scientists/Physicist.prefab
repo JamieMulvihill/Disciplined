@@ -292,6 +292,7 @@ MonoBehaviour:
     type: 3}
   laserSpeed: 200
   enemy: {fileID: 0}
+  laser: {fileID: 565093320624771221, guid: be13af76e8796024cb953b1d429ca3df, type: 3}
 --- !u!114 &3423044513703123039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,9 +346,12 @@ MonoBehaviour:
   playerHOR: Horizontal
   PlayerVer: Vertical
   isCaptured: 0
+  hasGrant: 0
+  grantEarnings: 0
   healthManager: {fileID: -8722950184395974396}
   healthSprite: {fileID: 6219464151573839684}
   controllerIndex: 2
+  grant: {fileID: 0}
   scientistPrefabs:
   - {fileID: 2421331766900598672, guid: e62cfa9c82b590b42991202f7f157ed4, type: 3}
   - {fileID: 5979943166543833243, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e, type: 3}
