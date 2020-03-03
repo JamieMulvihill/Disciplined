@@ -9,10 +9,12 @@ public class Scientist : MonoBehaviour
     public GameObject death;
     public string playerHOR, PlayerVer;
     public bool isCaptured = false;
+    public bool hasGrant = false;
+    public float grantEarnings = 0f;
     [SerializeField] private Health healthManager;
     [SerializeField] private SpriteRenderer healthSprite;
     public int controllerIndex;
-
+    public Grant grant;
     [SerializeField] private GameObject [] scientistPrefabs;
 
     private GameObject manager;
@@ -50,7 +52,12 @@ public class Scientist : MonoBehaviour
             Camera gameCam = Camera.main;
             MultipleTargetCamera multipleTargetCamera = gameCam.GetComponent<MultipleTargetCamera>();
             multipleTargetCamera.RemoveDeadPlayer(gameObject.transform);
-
+            if (grant)
+            {
+                grant.scientist = null;
+                grant.isPossessed = false;
+                grant.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            }
             switch(gameObject.tag)
             {
                 case "Biologist":
@@ -80,5 +87,12 @@ public class Scientist : MonoBehaviour
     private void OnDisable()
     {
         Instantiate(death, transform.position, transform.rotation);
+
+    }
+
+    public void EarningGrant(float cash) {
+        grantEarnings += cash;
+        Debug.Log("BLING BLING MOFOS");
+
     }
 }
