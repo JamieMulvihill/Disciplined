@@ -97,6 +97,7 @@ public class CharacterSpawn : MonoBehaviour
         //newestPlayer.GetComponent<Scientist>().enabled = false;
     }
 
+    // It yeets
     void Yeet()
     {
         if(realT.position != yeetPlatform.transform.position)
