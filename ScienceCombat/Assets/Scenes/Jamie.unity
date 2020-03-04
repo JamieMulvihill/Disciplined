@@ -5050,15 +5050,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b52e4c6cf17b54dbf725e120690b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  homebase: {fileID: 0}
+  sucker: {fileID: 0}
   zones:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  manager: {fileID: 0}
-  homebase: {fileID: 0}
+  pipeWPs:
+  - {fileID: 0}
+  - {fileID: 0}
   zone: 0
+  playersBeenSucked: 0
 --- !u!1001 &377791942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14115,6 +14120,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937891304}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &944909385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 944909386}
+  - component: {fileID: 944909387}
+  m_Layer: 0
+  m_Name: NavZone6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &944909386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944909385}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.2, y: 1.01, z: -6.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1862533994}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &944909387
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944909385}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 6.75, y: 1.5, z: 9}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &945710939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8422649610623184750, guid: a33cd6060f04eaf4b99c50427d1b68fd,
@@ -17939,6 +17991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff0975cf3469e2849b3d4e6113c122ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!1001 &1149787968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21679,13 +21732,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438683126}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07e03e922366fa9408a08b88ab40dd20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   quarenTime: 0
   navZone: {fileID: 1828930575}
+  grant: {fileID: 626058284}
 --- !u!1 &1440887669
 GameObject:
   m_ObjectHideFlags: 0
@@ -22994,6 +23048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff0975cf3469e2849b3d4e6113c122ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!1001 &1503749365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23733,6 +23788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff0975cf3469e2849b3d4e6113c122ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!1001 &1556646887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26402,6 +26458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff0975cf3469e2849b3d4e6113c122ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!1001 &1692254167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26971,7 +27028,15 @@ MonoBehaviour:
   - {fileID: 1146367046}
   - {fileID: 1691230363}
   - {fileID: 1499304220}
-  sucker: {fileID: 377145429}
+  playersInQueue: 0
+  navZones:
+  - {fileID: 1828930575}
+  - {fileID: 1673556678}
+  - {fileID: 784262159}
+  - {fileID: 220271113}
+  - {fileID: 1479034386}
+  - {fileID: 944909385}
+  navMesh: {fileID: 1438683129}
 --- !u!4 &1718003021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2372676834269391639, guid: 2c80b32234575484ebf3a1009a60842b,
@@ -28081,6 +28146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff0975cf3469e2849b3d4e6113c122ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!1001 &1820954507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29248,6 +29314,7 @@ Transform:
   - {fileID: 784262160}
   - {fileID: 220271114}
   - {fileID: 1479034387}
+  - {fileID: 944909386}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

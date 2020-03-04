@@ -9,7 +9,6 @@ public class QuarantineManager : MonoBehaviour
     //[SerializeField] private GameObject sucker;
 
     public Queue<GameObject> playersToKill;
-
     private bool isQuarantining;
     public bool playersInQueue;
 
@@ -20,6 +19,8 @@ public class QuarantineManager : MonoBehaviour
 
     private Manager managerScript;
     private Quarantine[] quarantineScript = new Quarantine[9];
+    public GameObject[] navZones = new GameObject[6];
+    public ModifyNavMesh navMesh;
     //private Sucker suckyScript;
 
     void Start()
@@ -171,12 +172,39 @@ public class QuarantineManager : MonoBehaviour
 
     public void KillZone(int _activeZone)
     {
+
         zoneToMove = _activeZone;
         playerChecks[_activeZone].SetActive(true);
-        if (playersInQueue == false)
-        {
+        NavMeshHandler(_activeZone);
+
+        if (playersInQueue == false){
+
             playerChecks[_activeZone].SetActive(false);
             Invoke("DeQuarantine", 5);
         }
+        
+    }
+
+    public void NavMeshHandler(int _activeZone) {
+        if (!navMesh.GrantWithinZone(navZones[_activeZone]))
+        {
+            navZones[_activeZone].SetActive(true);
+            StartCoroutine(ReActivateZone(_activeZone, 5));
+        }
+
+        else if (navMesh.GrantWithinZone(navZones[_activeZone])) {
+            for (int i = 0; i < navZones.Length; i++) {
+                if (i != _activeZone) {
+                    navZones[i].SetActive(true);
+                    StartCoroutine(ReActivateZone(i, 5));
+                }
+            }
+        }
+    }
+
+    IEnumerator ReActivateZone(int zone, float delay){
+
+        yield return new WaitForSeconds(delay);
+        navZones[zone].SetActive(false);
     }
 }
