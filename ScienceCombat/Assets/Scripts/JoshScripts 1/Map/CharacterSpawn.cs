@@ -6,7 +6,7 @@ public class CharacterSpawn : MonoBehaviour
 {
     [Header("Game Objects")]
     [SerializeField] private GameObject realPlayer;
-    [SerializeField] private GameObject fakePlayer;
+    public GameObject fakePlayer;
     [SerializeField] private GameObject yeetPlatform;
     private GameObject manager;
 
@@ -78,6 +78,7 @@ public class CharacterSpawn : MonoBehaviour
 
     public void SpawnFetus()
     {
+        fakePlayer = managerScript.queuedRespawns.Peek();
         Instantiate(fakePlayer);
     }
 

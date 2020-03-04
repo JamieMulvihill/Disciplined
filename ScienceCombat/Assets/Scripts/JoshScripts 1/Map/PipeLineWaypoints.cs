@@ -14,6 +14,9 @@ public class PipeLineWaypoints : MonoBehaviour
     public GameObject[] PL1WPs = new GameObject[23];
     public GameObject[] PL2WPs = new GameObject[28];
     public GameObject[] PL3WPs = new GameObject[30];
+    public GameObject[] PL1Exit = new GameObject[14];
+    public GameObject[] PL2Exit = new GameObject[14];
+    public GameObject[] PL3Exit = new GameObject[21];
     public GameObject[] roundabout = new GameObject[14];
     public GameObject PL1endPoint;
     public GameObject PL2endPoint;
