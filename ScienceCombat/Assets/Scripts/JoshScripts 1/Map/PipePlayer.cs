@@ -24,8 +24,13 @@ public class PipePlayer : MonoBehaviour
     private Manager managerScript;
     private CharacterSpawn cSpawnScript;
 
+    [Header("Components")]
+    private MeshRenderer mr;
+    private MeshFilter mf;
+
     void Start()
     {
+        mr = this.gameObject.GetComponent<MeshRenderer>();
         manager = GameObject.FindGameObjectWithTag("Manager");
         managerScript = manager.GetComponent<Manager>();
         plw = manager.GetComponent<PipeLineWaypoints>();
@@ -37,6 +42,9 @@ public class PipePlayer : MonoBehaviour
 
         entranceCounter = 1;
         speed = 5;
+
+        //mf.sharedMesh = cSpawnScript.fakePlayer.GetComponent<MeshFilter>().sharedMesh;
+        //mr.sharedMaterial = cSpawnScript.fakePlayer.GetComponent<MeshRenderer>().sharedMaterial;
     }
 
     void Update()
