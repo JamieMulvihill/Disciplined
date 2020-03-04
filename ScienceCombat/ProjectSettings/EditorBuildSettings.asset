@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterSelectScreen.unity
     guid: e491063f8927ed64b8dc0fa200d41bcb
   - enabled: 1
-    path: Assets/Scenes/Map V3.unity
-    guid: 3e6f1011e930ca74a840444a54d01537
+    path: Assets/Scenes/Jamie.unity
+    guid: eb11f45c89f3169439b1bceea20860a8
   m_configObjects: {}

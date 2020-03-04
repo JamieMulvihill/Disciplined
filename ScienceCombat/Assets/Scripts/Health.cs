@@ -45,7 +45,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        StartCoroutine(FlashRed());
+        //StartCoroutine(FlashRed());
         if (health > 50f)
         {
             redValue = healthSegment * (maxHealth - health ) * 2;

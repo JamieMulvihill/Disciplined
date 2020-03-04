@@ -40,6 +40,7 @@ public class Scientist : MonoBehaviour
         {
             // Setting the rotation of the player to turn towards the direction of the joystick.
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(joystickDirection, transform.up), rotationSpeed);
+            
             anim.SetBool("run", true);
         }
         else
