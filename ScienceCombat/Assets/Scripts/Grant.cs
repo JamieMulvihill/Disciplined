@@ -11,7 +11,8 @@ public class Grant : MonoBehaviour
     public NavMeshAgent navAgent;
     public float range = 5.0f;
     Vector3 point;
-    bool reachedDestination = true;
+    public bool reachedDestination = true;
+
     // Update is called once per frame
     void Update() {
 
@@ -32,7 +33,7 @@ public class Grant : MonoBehaviour
             navAgent.SetDestination(point);
             reachedDestination = false;
         }
-        if (Mathf.Abs(transform.position.magnitude - point.magnitude) < 1.2f) {
+        if (Mathf.Abs(transform.position.magnitude - point.magnitude) < .5f) {
             reachedDestination = true;
         }
     }

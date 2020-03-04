@@ -103,7 +103,7 @@ public class Selection : MonoBehaviour
         {
             if (Input.GetKeyDown($"joystick {playerNum} button 1"))
             {
-                SceneManager.LoadScene("Map V3");
+                SceneManager.LoadScene("Jamie");
             }
         }
     }
