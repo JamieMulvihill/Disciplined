@@ -76,7 +76,7 @@ public class Sucker : MonoBehaviour
                 if (Mathf.Approximately(sucker.transform.position.x, target.transform.position.x) && Mathf.Approximately(sucker.transform.position.z, target.transform.position.z))
                 {
                     playerCaught = true;
-                    target.GetComponent<Scientist>().beingSucked = true;
+                    //target.GetComponent<Scientist>().beingSucked = true;
                     target.GetComponent<Rigidbody>().useGravity = false;
                     if (playersBeenSucked == true)
                     {

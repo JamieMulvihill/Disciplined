@@ -6,7 +6,7 @@ public class QuarantineManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] zones = new GameObject[9];
     [SerializeField] private GameObject[] playerChecks = new GameObject[5];
-    [SerializeField] private GameObject sucker;
+    //[SerializeField] private GameObject sucker;
 
     public Queue<GameObject> playersToKill;
 
@@ -20,7 +20,7 @@ public class QuarantineManager : MonoBehaviour
 
     private Manager managerScript;
     private Quarantine[] quarantineScript = new Quarantine[9];
-    private Sucker suckyScript;
+    //private Sucker suckyScript;
 
     void Start()
     {
@@ -30,7 +30,7 @@ public class QuarantineManager : MonoBehaviour
             quarantineScript[i] = zones[i].GetComponent<Quarantine>();
         }
         managerScript = this.gameObject.GetComponent<Manager>();
-        suckyScript = sucker.gameObject.GetComponent<Sucker>();
+        //suckyScript = sucker.gameObject.GetComponent<Sucker>();
         isQuarantining = false;
         playersInQueue = false;
     }
@@ -171,11 +171,12 @@ public class QuarantineManager : MonoBehaviour
 
     public void KillZone(int _activeZone)
     {
+        zoneToMove = _activeZone;
         playerChecks[_activeZone].SetActive(true);
-        //playerChecks[_activeZone].SetActive(false);
-        //if (playersInQueue == false)
-        //{
-        //    Invoke("DeQuarantine", 5);
-        //}
+        if (playersInQueue == false)
+        {
+            playerChecks[_activeZone].SetActive(false);
+            Invoke("DeQuarantine", 5);
+        }
     }
 }
