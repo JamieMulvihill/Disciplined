@@ -24,7 +24,12 @@ public class Selection : MonoBehaviour
 
         selector = characterSelector.GetComponent<CharacterSelect>();
         characterSprite.sprite = selector.playabeCharacters[indexPosition].ScientistSprite;
-        
+        //Mesh = Instantiate(selector.playabeCharacters[indexPosition].Scientist);
+        //Mesh.transform.localScale = new Vector3(100,100,100);
+        Mesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+        Mesh.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
+
+
     }
 
     // Update is called once per frame
@@ -50,6 +55,8 @@ public class Selection : MonoBehaviour
                     {
                         indexPosition++;
                         lastInput = Time.time;
+
+
                     }
 
                     else
@@ -88,8 +95,10 @@ public class Selection : MonoBehaviour
 
         if (!selectedPlayer)
         {
-            //Mesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-            //Mesh.GetComponent<MeshRenderer>().sharedMaterial = selector.playabeCharacters[indexPosition].Scientist.GetComponent<MeshRenderer>().sharedMaterial;
+            //Mesh = Instantiate(selector.playabeCharacters[indexPosition].Scientist);
+            //Mesh.transform.localScale = new Vector3(100, 100, 100);
+            Mesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+            Mesh.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
 
             if (Input.GetKeyDown($"joystick {playerNum} button 0"))
             {
