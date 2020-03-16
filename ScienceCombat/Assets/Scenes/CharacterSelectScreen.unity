@@ -259,9 +259,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSelector: {fileID: 176393069}
   characterSprite: {fileID: 208927611}
+  characterMesh: {fileID: 820123284}
   playerContainer: {fileID: 1451118706}
   playerNum: 2
-  Mesh: {fileID: 820123284}
 --- !u!1 &265791996
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +330,7 @@ SkinnedMeshRenderer:
     firstSubMesh: 0
     subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
+  m_ProbeAnchor: {fileID: 265791997}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_ReceiveGI: 1
@@ -385,14 +385,14 @@ RectTransform:
   m_GameObject: {fileID: 267829167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 232.23088, y: 107.34533, z: 107.34533}
   m_Children: []
   m_Father: {fileID: 468837016}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0000042113, y: 0}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &267829169
@@ -524,9 +524,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSelector: {fileID: 176393069}
   characterSprite: {fileID: 295729884}
+  characterMesh: {fileID: 265791996}
   playerContainer: {fileID: 1451118706}
   playerNum: 3
-  Mesh: {fileID: 265791996}
 --- !u!1 &345723366
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,9 +684,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSelector: {fileID: 176393069}
   characterSprite: {fileID: 362866486}
+  characterMesh: {fileID: 1498219867}
   playerContainer: {fileID: 1451118706}
   playerNum: 1
-  Mesh: {fileID: 1498219867}
 --- !u!1 &468837012
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,8 +774,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468837012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 248.72}
+  m_LocalScale: {x: 3.6233, y: 3.6233, z: 3.6233}
   m_Children:
   - {fileID: 267829168}
   - {fileID: 362866485}
@@ -787,7 +787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -47.219, y: -78.698}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &482053463
@@ -837,11 +837,11 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 55.141346
+    width: 1920
+    height: 1024
+  near clip plane: 49.48
+  far clip plane: 3952.9
+  field of view: 141
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -866,8 +866,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482053463}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.85, y: 0, z: -10.28}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1037,7 +1037,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4869252656420698693, guid: a50d4840c6239a1499dc07388fd87c8c, type: 3}
+  m_Mesh: {fileID: 0}
   m_Bones: []
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
@@ -1161,7 +1161,7 @@ SkinnedMeshRenderer:
     firstSubMesh: 0
     subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
+  m_ProbeAnchor: {fileID: 295729883}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_ReceiveGI: 1
@@ -1181,11 +1181,10 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4869252656420698693, guid: a50d4840c6239a1499dc07388fd87c8c, type: 3}
+  m_Mesh: {fileID: 0}
   m_Bones: []
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: -5706069392837980813, guid: a50d4840c6239a1499dc07388fd87c8c,
-    type: 3}
+  m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: -0.00318712, y: 1.1590732, z: 0.015132159}
     m_Extent: {x: 0.96236676, y: 1.1539074, z: 0.5407884}
@@ -1258,7 +1257,7 @@ SkinnedMeshRenderer:
     firstSubMesh: 0
     subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
+  m_ProbeAnchor: {fileID: 1883667325}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_ReceiveGI: 1
@@ -1377,6 +1376,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSelector: {fileID: 176393069}
   characterSprite: {fileID: 1993869666}
+  characterMesh: {fileID: 1883667324}
   playerContainer: {fileID: 1451118706}
   playerNum: 4
-  Mesh: {fileID: 1883667324}
