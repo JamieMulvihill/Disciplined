@@ -23,7 +23,7 @@ public class Laser : MonoBehaviour
     {
         playerFire += GetComponent<Scientist>().controllerIndex.ToString();
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
-        laserPosition = transform.GetChild(1).transform.position;
+        laserPosition = transform.GetChild(3).transform.position;
         //laserSpawn = Instantiate(laserSpawn, laserPosition + gameObject.transform.forward, Quaternion.identity);
         //laserBeam = Instantiate(laserBeam, laserPosition + gameObject.transform.forward, Quaternion.identity);
         //laserHit = Instantiate(laserHit, laserPosition + gameObject.transform.forward, Quaternion.identity);
@@ -36,7 +36,7 @@ public class Laser : MonoBehaviour
 
         if (scientist.isCaptured) return;
 
-        laserPosition = transform.GetChild(1).transform.position;
+        laserPosition = transform.GetChild(3).transform.position;
         if (Mathf.Abs(Input.GetAxis(playerFire)) > 0.01f && GetComponent<Scientist>().isCaptured == false)
         {
             if (!isOn) {
