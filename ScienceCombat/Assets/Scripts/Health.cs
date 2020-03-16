@@ -14,6 +14,7 @@ public class Health : MonoBehaviour
     private float totalPoisionDmg = 30;
     private float currentPoisionDmg = 0;
     public bool isPoisioned;
+
     private bool runningCoroutine = false;
     public float lastAcidDamageTime = 0;
 
