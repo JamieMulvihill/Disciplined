@@ -666,12 +666,12 @@ GameObject:
   - component: {fileID: 9038972989566669038}
   - component: {fileID: 5780368762819271680}
   - component: {fileID: 518090464638075327}
-  - component: {fileID: 159955348542332664}
   - component: {fileID: 3904794363725575563}
   - component: {fileID: 2418186709745517208}
   - component: {fileID: 1373391109311234993}
   - component: {fileID: 6994353297500470279}
   - component: {fileID: 8343837253561570609}
+  - component: {fileID: -2938093145132655356}
   m_Layer: 0
   m_Name: newChemist
   m_TagString: Untagged
@@ -688,7 +688,7 @@ Transform:
   m_GameObject: {fileID: 5466835545142287576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6764327238365794682}
   - {fileID: 8826935151071726669}
@@ -810,27 +810,6 @@ MonoBehaviour:
   greenGuiValue: 0
   isPoisioned: 0
   lastAcidDamageTime: 0
---- !u!114 &159955348542332664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5466835545142287576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: -3746896607812541188, guid: c91ec678445046545abd3bc3658ab792,
-    type: 3}
-  triggerButton: RT
-  verticalVelocity: 4
-  horizontalVelocity: 7
-  upOffset: 2
-  forwardOffset: 2
-  fireRate: 2
-  momentumScalar: 0
 --- !u!114 &3904794363725575563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -925,6 +904,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &-2938093145132655356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5466835545142287576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5950373702657677660, guid: 6b285e44ef3bc7d4496edd71297944d8,
+    type: 3}
+  triggerButton: RT
+  verticalVelocity: 2
+  horizontalVelocity: 4
+  upOffset: 2
+  forwardOffset: 2
+  fireRate: 0.25
+  momentumScalar: 1
 --- !u!1 &5469532899335628989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,11 +1703,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9044705994402803403}
     m_Modifications:
-    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
-        type: 3}
-      propertyPath: m_Name
-      value: Punch Hitbox
-      objectReference: {fileID: 0}
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1762,6 +1757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
+        type: 3}
+      propertyPath: m_Name
+      value: Punch Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 6699842662239036542, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}

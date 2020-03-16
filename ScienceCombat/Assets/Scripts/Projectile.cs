@@ -5,8 +5,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Collider[] hitObjecets;
-    [SerializeField] protected float damage;
-    [SerializeField] private float damageRadius;
+    public float damage;
+    public float damageRadius;
 
     // Start is called before the first frame update
     void Start()
@@ -46,8 +46,8 @@ public class Projectile : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, damageRadius);
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawWireSphere(transform.position, damageRadius);
     }
 
 
