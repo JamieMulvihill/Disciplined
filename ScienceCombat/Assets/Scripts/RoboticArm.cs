@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrabbyArm : MonoBehaviour
+public class RoboticArm : MonoBehaviour
 {
     [SerializeField] GameObject hand;               // the object which collides with a player which is to be grabbed
     [SerializeField] private float forwardOffset;
@@ -168,8 +168,8 @@ public class GrabbyArm : MonoBehaviour
         }
         var armVisualPosition = armVisual.transform.localPosition;
         armVisualPosition.Set(armVisualPosition.x, armVisualPosition.y, (armProgress + forwardOffset) / 2);
-        hand.transform.localPosition = new Vector3(0f, 0f, (armProgress + forwardOffset));
-        armVisual.transform.localScale = new Vector3(armVisual.transform.localScale.x, (armProgress + forwardOffset) / 2, armVisual.transform.localScale.z);
+        //hand.transform.localPosition = new Vector3(0f, 0f, (armProgress + forwardOffset));
+        //armVisual.transform.localScale = new Vector3(armVisual.transform.localScale.x, (armProgress + forwardOffset) / 2, armVisual.transform.localScale.z);
     }
 
     public void DisignateController(int controllerIndex)
