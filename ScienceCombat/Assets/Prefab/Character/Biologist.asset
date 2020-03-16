@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aece8cf0ba434f4ca0449aed8f00e3a, type: 3}
   m_Name: Biologist
   m_EditorClassIdentifier: 
-  Scientist: {fileID: 2421331766900598672, guid: e62cfa9c82b590b42991202f7f157ed4,
+  Scientist: {fileID: 4794347758951342451, guid: b30f9d0810ec3ef4caffeff8fb770531,
     type: 3}
   ScientistSprite: {fileID: 21300000, guid: b8da8b5cc2a5e41478431ebc36de7366, type: 3}
