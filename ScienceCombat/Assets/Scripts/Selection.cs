@@ -8,7 +8,6 @@ public class Selection : MonoBehaviour
 {
     [SerializeField] private GameObject characterSelector;
     [SerializeField] private Image characterSprite;
-    [SerializeField] private GameObject characterMesh;
     [SerializeField] private PlayerContainer playerContainer;
     private int indexPosition = 0;
     private CharacterSelect selector;
@@ -17,33 +16,19 @@ public class Selection : MonoBehaviour
     bool selectedPlayer = false;
     public int playerNum;
 
-    
+    public GameObject Mesh;
 
     // Start is called before the first frame update
     void Start()
     {
 
         selector = characterSelector.GetComponent<CharacterSelect>();
-        characterSprite.sprite = selector.playabeCharacters[indexPosition].ScientistSprite;
+        characterSprite.sprite = selector.playabeCharacters[indexPosition].ScientistSprite; 
+        //Mesh = Instantiate(selector.playabeCharacters[indexPosition].Scientist);
+        //Mesh.transform.localScale = new Vector3(100,100,100);
+        Mesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+        Mesh.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
 
-        selector.playabeCharacters[indexPosition].Scientist.transform.position = characterSprite.transform.position;
-        selector.playabeCharacters[indexPosition].Scientist.transform.localScale = new Vector3(100, 100, 100);
-        selector.playabeCharacters[indexPosition].Scientist.GetComponent<Rigidbody>().isKinematic = true;
-        selector.playabeCharacters[indexPosition].Scientist.GetComponent<Rigidbody>().useGravity = false;
-
-        characterMesh = Instantiate(selector.playabeCharacters[indexPosition].Scientist);
-
-
-        //characterMesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-        //characterMesh.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
-        //characterMesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = new CharacterSelect().playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-        //characterMesh.GetComponent<SkinnedMeshRenderer>().bones = new CharacterSelect().playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
-
-
-
-        // Mesh.GetComponent<SkinnedMeshRenderer>().gameObject.transform.position = characterSprite.transform.position;
-
-        //Mesh = selector.playabeCharacters[indexPosition].Scientist;
 
     }
 
@@ -52,7 +37,7 @@ public class Selection : MonoBehaviour
     {
         if (!selectedPlayer)
             characterSprite.sprite = selector.playabeCharacters[ChoosingCharacter()].ScientistSprite;
-            
+
 
         SelectingChoice();
     }
@@ -61,18 +46,8 @@ public class Selection : MonoBehaviour
 
         if (!selectedPlayer)
         {
-
             if (Input.GetAxis("Horizontal" + playerNum.ToString()) > .5)
             {
-                Destroy(characterMesh);
-
-                selector.playabeCharacters[indexPosition].Scientist.transform.position = characterSprite.transform.position;
-                selector.playabeCharacters[indexPosition].Scientist.transform.localScale = new Vector3(100, 100, 100);
-                selector.playabeCharacters[indexPosition].Scientist.GetComponent<Rigidbody>().isKinematic = true;
-                selector.playabeCharacters[indexPosition].Scientist.GetComponent<Rigidbody>().useGravity = false;
-
-                characterMesh = Instantiate(selector.playabeCharacters[indexPosition].Scientist);
-
                 inputTime = Time.time;
                 if (inputTime - lastInput > .3)
                 {
@@ -94,15 +69,6 @@ public class Selection : MonoBehaviour
 
             if (Input.GetAxis("Horizontal" + playerNum.ToString()) < -.5)
             {
-
-                Destroy(characterMesh);
-
-                selector.playabeCharacters[indexPosition].Scientist.transform.position = characterSprite.transform.position;
-                selector.playabeCharacters[indexPosition].Scientist.transform.localScale = new Vector3(100, 100, 100);
-                selector.playabeCharacters[indexPosition].Scientist.GetComponent<Rigidbody>().isKinematic = true;
-                selector.playabeCharacters[indexPosition].Scientist.GetComponent<Rigidbody>().useGravity = false;
-
-                characterMesh = Instantiate(selector.playabeCharacters[indexPosition].Scientist);
 
                 inputTime = Time.time;
                 if (inputTime - lastInput > .3)
@@ -131,23 +97,15 @@ public class Selection : MonoBehaviour
         {
             //Mesh = Instantiate(selector.playabeCharacters[indexPosition].Scientist);
             //Mesh.transform.localScale = new Vector3(100, 100, 100);
-
-            //characterMesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-            //characterMesh.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
-
-            //characterMesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = new CharacterSelect().playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-            //characterMesh.GetComponent<SkinnedMeshRenderer>().bones = new CharacterSelect().playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
-
-            //Mesh = selector.playabeCharacters[indexPosition].Scientist;
+            Mesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+            Mesh.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
 
             if (Input.GetKeyDown($"joystick {playerNum} button 0"))
             {
                 selectedPlayer = true;
                 playerContainer.chosenPlayers[playerNum - 1] = selector.playabeCharacters[ChoosingCharacter()];
-                selector.playabeCharacters[indexPosition].Scientist.transform.position = Vector3.zero;
                 selector.playabeCharacters.RemoveAt(ChoosingCharacter());
                 characterSprite.sprite = playerContainer.chosenPlayers[playerNum - 1].ScientistSprite;
-
             }
         }
         if (selectedPlayer)
@@ -157,7 +115,6 @@ public class Selection : MonoBehaviour
                 SceneManager.LoadScene("Jamie");
             }
         }
-       
     }
 }
 
