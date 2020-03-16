@@ -114,7 +114,7 @@ public class GrabbyArm : MonoBehaviour
             remainingLifespan = lifespan;
             retracting = false;
         }
-        if (Input.GetButtonDown(playerAlt) && !onCooldown && GetComponent<Scientist>().isCaptured == false)
+        if (Input.GetButtonDown(playerAlt) && remainingLifespan > 0f && !onCooldown && GetComponent<Scientist>().isCaptured == false)
         {
             usingArm = true;
             armReach = GetArmSpace();
@@ -133,6 +133,18 @@ public class GrabbyArm : MonoBehaviour
         if (usingArm)
         {
             if (armProgress <= 0f && retracting && hitGuy == null)
+            {
+                retracting = false;
+                armProgress = 0f;
+                usingArm = false;
+                onCooldown = true;
+            }
+        }
+        // decreases remainingLifespan while arm is out and puts the arm away if remainingLifespan hits 0
+        if (usingArm && hitGuy != null)
+        {
+            remainingLifespan -= Time.deltaTime;
+            if (remainingLifespan <= 0f)
             {
                 retracting = false;
                 armProgress = 0f;
@@ -165,9 +177,14 @@ public class GrabbyArm : MonoBehaviour
         {
             hitGuy.transform.position = transform.position + (transform.forward * armProgress) + (transform.forward * forwardOffset);
             retracting = true;
+            if (remainingLifespan <= 0f)
+            {
+                hitGuy.GetComponent<Scientist>().isCaptured = false;
+                hitGuy = null;
+                return;
+            }
         }
-        var armVisualPosition = armVisual.transform.localPosition;
-        armVisualPosition.Set(armVisualPosition.x, armVisualPosition.y, (armProgress + forwardOffset) / 2);
+        armVisual.transform.localPosition = new Vector3(0f, 0f, (armProgress + forwardOffset) / 2);
         hand.transform.localPosition = new Vector3(0f, 0f, (armProgress + forwardOffset));
         armVisual.transform.localScale = new Vector3(armVisual.transform.localScale.x, (armProgress + forwardOffset) / 2, armVisual.transform.localScale.z);
     }

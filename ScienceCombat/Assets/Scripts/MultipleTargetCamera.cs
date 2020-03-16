@@ -60,7 +60,16 @@ public class MultipleTargetCamera : MonoBehaviour
         }
         // get the distnce of the two furthest away points of the box using pythageros
         float distance = (bounds.size.z * bounds.size.z) + (bounds.size.x * bounds.size.x);
-        Debug.Log(Mathf.Sqrt(distance));
+
+        bool dontSpamNumbers = true;
+        if (dontSpamNumbers)
+        {
+
+        }
+        else
+        {
+            Debug.Log(Mathf.Sqrt(distance));
+        }
         return Mathf.Sqrt(distance);
     }
 

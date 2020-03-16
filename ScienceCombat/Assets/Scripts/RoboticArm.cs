@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RoboticArm : MonoBehaviour
 {
+    Animator armAnimation;
     [SerializeField] GameObject hand;               // the object which collides with a player which is to be grabbed
     [SerializeField] private float forwardOffset;
     [SerializeField] private string playerAlt;      // button to use the grab attack
@@ -15,8 +16,6 @@ public class RoboticArm : MonoBehaviour
     [SerializeField] private float cooldown;        // how long in seconds the player must wait to be able to use the grabby arm after its been used
     private bool onCooldown = false;                // represents whether or not more time must elapse before the grabby arm can be used again
     private float cooldownCheckRate = 0.1f;         // how often it should check whether cooldown should start ticking. Setting this too big may result in longer cooldowns than expected.
-    [SerializeField] private float lifespan;        // represents how many seconds a grabby arm may be used before it breaks (immediately end use of grabby arm)
-    private float remainingLifespan;                // represents the remaining amount of seconds a grabby arm may be used before it breaks. Resets when cooldown ends
 
     //arm limit variables
     [SerializeField] private float animationLength;
@@ -48,6 +47,7 @@ public class RoboticArm : MonoBehaviour
         StartCoroutine(Cooldown());
         originalSpeed = GetComponent<Scientist>().speed;
         originalRotationSpeed = GetComponent<Scientist>().rotationSpeed;
+        armAnimation = armVisual.GetComponent<Animator>();
     }
     private float GetArmSpace() // returns the maximum distance the arm may extend without passing through walls
     {
@@ -66,8 +66,13 @@ public class RoboticArm : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Engineer" && other.gameObject.tag != "Biologist" && other.gameObject.tag != "Physicist" && other.gameObject.tag != "Chemist")
+        string tag = other.gameObject.tag;
+        if (tag != "Engineer" && tag != "Biologist" && tag != "Physicist" && tag != "Chemist")
         {
+            if (tag != "Fireball" && tag != "Acid" && tag != "Virus" && tag != "Vines" && tag != "PunchHitbox")
+            {
+                retracting = true;
+            }
             return;
         }
         // I added UsingArm to this check because it was colliding with players and capturing them even though the Arm wasnt launched??
@@ -83,7 +88,6 @@ public class RoboticArm : MonoBehaviour
         playerAlt += GetComponent<Scientist>().controllerIndex.ToString();
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
         originalSpeed = GetComponent<Scientist>().speed;
-        remainingLifespan = lifespan;
     }
 
     // Update is called once per frame
@@ -92,7 +96,6 @@ public class RoboticArm : MonoBehaviour
         if (GetComponent<Scientist>().isCaptured && usingArm)
         {
             retracting = false;
-            armProgress = 0f;
             usingArm = false;
             onCooldown = true;
         }
@@ -105,13 +108,12 @@ public class RoboticArm : MonoBehaviour
         else
         {
             hand.SetActive(false);
-            armVisual.SetActive(false); 
+            armVisual.SetActive(false);
             if (GetComponent<Scientist>().isCaptured == false)
             {
                 GetComponent<Scientist>().speed = originalSpeed;
                 GetComponent<Scientist>().rotationSpeed = originalRotationSpeed;
             }
-            remainingLifespan = lifespan;
             retracting = false;
         }
         if (Input.GetButtonDown(playerAlt) && !onCooldown && GetComponent<Scientist>().isCaptured == false)
@@ -129,47 +131,36 @@ public class RoboticArm : MonoBehaviour
                 retracting = true;
             }
         }
+        if (retracting)
+        {
+            armAnimation.SetFloat("direction", -1f * armSpeed);
+        }
+        else
+        {
+            armAnimation.SetFloat("direction", 1f * armSpeed);
+        }
         // puts arm away if arm has finished retracting and has not caught anything
         if (usingArm)
         {
-            if (armProgress <= 0f && retracting && hitGuy == null)
+            if (retracting && (hand.transform.position - gameObject.transform.position).magnitude <= forwardOffset)
             {
+                if (hitGuy != null)
+                {
+                    hitGuy.GetComponent<Scientist>().isCaptured = false;
+                    hitGuy = null;
+                }
                 retracting = false;
-                armProgress = 0f;
                 usingArm = false;
                 onCooldown = true;
             }
         }
-        // if arm is out
-        // if less than reach of arm and not retracting, increase arm progress
-        // if greater than 0 and retracting, decrease arm progress
-        if (usingArm)
-        {
-            if (armProgress < armReach && !retracting)
-            {
-                armProgress += Time.deltaTime * armSpeed;
-
-                //if it is at or beyond reach of arm NOW... set to retracting
-                if (armProgress >= armReach)
-                {
-                    retracting = true;
-                }
-            }
-            if (armProgress > 0f && retracting)
-            {
-                retracting = true;
-                armProgress -= Time.deltaTime * armSpeed;
-            }
-        }
         if (hitGuy != null)
         {
-            hitGuy.transform.position = transform.position + (transform.forward * armProgress) + (transform.forward * forwardOffset);
+            hitGuy.transform.position = hand.transform.position;
             retracting = true;
         }
         var armVisualPosition = armVisual.transform.localPosition;
-        armVisualPosition.Set(armVisualPosition.x, armVisualPosition.y, (armProgress + forwardOffset) / 2);
-        //hand.transform.localPosition = new Vector3(0f, 0f, (armProgress + forwardOffset));
-        //armVisual.transform.localScale = new Vector3(armVisual.transform.localScale.x, (armProgress + forwardOffset) / 2, armVisual.transform.localScale.z);
+        armVisualPosition.Set(armVisualPosition.x, armVisualPosition.y, armVisualPosition.y);
     }
 
     public void DisignateController(int controllerIndex)
