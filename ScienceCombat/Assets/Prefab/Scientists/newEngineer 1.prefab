@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134208029605239808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7822935616994775112}
@@ -2212,6 +2212,7 @@ GameObject:
   - component: {fileID: 5150596933539595646}
   - component: {fileID: 6297818517317787712}
   - component: {fileID: 746819630619700381}
+  - component: {fileID: 6672402539733480933}
   m_Layer: 0
   m_Name: newEngineer 1
   m_TagString: Engineer
@@ -2474,6 +2475,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   count: 0
   breakFree: 30
+--- !u!114 &6672402539733480933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6542603972521189979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a3b900d4e70e4b8d8e6f6d120c12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: RB
+  damage: 1
+  cooldown: 2
 --- !u!1 &6553381092256536126
 GameObject:
   m_ObjectHideFlags: 0

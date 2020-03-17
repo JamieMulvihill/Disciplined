@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 7172011722149938104}
   - component: {fileID: 2111835809520097270}
   - component: {fileID: 4746688691079236578}
+  - component: {fileID: 2793961856319792606}
   m_Layer: 0
   m_Name: newPhysicist
   m_TagString: Physicist
@@ -371,6 +372,21 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0023189187, y: 0.5165723, z: -0.08134025}
     m_Extent: {x: 0.9824318, y: 1.2284231, z: 0.6001685}
   m_DirtyAABB: 0
+--- !u!114 &2793961856319792606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929000472914193546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a3b900d4e70e4b8d8e6f6d120c12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: RB
+  damage: 1
+  cooldown: 2
 --- !u!1 &996595508961776083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,7 +1633,7 @@ PrefabInstance:
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}

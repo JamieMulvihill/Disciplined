@@ -733,6 +733,7 @@ GameObject:
   - component: {fileID: 25628582935725668}
   - component: {fileID: 4834419755509153164}
   - component: {fileID: 873690435847472725}
+  - component: {fileID: 3320544639063240329}
   m_Layer: 0
   m_Name: newBiologist
   m_TagString: Biologist
@@ -991,6 +992,21 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0016915798, y: 0.5075115, z: 0.032442987}
     m_Extent: {x: 0.9784272, y: 1.2194675, z: 0.5407887}
   m_DirtyAABB: 0
+--- !u!114 &3320544639063240329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794347758951342451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a3b900d4e70e4b8d8e6f6d120c12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: RB
+  damage: 1
+  cooldown: 2
 --- !u!1 &4805700503036302614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,7 +1765,7 @@ PrefabInstance:
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
