@@ -11,6 +11,15 @@ TagManager:
   - Hand
   - Chemist
   - Biologist
+  - Spawner
+  - Quarentine
+  - Environment
+  - Manager
+  - Acid
+  - Smoke
+  - Ground
+  - Projectile
+  - InvisibleWalls
   layers:
   - Default
   - TransparentFX

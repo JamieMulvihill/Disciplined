@@ -347,6 +347,7 @@ MonoBehaviour:
   playerHOR: Horizontal
   PlayerVer: Vertical
   isCaptured: 0
+  isSliding: 0
   hasGrant: 0
   grantEarnings: 0
   healthManager: {fileID: -8722950184395974396}
@@ -359,6 +360,7 @@ MonoBehaviour:
   - {fileID: 1830673993139359091, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
   - {fileID: 2466507813489192644}
   anim: {fileID: 0}
+  slippingVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &3136616758162024980
 MonoBehaviour:
   m_ObjectHideFlags: 0
