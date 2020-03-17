@@ -775,10 +775,10 @@ MonoBehaviour:
   playerHOR: Horizontal
   PlayerVer: Vertical
   isCaptured: 0
+  isSliding: 0
   hasGrant: 0
   grantEarnings: 0
   healthManager: {fileID: 5460022847351036833}
-  healthSprite: {fileID: 768185490869660831}
   controllerIndex: 1
   grant: {fileID: 0}
   scientistPrefabs:
@@ -787,6 +787,7 @@ MonoBehaviour:
   - {fileID: 1427351833560434034}
   - {fileID: 2466507813489192644, guid: 52465b71ad2580b4097cba71226a9a1e, type: 3}
   anim: {fileID: 0}
+  slippingVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &5460022847351036833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2278,7 +2279,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7913972925973380788, guid: be2e5ad6201888847a6e7cbe591f2f63, type: 3}
+  - {fileID: 2100000, guid: b0a4879202d94f143bd4148cd2085e5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2429,10 +2430,10 @@ MonoBehaviour:
   playerHOR: Horizontal
   PlayerVer: Vertical
   isCaptured: 0
+  isSliding: 0
   hasGrant: 0
   grantEarnings: 0
   healthManager: {fileID: 6297818517317787712}
-  healthSprite: {fileID: 1285842078, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
   controllerIndex: 1
   grant: {fileID: 0}
   scientistPrefabs:
@@ -2441,6 +2442,7 @@ MonoBehaviour:
   - {fileID: 1830673993139359091, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
   - {fileID: 2466507813489192644, guid: 52465b71ad2580b4097cba71226a9a1e, type: 3}
   anim: {fileID: 151615778732195122}
+  slippingVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &6297818517317787712
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class Scientist : MonoBehaviour
     public bool hasGrant = false;
     public float grantEarnings = 0f;
     [SerializeField] private Health healthManager;
-    [SerializeField] private SpriteRenderer healthSprite;
+    //[SerializeField] private SpriteRenderer healthSprite;
     public int controllerIndex;
     public Grant grant;
     [SerializeField] private GameObject [] scientistPrefabs;
@@ -28,7 +28,7 @@ public class Scientist : MonoBehaviour
         playerHOR += GetComponent<Scientist>().controllerIndex.ToString();
         PlayerVer += GetComponent<Scientist>().controllerIndex.ToString();
         manager = GameObject.FindGameObjectWithTag("Manager");
-        healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
+       // healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
         Camera.main.GetComponent<MultipleTargetCamera>().AddPlayer(gameObject.transform);
     }
 
@@ -57,7 +57,7 @@ public class Scientist : MonoBehaviour
 
     void Update()
     {
-        healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
+       // healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
         
         if (healthManager.health <= 0) {
             Camera gameCam = Camera.main;
