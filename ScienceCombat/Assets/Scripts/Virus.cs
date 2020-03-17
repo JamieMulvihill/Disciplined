@@ -16,11 +16,15 @@ public class Virus : MonoBehaviour
 
     private void OnTriggerEnter(Collider hitPlayer)
     {
-        //Apply poisin to the health of hitPlayer;
-        Health playerHealth = hitPlayer.GetComponent<Health>();
-        if (playerHealth != null) {
-            playerHealth.isPoisioned = true;
-            playerHealth.PoisionDamage();
+        if (hitPlayer.gameObject.tag != "Biologist")
+        {
+            //Apply poisin to the health of hitPlayer;
+            Health playerHealth = hitPlayer.GetComponent<Health>();
+            if (playerHealth != null)
+            {
+                playerHealth.isPoisioned = true;
+                playerHealth.PoisionDamage();
+            }
         }
     }
 

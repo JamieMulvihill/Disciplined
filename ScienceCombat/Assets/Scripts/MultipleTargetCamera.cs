@@ -10,7 +10,7 @@ public class MultipleTargetCamera : MonoBehaviour
     private Vector3 velocity;
     public float minZoom = 40f;
     public float maxZoom = 10f;
-    public float cameraNearClamp = 7f;
+    public float cameraNearClamp = 14f;
     public float zoomLimiter;
     private Camera cam;
     public GameObject centre;
@@ -34,9 +34,14 @@ public class MultipleTargetCamera : MonoBehaviour
         Vector3 centrePoint = GetCentrePoint();
         centre.transform.position = centrePoint; ///***** centre is used to debug the cameras cetre point with a game object, nothing else****
         float standardOffset = -24f;
+
         if (centrePoint.z < -cameraNearClamp) {
+            Debug.Log(-centrePoint.z - cameraNearClamp);
             offset.z = standardOffset + (-centrePoint.z - cameraNearClamp);
         }
+        
+        offset.x = centrePoint.x;
+        
         Vector3 newPosition = centrePoint + offset;
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
     }
@@ -61,15 +66,6 @@ public class MultipleTargetCamera : MonoBehaviour
         // get the distnce of the two furthest away points of the box using pythageros
         float distance = (bounds.size.z * bounds.size.z) + (bounds.size.x * bounds.size.x);
 
-        bool dontSpamNumbers = true;
-        if (dontSpamNumbers)
-        {
-
-        }
-        else
-        {
-            Debug.Log(Mathf.Sqrt(distance));
-        }
         return Mathf.Sqrt(distance);
     }
 

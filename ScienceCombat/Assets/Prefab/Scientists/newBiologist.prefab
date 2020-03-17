@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 873690435847472725}
   m_Layer: 0
   m_Name: newBiologist
-  m_TagString: Untagged
+  m_TagString: Biologist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -748,8 +748,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4794347758951342451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2351.4058, y: 37.247604, z: 248.72}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 101019737413825801}
   - {fileID: 1533413983972023620}
