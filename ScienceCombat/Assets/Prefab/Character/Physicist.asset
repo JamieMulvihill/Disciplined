@@ -16,4 +16,4 @@ MonoBehaviour:
     type: 3}
   MenuCharacter: {fileID: 929000472914193546, guid: d32ad547d7d5abd488e990e968d823cb,
     type: 3}
-  ScientistSprite: {fileID: 21300000, guid: 231e284076886ac41a117d5e3a181ffd, type: 3}
+  ScientistSprite: {fileID: 21300000, guid: abd153583393c414eaeffab88dd9290f, type: 3}
