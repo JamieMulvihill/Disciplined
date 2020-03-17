@@ -54,7 +54,7 @@ public class Laser : MonoBehaviour
 
                 enemy = hit.collider.gameObject;
                 inst.transform.GetChild(1).transform.position = laserPosition + transform.forward;
-                if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid" && hit.collider.tag != "Virus" && hit.collider.tag != "Vines" && hit.collider.tag != "PunchHitbox")
+                if (hit.collider != null && hit.collider.gameObject.tag != "Fireball" && hit.collider.gameObject.tag != "Acid" && hit.collider.tag != "Virus" && hit.collider.tag != "Vines" && hit.collider.tag != "Punch Hitbox")
                 {
                     line.transform.localScale = new Vector3(radius, radius, Mathf.Lerp(0, hit.distance, 1f));
                     if (enemy != null)

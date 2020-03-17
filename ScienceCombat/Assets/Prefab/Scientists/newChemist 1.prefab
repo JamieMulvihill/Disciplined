@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 7123947294955925267}
   - component: {fileID: 7123947294955925260}
   - component: {fileID: 7123947294955925261}
-  - component: {fileID: 7123947294955925262}
   - component: {fileID: 7123947294955925263}
   - component: {fileID: 7123947294955925256}
   - component: {fileID: 7123947294955925257}
@@ -207,21 +206,6 @@ MonoBehaviour:
   forwardOffset: 2
   fireRate: 0.25
   momentumScalar: 1
---- !u!114 &7123947294955925262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7123947294955925259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dfe632095c897047b87071ca6fc22ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerFire: B
-  smokePrefab: {fileID: 8644326735496483049, guid: 90a857e7556f44d4a8aea3e89bdd165c,
-    type: 3}
 --- !u!65 &7123947294955925263
 BoxCollider:
   m_ObjectHideFlags: 0
