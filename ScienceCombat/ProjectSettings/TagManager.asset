@@ -24,6 +24,7 @@ TagManager:
   - Seeds
   - Fireball
   - Invisible Wall
+  - InvisibleWalls
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Punch Hitbox
   - 
   - 
   - 

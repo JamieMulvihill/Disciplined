@@ -1300,7 +1300,7 @@ GameObject:
   - component: {fileID: 110939953}
   m_Layer: 0
   m_Name: Invisible Wall 13
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2328,7 +2328,7 @@ GameObject:
   - component: {fileID: 183296736}
   m_Layer: 0
   m_Name: Invisible Wall 18
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3068,7 +3068,7 @@ GameObject:
   - component: {fileID: 251882175}
   m_Layer: 0
   m_Name: Invisible Wall 12
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3816,6 +3816,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5447640971771108537, guid: b30f9d0810ec3ef4caffeff8fb770531,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447640971771108537, guid: b30f9d0810ec3ef4caffeff8fb770531,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5525659981725527110, guid: b30f9d0810ec3ef4caffeff8fb770531,
         type: 3}
       propertyPath: scientistPrefabs.Array.data[0]
@@ -3843,16 +3853,6 @@ PrefabInstance:
     - target: {fileID: 7791358753911799770, guid: b30f9d0810ec3ef4caffeff8fb770531,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5447640971771108537, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5447640971771108537, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5270,7 +5270,7 @@ GameObject:
   - component: {fileID: 397836517}
   m_Layer: 0
   m_Name: Invisible Wall 06
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5441,7 +5441,7 @@ GameObject:
   - component: {fileID: 403270799}
   m_Layer: 0
   m_Name: Invisible Wall 10
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7147,7 +7147,7 @@ GameObject:
   - component: {fileID: 518482047}
   m_Layer: 0
   m_Name: Invisible Wall 14
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8568,7 +8568,7 @@ GameObject:
   - component: {fileID: 623808966}
   m_Layer: 0
   m_Name: Invisible Wall 22
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9240,7 +9240,7 @@ GameObject:
   - component: {fileID: 657885949}
   m_Layer: 0
   m_Name: Invisible Wall 05
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12715,7 +12715,7 @@ GameObject:
   - component: {fileID: 861596070}
   m_Layer: 0
   m_Name: Invisible Wall 27
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13134,7 +13134,7 @@ GameObject:
   - component: {fileID: 883535479}
   m_Layer: 0
   m_Name: Invisible Wall 11
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14091,7 +14091,7 @@ GameObject:
   - component: {fileID: 937891306}
   m_Layer: 0
   m_Name: Invisible Wall 07
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14705,7 +14705,7 @@ GameObject:
   - component: {fileID: 962843631}
   m_Layer: 0
   m_Name: Invisible Wall 28
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14944,7 +14944,7 @@ GameObject:
   - component: {fileID: 978166196}
   m_Layer: 0
   m_Name: Invisible Wall 25
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15201,7 +15201,7 @@ GameObject:
   - component: {fileID: 985036203}
   m_Layer: 0
   m_Name: Invisible Wall 17
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15701,7 +15701,7 @@ GameObject:
   - component: {fileID: 1024924671}
   m_Layer: 0
   m_Name: Invisible Wall 23
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16173,7 +16173,7 @@ GameObject:
   - component: {fileID: 1058332207}
   m_Layer: 0
   m_Name: Invisible Wall 20
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16804,7 +16804,7 @@ GameObject:
   - component: {fileID: 1102974236}
   m_Layer: 0
   m_Name: Invisible Wall 16
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17843,7 +17843,7 @@ GameObject:
   - component: {fileID: 1153172092}
   m_Layer: 0
   m_Name: Invisible Wall 29
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18034,7 +18034,7 @@ GameObject:
   - component: {fileID: 1162030322}
   m_Layer: 0
   m_Name: Invisible Wall 26
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18314,7 +18314,7 @@ GameObject:
   - component: {fileID: 1194546550}
   m_Layer: 0
   m_Name: Invisible Wall 24
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19046,7 +19046,7 @@ GameObject:
   - component: {fileID: 1236502875}
   m_Layer: 0
   m_Name: Invisible Wall 21
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19677,7 +19677,7 @@ GameObject:
   - component: {fileID: 1288191098}
   m_Layer: 0
   m_Name: Invisible Wall 15
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20496,7 +20496,7 @@ GameObject:
   - component: {fileID: 1349230382}
   m_Layer: 0
   m_Name: Invisible Wall 08
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20964,7 +20964,7 @@ GameObject:
   - component: {fileID: 1384521671}
   m_Layer: 0
   m_Name: Invisible Wall 09
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21174,7 +21174,7 @@ GameObject:
   - component: {fileID: 1394715319}
   m_Layer: 0
   m_Name: Invisible Wall 19
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22453,7 +22453,7 @@ GameObject:
   - component: {fileID: 1487025285}
   m_Layer: 0
   m_Name: Invisible Wall 04
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23571,7 +23571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1554585259
 Transform:
   m_ObjectHideFlags: 0
@@ -23820,7 +23820,7 @@ GameObject:
   - component: {fileID: 1560760706}
   m_Layer: 0
   m_Name: Invisible Wall 02
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24413,7 +24413,7 @@ GameObject:
   - component: {fileID: 1595301035}
   m_Layer: 0
   m_Name: Invisible Wall 01
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29078,6 +29078,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636,
         type: 3}
+    - target: {fileID: 3499942534992194811, guid: dbad9d36d84861043aeff669db1ec636,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499942534992194811, guid: dbad9d36d84861043aeff669db1ec636,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3910188980674273677, guid: dbad9d36d84861043aeff669db1ec636,
         type: 3}
       propertyPath: m_IsActive
@@ -29583,7 +29593,7 @@ GameObject:
   - component: {fileID: 1872208554}
   m_Layer: 0
   m_Name: Invisible Wall 03
-  m_TagString: InvisibleWalls
+  m_TagString: Invisible Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33305,11 +33315,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7123947294955925262, guid: 0d05dc676c1169b40bad34d7e5b27723,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7123947294955925257, guid: 0d05dc676c1169b40bad34d7e5b27723,
         type: 3}
       propertyPath: controllerIndex
@@ -33327,6 +33332,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786,
         type: 3}
+    - target: {fileID: 7123947294955925262, guid: 0d05dc676c1169b40bad34d7e5b27723,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d05dc676c1169b40bad34d7e5b27723, type: 3}
 --- !u!114 &8804693504099369929
