@@ -19,7 +19,11 @@ TagManager:
   - Smoke
   - Ground
   - Projectile
-  - InvisibleWalls
+  - Vines
+  - Virus
+  - Seeds
+  - Fireball
+  - Invisible Wall
   layers:
   - Default
   - TransparentFX

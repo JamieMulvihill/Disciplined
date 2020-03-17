@@ -91,11 +91,11 @@ public class Scientist : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
-        if(collision.gameObject.tag == "Invisible Wall")
+        if (isSliding)
         {
-            if (isSliding)
+            if (collision.gameObject.tag == "Invisible Wall")
             {
+            
                 Vector3 reflectedVector = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collision.contacts[0].normal);
                 slippingVelocity = reflectedVector;
                 //transform.forward = reflectedVector.normalized;
