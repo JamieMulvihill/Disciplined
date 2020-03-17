@@ -286,6 +286,7 @@ MonoBehaviour:
   playerHOR: Horizontal
   PlayerVer: Vertical
   isCaptured: 0
+  isSliding: 0
   hasGrant: 0
   grantEarnings: 0
   healthManager: {fileID: 861150349094063214}
@@ -298,6 +299,7 @@ MonoBehaviour:
   - {fileID: 1830673993139359091, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
   - {fileID: 2466507813489192644, guid: 52465b71ad2580b4097cba71226a9a1e, type: 3}
   anim: {fileID: 578062263515398077}
+  slippingVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &861150349094063214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,6 +1153,7 @@ MonoBehaviour:
   playerHOR: Horizontal
   PlayerVer: Vertical
   isCaptured: 0
+  isSliding: 0
   hasGrant: 0
   grantEarnings: 0
   healthManager: {fileID: 8798814614624209487}
@@ -1163,6 +1166,7 @@ MonoBehaviour:
   - {fileID: 1830673993139359091, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
   - {fileID: 2466507813489192644, guid: 52465b71ad2580b4097cba71226a9a1e, type: 3}
   anim: {fileID: 578062263515398077}
+  slippingVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &8798814614624209487
 MonoBehaviour:
   m_ObjectHideFlags: 0

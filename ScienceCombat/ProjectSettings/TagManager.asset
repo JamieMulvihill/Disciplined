@@ -4,26 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Chemist
-  - Physicist
-  - Vines
-  - Hand
   - Engineer
-  - Biologist
-  - Fireball
-  - Environment
-  - Manager
-  - Punch Hitbox
-  - Virus
-  - Smoke
-  - Acid
-  - Seeds
-  - Ground
   - Health Bar
-  - Projectile
-  - Spawner
-  - Fire
-  - Quarentine
+  - Punch Hitbox
+  - Physicist
+  - Hand
+  - Chemist
+  - Biologist
   layers:
   - Default
   - TransparentFX
@@ -33,9 +20,9 @@ TagManager:
   - UI
   - 
   - 
-  - PunchLayer
-  - GrantLayer
-  - PlayerLayer
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -60,7 +47,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: 2
-    uniqueID: 3158626763
     locked: 0

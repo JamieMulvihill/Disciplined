@@ -9,6 +9,7 @@ public class Scientist : MonoBehaviour
     public GameObject death;
     public string playerHOR, PlayerVer;
     public bool isCaptured = false;
+    public bool isSliding = false;
     public bool hasGrant = false;
     public float grantEarnings = 0f;
     [SerializeField] private Health healthManager;
@@ -17,6 +18,8 @@ public class Scientist : MonoBehaviour
     public Grant grant;
     [SerializeField] private GameObject [] scientistPrefabs;
     public Animator anim;
+
+    public Vector3 slippingVelocity;
 
     private GameObject manager;
 
@@ -31,7 +34,7 @@ public class Scientist : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isCaptured) return;
+        if (isCaptured || isSliding) return;
 
         Vector3 joystickDirection = new Vector3(Input.GetAxis(playerHOR), 0, Input.GetAxis(PlayerVer));
 
@@ -85,6 +88,21 @@ public class Scientist : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if(collision.gameObject.tag == "Invisible Wall")
+        {
+            if (isSliding)
+            {
+                Vector3 reflectedVector = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collision.contacts[0].normal);
+                slippingVelocity = reflectedVector;
+                //transform.forward = reflectedVector.normalized;
+            }
+        }
+    }
+
 
     //public void DisignateController(int controllerIndex)
     //{
