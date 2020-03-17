@@ -853,10 +853,10 @@ MonoBehaviour:
   controllerIndex: 2
   grant: {fileID: 0}
   scientistPrefabs:
-  - {fileID: 0}
-  - {fileID: 5979943166543833243, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e, type: 3}
-  - {fileID: 1830673993139359091, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
-  - {fileID: 2466507813489192644, guid: 52465b71ad2580b4097cba71226a9a1e, type: 3}
+  - {fileID: 4794347758951342451}
+  - {fileID: 7123947294955925259, guid: 0d05dc676c1169b40bad34d7e5b27723, type: 3}
+  - {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786, type: 3}
+  - {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636, type: 3}
   anim: {fileID: 1898737816137793050}
   slippingVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &5130345911107156795

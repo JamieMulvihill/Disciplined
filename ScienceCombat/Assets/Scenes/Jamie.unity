@@ -3826,13 +3826,13 @@ PrefabInstance:
         type: 3}
       propertyPath: scientistPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 5466835545142287576, guid: 86185352e5b6c8e4d93d1ac93eb29ec1,
+      objectReference: {fileID: 7123947294955925259, guid: 0d05dc676c1169b40bad34d7e5b27723,
         type: 3}
     - target: {fileID: 5525659981725527110, guid: b30f9d0810ec3ef4caffeff8fb770531,
         type: 3}
       propertyPath: scientistPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 4379326487408046681, guid: 0231939e34f3e264c82bd95037d4d9bc,
+      objectReference: {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786,
         type: 3}
     - target: {fileID: 5525659981725527110, guid: b30f9d0810ec3ef4caffeff8fb770531,
         type: 3}
@@ -16687,7 +16687,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079177047}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 221d154d4115d5e4dafd976899dcd808, type: 3}
   m_Name: 
@@ -26724,10 +26724,10 @@ MonoBehaviour:
   - {fileID: 8947086341928782875, guid: a7cca0a1820df0f4eaad0f5c192bb90c, type: 3}
   - {fileID: 8947086341928782875, guid: 28885638eca7b3f49a153af4746e430f, type: 3}
   playerClones:
-  - {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636, type: 3}
-  - {fileID: 5466835545142287576, guid: 86185352e5b6c8e4d93d1ac93eb29ec1, type: 3}
   - {fileID: 4794347758951342451, guid: b30f9d0810ec3ef4caffeff8fb770531, type: 3}
-  - {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786, type: 3}
+  - {fileID: 7123947294955925259, guid: 0d05dc676c1169b40bad34d7e5b27723, type: 3}
+  - {fileID: 4379326487408046681, guid: 0231939e34f3e264c82bd95037d4d9bc, type: 3}
+  - {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636, type: 3}
   pipeHeads:
   - {fileID: 1620539138}
   - {fileID: 2147119170}
@@ -28931,6 +28931,30 @@ PrefabInstance:
       propertyPath: controllerIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5150596933539595646, guid: 9a9ca21ef4a2e6d459889469a23b8786,
+        type: 3}
+      propertyPath: scientistPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 4794347758951342451, guid: b30f9d0810ec3ef4caffeff8fb770531,
+        type: 3}
+    - target: {fileID: 5150596933539595646, guid: 9a9ca21ef4a2e6d459889469a23b8786,
+        type: 3}
+      propertyPath: scientistPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 7123947294955925259, guid: 0d05dc676c1169b40bad34d7e5b27723,
+        type: 3}
+    - target: {fileID: 5150596933539595646, guid: 9a9ca21ef4a2e6d459889469a23b8786,
+        type: 3}
+      propertyPath: scientistPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786,
+        type: 3}
+    - target: {fileID: 5150596933539595646, guid: 9a9ca21ef4a2e6d459889469a23b8786,
+        type: 3}
+      propertyPath: scientistPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a9ca21ef4a2e6d459889469a23b8786, type: 3}
 --- !u!1001 &1851946403
@@ -29040,13 +29064,13 @@ PrefabInstance:
         type: 3}
       propertyPath: scientistPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 5466835545142287576, guid: 86185352e5b6c8e4d93d1ac93eb29ec1,
+      objectReference: {fileID: 7123947294955925259, guid: 0d05dc676c1169b40bad34d7e5b27723,
         type: 3}
     - target: {fileID: 7172011722149938104, guid: dbad9d36d84861043aeff669db1ec636,
         type: 3}
       propertyPath: scientistPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 4379326487408046681, guid: 0231939e34f3e264c82bd95037d4d9bc,
+      objectReference: {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786,
         type: 3}
     - target: {fileID: 7172011722149938104, guid: dbad9d36d84861043aeff669db1ec636,
         type: 3}
@@ -33291,6 +33315,18 @@ PrefabInstance:
       propertyPath: controllerIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7123947294955925257, guid: 0d05dc676c1169b40bad34d7e5b27723,
+        type: 3}
+      propertyPath: scientistPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 7123947294955925259, guid: 0d05dc676c1169b40bad34d7e5b27723,
+        type: 3}
+    - target: {fileID: 7123947294955925257, guid: 0d05dc676c1169b40bad34d7e5b27723,
+        type: 3}
+      propertyPath: scientistPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d05dc676c1169b40bad34d7e5b27723, type: 3}
 --- !u!114 &8804693504099369929

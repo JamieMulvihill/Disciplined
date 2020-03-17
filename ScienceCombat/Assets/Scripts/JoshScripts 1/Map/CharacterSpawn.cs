@@ -78,7 +78,7 @@ public class CharacterSpawn : MonoBehaviour
 
     public void SpawnFetus()
     {
-        fakePlayer = managerScript.queuedRespawns.Peek();
+        //fakePlayer = managerScript.queuedRespawns.Peek();
         Instantiate(fakePlayer);
     }
 

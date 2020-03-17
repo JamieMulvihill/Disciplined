@@ -2139,13 +2139,13 @@ MonoBehaviour:
   hasGrant: 0
   grantEarnings: 0
   healthManager: {fileID: 6297818517317787712}
-  controllerIndex: 1
+  controllerIndex: 2
   grant: {fileID: 0}
   scientistPrefabs:
-  - {fileID: 2421331766900598672, guid: e62cfa9c82b590b42991202f7f157ed4, type: 3}
-  - {fileID: 5979943166543833243, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e, type: 3}
-  - {fileID: 1830673993139359091, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
-  - {fileID: 2466507813489192644, guid: 52465b71ad2580b4097cba71226a9a1e, type: 3}
+  - {fileID: 4794347758951342451, guid: b30f9d0810ec3ef4caffeff8fb770531, type: 3}
+  - {fileID: 7123947294955925259, guid: 0d05dc676c1169b40bad34d7e5b27723, type: 3}
+  - {fileID: 6542603972521189979}
+  - {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636, type: 3}
   anim: {fileID: 151615778732195122}
   slippingVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &6297818517317787712

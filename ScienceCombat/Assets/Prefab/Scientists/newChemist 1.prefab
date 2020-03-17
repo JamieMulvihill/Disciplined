@@ -260,14 +260,12 @@ MonoBehaviour:
   hasGrant: 0
   grantEarnings: 0
   healthManager: {fileID: 7123947294955925260}
-  healthSprite: {fileID: 1019162511374248274, guid: 92e565072c06b3348a37e72c9c86d206,
-    type: 3}
   controllerIndex: 3
   grant: {fileID: 0}
   scientistPrefabs:
   - {fileID: 4794347758951342451, guid: b30f9d0810ec3ef4caffeff8fb770531, type: 3}
-  - {fileID: 5466835545142287576, guid: 86185352e5b6c8e4d93d1ac93eb29ec1, type: 3}
-  - {fileID: 4379326487408046681, guid: 0231939e34f3e264c82bd95037d4d9bc, type: 3}
+  - {fileID: 7123947294955925259}
+  - {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786, type: 3}
   - {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636, type: 3}
   anim: {fileID: 7123947294955925256}
   slippingVelocity: {x: 0, y: 0, z: 0}
