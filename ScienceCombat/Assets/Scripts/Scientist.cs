@@ -62,7 +62,7 @@ public class Scientist : MonoBehaviour
         if (healthManager.health <= 0) {
             Camera gameCam = Camera.main;
             MultipleTargetCamera multipleTargetCamera = gameCam.GetComponent<MultipleTargetCamera>();
-            multipleTargetCamera.RemoveDeadPlayer(gameObject.transform);
+
             if (grant)
             {
                 grant.scientist = null;

@@ -8,11 +8,12 @@ public class Ice : MonoBehaviour
     [SerializeField] private float radius;
     [SerializeField] private float duration;
     private GameObject particleEffect;
-    private GameObject slidingScientist;
+    private List<GameObject> slidingScientists;
 
     // Start is called before the first frame update
     void Start()
     {
+        slidingScientists = new List<GameObject>();
         particleEffect = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
         StartCoroutine(deleteSelf());
 
@@ -26,23 +27,21 @@ public class Ice : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<Scientist>() != null)
+        if(other.gameObject.GetComponent<Scientist>() != null && other.gameObject.tag != "Chemist")
         {
-            slidingScientist = other.gameObject;
+            //slidingScientist = other.gameObject;
             other.gameObject.GetComponent<Scientist>().slippingVelocity = other.gameObject.transform.forward * 10;
+            other.gameObject.GetComponent<Scientist>().isSliding = true;
+            slidingScientists.Add(other.gameObject);
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.GetComponent<Scientist>() != null)
+        if (other.gameObject.GetComponent<Scientist>() != null && other.gameObject.tag != "Chemist")
         {
             other.gameObject.GetComponent<Rigidbody>().velocity = other.gameObject.GetComponent<Scientist>().slippingVelocity;
-            other.gameObject.GetComponent<Scientist>().isSliding = true;
         }
-
-
-
     }
 
     private void OnTriggerExit(Collider other)
@@ -62,7 +61,16 @@ public class Ice : MonoBehaviour
     IEnumerator deleteSelf()
     {
         yield return new WaitForSeconds(duration);
-        slidingScientist.gameObject.GetComponent<Scientist>().isSliding = false;
+        //if (slidingScientist != null)
+        //{
+        //    slidingScientist.gameObject.GetComponent<Scientist>().isSliding = false;
+        //    slidingScientist = null;
+        //}
+        foreach(var slidingScientist in slidingScientists)
+        {
+            slidingScientist.gameObject.GetComponent<Scientist>().isSliding = false;
+        }
+        slidingScientists.Clear();
         Destroy(particleEffect);
         Destroy(gameObject);
     }

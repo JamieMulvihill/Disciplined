@@ -23,7 +23,7 @@ public class Spawn : MonoBehaviour
                 //scientist.DisignateController(i + 1);
                 scientist.controllerIndex = i + 1;
                 Instantiate(playerSpawner.chosenPlayers[i].Scientist);
-                
+              
             }
         }
     }
