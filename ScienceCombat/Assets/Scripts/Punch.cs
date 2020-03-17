@@ -28,8 +28,6 @@ public class Punch : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-
-
         // calling GetComponent every frame...
         Scientist scientist = other.gameObject.GetComponent<Scientist>();
         if (scientist != null)
@@ -40,6 +38,8 @@ public class Punch : MonoBehaviour
                 {
                     if (Time.time > lastTime + cooldown)
                     {
+                        Debug.Log("Hit Player");
+                        Debug.Log(other.gameObject);
                         other.gameObject.GetComponent<Health>().TakeDamage(damage);
                         lastTime = Time.time;
                     }
