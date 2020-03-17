@@ -167,7 +167,7 @@ public class RoboticArm : MonoBehaviour
             retracting = true;
         }
         var armVisualPosition = armVisual.transform.localPosition;
-        armVisualPosition.Set(armVisualPosition.x, armVisualPosition.y, armVisualPosition.y);
+        armVisualPosition.Set(armVisualPosition.x, armVisualPosition.y, armVisualPosition.z + forwardOffset);
     }
 
     public void DisignateController(int controllerIndex)
