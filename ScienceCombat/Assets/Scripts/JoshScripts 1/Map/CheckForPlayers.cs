@@ -10,7 +10,7 @@ public class CheckForPlayers : MonoBehaviour
 
     private void Start()
     {
-        QMScript = manager.GetComponent<QuarantineManager>();
+        //QMScript = manager.GetComponent<QuarantineManager>();
     }
     private void OnTriggerEnter(Collider other)
     {

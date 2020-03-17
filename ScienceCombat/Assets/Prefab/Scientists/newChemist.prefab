@@ -639,6 +639,11 @@ GameObject:
   - component: {fileID: 1373391109311234993}
   - component: {fileID: 6994353297500470279}
   - component: {fileID: 8343837253561570609}
+<<<<<<< HEAD
+=======
+  - component: {fileID: -2938093145132655356}
+  - component: {fileID: 8607992243080122673}
+>>>>>>> Phil
   m_Layer: 0
   m_Name: newChemist
   m_TagString: Chemist
@@ -891,6 +896,44 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+<<<<<<< HEAD
+=======
+--- !u!114 &-2938093145132655356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5466835545142287576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5950373702657677660, guid: 6b285e44ef3bc7d4496edd71297944d8,
+    type: 3}
+  triggerButton: RT
+  verticalVelocity: 2
+  horizontalVelocity: 4
+  upOffset: 2
+  forwardOffset: 2
+  fireRate: 0.25
+  momentumScalar: 1
+--- !u!114 &8607992243080122673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5466835545142287576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1505ef85240824c8cc96c114834c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: B
+  icePrefab: {fileID: 0}
+>>>>>>> Phil
 --- !u!1 &5469532899335628989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1442,7 @@ PrefabInstance:
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
