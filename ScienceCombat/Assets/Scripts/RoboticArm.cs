@@ -73,7 +73,7 @@ public class RoboticArm : MonoBehaviour
         }
         else if (tag != "Engineer" && tag != "Biologist" && tag != "Physicist" && tag != "Chemist")
         {
-            if (tag != "Fireball" && tag != "Acid" && tag != "Virus" && tag != "Vines" && tag != "PunchHitbox" && tag != "Quarentine")
+            if (tag != "Fireball" && tag != "Acid" && tag != "Virus" && tag != "Vines" && tag != "Punch Hitbox" && tag != "Quarentine")
             {
                 if (!retracting)
                 {
