@@ -9,6 +9,8 @@ public class Selection : MonoBehaviour
     [SerializeField] private GameObject characterSelector;
     [SerializeField] private Image characterSprite;
     [SerializeField] private PlayerContainer playerContainer;
+    [SerializeField] private GameObject MenuChar;
+    public GameObject CharPosition;
     private int indexPosition = 0;
     private CharacterSelect selector;
     float inputTime = 0.0f;
@@ -16,20 +18,20 @@ public class Selection : MonoBehaviour
     bool selectedPlayer = false;
     public int playerNum;
 
-    public GameObject Mesh;
-
     // Start is called before the first frame update
     void Start()
     {
 
         selector = characterSelector.GetComponent<CharacterSelect>();
-        characterSprite.sprite = selector.playabeCharacters[indexPosition].ScientistSprite; 
-        //Mesh = Instantiate(selector.playabeCharacters[indexPosition].Scientist);
-        //Mesh.transform.localScale = new Vector3(100,100,100);
-        Mesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-        Mesh.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
+        characterSprite.sprite = selector.playabeCharacters[indexPosition].ScientistSprite;
+        //MenuChar = Instantiate(selector.playabeCharacters[indexPosition].Scientist);
+        //MenuChar.transform.localScale = new Vector3(100,100,100);
+        //MenuChar.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].MenuCharacter.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+        //MenuChar.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].MenuCharacter.GetComponent<SkinnedMeshRenderer>().bones;
 
-
+        MenuChar = Instantiate(selector.playabeCharacters[indexPosition].MenuCharacter);
+        MenuChar.transform.position = CharPosition.transform.position;
+        MenuChar.transform.localScale = new Vector3(500, 500, 500);
     }
 
     // Update is called once per frame
@@ -51,11 +53,17 @@ public class Selection : MonoBehaviour
                 inputTime = Time.time;
                 if (inputTime - lastInput > .3)
                 {
+
                     if (indexPosition < selector.playabeCharacters.Count - 1)
                     {
                         indexPosition++;
                         lastInput = Time.time;
 
+
+                        Destroy(MenuChar);
+                        MenuChar = Instantiate(selector.playabeCharacters[indexPosition].MenuCharacter);
+                        MenuChar.transform.position = CharPosition.transform.position;
+                        MenuChar.transform.localScale = new Vector3(500, 500, 500);
 
                     }
 
@@ -63,6 +71,12 @@ public class Selection : MonoBehaviour
                     {
                         indexPosition = 0;
                         lastInput = Time.time;
+
+
+                        Destroy(MenuChar);
+                        MenuChar = Instantiate(selector.playabeCharacters[indexPosition].MenuCharacter);
+                        MenuChar.transform.position = CharPosition.transform.position;
+                        MenuChar.transform.localScale = new Vector3(500, 500, 500);
                     }
                 }
             }
@@ -73,16 +87,28 @@ public class Selection : MonoBehaviour
                 inputTime = Time.time;
                 if (inputTime - lastInput > .3)
                 {
+                    
                     if (indexPosition > 0)
                     {
                         indexPosition--;
                         lastInput = Time.time;
+
+                        Destroy(MenuChar);
+                        MenuChar = Instantiate(selector.playabeCharacters[indexPosition].MenuCharacter);
+                        MenuChar.transform.position = CharPosition.transform.position;
+                        MenuChar.transform.localScale = new Vector3(500, 500, 500);
                     }
 
                     else
                     {
                         indexPosition = selector.playabeCharacters.Count - 1;
                         lastInput = Time.time;
+
+
+                        Destroy(MenuChar);
+                        MenuChar = Instantiate(selector.playabeCharacters[indexPosition].MenuCharacter);
+                        MenuChar.transform.position = CharPosition.transform.position;
+                        MenuChar.transform.localScale = new Vector3(500, 500, 500);
                     }
 
                 }
@@ -97,8 +123,8 @@ public class Selection : MonoBehaviour
         {
             //Mesh = Instantiate(selector.playabeCharacters[indexPosition].Scientist);
             //Mesh.transform.localScale = new Vector3(100, 100, 100);
-            Mesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-            Mesh.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
+            //Mesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+            //Mesh.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
 
             if (Input.GetKeyDown($"joystick {playerNum} button 0"))
             {

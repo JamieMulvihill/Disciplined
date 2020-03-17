@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scientist: {fileID: 4379326487408046681, guid: 0231939e34f3e264c82bd95037d4d9bc,
     type: 3}
+  MenuCharacter: {fileID: 4379326487408046681, guid: 451fb8a0febf17e40b47b6637b9199f7,
+    type: 3}
   ScientistSprite: {fileID: 21300000, guid: ce6b3c4473ba331429c15d173fbdac9b, type: 3}

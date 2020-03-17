@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Character : ScriptableObject
 {
     public GameObject Scientist;
+    public GameObject MenuCharacter;
     public Sprite ScientistSprite;
 
 }
