@@ -22,6 +22,8 @@ TagManager:
   - Health Bar
   - Projectile
   - Spawner
+  - Counter
+  - Invisible Wall
   layers:
   - Default
   - TransparentFX

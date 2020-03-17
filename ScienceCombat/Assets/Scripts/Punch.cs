@@ -28,8 +28,6 @@ public class Punch : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-
-
         // calling GetComponent every frame...
         Scientist scientist = other.gameObject.GetComponent<Scientist>();
         if (scientist != null)

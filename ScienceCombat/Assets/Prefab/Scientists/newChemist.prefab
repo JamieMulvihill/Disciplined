@@ -672,6 +672,7 @@ GameObject:
   - component: {fileID: 6994353297500470279}
   - component: {fileID: 8343837253561570609}
   - component: {fileID: -2938093145132655356}
+  - component: {fileID: 8607992243080122673}
   m_Layer: 0
   m_Name: newChemist
   m_TagString: Untagged
@@ -925,6 +926,20 @@ MonoBehaviour:
   forwardOffset: 2
   fireRate: 0.25
   momentumScalar: 1
+--- !u!114 &8607992243080122673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5466835545142287576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1505ef85240824c8cc96c114834c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerButton: B
+  icePrefab: {fileID: 0}
 --- !u!1 &5469532899335628989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,7 +1731,7 @@ PrefabInstance:
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}

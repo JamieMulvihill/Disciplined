@@ -26,7 +26,7 @@ public class Sucker : MonoBehaviour
 
     void Start()
     {
-        QMScript = manager.GetComponent<QuarantineManager>();
+        //QMScript = manager.GetComponent<QuarantineManager>();
         offset = new Vector3(0, 11, 0);
         speed = 4;
         huntPlayers = false;
@@ -36,14 +36,14 @@ public class Sucker : MonoBehaviour
 
     void Update()
     {
-        if (QMScript.playersInQueue == true)
-        {
-            target = QMScript.playersToKill.Peek();
-        }
-        else
-        {
-            target = null;
-        }
+        //if (QMScript.playersInQueue == true)
+        //{
+        //    target = QMScript.playersToKill.Peek();
+        //}
+        //else
+        //{
+        //    target = null;
+        //}
     }
 
     private void LateUpdate()
@@ -92,7 +92,7 @@ public class Sucker : MonoBehaviour
         {
             targetPos = homebase.transform.position;
         }
-        sucker.transform.position = Vector3.MoveTowards(sucker.transform.position, targetPos, speed * Time.deltaTime);
+        //sucker.transform.position = Vector3.MoveTowards(sucker.transform.position, targetPos, speed * Time.deltaTime);
     }
 }
 
