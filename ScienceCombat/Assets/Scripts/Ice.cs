@@ -8,7 +8,6 @@ public class Ice : MonoBehaviour
     [SerializeField] private float radius;
     [SerializeField] private float duration;
     private GameObject particleEffect;
-    private Vector3 initialVelocity;
     private GameObject slidingScientist;
 
     // Start is called before the first frame update
@@ -30,7 +29,6 @@ public class Ice : MonoBehaviour
         if(other.gameObject.GetComponent<Scientist>() != null)
         {
             slidingScientist = other.gameObject;
-            //initialVelocity = other.gameObject.transform.forward * 10;
             other.gameObject.GetComponent<Scientist>().slippingVelocity = other.gameObject.transform.forward * 10;
         }
     }
