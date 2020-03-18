@@ -271,7 +271,7 @@ MonoBehaviour:
   hasGrant: 0
   grantEarnings: 0
   healthManager: {fileID: 5506943396910897588}
-  controllerIndex: 2
+  controllerIndex: 1
   grant: {fileID: 0}
   scientistPrefabs:
   - {fileID: 4794347758951342451, guid: b30f9d0810ec3ef4caffeff8fb770531, type: 3}
@@ -741,7 +741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7555266810343876399
 Transform:
   m_ObjectHideFlags: 0
