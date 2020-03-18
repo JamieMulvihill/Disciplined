@@ -260,7 +260,7 @@ MonoBehaviour:
   hasGrant: 0
   grantEarnings: 0
   healthManager: {fileID: 7123947294955925260}
-  controllerIndex: 1
+  controllerIndex: 0
   grant: {fileID: 0}
   scientistPrefabs:
   - {fileID: 4794347758951342451, guid: b30f9d0810ec3ef4caffeff8fb770531, type: 3}

@@ -3741,11 +3741,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: newBiologist
       objectReference: {fileID: 0}
-    - target: {fileID: 4794347758951342451, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8418257097466762080, guid: b30f9d0810ec3ef4caffeff8fb770531,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3799,60 +3794,6 @@ PrefabInstance:
     - target: {fileID: 8418257097466762080, guid: b30f9d0810ec3ef4caffeff8fb770531,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8418257097466762080, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8418257097466762080, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8418257097466762080, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5447640971771108537, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5447640971771108537, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5525659981725527110, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 4794347758951342451, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-    - target: {fileID: 5525659981725527110, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 7123947294955925259, guid: 0d05dc676c1169b40bad34d7e5b27723,
-        type: 3}
-    - target: {fileID: 5525659981725527110, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786,
-        type: 3}
-    - target: {fileID: 5525659981725527110, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-    - target: {fileID: 7791358753911799770, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -28833,35 +28774,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5150596933539595646, guid: 9a9ca21ef4a2e6d459889469a23b8786,
-        type: 3}
-      propertyPath: controllerIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150596933539595646, guid: 9a9ca21ef4a2e6d459889469a23b8786,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 4794347758951342451, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-    - target: {fileID: 5150596933539595646, guid: 9a9ca21ef4a2e6d459889469a23b8786,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 7123947294955925259, guid: 0d05dc676c1169b40bad34d7e5b27723,
-        type: 3}
-    - target: {fileID: 5150596933539595646, guid: 9a9ca21ef4a2e6d459889469a23b8786,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786,
-        type: 3}
-    - target: {fileID: 5150596933539595646, guid: 9a9ca21ef4a2e6d459889469a23b8786,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a9ca21ef4a2e6d459889469a23b8786, type: 3}
 --- !u!1001 &1851946403
@@ -28875,11 +28787,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: newPhysicist
-      objectReference: {fileID: 0}
-    - target: {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4233138299716148889, guid: dbad9d36d84861043aeff669db1ec636,
         type: 3}
@@ -28934,70 +28841,6 @@ PrefabInstance:
     - target: {fileID: 4233138299716148889, guid: dbad9d36d84861043aeff669db1ec636,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4233138299716148889, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4233138299716148889, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4233138299716148889, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5067610688570781035, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5067610688570781035, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7172011722149938104, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 4794347758951342451, guid: b30f9d0810ec3ef4caffeff8fb770531,
-        type: 3}
-    - target: {fileID: 7172011722149938104, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 7123947294955925259, guid: 0d05dc676c1169b40bad34d7e5b27723,
-        type: 3}
-    - target: {fileID: 7172011722149938104, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786,
-        type: 3}
-    - target: {fileID: 7172011722149938104, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-    - target: {fileID: 3499942534992194811, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3499942534992194811, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3910188980674273677, guid: dbad9d36d84861043aeff669db1ec636,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -32787,11 +32630,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 495885357321258814, guid: e52ff58aece9c054fb6cf246023ca4e4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.001000029
-      objectReference: {fileID: 0}
     - target: {fileID: 3652334771259629105, guid: e52ff58aece9c054fb6cf246023ca4e4,
         type: 3}
       propertyPath: m_Mesh
@@ -32864,28 +32702,6 @@ PrefabInstance:
     - target: {fileID: 7123947294955925265, guid: 0d05dc676c1169b40bad34d7e5b27723,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123947294955925257, guid: 0d05dc676c1169b40bad34d7e5b27723,
-        type: 3}
-      propertyPath: controllerIndex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123947294955925257, guid: 0d05dc676c1169b40bad34d7e5b27723,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 7123947294955925259, guid: 0d05dc676c1169b40bad34d7e5b27723,
-        type: 3}
-    - target: {fileID: 7123947294955925257, guid: 0d05dc676c1169b40bad34d7e5b27723,
-        type: 3}
-      propertyPath: scientistPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786,
-        type: 3}
-    - target: {fileID: 7123947294955925262, guid: 0d05dc676c1169b40bad34d7e5b27723,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
