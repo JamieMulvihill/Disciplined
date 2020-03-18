@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aece8cf0ba434f4ca0449aed8f00e3a, type: 3}
   m_Name: Engineer
   m_EditorClassIdentifier: 
-  Scientist: {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786,
+  Scientist: {fileID: 4379326487408046681, guid: 0231939e34f3e264c82bd95037d4d9bc,
     type: 3}
   MenuCharacter: {fileID: 4379326487408046681, guid: 451fb8a0febf17e40b47b6637b9199f7,
     type: 3}

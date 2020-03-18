@@ -67,23 +67,16 @@ public class RoboticArm : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         string tag = other.gameObject.tag;
-        if (!usingArm)
+        if (tag != "Engineer" && tag != "Biologist" && tag != "Physicist" && tag != "Chemist")
         {
-            return;
-        }
-        else if (tag != "Engineer" && tag != "Biologist" && tag != "Physicist" && tag != "Chemist")
-        {
-            if (tag != "Fireball" && tag != "Acid" && tag != "Virus" && tag != "Vines" && tag != "Punch Hitbox" && tag != "Quarentine")
+            if (tag != "Fireball" && tag != "Acid" && tag != "Virus" && tag != "Vines" && tag != "PunchHitbox")
             {
-                if (!retracting)
-                {
-                    retracting = true;
-                    Debug.Log("Retracted robotic arm because of: " + other.gameObject.name);
-                }
+                retracting = true;
             }
             return;
         }
-        else if (other.gameObject.GetComponent<Scientist>().isCaptured == false)
+        // I added UsingArm to this check because it was colliding with players and capturing them even though the Arm wasnt launched??
+        if (other.gameObject.GetComponent<Scientist>().isCaptured == false && usingArm)
         {
             hitGuy = other.gameObject;
             hitGuy.GetComponent<Scientist>().isCaptured = true;
@@ -167,7 +160,7 @@ public class RoboticArm : MonoBehaviour
             retracting = true;
         }
         var armVisualPosition = armVisual.transform.localPosition;
-        armVisualPosition.Set(armVisualPosition.x, armVisualPosition.y, armVisualPosition.z + forwardOffset);
+        armVisualPosition.Set(armVisualPosition.x, armVisualPosition.y, armVisualPosition.y);
     }
 
     public void DisignateController(int controllerIndex)

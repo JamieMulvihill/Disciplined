@@ -37,11 +37,12 @@ public class Grant : MonoBehaviour
             reachedDestination = true;
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
+
         if (!isPossessed)
         {
-            scientist = other.gameObject.GetComponent<Scientist>();
+            scientist = collision.gameObject.GetComponent<Scientist>();
             if (scientist)
             {
                 isPossessed = true;
@@ -50,20 +51,6 @@ public class Grant : MonoBehaviour
             }
         }
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-
-    //    if (!isPossessed)
-    //    {
-    //        scientist = collision.gameObject.GetComponent<Scientist>();
-    //        if (scientist)
-    //        {
-    //            isPossessed = true;
-    //            scientist.grant = this;
-    //            Debug.Log(scientist.gameObject.tag);
-    //        }
-    //    }
-    //}
     private void MaxedOutGrant() {
         if (grantValue <= 0) {
             scientist.hasGrant = false;

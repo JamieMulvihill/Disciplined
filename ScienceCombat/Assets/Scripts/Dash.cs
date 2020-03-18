@@ -23,10 +23,10 @@ public class Dash : MonoBehaviour{
            RaycastHit hit;
            Debug.DrawRay(transform.position, transform.forward * 10, Color.green, 3f);
             Vector3 RayPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-            if (Physics.Raycast(RayPos, transform.forward, out hit, 10, ~(1 << 8)) && hit.collider != null/* && hit.collider.gameObject.tag != "Quarentine" && hit.collider.gameObject.tag != "Punch Hitbox"*/)
-            {
+            if (Physics.Raycast(RayPos, transform.forward, out hit, 10, ~(1 << 8)) && hit.collider != null && hit.transform.gameObject.tag != "Quarentine")
+           {
                transform.position = new Vector3(hit.point.x - (transform.forward.x), 0, hit.point.z - (transform.forward.z));
-            }
+           }
            else
            {
                transform.position += transform.forward * 10;

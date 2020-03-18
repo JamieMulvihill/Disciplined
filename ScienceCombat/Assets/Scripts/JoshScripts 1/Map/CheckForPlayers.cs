@@ -14,11 +14,11 @@ public class CheckForPlayers : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        //if(other.gameObject.tag == "Biologist" || other.gameObject.tag == "Chemist" || other.gameObject.tag == "Engineer" || other.gameObject.tag == "Physicist")
-        //{
-        //    QMScript.playersToKill.Enqueue(other.gameObject);
-        //    QMScript.playersInQueue = true;
-        //    print("Player Queued");
-        //}
+        if(other.gameObject.tag == "Biologist" || other.gameObject.tag == "Chemist" || other.gameObject.tag == "Engineer" || other.gameObject.tag == "Physicist")
+        {
+            QMScript.playersToKill.Enqueue(other.gameObject);
+            QMScript.playersInQueue = true;
+            print("Player Queued");
+        }
     }
 }

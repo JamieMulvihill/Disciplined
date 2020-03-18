@@ -790,8 +790,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.267044, z: 1}
-  m_Center: {x: 0, y: 1.1810327, z: 0}
+  m_Size: {x: 1, y: 1.0952551, z: 1}
+  m_Center: {x: 0, y: 0.6023724, z: 0}
 --- !u!54 &5447640971771108537
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -803,8 +803,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0.18
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
@@ -846,19 +846,18 @@ MonoBehaviour:
   playerHOR: Horizontal
   PlayerVer: Vertical
   isCaptured: 0
-  isSliding: 0
   hasGrant: 0
   grantEarnings: 0
   healthManager: {fileID: 5670719291744254386}
-  controllerIndex: 3
+  healthSprite: {fileID: 4047602468309476367}
+  controllerIndex: 2
   grant: {fileID: 0}
   scientistPrefabs:
-  - {fileID: 4794347758951342451}
-  - {fileID: 7123947294955925259, guid: 0d05dc676c1169b40bad34d7e5b27723, type: 3}
-  - {fileID: 6542603972521189979, guid: 9a9ca21ef4a2e6d459889469a23b8786, type: 3}
-  - {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636, type: 3}
+  - {fileID: 0}
+  - {fileID: 5979943166543833243, guid: 26bba7dd4b0ee9b4f8dcac6ebbe0b42e, type: 3}
+  - {fileID: 1830673993139359091, guid: e56b0a08bb66c1c46aa1abeb274a7369, type: 3}
+  - {fileID: 2466507813489192644, guid: 52465b71ad2580b4097cba71226a9a1e, type: 3}
   anim: {fileID: 1898737816137793050}
-  slippingVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &5130345911107156795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1495,7 +1494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7572055465611756010
 Transform:
   m_ObjectHideFlags: 0

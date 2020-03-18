@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerUI : MonoBehaviour
 {
     private GameObject manager;
-    public GameObject connectedPlayer;
     [SerializeField] private GameObject healthUI;
     [SerializeField] private GameObject cd1UI;
     [SerializeField] private GameObject cd2UI;
@@ -15,9 +14,8 @@ public class PlayerUI : MonoBehaviour
     private Image healthbar;
     private Image cd1;
     private Image cd2;
-    private Health health;
 
-    private float healthValue;
+    public float health;
 
     private float cooldownSpeed;
 
@@ -30,20 +28,19 @@ public class PlayerUI : MonoBehaviour
         UIMan = manager.GetComponent<UIManager>();
         cd1 = cd1UI.GetComponent<Image>();
         cd2 = cd2UI.GetComponent<Image>();
-        health = connectedPlayer.GetComponent<Health>();
         cooldownSpeed = 5;
         cd1ready = true;
         cd2ready = true;
-        healthValue = 1;
+        health = 1;
     }
 
 
     void Update()
     {
         //getHealth();
-        setHealth();
+        //setHealth();
 
-        if (cd1ready == false)
+        if(cd1ready == false)
         {
             cd1.fillAmount += 1 / cooldownSpeed * Time.deltaTime;
 
@@ -84,15 +81,14 @@ public class PlayerUI : MonoBehaviour
         }
     }
 
-    //void getHealth()
-    //{
-    //    print(health.health);
-    //    healthValue = health.health;
-    //}
+    void getHealth()
+    {
+        // health = assigned scientists health;
+    }
 
     void setHealth()
     {
-        healthbar.fillAmount = health.health / 100;
+        healthbar.fillAmount = health;
     }
 }
 

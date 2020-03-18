@@ -12,7 +12,7 @@ ScriptedImporter:
   rootGameObjectName: 
   streamSettings:
     normals: 1
-    tangents: 0
+    tangents: 1
     cameraAspectRatio: 2
     importVisibility: 1
     scaleFactor: 0.01
