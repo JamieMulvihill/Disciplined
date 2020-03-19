@@ -11,7 +11,7 @@ public class Bomb : Projectile
 
     protected override void AreaOfEffect(GameObject hitPlayer)
     {
-        if (hitPlayer.tag != "Virus" && hitPlayer.tag != "Vines" && hitPlayer.tag != "Acid" && hitPlayer.tag != "Fireball" && hitPlayer.tag != "Punch Hitbox")
+        if (hitPlayer.tag != "Virus" && hitPlayer.tag != "Vines" && hitPlayer.tag != "Acid" && hitPlayer.tag != "Fireball" && hitPlayer.tag != "Punch Hitbox" && hitPlayer.tag != "Quarentine")
         {
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Explosion explosionScript = explosion.GetComponent<Explosion>();

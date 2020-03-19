@@ -11,6 +11,20 @@ TagManager:
   - Hand
   - Chemist
   - Biologist
+  - Spawner
+  - Quarentine
+  - Environment
+  - Manager
+  - Acid
+  - Smoke
+  - Ground
+  - Projectile
+  - Vines
+  - Virus
+  - Seeds
+  - Fireball
+  - Invisible Wall
+  - InvisibleWalls
   layers:
   - Default
   - TransparentFX
@@ -20,8 +34,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Punch Hitbox
+  - ForRenderTexture
   - 
   - 
   - 
