@@ -63,8 +63,161 @@ Transform:
   m_Father: {fileID: 4137759698846834456}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:ScienceCombat/Assets/Prefab/Scientists/newEngineer.prefab
 --- !u!1 &1181660939083161854
 GameObject:
+=======
+--- !u!137 &7123947294955925266
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123947294955925259}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d7920014ec521b546910e9eee1dda811, type: 2}
+  - {fileID: 2100000, guid: d7920014ec521b546910e9eee1dda811, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 6787918424279046723, guid: 86a8903486ae6b74289af100ba43dbdd, type: 3}
+  m_Bones:
+  - {fileID: 7123947295443428921}
+  - {fileID: 7123947296392233993}
+  - {fileID: 7123947295211502835}
+  - {fileID: 7123947294963637049}
+  - {fileID: 7123947295797298426}
+  - {fileID: 7123947295142502514}
+  - {fileID: 7123947296831398912}
+  - {fileID: 7123947296055640545}
+  - {fileID: 7123947295852916082}
+  - {fileID: 7123947296418175017}
+  - {fileID: 7123947295427274381}
+  - {fileID: 7123947295501989395}
+  - {fileID: 7123947295819495166}
+  - {fileID: 7123947296239858576}
+  - {fileID: 7123947295670805598}
+  - {fileID: 7123947295227876051}
+  - {fileID: 7123947295188374061}
+  - {fileID: 7123947296592183844}
+  - {fileID: 7123947295252249615}
+  - {fileID: 7123947296055122488}
+  - {fileID: 7123947295233570451}
+  - {fileID: 7123947295516314750}
+  - {fileID: 7123947295242338333}
+  - {fileID: 7123947296555768967}
+  - {fileID: 7123947295088053532}
+  - {fileID: 7123947295634242936}
+  - {fileID: 7123947296706739578}
+  - {fileID: 7123947295883468437}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 7123947296592183844}
+  m_AABB:
+    m_Center: {x: 0.0010685623, y: 0.39561898, z: -0.010832787}
+    m_Extent: {x: 0.97858274, y: 1.1252782, z: 0.52584785}
+  m_DirtyAABB: 0
+--- !u!114 &7123947294955925267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123947294955925259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e376c38249b694ba404f20cf282b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  breakFree: 30
+--- !u!114 &7123947294955925260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123947294955925259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2920560339513c047a873b638ee7b6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  red: {fileID: 0}
+  redValue: 0
+  healthSegment: 0
+  greenGuiValue: 0
+  isPoisioned: 0
+  lastAcidDamageTime: 0
+--- !u!114 &7123947294955925261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123947294955925259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 113480648811193456, guid: 302c85eb88d6d19419b254a49fa02d81,
+    type: 3}
+  triggerButton: RT
+  verticalVelocity: 4
+  horizontalVelocity: 7
+  upOffset: 2.1
+  forwardOffset: 2
+  fireRate: 0.25
+  momentumScalar: 1
+--- !u!65 &7123947294955925263
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123947294955925259}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.0592752, z: 1}
+  m_Center: {x: 0, y: 1.1100471, z: 0}
+--- !u!95 &7123947294955925256
+Animator:
+  serializedVersion: 3
+>>>>>>> JamieBranch:ScienceCombat/Assets/Prefab/Scientists/newChemist 1.prefab
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
