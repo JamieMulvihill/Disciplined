@@ -202,7 +202,7 @@ MonoBehaviour:
   triggerButton: RT
   verticalVelocity: 4
   horizontalVelocity: 7
-  upOffset: 2.1
+  upOffset: 2
   forwardOffset: 2
   fireRate: 0.25
   momentumScalar: 1
