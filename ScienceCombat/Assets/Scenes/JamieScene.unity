@@ -7177,6 +7177,7 @@ Transform:
   m_PrefabInstance: {fileID: 1267442059}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1 &533675317
 GameObject:
@@ -7208,6 +7209,8 @@ Transform:
   m_Father: {fileID: 825040612}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> JamieBranch
+=======
 >>>>>>> JamieBranch
 --- !u!1001 &534584743
 PrefabInstance:
