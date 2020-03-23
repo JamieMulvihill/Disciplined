@@ -2017,6 +2017,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8462ad378b581194192b3d0e3573de94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heatPerUse: 100
+  cooloffPerSecond: 25
+  chillThreshold: 0
   hand: {fileID: 768185491091456855}
   forwardOffset: 2
   playerAlt: B
@@ -2037,6 +2040,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a43cc487e770f94ca4d400f7e4b836f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heatPerUse: 5
+  cooloffPerSecond: 10
+  chillThreshold: 66
   projectilePrefab: {fileID: 22400591502661274, guid: f8a3d263f4980e049be218ab9cd412c5,
     type: 3}
   triggerButton: RT
@@ -2047,7 +2053,7 @@ MonoBehaviour:
   fireRate: 0.1
   momentumScalar: 1
   flameVisual: {fileID: 7562411151027951387}
-  updateDelay: 0.25
+  updateDelay: 0.0025
 --- !u!114 &5150596933539595646
 MonoBehaviour:
   m_ObjectHideFlags: 0

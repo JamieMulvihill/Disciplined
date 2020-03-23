@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class RoboticArm : MonoBehaviour
 {
+    [Header("Overheat values")]
+    public Overheat overheat;
+    [SerializeField] protected float heatPerUse = 0f;
+    [SerializeField] protected float cooloffPerSecond = 0f;
+    [SerializeField] protected float chillThreshold = 100f;
+    [Header("Other Settings")]
     Animator armAnimation;
     [SerializeField] GameObject hand;               // the object which collides with a player which is to be grabbed
     [SerializeField] private float forwardOffset;
@@ -95,11 +101,14 @@ public class RoboticArm : MonoBehaviour
         playerAlt += GetComponent<Scientist>().controllerIndex.ToString();
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
         originalSpeed = GetComponent<Scientist>().speed;
+        overheat = new Overheat();
     }
 
     // Update is called once per frame
     void Update()
     {
+        overheat.chillThreshold = chillThreshold;
+        overheat.Chill(cooloffPerSecond);
         if (GetComponent<Scientist>().isCaptured && usingArm)
         {
             retracting = false;
@@ -123,13 +132,14 @@ public class RoboticArm : MonoBehaviour
             }
             retracting = false;
         }
-        if (Input.GetButtonDown(playerAlt) && !onCooldown && GetComponent<Scientist>().isCaptured == false)
+        if (Input.GetButtonDown(playerAlt) && !onCooldown && GetComponent<Scientist>().isCaptured == false && overheat.GetOverheated() == false)
         {
             usingArm = true;
             armReach = GetArmSpace();
             GetComponent<Scientist>().speed = 0f;
             GetComponent<Scientist>().rotationSpeed = 0f;
             hand.GetComponent<Collider>().enabled = true;
+            overheat.Broil(heatPerUse);
         }
         if (usingArm && hitGuy == null)
         {

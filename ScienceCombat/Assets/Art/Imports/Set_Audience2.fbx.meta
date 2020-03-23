@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 20ab98de88b8baa409b338837041857b
+guid: 7c53ed1be50fafd4b89082800f341c32
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Audience_Planks
+    second: {fileID: 2100000, guid: 1e4409b4dc7a6d74096ac2d12fec561b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Audience_Walls
+    second: {fileID: 2100000, guid: 8d0ebb9a5e2ff5443b7ce87f15672bfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barrier
+    second: {fileID: 2100000, guid: 85b8f989e08b7084bacd7ea772fbc773, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -12,8 +27,14 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: TubeTrim
-    second: {fileID: 2100000, guid: 0fb93fe230be1304d9a47958c468a5b9, type: 2}
+      name: Seats
+    second: {fileID: 2100000, guid: ae69f09c83483584ba7039e7c13a7686, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShinyMetal_Mat
+    second: {fileID: -2546039075986145507, guid: b9b0968c7aac0a447be67b1b667d96d0,
+      type: 3}
   materials:
     importMaterials: 1
     materialName: 0

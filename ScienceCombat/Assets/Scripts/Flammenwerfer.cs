@@ -20,7 +20,7 @@ public class Flammenwerfer : ProjectileLauncher
         while (gameObject)
         {
             yield return new WaitForSeconds(updateDelay);
-            if (Mathf.Abs(Input.GetAxis(triggerButton)) > 0.01f && GetComponent<Scientist>().isCaptured == false)
+            if (Mathf.Abs(Input.GetAxis(triggerButton)) > 0.01f && GetComponent<Scientist>().isCaptured == false && overheat.GetOverheated() == false)
             {
                 flameVisual.SetActive(true);
             }
@@ -34,5 +34,6 @@ public class Flammenwerfer : ProjectileLauncher
     void Awake()
     {
         StartCoroutine(FlameTimer());
+        overheat = new Overheat();
     }
 }

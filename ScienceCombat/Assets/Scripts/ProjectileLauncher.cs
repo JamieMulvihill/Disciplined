@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class ProjectileLauncher : MonoBehaviour
 {
+    [Header("Overheat values")]
+    public Overheat overheat;
+    [SerializeField] protected float heatPerUse = 0f;
+    [SerializeField] protected float cooloffPerSecond = 0f;
+    [SerializeField] protected float chillThreshold = 100f;
+    [Header("Other Settings")]
     [SerializeField] protected Projectile projectilePrefab;
     public string triggerButton;
     protected Projectile projectile;
@@ -14,10 +20,10 @@ public class ProjectileLauncher : MonoBehaviour
     [SerializeField] protected float fireRate = 1f;
     [SerializeField] protected float momentumScalar = 0.0f;       // carries velocity from player to projectile; 1.0 = full retention
     private float lastShotTime = 0.0f;
-
     // Start is called before the first frame update
     void Start()
     {
+        overheat = new Overheat();
         triggerButton += GetComponent<Scientist>().controllerIndex.ToString();
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
     }
@@ -25,6 +31,12 @@ public class ProjectileLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        overheat.chillThreshold = chillThreshold; // allows value to be adjusted in editor during play
+        overheat.Chill(Time.deltaTime * cooloffPerSecond);
+        if (overheat.GetOverheated())
+        {
+            return;
+        }
         if(!gameObject.GetComponent<Scientist>().isCaptured)
         { 
             // If the trigger is pressed.
@@ -49,6 +61,7 @@ public class ProjectileLauncher : MonoBehaviour
 
                     // Keep track of the last time a projectile was launched.
                     lastShotTime = Time.time;
+                    overheat.Broil(heatPerUse);
                 }
             }
         }
