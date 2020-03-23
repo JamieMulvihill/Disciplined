@@ -30,7 +30,7 @@ public class Sucker : MonoBehaviour
         offset = new Vector3(0, 11, 0);
         speed = 4;
         huntPlayers = false;
-        targetPos = homebase.transform.position;
+        //targetPos = homebase.transform.position;
     }
 
 

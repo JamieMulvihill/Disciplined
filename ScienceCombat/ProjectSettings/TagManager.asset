@@ -25,6 +25,9 @@ TagManager:
   - Fireball
   - Invisible Wall
   - InvisibleWalls
+  - Gloves
+  - Goggles
+  - Lab Coat
   layers:
   - Default
   - TransparentFX

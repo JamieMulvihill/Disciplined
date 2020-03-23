@@ -272,6 +272,14 @@ MonoBehaviour:
   - {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636, type: 3}
   anim: {fileID: 7123947294955925256}
   slippingVelocity: {x: 0, y: 0, z: 0}
+  pickupButton: 
+  pickedUP: 0
+  glovesPrefab: {fileID: 4711749991075689582, guid: 9dcc7a74f29d606418e9c5d1b329bc21,
+    type: 3}
+  gogglesPrefab: {fileID: 4711749991075689582, guid: 7f938076747ee6d43bcf12c7c6820afc,
+    type: 3}
+  labCoatPrefab: {fileID: 4711749991075689582, guid: 063ee3f13dd340845bb8774ef5d57977,
+    type: 3}
 --- !u!54 &7123947294955925258
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1384,11 +1392,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7123947294955925265}
     m_Modifications:
-    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
-        type: 3}
-      propertyPath: m_Name
-      value: Punch Hitbox
-      objectReference: {fileID: 0}
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1443,6 +1446,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
+        type: 3}
+      propertyPath: m_Name
+      value: Punch Hitbox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75924fb149fe82348947c7b1da35bbb1, type: 3}

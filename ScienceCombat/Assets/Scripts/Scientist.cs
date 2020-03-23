@@ -24,6 +24,14 @@ public class Scientist : MonoBehaviour
 
     private GameObject manager;
 
+    // Pickups---------------------------------------
+    public string pickupButton;
+    [SerializeField] private GameObject glovesPrefab;
+    [SerializeField] private GameObject gogglesPrefab;
+    [SerializeField] private GameObject labCoatPrefab;
+    GameObject item;
+    // ----------------------------------------------
+
     void Start()
     {
         playerHOR += GetComponent<Scientist>().controllerIndex.ToString();
@@ -32,7 +40,9 @@ public class Scientist : MonoBehaviour
        // healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
         Camera.main.GetComponent<MultipleTargetCamera>().AddPlayer(gameObject.transform);
         scoreboard = FindObjectOfType<Scoreboard>();
-        grantEarnings = scoreboard.scores[gameObject.tag];
+        //grantEarnings = scoreboard.scores[gameObject.tag];
+
+        pickupButton += GetComponent<Scientist>().controllerIndex.ToString();
     }
 
     void FixedUpdate()
@@ -92,6 +102,14 @@ public class Scientist : MonoBehaviour
 
             Destroy(gameObject);
         }
+
+        // Pickups---------------------------------------
+        if (item != null)
+        {
+            Vector3 relativeSpawnPosition = new Vector3(0, 2, 0);
+            item.transform.SetPositionAndRotation(transform.position + relativeSpawnPosition, transform.rotation);
+        }
+        // ----------------------------------------------
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -108,6 +126,36 @@ public class Scientist : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        // Pickups---------------------------------------
+        if(other.tag == "Gloves" ||
+           other.tag == "Goggles" ||
+           other.tag == "Lab Coat")
+        {
+            if(other.gameObject.GetComponent<PipeItems>().hasSpawned)
+            {
+                if (Mathf.Abs(Input.GetAxis(pickupButton)) > 0.01f)
+                {
+                    Destroy(other.gameObject);
+                    Vector3 relativeSpawnPosition = new Vector3(0, 2, 0);
+                    item = Instantiate(glovesPrefab, transform.position + relativeSpawnPosition, Quaternion.identity);
+                }
+            }
+        }
+        // ------------------------------------------------
+    }
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.tag == "Gloves" ||
+    //       other.tag == "Goggles" ||
+    //       other.tag == "Lab Coat")
+    //    {
+           
+    //        pickedUP = false;
+    //    }
+    //}
 
     //public void DisignateController(int controllerIndex)
     //{

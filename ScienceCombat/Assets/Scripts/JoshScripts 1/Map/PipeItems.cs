@@ -37,6 +37,9 @@ public class PipeItems : MonoBehaviour
     private Color silver;
     private Color bronze;
 
+    // Phil---------------------------------------------------
+    public bool hasSpawned = false;
+    // -------------------------------------------------------
 
     private void Start()
     {
@@ -141,8 +144,11 @@ public class PipeItems : MonoBehaviour
 
                 if (T.position == goToT.position && goToT == plw.PL1endPoint.transform)
                 {
+                    // Phil-----------------------------------------------
+                    hasSpawned = true;
+                    // ---------------------------------------------------
                     plw.pipeAnims[0].SetBool("Spit", false);
-                    StartCoroutine(DestroyItem());
+                    //StartCoroutine(DestroyItem());
                 }
 
                 break;
@@ -167,8 +173,11 @@ public class PipeItems : MonoBehaviour
 
                 if (T.position == goToT.position && goToT == plw.PL2endPoint.transform)
                 {
+                    // Phil-----------------------------------------------
+                    hasSpawned = true;
+                    // ---------------------------------------------------
                     plw.pipeAnims[1].SetBool("Spit", false);
-                    StartCoroutine(DestroyItem());
+                    //StartCoroutine(DestroyItem());
                 }
 
                 break;
@@ -193,8 +202,11 @@ public class PipeItems : MonoBehaviour
 
                 if (T.position == goToT.position && goToT == plw.PL3endPoint.transform)
                 {
+                    // Phil-----------------------------------------------
+                    hasSpawned = true;
+                    // ---------------------------------------------------
                     plw.pipeAnims[2].SetBool("Spit", false);
-                    StartCoroutine(DestroyItem());
+                    //StartCoroutine(DestroyItem());
                 }
 
                 break;
