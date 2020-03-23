@@ -179,9 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d80dd0a7eef6d4293db132092861a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatPerUse: 50
-  cooloffPerSecond: 25
-  chillThreshold: 50
+  heatPerUse: 16.66
+  cooloffPerSecond: 16.66
+  chillThreshold: 0
   magnitude: 100
   radius: 0
   laserDamage: 40
@@ -197,6 +197,7 @@ MonoBehaviour:
   laserSpeed: 200
   enemy: {fileID: 0}
   laser: {fileID: 565093320624771221, guid: be13af76e8796024cb953b1d429ca3df, type: 3}
+  timeToChill: 0.333
 --- !u!114 &-238998170322175997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heatPerUse: 100
-  cooloffPerSecond: 33
+  cooloffPerSecond: 12.5
   chillThreshold: 0
   playerAlt1: B
   meshSize: 0.5
