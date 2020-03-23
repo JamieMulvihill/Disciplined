@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
+    [Header("Overheat values")]
+    public Overheat overheat;
+    [SerializeField] protected float heatPerUse = 0f;
+    [SerializeField] protected float cooloffPerSecond = 0f;
+    [SerializeField] protected float chillThreshold = 100f;
+    [Header("Other Settings")]
     [SerializeField] private float magnitude;
     [SerializeField] private float radius;
     [SerializeField] private float laserDamage = 15;
@@ -21,6 +27,7 @@ public class Laser : MonoBehaviour
     bool isOn = false;
     void Start()
     {
+        overheat = new Overheat();
         playerFire += GetComponent<Scientist>().controllerIndex.ToString();
         //DisignateController(gameObject.GetComponent<Scientist>().controllerIndex);
         laserPosition = transform.GetChild(3).transform.position;
@@ -34,11 +41,16 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate() {
 
+        overheat.chillThreshold = chillThreshold; // allows value to be adjusted in editor during play
+        overheat.Chill(cooloffPerSecond * Time.deltaTime);
+
         if (scientist.isCaptured) return;
 
         laserPosition = transform.GetChild(3).transform.position;
-        if (Mathf.Abs(Input.GetAxis(playerFire)) > 0.01f && GetComponent<Scientist>().isCaptured == false)
+        if (Mathf.Abs(Input.GetAxis(playerFire)) > 0.01f && GetComponent<Scientist>().isCaptured == false && overheat.GetOverheated() == false)
         {
+            overheat.Broil(heatPerUse * Time.deltaTime);
+
             if (!isOn) {
                 inst = Instantiate(laser, laserPosition + gameObject.transform.forward, Quaternion.identity);
                 isOn = true;

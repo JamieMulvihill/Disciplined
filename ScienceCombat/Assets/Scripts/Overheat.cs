@@ -35,7 +35,7 @@ public class Overheat
     public void Broil(float addedHeat)
     {
         heat += Mathf.Abs(addedHeat);
-        if (heat > maxHeat)
+        if (heat >= maxHeat)
         {
             burned = true;
             if (shouldClamp)

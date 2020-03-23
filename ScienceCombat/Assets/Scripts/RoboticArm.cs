@@ -108,7 +108,7 @@ public class RoboticArm : MonoBehaviour
     void Update()
     {
         overheat.chillThreshold = chillThreshold;
-        overheat.Chill(cooloffPerSecond);
+        overheat.Chill(cooloffPerSecond * Time.deltaTime);
         if (GetComponent<Scientist>().isCaptured && usingArm)
         {
             retracting = false;
