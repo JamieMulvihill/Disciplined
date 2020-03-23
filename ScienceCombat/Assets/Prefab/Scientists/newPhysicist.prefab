@@ -179,6 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d80dd0a7eef6d4293db132092861a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heatPerUse: 50
+  cooloffPerSecond: 25
+  chillThreshold: 50
   magnitude: 100
   radius: 0
   laserDamage: 40
@@ -206,6 +209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a034fecafa159eb4488e0f15008b105b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heatPerUse: 100
+  cooloffPerSecond: 33
+  chillThreshold: 0
   playerAlt1: B
   meshSize: 0.5
   scientist: {fileID: 4541228889225816936, guid: 52465b71ad2580b4097cba71226a9a1e,
@@ -1530,6 +1536,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4233138299716148889}
     m_Modifications:
+    - target: {fileID: 5345917229019240601, guid: 20d3c991dcd2d78499aee83418c98c79,
+        type: 3}
+      propertyPath: m_Name
+      value: LaserGun
+      objectReference: {fileID: 0}
     - target: {fileID: 8965499991544294026, guid: 20d3c991dcd2d78499aee83418c98c79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1600,11 +1611,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5345917229019240601, guid: 20d3c991dcd2d78499aee83418c98c79,
-        type: 3}
-      propertyPath: m_Name
-      value: LaserGun
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20d3c991dcd2d78499aee83418c98c79, type: 3}
 --- !u!4 &8227923032318298934 stripped
@@ -1620,6 +1626,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4233138299716148889}
     m_Modifications:
+    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
+        type: 3}
+      propertyPath: m_Name
+      value: Punch Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1674,11 +1685,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
-        type: 3}
-      propertyPath: m_Name
-      value: Punch Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 6699842662239036542, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}

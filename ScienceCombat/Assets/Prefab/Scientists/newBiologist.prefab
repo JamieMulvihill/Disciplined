@@ -871,6 +871,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heatPerUse: 100
+  cooloffPerSecond: 100
+  chillThreshold: 0
   projectilePrefab: {fileID: 7871893638157571021, guid: b9ce5a0f79c33394db63abeceeb7e8c5,
     type: 3}
   triggerButton: RT
@@ -892,6 +895,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heatPerUse: 100
+  cooloffPerSecond: 20
+  chillThreshold: 0
   projectilePrefab: {fileID: 5388313906294673447, guid: c66ae8cc400a40a478c05d59eaa7c71b,
     type: 3}
   triggerButton: B
@@ -1753,6 +1759,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8418257097466762080}
     m_Modifications:
+    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
+        type: 3}
+      propertyPath: m_Name
+      value: Punch Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1807,11 +1818,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
-        type: 3}
-      propertyPath: m_Name
-      value: Punch Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 6699842662239036542, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
