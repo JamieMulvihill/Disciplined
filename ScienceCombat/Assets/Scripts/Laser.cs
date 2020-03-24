@@ -23,6 +23,8 @@ public class Laser : MonoBehaviour
     public GameObject enemy;
     private Vector3 laserPosition;
     public GameObject laser;
+    [Header("Cooling down delay")]
+    [SerializeField] protected float timeToChill = 0f;
     GameObject inst;
     bool isOn = false;
     void Start()
@@ -42,6 +44,7 @@ public class Laser : MonoBehaviour
     void FixedUpdate() {
 
         overheat.chillThreshold = chillThreshold; // allows value to be adjusted in editor during play
+        overheat.timeToChill = timeToChill; // allows value to be adjusted in editor during play
         overheat.Chill(cooloffPerSecond * Time.deltaTime);
 
         if (scientist.isCaptured) return;

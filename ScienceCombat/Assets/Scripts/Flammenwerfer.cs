@@ -15,11 +15,14 @@ public class Flammenwerfer : ProjectileLauncher
 
     [SerializeField] GameObject flameVisual;
     [SerializeField] float updateDelay = 1f;
+    [Header("Cooling down delay")]
+    [SerializeField] protected float timeToChill = 0f;
     IEnumerator FlameTimer()
     {
         while (gameObject)
         {
             yield return new WaitForSeconds(updateDelay);
+            overheat.timeToChill = timeToChill; // allows value to be adjusted in editor during play
             if (Mathf.Abs(Input.GetAxis(triggerButton)) > 0.01f && GetComponent<Scientist>().isCaptured == false && overheat.GetOverheated() == false)
             {
                 flameVisual.SetActive(true);

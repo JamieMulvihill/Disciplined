@@ -197,8 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatPerUse: 100
-  cooloffPerSecond: 20
+  heatPerUse: 0
+  cooloffPerSecond: 0
   chillThreshold: 0
   projectilePrefab: {fileID: 113480648811193456, guid: 302c85eb88d6d19419b254a49fa02d81,
     type: 3}
@@ -207,7 +207,7 @@ MonoBehaviour:
   horizontalVelocity: 7
   upOffset: 2
   forwardOffset: 2
-  fireRate: 0.25
+  fireRate: 5
   momentumScalar: 1
 --- !u!65 &7123947294955925263
 BoxCollider:

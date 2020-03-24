@@ -871,8 +871,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatPerUse: 100
-  cooloffPerSecond: 100
+  heatPerUse: 0
+  cooloffPerSecond: 0
   chillThreshold: 0
   projectilePrefab: {fileID: 7871893638157571021, guid: b9ce5a0f79c33394db63abeceeb7e8c5,
     type: 3}
@@ -881,7 +881,7 @@ MonoBehaviour:
   horizontalVelocity: 4
   upOffset: 2
   forwardOffset: 2
-  fireRate: 0.25
+  fireRate: 2
   momentumScalar: 1
 --- !u!114 &25628582935725668
 MonoBehaviour:
@@ -895,8 +895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4808461882a0a9647a507f724cdb4da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatPerUse: 100
-  cooloffPerSecond: 20
+  heatPerUse: 0
+  cooloffPerSecond: 0
   chillThreshold: 0
   projectilePrefab: {fileID: 5388313906294673447, guid: c66ae8cc400a40a478c05d59eaa7c71b,
     type: 3}
@@ -905,7 +905,7 @@ MonoBehaviour:
   horizontalVelocity: 4
   upOffset: 2
   forwardOffset: 2
-  fireRate: 1
+  fireRate: 5
   momentumScalar: 1
 --- !u!114 &4834419755509153164
 MonoBehaviour:

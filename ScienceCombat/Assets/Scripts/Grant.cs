@@ -70,6 +70,8 @@ public class Grant : MonoBehaviour
             isPossessed = false;
             scientist = null;
             Destroy(gameObject);
+
+            //End the round and load next scene, this will be scoreboard if rounds or win screen if end game
         }
     }
 

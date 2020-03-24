@@ -33,10 +33,12 @@ public class CharacterSpawn : MonoBehaviour
 
     public Camera camera;
 
+    private Scoreboard scoreboard;
 
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("Manager");
+        scoreboard = FindObjectOfType<Scoreboard>();
         managerScript = manager.GetComponent<Manager>();
         plw = manager.GetComponent<PipeLineWaypoints>();
 
@@ -86,6 +88,7 @@ public class CharacterSpawn : MonoBehaviour
     {
         newestPlayer = Instantiate(managerScript.queuedRespawns.Dequeue());
         realT = newestPlayer.transform;
+        scoreboard.scientists.Add(newestPlayer.GetComponent<Scientist>());
         //newestPlayer.GetComponent<Rigidbody>().useGravity = false;
         spawningPlayer = true;
         spawnerAnim.Play("Spawn");
