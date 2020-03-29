@@ -15,7 +15,13 @@ public class TimeWarp : MonoBehaviour
     [Header("Floats")]
 
     private float sloMoFactor = 0.05f;
-    private float sloMoDuration = 1f;
+    private float sloMoDuration = 2f;
+    private float speed = 1f;
+
+    private void Start()
+    {
+        zoom = false;
+    }
 
     void Update()
     {
@@ -35,6 +41,22 @@ public class TimeWarp : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        if(zoom)
+        {
+            if(Time.timeScale < 1)
+            {
+                GetComponent<Camera>().fieldOfView = Mathf.Clamp(Mathf.Lerp(GetComponent<Camera>().fieldOfView, 60 * Time.timeScale, speed), 50f, 60f);
+            }
+            else
+            {
+                GetComponent<Camera>().fieldOfView = 60;
+                zoom = false;
+            }
+        }
+    }
+
     void SlowMo()
     {
         //set time to slow
@@ -42,5 +64,6 @@ public class TimeWarp : MonoBehaviour
         //smoothing
         Time.fixedDeltaTime = Time.timeScale * 0.02f;
         slowMotion = true;
+        zoom = true;
     }
 }
