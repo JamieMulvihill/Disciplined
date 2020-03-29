@@ -28,9 +28,10 @@ public class PlayerUI : MonoBehaviour
     {
         manager = GameObject.FindGameObjectWithTag("Manager");
         UIMan = manager.GetComponent<UIManager>();
+        health = connectedPlayer.GetComponent<Health>();
         cd1 = cd1UI.GetComponent<Image>();
         cd2 = cd2UI.GetComponent<Image>();
-        health = connectedPlayer.GetComponent<Health>();
+        healthbar = healthUI.GetComponent<Image>();
         cooldownSpeed = 5;
         cd1ready = true;
         cd2ready = true;
@@ -40,8 +41,7 @@ public class PlayerUI : MonoBehaviour
 
     void Update()
     {
-        //getHealth();
-        setHealth();
+        SetHealth();
 
         if (cd1ready == false)
         {
@@ -90,10 +90,15 @@ public class PlayerUI : MonoBehaviour
     //    healthValue = health.health;
     //}
 
-    void setHealth()
+    void SetHealth()
     {
         healthbar.fillAmount = health.health / 100;
     }
+
+    //public void ConnectPlayer()
+    //{
+    //    health = connectedPlayer.GetComponent<Health>();
+    //}
 }
 
 /*float health, float cooldowns 1/2, bool cooldowns 1/2 ready

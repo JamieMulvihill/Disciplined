@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
             GameObject player;
             player = Instantiate(UI, UIwps[i].transform);
             player.GetComponent<PlayerUI>().connectedPlayer = pc.chosenPlayers[i].Scientist;
-
+            //player.GetComponent<PlayerUI>().ConnectPlayer();
         }
     }
 }
