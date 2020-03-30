@@ -89,7 +89,7 @@ public class Scientist : MonoBehaviour
                     manager.GetComponent<PipeLineWaypoints>().EnqueueClone(3);
                     break;
             }
-
+            anim.Play("Death");
             Destroy(gameObject);
         }
     }

@@ -38,11 +38,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6941388417627210862}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: eb6be6b89c610974493d2f6190bdd772,
-        type: 3}
-      propertyPath: m_Name
-      value: Pipe_Head_Anim
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: eb6be6b89c610974493d2f6190bdd772,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -108,6 +103,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 99.99997
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eb6be6b89c610974493d2f6190bdd772,
+        type: 3}
+      propertyPath: m_Name
+      value: Pipe_Head_Anim
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: eb6be6b89c610974493d2f6190bdd772,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6810e326ad5742944b07594b774c9304, type: 2}
     - target: {fileID: 7561110372842451503, guid: eb6be6b89c610974493d2f6190bdd772,
         type: 3}
       propertyPath: m_AABB.m_Center.x
@@ -143,16 +148,6 @@ PrefabInstance:
       propertyPath: m_DirtyAABB
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7561110372842451503, guid: eb6be6b89c610974493d2f6190bdd772,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ba40067cd107b4847acd91cdbfa9c06f, type: 2}
-    - target: {fileID: -6057140222963153312, guid: eb6be6b89c610974493d2f6190bdd772,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 6810e326ad5742944b07594b774c9304, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb6be6b89c610974493d2f6190bdd772, type: 3}
 --- !u!4 &238792515315192696 stripped

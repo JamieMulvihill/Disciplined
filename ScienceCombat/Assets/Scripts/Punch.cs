@@ -12,11 +12,13 @@ public class Punch : MonoBehaviour
     private bool buttonState;
 
     private float lastTime;
+    public Animator anim;
 
     void Start()
     {
         lastTime = Time.time;
         triggerButton += GetComponentInParent<Scientist>().controllerIndex.ToString();
+        anim.SetTrigger("slap");
     }
 
     // Update is called once per frame
