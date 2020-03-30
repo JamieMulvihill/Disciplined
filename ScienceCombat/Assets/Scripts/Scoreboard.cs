@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Scoreboard : MonoBehaviour
 {
-    private PlayerContainer spawner;
+    public PlayerContainer spawner;
     public List<Scientist> scientists;
     public List<Scientist> deadScientists;
     public List<float> currentScores;
     public Dictionary<string, float> scores;
+    public Grant grant;
     private void Start()
     {
         
@@ -16,10 +17,13 @@ public class Scoreboard : MonoBehaviour
         deadScientists = new List<Scientist>();
         spawner = FindObjectOfType<PlayerContainer>();
         scores = new Dictionary<string, float>();
+
         //for (int i = 0; i < spawner.chosenPlayers.Length; i++)
         //{
         //    scientists.Add(spawner.chosenPlayers[i].Scientist.GetComponent<Scientist>());
         //}
+
+        // currently initilaizes scientist from the scene, this will change to be initialized from the character select scientists
         for (int i = 0; i < scientists.Count; i++) {
             scores.Add(scientists[i].gameObject.tag, scientists[i].grantEarnings);        
         }
@@ -31,8 +35,13 @@ public class Scoreboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scientists.Sort((Scientist a, Scientist b) => a.grantEarnings.CompareTo(b.grantEarnings));
-
+        if (grant)
+        {
+            if (grant.grantValue > 0)
+            {
+                scientists.Sort((Scientist a, Scientist b) => a.grantEarnings.CompareTo(b.grantEarnings));
+            }
+        }
         //scientists.Sort((Scientist a, Scientist b) =>
         //{
         //    return a.grantEarnings > b.grantEarnings ? -1 : 1;
