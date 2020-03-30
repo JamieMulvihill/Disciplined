@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Grant : MonoBehaviour
 {
@@ -50,9 +51,9 @@ public class Grant : MonoBehaviour
             }
         }
     }
+
     //private void OnCollisionEnter(Collision collision)
     //{
-
     //    if (!isPossessed)
     //    {
     //        scientist = collision.gameObject.GetComponent<Scientist>();
@@ -64,6 +65,7 @@ public class Grant : MonoBehaviour
     //        }
     //    }
     //}
+    
     private void MaxedOutGrant() {
         if (grantValue <= 0) {
             scientist.hasGrant = false;
@@ -71,11 +73,11 @@ public class Grant : MonoBehaviour
             scientist = null;
             Destroy(gameObject);
 
-            //End the round and load next scene, this will be scoreboard if rounds or win screen if end game
+            //End the round and load next scene, this will be scoreboard of rounds or win screen if end game
+            SceneManager.LoadScene("WinState");
         }
     }
 
-    
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
         for (int i = 0; i < 30; i++)
@@ -91,6 +93,4 @@ public class Grant : MonoBehaviour
         result = Vector3.zero;
         return false;
     }
-  
-
 }
