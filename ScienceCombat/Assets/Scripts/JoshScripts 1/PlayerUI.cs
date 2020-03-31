@@ -16,13 +16,18 @@ public class PlayerUI : MonoBehaviour
     private Image cd1;
     private Image cd2;
     private Health health;
+    private Flammenwerfer engineerAttack;
+    private Laser physicistAttack;
 
     private float healthValue;
 
-    private float cooldownSpeed;
+    //private float cooldownSpeed;
 
     private bool cd1ready;
     private bool cd2ready;
+    private bool engineer;
+    private bool physicist;
+    private bool attackOnCooldown;
 
     void Start()
     {
@@ -32,10 +37,29 @@ public class PlayerUI : MonoBehaviour
         cd1 = cd1UI.GetComponent<Image>();
         cd2 = cd2UI.GetComponent<Image>();
         healthbar = healthUI.GetComponent<Image>();
-        cooldownSpeed = 5;
+        //cooldownSpeed = 5;
         cd1ready = true;
         cd2ready = true;
         healthValue = 1;
+        attackOnCooldown = false;
+        engineer = false;
+        physicist = false;
+        Setup();
+    }
+
+    void Setup()
+    {
+        if(connectedPlayer.tag == "Engineer")
+        {
+            engineerAttack = connectedPlayer.GetComponent<Flammenwerfer>();
+            engineer = true;
+        }
+
+        if (connectedPlayer.tag == "Physicist")
+        {
+            physicistAttack = connectedPlayer.GetComponent<Laser>();
+            physicist = true;
+        }
     }
 
 
@@ -43,52 +67,50 @@ public class PlayerUI : MonoBehaviour
     {
         SetHealth();
 
-        if (cd1ready == false)
+        if (engineer == true)
         {
-            cd1.fillAmount += 1 / cooldownSpeed * Time.deltaTime;
+            if (!attackOnCooldown)
+            {
+                cd1.fillAmount = engineerAttack.overheat.GetHeatFraction();
+            }
+        }
+
+        if (physicist == true)
+        {
+            if (!attackOnCooldown)
+            {
+                cd1.fillAmount = physicistAttack.overheat.GetHeatFraction();
+            }
+        }
+    }
+
+    public void UIAbilityCooldown1(float _duration)
+    {
+        cd1.fillAmount = 0;
+        while (cd1ready == false)
+        {
+            cd1.fillAmount += 1 / _duration * Time.deltaTime;
 
             if (cd1.fillAmount >= 1)
             {
                 cd1ready = true;
             }
         }
+    }
 
-        if (cd2ready == false)
+    public void UIAbilityCooldown2(float _duration)
+    {
+        cd2.fillAmount = 0;
+        while (cd2ready == false)
         {
-            cd2.fillAmount += 1 / cooldownSpeed * Time.deltaTime;
+            cd2.fillAmount += 1 / _duration * Time.deltaTime;
 
             if (cd2.fillAmount >= 1)
             {
                 cd2ready = true;
             }
         }
-
-        if(UIMan.cooldown1)
-        {
-            UIMan.cooldown1 = false;
-            if (cd1ready)
-            {
-                cd1.fillAmount = 0;
-                cd1ready = false;
-            }
-        }
-
-        if (UIMan.cooldown2)
-        {
-            UIMan.cooldown2 = false;
-            if (cd2ready)
-            {
-                cd2.fillAmount = 0;
-                cd2ready = false;
-            }
-        }
     }
-
-    //void getHealth()
-    //{
-    //    print(health.health);
-    //    healthValue = health.health;
-    //}
 
     void SetHealth()
     {
@@ -101,7 +123,43 @@ public class PlayerUI : MonoBehaviour
     //}
 }
 
-/*float health, float cooldowns 1/2, bool cooldowns 1/2 ready
- * 
- * when cooldown is used, set the fill amount to 0
- */
+
+//if (cd1ready == false)
+//{
+//    cd1.fillAmount += 1 / cooldownSpeed * Time.deltaTime;
+
+//    if (cd1.fillAmount >= 1)
+//    {
+//        cd1ready = true;
+//    }
+//}
+
+//if (cd2ready == false)
+//{
+//    cd2.fillAmount += 1 / cooldownSpeed * Time.deltaTime;
+
+//    if (cd2.fillAmount >= 1)
+//    {
+//        cd2ready = true;
+//    }
+//}
+
+//if(UIMan.cooldown1)
+//{
+//    UIMan.cooldown1 = false;
+//    if (cd1ready)
+//    {
+//        cd1.fillAmount = 0;
+//        cd1ready = false;
+//    }
+//}
+
+//if (UIMan.cooldown2)
+//{
+//    UIMan.cooldown2 = false;
+//    if (cd2ready)
+//    {
+//        cd2.fillAmount = 0;
+//        cd2ready = false;
+//    }
+//}

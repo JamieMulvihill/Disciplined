@@ -504,10 +504,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b01a29a8dcc63048bb51efc7165430c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  connectedPlayer: {fileID: 0}
   healthUI: {fileID: 4414536808265943925}
   cd1UI: {fileID: 395873105623953223}
   cd2UI: {fileID: 4414536808569680944}
-  health: 0
 --- !u!1 &4414536810378381936
 GameObject:
   m_ObjectHideFlags: 0

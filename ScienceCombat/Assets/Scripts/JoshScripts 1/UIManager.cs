@@ -25,8 +25,6 @@ public class UIManager : MonoBehaviour
         cooldown1 = false;
         cooldown2 = false;
         numberOfPlayers = pc.chosenPlayers.Count(i => i != null);
-        print(numberOfPlayers);
-
         SetUI(numberOfPlayers);
     }
 
