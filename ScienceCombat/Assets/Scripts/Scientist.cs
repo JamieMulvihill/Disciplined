@@ -37,7 +37,7 @@ public class Scientist : MonoBehaviour
         playerHOR += GetComponent<Scientist>().controllerIndex.ToString();
         PlayerVer += GetComponent<Scientist>().controllerIndex.ToString();
         manager = GameObject.FindGameObjectWithTag("Manager");
-       // healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
+        //healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
         Camera.main.GetComponent<MultipleTargetCamera>().AddPlayer(gameObject.transform);
         scoreboard = FindObjectOfType<Scoreboard>();
         //grantEarnings = scoreboard.scores[gameObject.tag];
@@ -81,9 +81,10 @@ public class Scientist : MonoBehaviour
                 grant.scientist = null;
                 grant.isPossessed = false;
                 grant.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-                scoreboard.scores[gameObject.tag] = grantEarnings;
-                scoreboard.scientists.Remove(this);
             }
+            //scoreboard.scores[gameObject.tag] = grantEarnings;
+            //scoreboard.scientists.Remove(this);
+
             switch(gameObject.tag)
             {
                 case "Biologist":
@@ -99,7 +100,7 @@ public class Scientist : MonoBehaviour
                     manager.GetComponent<PipeLineWaypoints>().EnqueueClone(3);
                     break;
             }
-
+            anim.Play("Death");
             Destroy(gameObject);
         }
 
@@ -166,7 +167,8 @@ public class Scientist : MonoBehaviour
     private void OnDisable()
     {
         Instantiate(death, transform.position, transform.rotation);
-
+        scoreboard.scores[gameObject.tag] = grantEarnings;
+        scoreboard.scientists.Remove(this);
     }
 
     public void EarningGrant(float cash) {

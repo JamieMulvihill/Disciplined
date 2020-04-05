@@ -5,15 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: c3225bd8dcf8a3e4793fcb5d9a1d2e82
   - enabled: 1
     path: Assets/Scenes/CharacterSelectScreen.unity
     guid: e491063f8927ed64b8dc0fa200d41bcb
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Josh's.unity
     guid: 05b34cbc64e044043876911d8817ceae

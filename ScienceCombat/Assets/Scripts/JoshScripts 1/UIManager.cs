@@ -25,8 +25,6 @@ public class UIManager : MonoBehaviour
         cooldown1 = false;
         cooldown2 = false;
         numberOfPlayers = pc.chosenPlayers.Count(i => i != null);
-        print(numberOfPlayers);
-
         SetUI(numberOfPlayers);
     }
 
@@ -37,7 +35,7 @@ public class UIManager : MonoBehaviour
             GameObject player;
             player = Instantiate(UI, UIwps[i].transform);
             player.GetComponent<PlayerUI>().connectedPlayer = pc.chosenPlayers[i].Scientist;
-
+            //player.GetComponent<PlayerUI>().ConnectPlayer();
         }
     }
 }
