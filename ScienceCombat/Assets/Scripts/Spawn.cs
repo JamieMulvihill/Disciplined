@@ -21,7 +21,7 @@ public class Spawn : MonoBehaviour
             {
                 Scientist scientist = playerSpawner.chosenPlayers[i].Scientist.GetComponent<Scientist>();
                 //scientist.DisignateController(i + 1);
-                scientist.controllerIndex = i + 1;
+                scientist.controllerIndex = i;
                 Instantiate(playerSpawner.chosenPlayers[i].Scientist);
               
             }

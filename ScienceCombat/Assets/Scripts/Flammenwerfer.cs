@@ -40,9 +40,4 @@ public class Flammenwerfer : ProjectileLauncher
         overheat = new Overheat();
     }
 
-    public void Initialize()
-    {
-        overheat = new Overheat();
-    }
-
 }

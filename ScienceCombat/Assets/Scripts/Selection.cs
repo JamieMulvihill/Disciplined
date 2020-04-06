@@ -17,6 +17,8 @@ public class Selection : MonoBehaviour
     float lastInput = 0.0f;
     bool selectedPlayer = false;
     public int playerNum;
+    [SerializeField] private string selectButton;   // Button to select scientist.
+    [SerializeField] private string startButton;    // Button to start the game.
 
     // Start is called before the first frame update
     void Start()
@@ -126,17 +128,19 @@ public class Selection : MonoBehaviour
             //Mesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
             //Mesh.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
 
-            if (Input.GetKeyDown($"joystick {playerNum} button 0"))
+            //if (Input.GetKeyDown($"joystick {playerNum} button 0"))
+            if(Input.GetButtonDown(selectButton + playerNum.ToString()))
             {
                 selectedPlayer = true;
-                playerContainer.chosenPlayers[playerNum - 1] = selector.playabeCharacters[ChoosingCharacter()];
+                playerContainer.chosenPlayers[playerNum] = selector.playabeCharacters[ChoosingCharacter()];
                 selector.playabeCharacters.RemoveAt(ChoosingCharacter());
-                characterSprite.sprite = playerContainer.chosenPlayers[playerNum - 1].ScientistSprite;
+                characterSprite.sprite = playerContainer.chosenPlayers[playerNum].ScientistSprite;
             }
         }
         if (selectedPlayer)
         {
-            if (Input.GetKeyDown($"joystick {playerNum} button 1"))
+            //if (Input.GetKeyDown($"joystick {playerNum} button 1"))
+            if (Input.GetButtonDown(startButton + playerNum.ToString()))
             {
                 //SceneManager.LoadScene("Jamie");
                 SceneManager.LoadScene("Josh's");

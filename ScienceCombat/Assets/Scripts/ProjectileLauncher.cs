@@ -71,4 +71,5 @@ public class ProjectileLauncher : MonoBehaviour
     {
         triggerButton = "Fire" + controllerIndex.ToString();
     }
+
 }

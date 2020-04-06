@@ -52,13 +52,14 @@ public class PlayerUI : MonoBehaviour
         if(connectedPlayer.tag == "Engineer")
         {
             engineerAttack = connectedPlayer.GetComponent<Flammenwerfer>();
-            engineerAttack.Initialize();
+            engineerAttack.overheat = new Overheat();
             engineer = true;
         }
 
         if (connectedPlayer.tag == "Physicist")
         {
             physicistAttack = connectedPlayer.GetComponent<Laser>();
+            physicistAttack.overheat = new Overheat();
             physicist = true;
         }
     }
