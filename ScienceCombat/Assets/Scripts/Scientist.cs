@@ -58,10 +58,12 @@ public class Scientist : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(joystickDirection, transform.up), rotationSpeed);
             
             anim.SetBool("run", true);
+            anim.SetFloat("pace", (1.0f/10.0f) * gameObject.GetComponent<Rigidbody>().velocity.magnitude);
         }
         else
         {
             anim.SetBool("run", false);
+            anim.SetFloat("pace", 1.0f);
         }
         // Setting the velocity of the player
         gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, gameObject.GetComponent<Rigidbody>().velocity.y, 0) + transform.forward * new Vector3(Mathf.Abs(joystickDirection.x), 0, Mathf.Abs(joystickDirection.z)).magnitude * speed;
