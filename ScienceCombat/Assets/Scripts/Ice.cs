@@ -16,7 +16,6 @@ public class Ice : MonoBehaviour
         slidingScientists = new List<GameObject>();
         particleEffect = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
         StartCoroutine(deleteSelf());
-
     }
 
     // Update is called once per frame

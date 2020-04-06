@@ -18,7 +18,7 @@ public class Punch : MonoBehaviour
     {
         lastTime = Time.time;
         triggerButton += GetComponentInParent<Scientist>().controllerIndex.ToString();
-        anim.SetTrigger("slap");
+        //anim.SetTrigger("slap");
     }
 
     // Update is called once per frame
