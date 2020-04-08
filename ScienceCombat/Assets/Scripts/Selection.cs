@@ -143,7 +143,8 @@ public class Selection : MonoBehaviour
             if (Input.GetButtonDown(startButton + playerNum.ToString()))
             {
                 //SceneManager.LoadScene("Jamie");
-                SceneManager.LoadScene("Josh's");
+                //SceneManager.LoadScene("Josh's");
+                SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
             }
         }
     }
