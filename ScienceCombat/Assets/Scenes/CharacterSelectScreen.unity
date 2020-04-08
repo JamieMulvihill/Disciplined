@@ -299,8 +299,8 @@ MonoBehaviour:
   MenuChar: {fileID: 0}
   CharPosition: {fileID: 1653788124}
   playerNum: 1
-  selectButton: B
-  startButton: RT
+  selectButton: A
+  startButton: B
 --- !u!1 &265791996
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,8 +568,8 @@ MonoBehaviour:
   MenuChar: {fileID: 0}
   CharPosition: {fileID: 720285628}
   playerNum: 2
-  selectButton: B
-  startButton: RT
+  selectButton: A
+  startButton: B
 --- !u!1 &345723366
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,8 +732,8 @@ MonoBehaviour:
   MenuChar: {fileID: 0}
   CharPosition: {fileID: 63893059}
   playerNum: 0
-  selectButton: B
-  startButton: RT
+  selectButton: A
+  startButton: B
 --- !u!1 &468837012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,5 +1533,5 @@ MonoBehaviour:
   MenuChar: {fileID: 0}
   CharPosition: {fileID: 1504384860}
   playerNum: 3
-  selectButton: B
-  startButton: RT
+  selectButton: A
+  startButton: B

@@ -56,7 +56,7 @@ public class ProjectileLauncher : MonoBehaviour
                     // base projectile speed then add player velocity
                     projectile.GetComponent<Rigidbody>().velocity = new Vector3(horizontalVelocity * transform.forward.x, verticalVelocity, horizontalVelocity * transform.forward.z);
                     Vector3 scientistVelocity = GetComponentInParent<Scientist>().GetComponent<Rigidbody>().velocity;
-                    projectile.GetComponent<Rigidbody>().velocity += scientistVelocity * momentumScalar; // add player velocity
+                    //projectile.GetComponent<Rigidbody>().velocity += scientistVelocity * momentumScalar; // add player velocity
 
 
                     // Keep track of the last time a projectile was launched.
