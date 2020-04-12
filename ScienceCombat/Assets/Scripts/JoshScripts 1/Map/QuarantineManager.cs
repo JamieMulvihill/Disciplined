@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class QuarantineManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class QuarantineManager : MonoBehaviour
     private Quarantine[] quarantineScript = new Quarantine[9];
     public GameObject[] navZones = new GameObject[6];
     public ModifyNavMesh navMesh;
+    public GameObject cameraShaker;
     //private Sucker suckyScript;
 
     void Start()
@@ -170,24 +172,22 @@ public class QuarantineManager : MonoBehaviour
         managerScript.canQuarantine = true;
     }
 
-    public void KillZone(int _activeZone)
-    {
+    public void KillZone(int _activeZone){
 
         zoneToMove = _activeZone;
         playerChecks[_activeZone].SetActive(true);
         NavMeshHandler(_activeZone);
-
+        navZones[_activeZone].GetComponent<CheckForPlayers>().PlayersWithinZoneCheck(navZones[_activeZone].GetComponent<NavMeshObstacle>().size);
+        cameraShaker.GetComponent<CameraShake>().shake = true;
         if (playersInQueue == false){
 
             playerChecks[_activeZone].SetActive(false);
             Invoke("DeQuarantine", 5);
         }
-        
     }
 
     public void NavMeshHandler(int _activeZone) {
-        if (!navMesh.GrantWithinZone(navZones[_activeZone]))
-        {
+        if (!navMesh.GrantWithinZone(navZones[_activeZone])){
             navZones[_activeZone].SetActive(true);
             StartCoroutine(ReActivateZone(_activeZone, 5));
         }

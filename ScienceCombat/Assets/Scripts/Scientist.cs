@@ -18,7 +18,7 @@ public class Scientist : MonoBehaviour
     public Grant grant;
     [SerializeField] private GameObject [] scientistPrefabs;
     public Animator anim;
-    private Scoreboard scoreboard;
+    //private Scoreboard scoreboard;
 
     public Vector3 slippingVelocity;
 
@@ -39,7 +39,7 @@ public class Scientist : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("Manager");
         //healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
         Camera.main.GetComponent<MultipleTargetCamera>().AddPlayer(gameObject.transform);
-        scoreboard = FindObjectOfType<Scoreboard>();
+        //scoreboard = FindObjectOfType<Scoreboard>();
         //grantEarnings = scoreboard.scores[gameObject.tag];
 
         pickupButton += GetComponent<Scientist>().controllerIndex.ToString();
@@ -169,8 +169,8 @@ public class Scientist : MonoBehaviour
     private void OnDisable()
     {
         Instantiate(death, transform.position, transform.rotation);
-        scoreboard.scores[gameObject.tag] = grantEarnings;
-        scoreboard.scientists.Remove(this);
+        //scoreboard.scores[gameObject.tag] = grantEarnings;
+        //scoreboard.scientists.Remove(this);
     }
 
     public void EarningGrant(float cash) {

@@ -88,7 +88,7 @@ public class CharacterSpawn : MonoBehaviour
     {
         newestPlayer = Instantiate(managerScript.queuedRespawns.Dequeue());
         realT = newestPlayer.transform;
-        scoreboard.scientists.Add(newestPlayer.GetComponent<Scientist>());
+        //scoreboard.scientists.Add(newestPlayer.GetComponent<Scientist>());
         //newestPlayer.GetComponent<Rigidbody>().useGravity = false;
         spawningPlayer = true;
         spawnerAnim.Play("Spawn");

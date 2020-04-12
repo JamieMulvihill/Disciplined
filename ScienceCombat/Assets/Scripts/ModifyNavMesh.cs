@@ -6,10 +6,11 @@ using UnityEngine.AI;
 public class ModifyNavMesh : MonoBehaviour
 {
     public bool quarenTime = false;
-    public GameObject navZone;
+    //public GameObject navZone;
     public GameObject grant;
     NavMeshSurface navSurface;
     float delayTime;
+
     // Start is called before the first frame update
    //private void Start()
    //{
