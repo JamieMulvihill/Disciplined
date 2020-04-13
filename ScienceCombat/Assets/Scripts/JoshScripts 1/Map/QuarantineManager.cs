@@ -7,7 +7,9 @@ public class QuarantineManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] zones = new GameObject[9];
     [SerializeField] private GameObject[] playerChecks = new GameObject[5];
-    //[SerializeField] private GameObject sucker;
+    [SerializeField] private GameObject[] gasPos = new GameObject[5];
+    [SerializeField] private GameObject gasPrefab;
+    [SerializeField] private GameObject newGas;
 
     public Queue<GameObject> playersToKill;
     private bool isQuarantining;
@@ -138,6 +140,7 @@ public class QuarantineManager : MonoBehaviour
 
     void DeQuarantine()
     {
+        Destroy(newGas);
         switch (zoneToMove)
         {
             case 0:
@@ -173,14 +176,13 @@ public class QuarantineManager : MonoBehaviour
     }
 
     public void KillZone(int _activeZone){
-
+        newGas =  Instantiate(gasPrefab, gasPos[_activeZone].transform);
         zoneToMove = _activeZone;
         playerChecks[_activeZone].SetActive(true);
         NavMeshHandler(_activeZone);
         navZones[_activeZone].GetComponent<CheckForPlayers>().PlayersWithinZoneCheck(navZones[_activeZone].GetComponent<NavMeshObstacle>().size);
         cameraShaker.GetComponent<CameraShake>().shake = true;
         if (playersInQueue == false){
-
             playerChecks[_activeZone].SetActive(false);
             Invoke("DeQuarantine", 5);
         }
