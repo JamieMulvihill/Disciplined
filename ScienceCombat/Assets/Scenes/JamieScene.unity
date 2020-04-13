@@ -71425,6 +71425,15 @@ MonoBehaviour:
   - {fileID: 1146367046}
   - {fileID: 1691230363}
   - {fileID: 1499304220}
+  gasPos:
+  - {fileID: 1036095798}
+  - {fileID: 1067175689}
+  - {fileID: 1239902296}
+  - {fileID: 1777330869}
+  - {fileID: 1969472179}
+  gasPrefab: {fileID: 234155018081617706, guid: 0f051c00429d9294e80acfc52f216125,
+    type: 3}
+  newGas: {fileID: 0}
   playersInQueue: 0
   navZones:
   - {fileID: 1036095798}
