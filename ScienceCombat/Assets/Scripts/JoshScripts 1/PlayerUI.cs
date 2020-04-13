@@ -49,6 +49,7 @@ public class PlayerUI : MonoBehaviour
 
     void Setup()
     {
+        //setting up the engineer attack cooldown
         if(connectedPlayer.tag == "Engineer")
         {
             engineerAttack = connectedPlayer.GetComponent<Flammenwerfer>();
@@ -56,6 +57,7 @@ public class PlayerUI : MonoBehaviour
             engineer = true;
         }
 
+        //setting up physicist attack cooldown
         if (connectedPlayer.tag == "Physicist")
         {
             physicistAttack = connectedPlayer.GetComponent<Laser>();
@@ -67,8 +69,10 @@ public class PlayerUI : MonoBehaviour
 
     void Update()
     {
+        //updating health value
         SetHealth();
 
+        //setting cooldown value to actual cooldown value in flammenwerfer script
         if (engineer == true)
         {
             if (!attackOnCooldown)
@@ -77,6 +81,7 @@ public class PlayerUI : MonoBehaviour
             }
         }
 
+        //same but for physicist
         if (physicist == true)
         {
             if (!attackOnCooldown)
@@ -86,11 +91,13 @@ public class PlayerUI : MonoBehaviour
         }
     }
 
-    public void UIAbilityCooldown1(float _duration)
-    {
+    public void UIAbilityCooldown1(float _duration) //passing in the duration of the cooldown from the different possible abilities respective scripts
+    { 
+        //setting cooldown value to 0
         cd1.fillAmount = 0;
-        while (cd1ready == false)
+        while (!cd1ready)
         {
+            // fill based on the duration in the other script
             cd1.fillAmount += 1 / _duration * Time.deltaTime;
 
             if (cd1.fillAmount >= 1)
@@ -100,7 +107,7 @@ public class PlayerUI : MonoBehaviour
         }
     }
 
-    public void UIAbilityCooldown2(float _duration)
+    public void UIAbilityCooldown2(float _duration) //exact same for the second cooldown
     {
         cd2.fillAmount = 0;
         while (cd2ready == false)
@@ -116,6 +123,7 @@ public class PlayerUI : MonoBehaviour
 
     void SetHealth()
     {
+        // set value to reflect the connected player's health
         healthbar.fillAmount = health.health / 100;
     }
 
