@@ -20220,11 +20220,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
-  offset: {x: 0, y: 25, z: -24}
+  offset: {x: 0, y: 25, z: -21}
   smoothTime: 0.5
   minZoom: 85
   maxZoom: 20
-  cameraNearClamp: 14
+  cameraNearClamp: 11
   zoomLimiter: 80
   centre: {fileID: 1068751985}
   lonely: 15
