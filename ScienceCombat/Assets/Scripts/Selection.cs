@@ -19,6 +19,7 @@ public class Selection : MonoBehaviour
     public int playerNum;
     [SerializeField] private string selectButton;   // Button to select scientist.
     [SerializeField] private string startButton;    // Button to start the game.
+    private Animator Anim;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class Selection : MonoBehaviour
     {
         if (!selectedPlayer)
             characterSprite.sprite = selector.playabeCharacters[ChoosingCharacter()].ScientistSprite;
+        Anim = MenuChar.GetComponent<Animator>();
 
 
         SelectingChoice();
@@ -135,6 +137,8 @@ public class Selection : MonoBehaviour
                 playerContainer.chosenPlayers[playerNum] = selector.playabeCharacters[ChoosingCharacter()];
                 selector.playabeCharacters.RemoveAt(ChoosingCharacter());
                 characterSprite.sprite = playerContainer.chosenPlayers[playerNum].ScientistSprite;
+
+                Anim.Play("Selected");
             }
         }
         if (selectedPlayer)
