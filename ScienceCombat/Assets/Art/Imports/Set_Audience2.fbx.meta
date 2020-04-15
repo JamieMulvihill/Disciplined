@@ -33,8 +33,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ShinyMetal_Mat
-    second: {fileID: -2546039075986145507, guid: b9b0968c7aac0a447be67b1b667d96d0,
-      type: 3}
+    second: {fileID: 2100000, guid: e841e3109f747b346beef23d5f17d7a9, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
