@@ -11,8 +11,8 @@ public class MenuButtons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Wait());
         print("Start");
+        StartCoroutine(Wait());
     }
 
     // Update is called once per frame
@@ -30,6 +30,11 @@ public class MenuButtons : MonoBehaviour
     private void Exit()
     {
         Application.Quit();
+    }
+
+    private void Controls()
+    {
+        SceneManager.LoadScene("Controls");
     }
 
     private IEnumerator Wait()
