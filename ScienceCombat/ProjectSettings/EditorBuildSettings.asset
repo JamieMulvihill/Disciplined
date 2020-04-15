@@ -13,10 +13,13 @@ EditorBuildSettings:
     guid: e491063f8927ed64b8dc0fa200d41bcb
   - enabled: 1
     path: Assets/Scenes/Sam's.unity
-    guid: d8c58ec24a241b843889f483efaf1ab8
+    guid: 7f57905b9be347e4caffa9da9df4620c
   - enabled: 0
     path: Assets/Scenes/Josh's.unity
     guid: 05b34cbc64e044043876911d8817ceae
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/d8c58ec24a241b843889f483efaf1ab8
+    guid: d8c58ec24a241b843889f483efaf1ab8
   - enabled: 0
     path: Assets/Scenes/JamieScene.unity
     guid: b388f22ebac1fdd4a8a3207dd412be92
