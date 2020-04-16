@@ -13,7 +13,7 @@ public class MultipleTargetCamera : MonoBehaviour
     public float cameraNearClamp = 14f;
     public float zoomLimiter;
     private Camera cam;
-    public GameObject centre;
+   // public GameObject centre;
     public float lonely = 15;
     private void Start(){
         cam = GetComponent<Camera>();
@@ -32,7 +32,7 @@ public class MultipleTargetCamera : MonoBehaviour
     void Move(){
         // call the get centrepoint function and store the result, add the offset value and store new postion
         Vector3 centrePoint = GetCentrePoint();
-        centre.transform.position = centrePoint; ///***** centre is used to debug the cameras cetre point with a game object, nothing else****
+        //centre.transform.position = centrePoint; ///***** centre is used to debug the cameras cetre point with a game object, nothing else****
         float standardOffset = -24f;
 
         if (centrePoint.z < -cameraNearClamp) {
