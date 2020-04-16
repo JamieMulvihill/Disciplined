@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class QuarantineManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] zones = new GameObject[9];
+    [SerializeField] private GameObject[] wallForces = new GameObject[5];
     [SerializeField] private GameObject[] playerChecks = new GameObject[5];
     [SerializeField] private GameObject[] gasPos = new GameObject[5];
     [SerializeField] private GameObject gasPrefab;
@@ -106,12 +107,15 @@ public class QuarantineManager : MonoBehaviour
 
     void Quarantine(int quarantinedZone)
     {
+        wallForces[quarantinedZone].SetActive(true);
+
         switch (quarantinedZone)
         {
             case 0:
                 quarantineScript[0].raiseWalls = true;
                 quarantineScript[5].raiseWalls = true;
                 quarantineScript[6].raiseWalls = true;
+                
                 break;
 
             case 1:
@@ -208,5 +212,9 @@ public class QuarantineManager : MonoBehaviour
 
         yield return new WaitForSeconds(delay);
         navZones[zone].SetActive(false);
+        if (zone < 5)
+        {
+            wallForces[zone].SetActive(false);
+        }
     }
 }

@@ -11,7 +11,7 @@ public class CheckForPlayers : MonoBehaviour
 
     private void Start()
     {
-        zoneCollider = GetComponent<BoxCollider>();
+        //zoneCollider = GetComponent<BoxCollider>();
 
         //QMScript = manager.GetComponent<QuarantineManager>();
     }
