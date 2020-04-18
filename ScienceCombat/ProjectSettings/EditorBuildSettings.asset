@@ -11,8 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharacterSelectScreen.unity
     guid: e491063f8927ed64b8dc0fa200d41bcb
-  - enabled: 1
-    path: Assets/Scenes/sam's.unity
+  - enabled: 0
+    path: Assets/Scenes/Sam's.unity
     guid: 9cbe4c17c1fc03847b247fa6d0395c31
   - enabled: 0
     path: Assets/Scenes/Sam's Capturing.unity
@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/JamieScene.unity
     guid: b388f22ebac1fdd4a8a3207dd412be92
+  - enabled: 1
+    path: Assets/Scenes/Jamie.unity
+    guid: 93ed5d00e4f66be448dea3e037a0c088
   m_configObjects: {}
