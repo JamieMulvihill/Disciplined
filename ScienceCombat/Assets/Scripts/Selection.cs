@@ -10,7 +10,7 @@ public class Selection : MonoBehaviour
     [SerializeField] private Image characterSprite;
     [SerializeField] private PlayerContainer playerContainer;
     [SerializeField] private GameObject MenuChar;
-    public GameObject CharPosition;
+    public GameObject characterPosition;
     private int indexPosition = 0;
     private CharacterSelect selector;
     float inputTime = 0.0f;
@@ -27,79 +27,80 @@ public class Selection : MonoBehaviour
 
         selector = characterSelector.GetComponent<CharacterSelect>();
         characterSprite.sprite = selector.playabeCharacters[indexPosition].ScientistSprite;
-        //MenuChar = Instantiate(selector.playabeCharacters[indexPosition].Scientist);
-        //MenuChar.transform.localScale = new Vector3(100,100,100);
-        //MenuChar.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].MenuCharacter.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-        //MenuChar.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].MenuCharacter.GetComponent<SkinnedMeshRenderer>().bones;
-
         MenuChar = Instantiate(selector.playabeCharacters[indexPosition].MenuCharacter);
-        MenuChar.transform.position = CharPosition.transform.position;
+        MenuChar.transform.position = characterPosition.transform.position;
         MenuChar.transform.localScale = new Vector3(500, 500, 500);
     }
 
-    // Update is called once per frame
+   
     void LateUpdate()
     {
         if (!selectedPlayer)
             characterSprite.sprite = selector.playabeCharacters[ChoosingCharacter()].ScientistSprite;
         Anim = MenuChar.GetComponent<Animator>();
 
-
         SelectingChoice();
     }
+
+    // Function to determine which element of the List of Characters is to be displayed On screen
     int ChoosingCharacter()
     {
-
+        // CHeck if a player is selected
         if (!selectedPlayer)
         {
+            //  Check if the input from the controller is in the right direction 
             if (Input.GetAxis("Horizontal" + playerNum.ToString()) > .5)
             {
+                // check the time since last input is greater than the delay time
                 inputTime = Time.time;
                 if (inputTime - lastInput > .3)
                 {
-
+                    // check which element of the list is being displayed,
+                    // increase the indexPosition, store the time and destroy the GameObject currently Displayed
+                    // Instantiate the next GameObject based on the new IndexPosition, set its postion and Scale.
                     if (indexPosition < selector.playabeCharacters.Count - 1)
                     {
                         indexPosition++;
                         lastInput = Time.time;
-
-
                         Destroy(MenuChar);
                         MenuChar = Instantiate(selector.playabeCharacters[indexPosition].MenuCharacter);
-                        MenuChar.transform.position = CharPosition.transform.position;
+                        MenuChar.transform.position = characterPosition.transform.position;
                         MenuChar.transform.localScale = new Vector3(500, 500, 500);
 
                     }
 
+                    // set index back to 0 to start again, store the time
+                    // destroy the GameObject currently Displayed
+                    // Instantiate the next GameObject based on the new IndexPosition, set its postion and Scale.
                     else
                     {
                         indexPosition = 0;
                         lastInput = Time.time;
-
-
                         Destroy(MenuChar);
                         MenuChar = Instantiate(selector.playabeCharacters[indexPosition].MenuCharacter);
-                        MenuChar.transform.position = CharPosition.transform.position;
+                        MenuChar.transform.position = characterPosition.transform.position;
                         MenuChar.transform.localScale = new Vector3(500, 500, 500);
                     }
                 }
             }
 
+            // check if the input from the controller is in the left direction
             if (Input.GetAxis("Horizontal" + playerNum.ToString()) < -.5)
             {
-
+                // check the time since last input is greater than the delay time
                 inputTime = Time.time;
                 if (inputTime - lastInput > .3)
                 {
-                    
+                    // check which element of the list is being displayed,
+                    // decrease the indexPosition, store the time and destroy the GameObject currently Displayed
+                    // Instantiate the next GameObject based on the new IndexPosition, set its postion and Scale.
                     if (indexPosition > 0)
                     {
                         indexPosition--;
                         lastInput = Time.time;
-
                         Destroy(MenuChar);
                         MenuChar = Instantiate(selector.playabeCharacters[indexPosition].MenuCharacter);
-                        MenuChar.transform.position = CharPosition.transform.position;
+                        MenuChar.transform.position = characterPosition.transform.position;
                         MenuChar.transform.localScale = new Vector3(500, 500, 500);
                     }
 
@@ -107,17 +108,16 @@ public class Selection : MonoBehaviour
                     {
                         indexPosition = selector.playabeCharacters.Count - 1;
                         lastInput = Time.time;
-
-
                         Destroy(MenuChar);
                         MenuChar = Instantiate(selector.playabeCharacters[indexPosition].MenuCharacter);
-                        MenuChar.transform.position = CharPosition.transform.position;
+                        MenuChar.transform.position = characterPosition.transform.position;
                         MenuChar.transform.localScale = new Vector3(500, 500, 500);
                     }
 
                 }
             }
         }
+        //return the value of index postion to control which element of the list of character to display
         return indexPosition;
     }
     void SelectingChoice()
@@ -125,12 +125,6 @@ public class Selection : MonoBehaviour
 
         if (!selectedPlayer)
         {
-            //Mesh = Instantiate(selector.playabeCharacters[indexPosition].Scientist);
-            //Mesh.transform.localScale = new Vector3(100, 100, 100);
-            //Mesh.GetComponent<SkinnedMeshRenderer>().sharedMesh = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-            //Mesh.GetComponent<SkinnedMeshRenderer>().bones = selector.playabeCharacters[indexPosition].Scientist.GetComponent<SkinnedMeshRenderer>().bones;
-
-            //if (Input.GetKeyDown($"joystick {playerNum} button 0"))
             if(Input.GetButtonDown(selectButton + playerNum.ToString()))
             {
                 selectedPlayer = true;
@@ -143,7 +137,6 @@ public class Selection : MonoBehaviour
         }
         if (selectedPlayer)
         {
-            //if (Input.GetKeyDown($"joystick {playerNum} button 1"))
             if (Input.GetButtonDown(startButton + playerNum.ToString()))
             {
                 //SceneManager.LoadScene("Jamie");

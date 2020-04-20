@@ -51,20 +51,6 @@ public class Grant : MonoBehaviour
             }
         }
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (!isPossessed)
-    //    {
-    //        scientist = collision.gameObject.GetComponent<Scientist>();
-    //        if (scientist)
-    //        {
-    //            isPossessed = true;
-    //            scientist.grant = this;
-    //            Debug.Log(scientist.gameObject.tag);
-    //        }
-    //    }
-    //}
     
     private void MaxedOutGrant() {
         if (grantValue <= 0) {
@@ -82,10 +68,13 @@ public class Grant : MonoBehaviour
     {
         for (int i = 0; i < 30; i++)
         {
+            // Get a point within a UnitSphere mutiplied by range variable frome the centre variable.
             Vector3 randomPoint = center + Random.insideUnitSphere * range;
             NavMeshHit hit;
+            // Check that the point is a point on the NavMesh
             if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
             {
+                // Store the result
                 result = hit.position;
                 return true;
             }
