@@ -263,6 +263,7 @@ MonoBehaviour:
   hasGrant: 0
   grantEarnings: 0
   healthManager: {fileID: 7123947294955925260}
+  healthSprite: {fileID: 7123947296159613987}
   controllerIndex: 0
   grant: {fileID: 0}
   scientistPrefabs:
@@ -1040,7 +1041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7123947296159614172
 Transform:
   m_ObjectHideFlags: 0
@@ -1391,6 +1392,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7123947294955925265}
     m_Modifications:
+    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
+        type: 3}
+      propertyPath: m_Name
+      value: Punch Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1445,11 +1451,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
-        type: 3}
-      propertyPath: m_Name
-      value: Punch Hitbox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75924fb149fe82348947c7b1da35bbb1, type: 3}

@@ -2077,6 +2077,7 @@ MonoBehaviour:
   hasGrant: 0
   grantEarnings: 0
   healthManager: {fileID: 6297818517317787712}
+  healthSprite: {fileID: 7030937649653244189}
   controllerIndex: 2
   grant: {fileID: 0}
   scientistPrefabs:
@@ -2086,6 +2087,10 @@ MonoBehaviour:
   - {fileID: 929000472914193546, guid: dbad9d36d84861043aeff669db1ec636, type: 3}
   anim: {fileID: 151615778732195122}
   slippingVelocity: {x: 0, y: 0, z: 0}
+  pickupButton: 
+  glovesPrefab: {fileID: 0}
+  gogglesPrefab: {fileID: 0}
+  labCoatPrefab: {fileID: 0}
 --- !u!114 &6297818517317787712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2135,6 +2140,7 @@ MonoBehaviour:
   triggerButton: RB
   damage: 1
   cooldown: 2
+  anim: {fileID: 0}
 --- !u!1 &6553381092256536126
 GameObject:
   m_ObjectHideFlags: 0
