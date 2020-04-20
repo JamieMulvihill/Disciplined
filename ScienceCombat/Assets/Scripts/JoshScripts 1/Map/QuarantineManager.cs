@@ -45,53 +45,61 @@ public class QuarantineManager : MonoBehaviour
     {
         if (managerScript.canQuarantine == true && isQuarantining == false)
         {
+
             if (managerScript.zone1 == true)
             {
+                
                 managerScript.canQuarantine = false;
                 isQuarantining = true;
                 managerScript.zone1 = false;
                 int zone = 0;
-                Quarantine(zone);
+                StartCoroutine(WarningShake(zone, 2f));
+               
             }
 
             if (managerScript.zone2 == true)
             {
+                cameraShaker.GetComponent<CameraShake>().shake = true;
                 managerScript.canQuarantine = false;
                 isQuarantining = true;
                 managerScript.zone2 = false;
                 int zone = 1;
-                Quarantine(zone);
+                StartCoroutine(WarningShake(zone, 2f));
             }
 
             if (managerScript.zone3 == true)
             {
+                cameraShaker.GetComponent<CameraShake>().shake = true;
                 managerScript.canQuarantine = false;
                 isQuarantining = true;
                 managerScript.zone3 = false;
                 int zone = 2;
-                Quarantine(zone);
+                StartCoroutine(WarningShake(zone, 2f));
             }
 
             if (managerScript.zone4 == true)
             {
+                cameraShaker.GetComponent<CameraShake>().shake = true;
                 managerScript.canQuarantine = false;
                 isQuarantining = true;
                 managerScript.zone4 = false;
                 int zone = 3;
-                Quarantine(zone);
+                StartCoroutine(WarningShake(zone, 2f));
             }
 
             if (managerScript.zone5 == true)
             {
+                cameraShaker.GetComponent<CameraShake>().shake = true;
                 managerScript.canQuarantine = false;
                 isQuarantining = true;
                 managerScript.zone5 = false;
                 int zone = 4;
-                Quarantine(zone);
+                StartCoroutine(WarningShake(zone, 2f));
             }
 
             if (managerScript.auto == true)
             {
+                cameraShaker.GetComponent<CameraShake>().shake = true;
                 managerScript.canQuarantine = false;
                 isQuarantining = true;
                 int rand = Random.Range(0, 5);
@@ -100,7 +108,7 @@ public class QuarantineManager : MonoBehaviour
                     rand = Random.Range(0, 5);
                 }
                 lastNum = rand;
-                Quarantine(rand);
+                StartCoroutine(WarningShake(rand, 2f));
             }
         }
     }
@@ -185,7 +193,6 @@ public class QuarantineManager : MonoBehaviour
         playerChecks[_activeZone].SetActive(true);
         NavMeshHandler(_activeZone);
         navZones[_activeZone].GetComponent<CheckForPlayers>().PlayersWithinZoneCheck(navZones[_activeZone].GetComponent<NavMeshObstacle>().size);
-        cameraShaker.GetComponent<CameraShake>().shake = true;
         if (playersInQueue == false){
             playerChecks[_activeZone].SetActive(false);
             Invoke("DeQuarantine", 5);
@@ -217,4 +224,12 @@ public class QuarantineManager : MonoBehaviour
             wallForces[zone].SetActive(false);
         }
     }
+
+    IEnumerator WarningShake(int zone, float delay)
+    {
+        cameraShaker.GetComponent<CameraShake>().shake = true;
+        yield return new WaitForSeconds(delay);
+        Quarantine(zone);
+    }
+
 }

@@ -13,13 +13,13 @@ public class MultipleTargetCamera : MonoBehaviour
     public float cameraNearClamp = 14f;
     public float zoomLimiter;
     private Camera cam;
-   // public GameObject centre;
-    public float lonely = 15;
+    public float defaultDistance = 15;
     private void Start(){
         cam = GetComponent<Camera>();
     }
 
     private void LateUpdate(){
+
         //if the list of transofrms is empty return
         if (targets.Count == 0) {
             return;
@@ -30,60 +30,66 @@ public class MultipleTargetCamera : MonoBehaviour
     }
 
     void Move(){
-        // call the get centrepoint function and store the result, add the offset value and store new postion
+
+        // get the centre point function and store the result, add the offset value and store new postion
         Vector3 centrePoint = GetCentrePoint();
-        //centre.transform.position = centrePoint; ///***** centre is used to debug the cameras cetre point with a game object, nothing else****
         float standardOffset = -24f;
 
+        // Check if the camera has moved too far in the Z axis and adjust using clamp value
         if (centrePoint.z < -cameraNearClamp) {
-            Debug.Log(-centrePoint.z - cameraNearClamp);
             offset.z = standardOffset + (-centrePoint.z - cameraNearClamp);
         }
         
+        // Move the camera to follow the centre point of the players in the x axis
         offset.x = centrePoint.x;
         
+        // alter the cameras position to the new position, using Smoothdamp to change gradually over time
         Vector3 newPosition = centrePoint + offset;
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
     }
 
     void Zoom() {
 
-        //Debug.Log(GetGreatestDistance());
-        // set the cameras field of view and zoom values based of the Lerp calculations of the greastest distance points divided by the zoom limiter 
+        // set the cameras field of view and zoom values based off the Lerp calculations
+        // of the greastest distance points divided by the zoom limiter 
         float newZoom = Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / zoomLimiter);
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, newZoom, Time.deltaTime);
     }
 
     float GetGreatestDistance() {
+
+        // if there is only one player, set the distance to a the fixed value.
         if (targets.Count == 1)
-            return lonely;
+            return defaultDistance;
+
         // create a bounding box around the first elemnt of the list of transforms
         // Use the encapulate function to add the remaining transforms to the bounding box
         var bounds = new Bounds(targets[0].position, Vector3.zero);
         for (int i = 0; i < targets.Count; i++) {
             bounds.Encapsulate(targets[i].position);
         }
-        // get the distnce of the two furthest away points of the box using pythageros
+        // get the distnce of the two furthest away points of the box 
         float distance = (bounds.size.z * bounds.size.z) + (bounds.size.x * bounds.size.x);
-
         return Mathf.Sqrt(distance);
     }
 
     Vector3 GetCentrePoint()
     {
+        //if there is only 1 player, use that position as the centre
         if (targets.Count == 1) {
             return targets[0].position;
         }
 
         // create a bounding box around the first elemnt of the list of transforms
-        // Use the encapulate function to add the remaining transforms to the bounding box, this will adjust the centre point based on the indiviual transforms
+        // Use the encapulate function to add the remaining transforms to the bounding box,
+        //this will adjust the centre point based on the indiviual transforms
         var bounds = new Bounds(targets[0].position, Vector3.zero);
         for (int i = 0; i < targets.Count; i++) {
             bounds.Encapsulate(targets[i].position);
         }
         return new Vector3(bounds.center.x, 0f, bounds.center.z);
-        //return bounds.center;
     }
+
     public void RemoveDeadPlayer(Transform deadPlayerTransform) {
         for (int i = 0; i < targets.Count; i++)
         {
@@ -93,6 +99,7 @@ public class MultipleTargetCamera : MonoBehaviour
         }
         GetCentrePoint();
     }
+
     public void AddPlayer(Transform playerTransform) {
         targets.Add(playerTransform);
     }
