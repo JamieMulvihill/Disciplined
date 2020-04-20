@@ -60,5 +60,6 @@ MonoBehaviour:
   duration: 0
   damage: 0
   radius: 0
-  particleEffectPrefab: {fileID: 234155018081617706, guid: 0f051c00429d9294e80acfc52f216125,
+  deltaRadius: 0
+  particleEffectPrefab: {fileID: 369746833374612549, guid: dffb219dd5983f64499ff40d055b1d23,
     type: 3}
