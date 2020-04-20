@@ -30,6 +30,10 @@ public class Scientist : MonoBehaviour
     [SerializeField] private GameObject gogglesPrefab;
     [SerializeField] private GameObject labCoatPrefab;
     GameObject item;
+
+    public bool holdingGloves = false;
+    public bool holdingGoggles = false;
+    public bool holdingLabCoat = false;
     // ----------------------------------------------
 
     void Start()
@@ -109,8 +113,8 @@ public class Scientist : MonoBehaviour
         // Pickups---------------------------------------
         if (item != null)
         {
-            Vector3 relativeSpawnPosition = new Vector3(0, 2, 0);
-            item.transform.SetPositionAndRotation(transform.position + relativeSpawnPosition, transform.rotation);
+            //Vector3 relativeSpawnPosition = new Vector3(0, 2, 0);
+            //item.transform.SetPositionAndRotation(transform.position + relativeSpawnPosition, transform.rotation);
         }
         // ----------------------------------------------
     }
@@ -140,9 +144,23 @@ public class Scientist : MonoBehaviour
             {
                 if (Mathf.Abs(Input.GetAxis(pickupButton)) > 0.01f)
                 {
-                    Destroy(other.gameObject);
-                    Vector3 relativeSpawnPosition = new Vector3(0, 2, 0);
-                    item = Instantiate(glovesPrefab, transform.position + relativeSpawnPosition, Quaternion.identity);
+                    if (!holdingGloves && other.tag == "Gloves")
+                    {
+                        holdingGloves = true;
+                        Destroy(other.gameObject);
+                    }
+                    else if (!holdingGoggles && other.tag == "Goggles")
+                    {
+                        holdingGoggles = true;
+                        Destroy(other.gameObject);
+                    }
+                    if (!holdingLabCoat && other.tag == "Lab Coat")
+                    {
+                        holdingLabCoat = true;
+                        Destroy(other.gameObject);
+                    }
+                    //Vector3 relativeSpawnPosition = new Vector3(0, 2, 0);
+                    //item = Instantiate(glovesPrefab, transform.position + relativeSpawnPosition, Quaternion.identity);
                 }
             }
         }
