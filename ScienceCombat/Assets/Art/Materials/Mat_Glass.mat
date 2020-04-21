@@ -101,7 +101,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.12
     - _GlossyReflections: 1
-    - _Metallic: 0.9
+    - _Metallic: 0.98
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Opacity: 1
@@ -112,7 +112,7 @@ Material:
     - _RimAmount: 0.1
     - _RimThreshold: 0.1
     - _Shininess: 0.822
-    - _Smoothness: 0.581
+    - _Smoothness: 0.379
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 5
@@ -122,7 +122,7 @@ Material:
     - _UseColorMap: 0
     - _UseEmissiveMap: 0
     - _UseMetallicMap: 0
-    - _UseNormalMap: 1
+    - _UseNormalMap: 0
     - _UseOpacityMap: 0
     - _UseRoughnessMap: 0
     - _WorkflowMode: 1
