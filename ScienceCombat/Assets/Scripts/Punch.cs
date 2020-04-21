@@ -12,13 +12,13 @@ public class Punch : MonoBehaviour
     private bool buttonState;
 
     private float lastTime;
-    public Animator anim;
+    private Animator anim;
 
     void Start()
     {
         lastTime = Time.time;
         triggerButton += GetComponentInParent<Scientist>().controllerIndex.ToString();
-        //anim.SetTrigger("slap");
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,6 +42,7 @@ public class Punch : MonoBehaviour
                     {
                         Debug.Log("Hit Player");
                         Debug.Log(other.gameObject);
+                        anim.Play("Slap");
                         other.gameObject.GetComponent<Health>().TakeDamage(damage);
                         lastTime = Time.time;
                     }

@@ -31,16 +31,16 @@ MonoBehaviour:
     value: 1
   toneCurveToeLength:
     overrideState: 1
-    value: 0.329
+    value: 0.075
   toneCurveShoulderStrength:
     overrideState: 1
-    value: 0.09
+    value: 1
   toneCurveShoulderLength:
     overrideState: 1
     value: 0.63
   toneCurveShoulderAngle:
     overrideState: 1
-    value: 0.472
+    value: 1
   toneCurveGamma:
     overrideState: 1
     value: 1
@@ -53,10 +53,10 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 7
+    value: -5
   tint:
     overrideState: 1
-    value: 20
+    value: 9
   colorFilter:
     overrideState: 1
     value: {r: 1, g: 1, b: 1, a: 1}
@@ -65,16 +65,16 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: 25
+    value: 100
   brightness:
     overrideState: 1
     value: 0
   postExposure:
-    overrideState: 1
+    overrideState: 0
     value: -0.04
   contrast:
     overrideState: 1
-    value: 30
+    value: -4
   mixerRedOutRedIn:
     overrideState: 1
     value: 100
@@ -110,7 +110,7 @@ MonoBehaviour:
     value: {x: 0.9183858, y: 0.9215792, z: 1, w: -0.080767296}
   gain:
     overrideState: 1
-    value: {x: 1, y: 0.9691218, z: 0.87648785, w: 0.26249373}
+    value: {x: 1, y: 0.9691218, z: 0.87648785, w: 0.18539272}
   masterCurve:
     overrideState: 1
     value:
@@ -1338,13 +1338,13 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.35
+    value: 0.496
   smoothness:
     overrideState: 1
-    value: 0.15
+    value: 1
   roundness:
     overrideState: 1
-    value: 1
+    value: 0.434
   rounded:
     overrideState: 1
     value: 0
@@ -1354,7 +1354,7 @@ MonoBehaviour:
     defaultState: 1
   opacity:
     overrideState: 1
-    value: 1
+    value: 0.477
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,13 +1395,13 @@ MonoBehaviour:
     value: 1
   softKnee:
     overrideState: 1
-    value: 0.5
+    value: 0
   clamp:
     overrideState: 1
     value: 65472
   diffusion:
     overrideState: 1
-    value: 7
+    value: 5.3
   anamorphicRatio:
     overrideState: 1
     value: 1
