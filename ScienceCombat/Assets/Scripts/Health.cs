@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Health : MonoBehaviour
     private float totalPoisionDmg = 30;
     private float currentPoisionDmg = 0;
     public bool isPoisioned;
+    public Image healthBar;
 
     private bool runningCoroutine = false;
     public float lastAcidDamageTime = 0;
@@ -26,12 +28,13 @@ public class Health : MonoBehaviour
         health = maxHealth;
         greenGuiValue = 255;
         healthSegment = (greenGuiValue / health);
+        healthBar.fillAmount = health / maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        healthBar.fillAmount = health / maxHealth;
     }
 
     public void PoisionDamage() {
