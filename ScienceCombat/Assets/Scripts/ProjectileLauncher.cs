@@ -19,7 +19,7 @@ public class ProjectileLauncher : MonoBehaviour
     [SerializeField] protected float forwardOffset;               // spawn position offset (forward)
     [SerializeField] protected float fireRate = 1f;
     [SerializeField] protected float momentumScalar = 0.0f;       // carries velocity from player to projectile; 1.0 = full retention
-    private float lastShotTime = 0.0f;
+    public float lastShotTime = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
