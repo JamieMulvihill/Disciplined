@@ -36,6 +36,8 @@ public class Scientist : MonoBehaviour
     public bool holdingLabCoat = false;
     // ----------------------------------------------
 
+    public int test = 0;
+
     void Start()
     {
         playerHOR += GetComponent<Scientist>().controllerIndex.ToString();
@@ -75,8 +77,10 @@ public class Scientist : MonoBehaviour
 
     void Update()
     {
+        test++;
+
         //healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
-        
+
         if (healthManager.health <= 0) {
             Camera gameCam = Camera.main;
             MultipleTargetCamera multipleTargetCamera = gameCam.GetComponent<MultipleTargetCamera>();
