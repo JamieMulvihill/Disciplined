@@ -4,34 +4,20 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private Collider[] hitObjecets;
     public float damage;
     public float damageRadius;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     protected virtual void AreaOfEffect(GameObject hitPlayer)
     {
-        //Debug.Log("Base class AreaOfEffect function.");
+        //This is a virtual function to be orverridden by the Child classes
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        //hitObjecets = Physics.OverlapSphere(transform.position, damageRadius);
-        //foreach (Collider hit in hitObjecets)
-        //{
+    private void OnCollisionEnter(Collision collision) {
 
-            if (collision.gameObject.tag != gameObject.tag) //(hit.tag != gameObject.tag)
-            {
-                AreaOfEffect(collision.gameObject);
-                Destroy(gameObject);
-            }
-        //}
-
+        if (collision.gameObject.tag != gameObject.tag) {
+            AreaOfEffect(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerStay(Collider collision)
@@ -43,12 +29,4 @@ public class Projectile : MonoBehaviour
         }
 
     }
-
-    private void OnDrawGizmos()
-    {
-        //Gizmos.color = Color.red;
-        //Gizmos.DrawWireSphere(transform.position, damageRadius);
-    }
-
-
 }
