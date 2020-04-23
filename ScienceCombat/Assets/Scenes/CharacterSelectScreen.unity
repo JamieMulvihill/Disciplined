@@ -881,7 +881,7 @@ MonoBehaviour:
   playerContainer: {fileID: 1451118706}
   MenuChar: {fileID: 0}
   characterPosition: {fileID: 63893059}
-  playerNum: 0
+  playerNum: 1
   selectButton: A
   startButton: B
 --- !u!1 &468837012

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterSpawn : MonoBehaviour
 {
+    [Header("UI")]
+    [SerializeField] private Canvas UICanvas;
+
     [Header("Game Objects")]
     [SerializeField] private GameObject realPlayer;
     public GameObject fakePlayer;
@@ -87,6 +90,15 @@ public class CharacterSpawn : MonoBehaviour
     public void SpawnPlayer() // for spawning different scientists, just pass in player desired
     {
         newestPlayer = Instantiate(managerScript.queuedRespawns.Dequeue());
+        // Update UI Here!
+        for (int j = 0; j < 4; j++)
+        {
+            // on spawn/respawn, find children of UI canvas and allow the UI bars to re-initialise.
+            string bar = "Player ";
+            bar += j + 1;
+            UICanvas.transform.Find(bar + " Primary").GetComponent<cooldownUI>().firstUpdate = true;
+            UICanvas.transform.Find(bar + " Secondary").GetComponent<cooldownUI>().firstUpdate = true;
+        }
         realT = newestPlayer.transform;
         //scoreboard.scientists.Add(newestPlayer.GetComponent<Scientist>());
         //newestPlayer.GetComponent<Rigidbody>().useGravity = false;
