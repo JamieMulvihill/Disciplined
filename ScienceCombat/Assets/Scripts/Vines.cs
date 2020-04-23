@@ -22,11 +22,17 @@ public class Vines : MonoBehaviour{
 
     private void OnTriggerEnter(Collider other)
     {
+        // Check if the Vines have collided with something that is not the biologist or the ground
+        // get the Scientist component of the collided object
         if (other.gameObject.tag != "Biologist" && other.gameObject.tag != "Ground" && scientist == null)
         {
             scientist = other.gameObject.GetComponent<Scientist>();
             if (scientist)
             {
+                // Set the Scientist to being captured
+                // Start thr capture Co-Routine
+                // Set the Spawn positon for the Vines gameObject
+                // Set the Vines GAmeObject to active
                 scientist.isCaptured = true;
                 StartCoroutine(Capture(scientist));
                 transform.GetChild(0).position = other.transform.position;
@@ -35,10 +41,16 @@ public class Vines : MonoBehaviour{
         }
     }
 
+    // function to handle the Capture behavior
    IEnumerator Capture(Scientist capturedScientist) {
+        // Set the captured Scientist Kinematic to true so it connot move
+        // wait for 6 seconds
         capturedScientist.GetComponent<Rigidbody>().isKinematic = true;
-       
         yield return new WaitForSeconds(6);
+        // Free the Scientist
+        // set the Captured Scientist to not captured
+        // set the Scienitst back to not kinemtatic
+        // Destroy the Vines gameobject
         capturedScientist.isCaptured = false;
         scientist = null;
         capturedScientist.GetComponent<Rigidbody>().isKinematic = false;

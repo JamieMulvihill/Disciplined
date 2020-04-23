@@ -273,7 +273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7123947294955925259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.68, y: 0, z: -10.46}
+  m_LocalPosition: {x: 16.51, y: 0, z: -10.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7123947296592183844}
@@ -1790,6 +1790,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7123947294955925265}
     m_Modifications:
+    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
+        type: 3}
+      propertyPath: m_Name
+      value: Punch Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1844,11 +1849,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
-        type: 3}
-      propertyPath: m_Name
-      value: Punch Hitbox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75924fb149fe82348947c7b1da35bbb1, type: 3}
