@@ -17,7 +17,7 @@ public class cooldownUI : MonoBehaviour
     {
         Scientist[] scientists;
         scientists = FindObjectsOfType<Scientist>();
-        for (int i = 0; i < scientists.Length; i++)
+        for (int i = 0; i < scientists.Length - 4; i++)
         {
             if (scientists[i].gameObject.tag == "Chemist" && playerIndex == 0)
             {
@@ -75,15 +75,16 @@ public class cooldownUI : MonoBehaviour
         }
         else if (scientist.tag == "Biologist")
         {
+            var projectileLaunchers = scientist.GetComponents<ProjectileLauncher>();
             if (primarySecondary == 0)
             {
-                slider.maxValue = scientist.GetComponent<ProjectileLauncher>().fireRate;
-                slider.value = slider.maxValue - (Time.time - scientist.GetComponent<ProjectileLauncher>().lastShotTime);
+                slider.maxValue = projectileLaunchers[0].fireRate;
+                slider.value = slider.maxValue - (Time.time - projectileLaunchers[0].lastShotTime);
             }
             if (primarySecondary == 1)
             {
-                slider.maxValue = scientist.GetComponent<ProjectileLauncher>().fireRate;
-                slider.value = slider.maxValue - (Time.time - scientist.GetComponent<ProjectileLauncher>().lastShotTime);
+                slider.maxValue = projectileLaunchers[1].fireRate;
+                slider.value = slider.maxValue - (Time.time - projectileLaunchers[1].lastShotTime);
             }
             Debug.Log(slider.maxValue);
             return;
