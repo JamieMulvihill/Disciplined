@@ -8,22 +8,105 @@ public class cooldownUI : MonoBehaviour
     public Slider slider;
 
     public int playerIndex;
+    public int primarySecondary;
 
     private bool firstUpdate = true;
+    GameObject scientist;
 
-    Scientist [] scientists;
+    private void InitialiseScientist()
+    {
+        Scientist[] scientists;
+        scientists = FindObjectsOfType<Scientist>();
+        for (int i = 0; i < scientists.Length; i++)
+        {
+            if (scientists[i].gameObject.tag == "Chemist" && playerIndex == 0)
+            {
+                scientist = scientists[i].gameObject;
+                break;
+            }
+            else if (scientists[i].gameObject.tag == "Engineer" && playerIndex == 1)
+            {
+                scientist = scientists[i].gameObject;
+                break;
+            }
+            else if (scientists[i].gameObject.tag == "Biologist" && playerIndex == 2)
+            {
+                scientist = scientists[i].gameObject;
+                break;
+            }
+            else if (scientists[i].gameObject.tag == "Physicist" && playerIndex == 3)
+            {
+                scientist = scientists[i].gameObject;
+                break;
+            }
+        }
+        firstUpdate = false;
+    }
+    
+    private void UpdateScientist()
+    {
+        if (scientist.tag == "Chemist")
+        {
+            if (primarySecondary == 0)
+            {
+                slider.maxValue = scientist.GetComponent<ProjectileLauncher>().fireRate;
+                slider.value = slider.maxValue - (Time.time - scientist.GetComponent<ProjectileLauncher>().lastShotTime);
+            }
+            if (primarySecondary == 1)
+            {
+                slider.maxValue = 1;
+                slider.value = scientist.GetComponent<IceAttack>().overheat.GetHeatFraction();
+            }
+            return;
+        }
+        else if (scientist.tag == "Engineer")
+        {
+            if (primarySecondary == 0)
+            {
+                slider.maxValue = 1;
+                slider.value = scientist.GetComponent<Flammenwerfer>().overheat.GetHeatFraction();
+            }
+            if (primarySecondary == 1)
+            {
+                slider.maxValue = 1;
+                slider.value = scientist.GetComponent<RoboticArm>().overheat.GetHeatFraction();
+            }
+            return;
+        }
+        else if (scientist.tag == "Biologist")
+        {
+            if (primarySecondary == 0)
+            {
+                slider.maxValue = scientist.GetComponent<ProjectileLauncher>().fireRate;
+                slider.value = slider.maxValue - (Time.time - scientist.GetComponent<ProjectileLauncher>().lastShotTime);
+            }
+            if (primarySecondary == 1)
+            {
+                slider.maxValue = scientist.GetComponent<ProjectileLauncher>().fireRate;
+                slider.value = slider.maxValue - (Time.time - scientist.GetComponent<ProjectileLauncher>().lastShotTime);
+            }
+            Debug.Log(slider.maxValue);
+            return;
+        }
+        else if (scientist.tag == "Physicist")
+        {
+            if (primarySecondary == 0)
+            {
+                slider.maxValue = 1;
+                slider.value = scientist.GetComponent<Laser>().overheat.GetHeatFraction();
+            }
+            if (primarySecondary == 1)
+            {
+                slider.maxValue = 1;
+                slider.value = scientist.GetComponent<Dash>().overheat.GetHeatFraction();
+            }
+            return;
+        }
+    }
 
     private void Start()
     {
-        var scientists = FindObjectsOfType<Scientist>();
-
-
-        
-        
         slider.value = 0;
-
-
-        //scientist.GetComponent<Flammenwerfer>().overheat = new Overheat();
     }
 
 
@@ -32,18 +115,15 @@ public class cooldownUI : MonoBehaviour
     {
         if (!firstUpdate)
         {
-            slider.value = Time.time - scientists[0].GetComponent<ProjectileLauncher>().lastShotTime;
-            Debug.Log(slider.value);
+            UpdateScientist();
         }
     }
 
     private void LateUpdate()
     {
-        if (firstUpdate)
+        if (firstUpdate) // after scientists are spawned
         {
-            scientists = FindObjectsOfType<Scientist>();
-            slider.maxValue = scientists[0].gameObject.GetComponent<ProjectileLauncher>().fireRate;
-            firstUpdate = false;
+            InitialiseScientist();
         }
     }
 

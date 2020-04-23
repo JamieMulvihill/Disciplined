@@ -526,7 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heatPerUse: 100
   cooloffPerSecond: 20
-  chillThreshold: 100
+  chillThreshold: 0
   triggerButton: B
   icePrefab: {fileID: 5805129448067776140, guid: aee6553bec7580648ab03004ab174ee2,
     type: 3}
