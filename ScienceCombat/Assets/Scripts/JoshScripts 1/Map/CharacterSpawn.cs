@@ -98,6 +98,9 @@ public class CharacterSpawn : MonoBehaviour
             bar += j + 1;
             UICanvas.transform.Find(bar + " Primary").GetComponent<cooldownUI>().firstUpdate = true;
             UICanvas.transform.Find(bar + " Secondary").GetComponent<cooldownUI>().firstUpdate = true;
+            string text = "Player ";
+            text += j + 1;
+            UICanvas.transform.Find(text + " Grant").GetComponent<grantUI>().firstUpdate = true;
         }
         realT = newestPlayer.transform;
         //scoreboard.scientists.Add(newestPlayer.GetComponent<Scientist>());
