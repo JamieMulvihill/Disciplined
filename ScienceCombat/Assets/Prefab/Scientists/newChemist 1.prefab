@@ -421,6 +421,7 @@ MonoBehaviour:
   forwardOffset: 2
   fireRate: 5
   momentumScalar: 1
+  lastShotTime: 0
 --- !u!65 &7123947294955925263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -494,6 +495,7 @@ MonoBehaviour:
   holdingGloves: 0
   holdingGoggles: 0
   holdingLabCoat: 0
+  test: 0
 --- !u!54 &7123947294955925258
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -522,6 +524,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1505ef85240824c8cc96c114834c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heatPerUse: 100
+  cooloffPerSecond: 20
+  chillThreshold: 100
   triggerButton: B
   icePrefab: {fileID: 5805129448067776140, guid: aee6553bec7580648ab03004ab174ee2,
     type: 3}
