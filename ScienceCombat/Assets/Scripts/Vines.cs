@@ -5,7 +5,6 @@ using UnityEngine;
 public class Vines : MonoBehaviour{
 
     private Scientist scientist;
-    private float originalSpeed;
 
     private void Start() {
         StartCoroutine(deleteSelf());
@@ -45,6 +44,7 @@ public class Vines : MonoBehaviour{
         capturedScientist.GetComponent<Rigidbody>().isKinematic = false;
         Destroy(gameObject);
    }
+
     private void LateUpdate()
     {
         if(scientist)
