@@ -78,6 +78,7 @@ public class Scientist : MonoBehaviour
     void Update()
     {
         test++;
+        Debug.Log("real:" + gameObject.GetInstanceID());
 
         //healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
 
