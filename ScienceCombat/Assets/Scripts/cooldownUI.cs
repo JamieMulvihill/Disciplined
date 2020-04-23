@@ -10,7 +10,7 @@ public class cooldownUI : MonoBehaviour
     public int playerIndex;
     public int primarySecondary;
 
-    private bool firstUpdate = true;
+    public bool firstUpdate = true;
     GameObject scientist;
 
     private void InitialiseScientist()
