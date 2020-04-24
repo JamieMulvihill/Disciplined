@@ -63,7 +63,6 @@ public class MultipleTargetCamera : MonoBehaviour
         // if there is only one player, set the distance to a the fixed value.
         if (targets.Count <= 1)
             return defaultDistance;
-
         
         // create a bounding box around the first elemnt of the list of transforms
         // Use the encapulate function to add the remaining transforms to the bounding box

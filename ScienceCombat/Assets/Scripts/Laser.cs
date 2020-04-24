@@ -110,7 +110,6 @@ public class Laser : MonoBehaviour
     }
 
     // function to move the laser particle effect along the lser from the base to the end
-   
     Vector3 LaserEffect(Vector3 start, Vector3 current, Vector3 target) {
         // Get the distance from where the particle currently is and check it against the magnitude
         // if lower than a specicified distance set the particle to back to the start of the laser
