@@ -47,7 +47,7 @@ public class Health : MonoBehaviour
    
     // Co-Routine to handle Poison functionality
     IEnumerator UpdatePoison() {
-        // Check that the PLayer is poisoned and that there is still
+        // Check that the Player is poisoned and that there is still
         // poison damage to be done
         // repeat every half a second
         while (isPoisioned && totalPoisionDmg >= 1)    {

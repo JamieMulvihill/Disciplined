@@ -13,12 +13,10 @@ public class Scientist : MonoBehaviour
     public bool hasGrant = false;
     public float grantEarnings = 0;
     [SerializeField] private Health healthManager;
-    //[SerializeField] private SpriteRenderer healthSprite;
     public int controllerIndex;
     public Grant grant;
     [SerializeField] private GameObject [] scientistPrefabs;
     public Animator anim;
-    //private Scoreboard scoreboard;
 
     public Vector3 slippingVelocity;
 
@@ -43,10 +41,7 @@ public class Scientist : MonoBehaviour
         playerHOR += GetComponent<Scientist>().controllerIndex.ToString();
         PlayerVer += GetComponent<Scientist>().controllerIndex.ToString();
         manager = GameObject.FindGameObjectWithTag("Manager");
-        //healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
         Camera.main.GetComponent<MultipleTargetCamera>().AddPlayer(gameObject.transform);
-        //scoreboard = FindObjectOfType<Scoreboard>();
-        //grantEarnings = scoreboard.scores[gameObject.tag];
         pickupButton += GetComponent<Scientist>().controllerIndex.ToString();
     }
 
@@ -80,20 +75,18 @@ public class Scientist : MonoBehaviour
         test++;
         Debug.Log("real:" + gameObject.GetInstanceID());
 
-        //healthSprite.color = new Color(healthManager.redValue / 255, healthManager.greenGuiValue / 255, 0 / 255, 1f);
 
         if (healthManager.health <= 0) {
             Camera gameCam = Camera.main;
             MultipleTargetCamera multipleTargetCamera = gameCam.GetComponent<MultipleTargetCamera>();
             multipleTargetCamera.RemoveDeadPlayer(gameObject.transform);
+
             if (grant)
             {
                 grant.scientist = null;
                 grant.isPossessed = false;
                 grant.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             }
-            //scoreboard.scores[gameObject.tag] = grantEarnings;
-            //scoreboard.scientists.Remove(this);
 
             switch(gameObject.tag)
             {
@@ -182,22 +175,13 @@ public class Scientist : MonoBehaviour
     //    }
     //}
 
-    //public void DisignateController(int controllerIndex)
-    //{
-    //    this.controllerIndex = controllerIndex;
-    //    playerHOR = "Horizontal" + controllerIndex.ToString();
-    //    PlayerVer = "Vertical" + controllerIndex.ToString();
-    //}
     private void OnDisable()
     {
         Instantiate(death, transform.position, transform.rotation);
-        //scoreboard.scores[gameObject.tag] = grantEarnings;
-        //scoreboard.scientists.Remove(this);
     }
 
     public void EarningGrant(float cash) {
         grantEarnings += cash;
-        Debug.Log("BLING BLING MOFOS");
 
     }
 }

@@ -35,8 +35,6 @@ public class CheckForPlayers : MonoBehaviour
                 Scientist inZoneScientist = position.GetComponent<Scientist>();
                 if (inZoneScientist){
                     inZoneScientist.GetComponent<Health>().health = 0;
-                    //playerTransforms.Remove(position);
-                    //Camera.main.GetComponent<MultipleTargetCamera>().RemoveDeadPlayer(position);
                 }
             }
         }
