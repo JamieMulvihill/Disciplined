@@ -14,7 +14,9 @@ public class MultipleTargetCamera : MonoBehaviour
     public float zoomLimiter;
     private Camera cam;
     public float defaultDistance = 15;
+    Vector3 defaultTransform;
     private void Start(){
+        defaultTransform = new Vector3(1.75f, .1f, 0);
         cam = GetComponent<Camera>();
     }
 
@@ -59,9 +61,10 @@ public class MultipleTargetCamera : MonoBehaviour
     float GetGreatestDistance() {
 
         // if there is only one player, set the distance to a the fixed value.
-        if (targets.Count == 1)
+        if (targets.Count <= 1)
             return defaultDistance;
 
+        
         // create a bounding box around the first elemnt of the list of transforms
         // Use the encapulate function to add the remaining transforms to the bounding box
         var bounds = new Bounds(targets[0].position, Vector3.zero);
@@ -79,7 +82,10 @@ public class MultipleTargetCamera : MonoBehaviour
         if (targets.Count == 1) {
             return targets[0].position;
         }
-
+        if (targets.Count == 0)
+        {
+            return defaultTransform;
+        }
         // create a bounding box around the first elemnt of the list of transforms
         // Use the encapulate function to add the remaining transforms to the bounding box,
         //this will adjust the centre point based on the indiviual transforms
