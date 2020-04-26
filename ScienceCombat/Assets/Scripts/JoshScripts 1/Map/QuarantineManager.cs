@@ -200,11 +200,19 @@ public class QuarantineManager : MonoBehaviour
     }
 
     public void NavMeshHandler(int _activeZone) {
+        // Check if grant is Within Zone being quarantined
+        // if it isnt
+        // turn on the NavMesh obstacle to remove the Quarantined area from NavMesh
+        // start Co-Routine to re-add removed area back to NavMesh
         if (!navMesh.GrantWithinZone(navZones[_activeZone])){
             navZones[_activeZone].SetActive(true);
             StartCoroutine(ReActivateZone(_activeZone, 5));
         }
 
+        // Check if grant is Within Zone being quarantined
+        // if it is
+        // turn on the NavMesh obstacle of all the other areas to remove them from NavMesh
+        // start Co-Routine to re-add removed areas back to NavMesh
         else if (navMesh.GrantWithinZone(navZones[_activeZone])) {
             for (int i = 0; i < navZones.Length; i++) {
                 if (i != _activeZone) {
@@ -215,6 +223,7 @@ public class QuarantineManager : MonoBehaviour
         }
     }
 
+    //Co-Routine to re-add removed areas from the NavMesh
     IEnumerator ReActivateZone(int zone, float delay){
 
         yield return new WaitForSeconds(delay);
@@ -225,6 +234,7 @@ public class QuarantineManager : MonoBehaviour
         }
     }
 
+    // Co-Routine to set the Camera to shake for a period then set the Quartine wall to raise
     IEnumerator WarningShake(int zone, float delay)
     {
         cameraShaker.GetComponent<CameraShake>().shake = true;
