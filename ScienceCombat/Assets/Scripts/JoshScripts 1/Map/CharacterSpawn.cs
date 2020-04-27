@@ -7,7 +7,6 @@ public class CharacterSpawn : MonoBehaviour
     [Header("Game Objects")]
     [SerializeField] private GameObject realPlayer;
     public GameObject fakePlayer;
-    [SerializeField] private GameObject yeetPlatform;
     private GameObject manager;
 
     public GameObject spawner;
@@ -22,7 +21,7 @@ public class CharacterSpawn : MonoBehaviour
 
     [Header("Bools")]
     private bool spawningPlayer;
-    private bool yeeting;
+    //private bool yeeting;
 
     [Header("Transform")]
     public Transform realT;
@@ -47,7 +46,7 @@ public class CharacterSpawn : MonoBehaviour
         realT = realPlayer.transform;
 
         spawningPlayer = false;
-        yeeting = false;
+        //yeeting = false;
         delayTime = 0;
         speed = 10;
     }
@@ -72,13 +71,13 @@ public class CharacterSpawn : MonoBehaviour
             }
         }
 
-        if(yeeting == true)
-        {
-            Yeet();
-        }
+        //if(yeeting == true)
+        //{
+        //    Yeet();
+        //}
     }
 
-    public void SpawnFetus()
+    public void SpawnFakePlayer()
     {
         //fakePlayer = managerScript.queuedRespawns.Peek();
         Instantiate(fakePlayer);
@@ -102,33 +101,33 @@ public class CharacterSpawn : MonoBehaviour
     }
 
     // It yeets
-    void Yeet()
-    {
-        if(realT.position != yeetPlatform.transform.position)
-            realT.position = Vector3.Lerp(realT.position, yeetPlatform.transform.position, speed * Time.deltaTime);
-        else
-        {
-            yeeting = false;
-            CalculateLanding();
-        }
-    }
+    //void Yeet()
+    //{
+    //    if(realT.position != yeetPlatform.transform.position)
+    //        realT.position = Vector3.Lerp(realT.position, yeetPlatform.transform.position, speed * Time.deltaTime);
+    //    else
+    //    {
+    //        yeeting = false;
+    //        CalculateLanding();
+    //    }
+    //}
 
-    void CalculateLanding()
-    {
-        Vector2 XZ = Random.insideUnitCircle * 13;
-        realT.position = new Vector3(XZ.x, yeetPlatform.transform.position.y, XZ.y);
-        RaycastHit hit;
-        if (Physics.Raycast(realT.position, realT.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
-        {
-            if(hit.transform.tag == "Environment")
-            {
-                realT.position = yeetPlatform.transform.position;
-                CalculateLanding();
-            }
-            else
-            {
-                newestPlayer.GetComponent<Rigidbody>().useGravity = true;
-            }
-        }
-    }
+    //void CalculateLanding()
+    //{
+    //    Vector2 XZ = Random.insideUnitCircle * 13;
+    //    realT.position = new Vector3(XZ.x, yeetPlatform.transform.position.y, XZ.y);
+    //    RaycastHit hit;
+    //    if (Physics.Raycast(realT.position, realT.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
+    //    {
+    //        if(hit.transform.tag == "Environment")
+    //        {
+    //            realT.position = yeetPlatform.transform.position;
+    //            CalculateLanding();
+    //        }
+    //        else
+    //        {
+    //            newestPlayer.GetComponent<Rigidbody>().useGravity = true;
+    //        }
+    //    }
+    //}
 }

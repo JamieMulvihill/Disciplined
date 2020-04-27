@@ -108,7 +108,7 @@ public class PipeLineWaypoints : MonoBehaviour
         //if isobjectplayer == true then check to see which player does not have a character in game
         if(_isObjectPlayer == true)
         {
-            cSpawnScript.SpawnFetus();
+            cSpawnScript.SpawnFakePlayer();
         } else
         {
             SpawnItem();
