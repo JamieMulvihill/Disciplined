@@ -1,107 +1,127 @@
-﻿Shader "Roystan/Toon"
+﻿Shader "JamieDisciplined/Toon"
 {
 	Properties
 	{
+		// defined values for colors, gloss to control the amount of refelction and rim variables
 		_Color("Color", Color) = (0.1, 0.1, .1, 1)
-		_MainTex("Main Texture", 2D) = "white" {}	
+		_MainTex("Main Texture", 2D) = "white" {}
 		[HDR]
-		_AmbientColor("Ambient Color", Color) = (0.2,0.2,0.2,1)
+		_Ambient("Ambient Color", Color) = (0.2,0.2,0.2,1)
 		[HDR]
-		_SpecularColor("Specular Color", Color) = (0.9,0.9,0.9,1)
-		_Glossiness("Glossiness", Float) = 8
+		_SpecularColour("Specular Color", Color) = (0.9,0.9,0.9,1)
+		_Gloss("Glossiness", Float) = 8
 		[HDR]
-		_RimColor("Rim Color", Color) = (.1,.1,.1,.1)
-		_RimAmount("Rim Amount", Range(0, 1)) = 0.1
-		_RimThreshold("Rim Threshold", Range(0, 1)) = 0.1
-
-
+		rimColor("Rim Color", Color) = (.1,.1,.1,.1)
+		rimAmount("Rim Amount", Range(0, 1)) = 0.1
+		rimThreshold("Rim Threshold", Range(0, 1)) = 0.1
 	}
-	SubShader
-	{
-		Pass
+		SubShader
 		{
-		Tags
+			Pass
 			{
-				"LightMode" = "ForwardBase"
-				"PassFlags" = "OnlyDirectional"
-			}
-
-			CGPROGRAM
-			#pragma vertex vert
-			#pragma fragment frag
-			#pragma multi_compile_fwdbase
-
-			#include "UnityCG.cginc"
-			#include "Lighting.cginc"
-			#include "AutoLight.cginc"
-
-			struct appdata
-			{
-				float4 vertex : POSITION;				
-				float4 uv : TEXCOORD0;
-				float3 normal : NORMAL;
-			};
-
-			struct v2f
-			{
-				float4 pos : SV_POSITION;
-				float2 uv : TEXCOORD0;
-				float3 worldNormal : NORMAL;
-				float3 viewDir : TEXCOORD1;
-				SHADOW_COORDS(2)
-			};
-
-			sampler2D _MainTex;
-			float4 _MainTex_ST;
-			
-			v2f vert (appdata v)
-			{
-				v2f o;
-				o.pos = UnityObjectToClipPos(v.vertex);
-				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-				o.worldNormal = UnityObjectToWorldNormal(v.normal);
-				o.viewDir = WorldSpaceViewDir(v.vertex);
-				TRANSFER_SHADOW(o)
-				return o;
-			}
-			
-			float4 _Color;
-			float4 _AmbientColor;
-			float _Glossiness;
-			float4 _SpecularColor;
-			float4 _RimColor;
-			float _RimAmount;
-			float _RimThreshold;
-
-			float4 frag (v2f i) : SV_Target
-			{
-				float3 normal = normalize(i.worldNormal);
-				float NdotL = dot(_WorldSpaceLightPos0, normal);
-				float shadow = SHADOW_ATTENUATION(i);
-				float lightIntensity = smoothstep(0, 0.01, NdotL * shadow);
-				float4 light = lightIntensity * _LightColor0;
-
-				float3 viewDir = normalize(i.viewDir);
-
-				float3 halfVector = normalize(_WorldSpaceLightPos0 + viewDir);
-				float NdotH = dot(normal, halfVector);
-
-				float specularIntensity = pow(NdotH * lightIntensity, _Glossiness * _Glossiness);
-				float specularIntensitySmooth = smoothstep(0.005, 0.01, specularIntensity);
-				float4 specular = specularIntensitySmooth * _SpecularColor;
-
-				float4 rimDot = 1 - dot(viewDir, normal);
-				float rimIntensity = rimDot * pow(NdotL, _RimThreshold);
-				rimIntensity = smoothstep(_RimAmount - 0.01, _RimAmount + 0.01, rimIntensity);
-				//float rimIntensity = smoothstep(_RimAmount - 0.01, _RimAmount + 0.05, rimDot);
-				float4 rim = rimIntensity * _RimColor;
-
-				float4 sample = tex2D(_MainTex, i.uv);
-
-				return _Color * sample * (_AmbientColor + light + specular + rim);
-			}
-			ENDCG
+			Tags
+				{
+			// Passing Light Data into shader and specifying as Directional Light
+			"LightMode" = "ForwardBase"
+			"PassFlags" = "OnlyDirectional"
 		}
-			UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
+
+		CGPROGRAM
+		#pragma vertex vert
+		#pragma fragment frag
+		#pragma multi_compile_fwdbase
+
+		#include "UnityCG.cginc"
+		#include "Lighting.cginc"
+		#include "AutoLight.cginc"
+
+		struct VertexShaderInput
+		{
+			float4 vertex : POSITION;
+			float4 uv : TEXCOORD0;
+			float3 normal : NORMAL;
+		};
+
+		struct VertexShaderOutput
+		{
+			float4 pos : SV_POSITION;
+			float2 uv : TEXCOORD0;
+			float3 worldNormal : NORMAL;
+			float3 viewDir : TEXCOORD1;
+			SHADOW_COORDS(2)
+		};
+
+		sampler2D _MainTex;
+		float4 _MainTex_ST;
+
+		// Vertex Shader
+		VertexShaderOutput vert(VertexShaderInput vertexData)
+		{
+			// create instance of struct for Vertex Shader output
+			// convert vertex to camera clip space
+			// ensure texture is scaled to new vertex position
+			// convert the Vertex normal to world space
+			// store the WorldSpaceView Direction
+			VertexShaderOutput output;
+			output.pos = UnityObjectToClipPos(vertexData.vertex);
+			output.uv = TRANSFORM_TEX(vertexData.uv, _MainTex);
+			output.worldNormal = UnityObjectToWorldNormal(vertexData.normal);
+			output.viewDir = WorldSpaceViewDir(vertexData.vertex);
+			TRANSFER_SHADOW(output)
+			return output;
+		}
+
+		//variables for defining output color of shader
+		float4 _Color;
+		float4 _Ambient;
+		float _Gloss;
+		float4 _SpecularColour;
+		float4 rimColor;
+		float rimAmount;
+		float rimThreshold;
+
+		// Fragment/Pixel Shader
+		float4 frag(VertexShaderOutput vertexData) : SV_Target
+		{
+			// get the Dot product of Normal and Light Direction(NdotL)
+			// use smoothstep to blend between light and dark edge of shapes(lightIntensity), 
+			// keep upper bound low to maintain sharp toony edge
+			// multiply light intensity by the color of the main directional light and store the result(light)
+			float3 normal = normalize(vertexData.worldNormal);
+			float NdotL = dot(_WorldSpaceLightPos0, normal);
+			float shadow = SHADOW_ATTENUATION(vertexData);
+			float lightIntensity = smoothstep(0, 0.01, NdotL * shadow);
+			float4 light = lightIntensity * _LightColor0;
+
+			// calculate HalfVector for Blinn - Phong Speculare Reflection, Normailzed vector between 
+			// the viewingDirection and light source(halfVector)
+			float3 viewDir = normalize(vertexData.viewDir);
+			float3 halfVector = normalize(_WorldSpaceLightPos0 + viewDir);
+			float NdotH = dot(normal, halfVector);
+
+			// size of Specular Reflection is calculated by mutiplying NdotH and lightInensity
+			// this is to ensure only lit surface receives  specular 
+			// this is then multiplied by the Gloss value squared to allow smaller values to greater effect
+			// smoothstep used again to create the sharp toon-like effect for the edges of the reflection
+			float specularIntensity = pow(NdotH * lightIntensity, _Gloss * _Gloss);
+			float specularIntensitySmooth = smoothstep(0.005, 0.01, specularIntensity);
+			float4 specular = specularIntensitySmooth * _SpecularColour;
+
+			// rim is applied to surface facing away from camera, calculated by inverting the Dot product of View direction and Normal(rimDot)
+			// apply rim to surface that is recieving light(rimIntensity)
+			// smoothstep used to toonify the edge and bend between rim and object
+			float4 rimDot = 1 - dot(viewDir, normal);
+			float rimIntensity = rimDot * pow(NdotL, rimThreshold);
+			rimIntensity = smoothstep(rimAmount - 0.01, rimAmount + 0.01, rimIntensity);
+			float4 rim = rimIntensity * rimColor;
+
+			float4 sample = tex2D(_MainTex, vertexData.uv);
+
+			return _Color * sample * (_Ambient + light + specular + rim);
+		}
+		ENDCG
 	}
+			// adding ability for shadows to be cast
+			UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
+		}
 }

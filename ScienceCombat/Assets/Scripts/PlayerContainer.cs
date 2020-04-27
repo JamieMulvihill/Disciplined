@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerContainer : MonoBehaviour
 {
    public Character[] chosenPlayers;
-   // Start is called before the first frame update
    void Awake()
    {
 

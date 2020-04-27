@@ -12,7 +12,6 @@ public class Spawn : MonoBehaviour
         playerSpawner = FindObjectOfType<PlayerContainer>();
     }
 
-
     private void Start()
     {
         for (int i = 0; i < playerSpawner.chosenPlayers.Length; i++)
@@ -20,7 +19,6 @@ public class Spawn : MonoBehaviour
             if (playerSpawner.chosenPlayers[i] != null)
             {
                 Scientist scientist = playerSpawner.chosenPlayers[i].Scientist.GetComponent<Scientist>();
-                //scientist.DisignateController(i + 1);
                 scientist.controllerIndex = i;
                 Instantiate(playerSpawner.chosenPlayers[i].Scientist);
             }

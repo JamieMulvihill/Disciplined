@@ -26,7 +26,6 @@ public class QuarantineManager : MonoBehaviour
     public GameObject[] navZones = new GameObject[6];
     public ModifyNavMesh navMesh;
     public GameObject cameraShaker;
-    //private Sucker suckyScript;
 
     void Start()
     {
@@ -36,7 +35,6 @@ public class QuarantineManager : MonoBehaviour
             quarantineScript[i] = zones[i].GetComponent<Quarantine>();
         }
         managerScript = this.gameObject.GetComponent<Manager>();
-        //suckyScript = sucker.gameObject.GetComponent<Sucker>();
         isQuarantining = false;
         playersInQueue = false;
     }
@@ -234,7 +232,7 @@ public class QuarantineManager : MonoBehaviour
         }
     }
 
-    // Co-Routine to set the Camera to shake for a period then set the Quartine wall to raise
+    // Co-Routine to set the Camera to shake for a period then set the Quarantine wall to raise
     IEnumerator WarningShake(int zone, float delay)
     {
         cameraShaker.GetComponent<CameraShake>().shake = true;
