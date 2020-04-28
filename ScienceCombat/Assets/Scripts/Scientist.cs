@@ -17,6 +17,7 @@ public class Scientist : MonoBehaviour
     public Grant grant;
     [SerializeField] private GameObject [] scientistPrefabs;
     public Animator anim;
+    public Canvas winCan;
 
     public Vector3 slippingVelocity;
 
@@ -114,6 +115,11 @@ public class Scientist : MonoBehaviour
             //item.transform.SetPositionAndRotation(transform.position + relativeSpawnPosition, transform.rotation);
         }
         // ----------------------------------------------
+
+        if(grant.winner != null) 
+        {
+            isCaptured = true;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -180,7 +186,9 @@ public class Scientist : MonoBehaviour
         Instantiate(death, transform.position, transform.rotation);
     }
 
-    public void EarningGrant(float cash) {
+    public void EarningGrant(float cash) 
+    {
+
         grantEarnings += cash;
 
     }
