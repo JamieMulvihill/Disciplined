@@ -57,8 +57,22 @@ public class Grant : MonoBehaviour
     
     private void MaxedOutGrant() {
         if (grantValue <= 0) {
+            // Get all the Scientists in the game
+            // iterate through them and find which has best score
+            // store the winning scor and postion in array
+            Scientist[] scientistis = FindObjectsOfType<Scientist>();
+            float winnerScore = 0;
+            int winnerIndex = 0;
+            for (int i = 0; i < scientistis.Length; i++) {
+                float playerScore = scientistis[i].grantEarnings;
+                if (playerScore > winnerScore)
+                {
+                    winnerScore = playerScore;
+                    winnerIndex = i;
+                }
+            }
 
-            winner = scientist.gameObject;
+            winner = scientistis[winnerIndex].gameObject;
             winCan.enabled = true;
             scientist.GetComponent<Animator>().Play("dance");
             scientist.hasGrant = false;
