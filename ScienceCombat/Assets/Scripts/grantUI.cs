@@ -40,8 +40,8 @@ public class grantUI : MonoBehaviour
             }
             else 
             {
-                grantText.enabled = false;
-                portrait.enabled = false;
+                grantText.text = "No player";
+                //portrait.enabled = false;
             }
             
         }

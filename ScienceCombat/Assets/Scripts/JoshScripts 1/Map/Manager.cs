@@ -53,7 +53,7 @@ public class Manager : MonoBehaviour
         zone3 = false;
         zone4 = false;
         zone5 = false;
-        auto = false;
+        auto = true;
         canQuarantine = true;
 
         // add players to list
