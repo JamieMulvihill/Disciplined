@@ -11,6 +11,11 @@ public class grantUI : MonoBehaviour
     public Image portrait;
     public bool firstUpdate = true;
     GameObject scientist;
+    private float score;
+    public float GetScore()
+    {
+        return score;
+    }
 
     private void InitialiseScientist()
     {
@@ -52,6 +57,9 @@ public class grantUI : MonoBehaviour
     {
         if (grantText.enabled)
         {
+            // update score
+            score = scientist.GetComponent<Scientist>().grantEarnings;
+
             string asdf = scientist.GetComponent<Scientist>().grantEarnings.ToString();
             grantText.text = ((int)scientist.GetComponent<Scientist>().grantEarnings).ToString() + "K";
             Debug.Log(grantText.text);
