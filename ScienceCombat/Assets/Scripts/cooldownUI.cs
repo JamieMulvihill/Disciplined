@@ -39,6 +39,11 @@ public class cooldownUI : MonoBehaviour
                 scientist = scientists[i].gameObject;
                 break;
             }
+            else 
+            {
+                slider.enabled = false;
+            }
+            
         }
         firstUpdate = false;
     }
@@ -107,7 +112,7 @@ public class cooldownUI : MonoBehaviour
 
     private void Start()
     {
-        slider.value = 0;
+        
     }
 
 
@@ -126,6 +131,7 @@ public class cooldownUI : MonoBehaviour
         {
             InitialiseScientist();
         }
+
     }
 
 

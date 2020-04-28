@@ -13,6 +13,9 @@ public class Grant : MonoBehaviour
     public float range = 5.0f;
     Vector3 point;
     public bool reachedDestination = true;
+    public Canvas winCan;
+    [SerializeField] private GameObject WinChar;
+    public GameObject winner = null;
 
     // Update is called once per frame
     void Update() {
@@ -54,13 +57,20 @@ public class Grant : MonoBehaviour
     
     private void MaxedOutGrant() {
         if (grantValue <= 0) {
+
+            winner = scientist.gameObject;
+            winCan.enabled = true;
+            scientist.GetComponent<Animator>().Play("dance");
             scientist.hasGrant = false;
-            isPossessed = false;
+            //isPossessed = false;
             scientist = null;
             Destroy(gameObject);
 
             //End the round and load next scene, this will be scoreboard of rounds or win screen if end game
-            SceneManager.LoadScene("WinState");
+            //SceneManager.LoadScene("WinState");
+
+            
+
         }
     }
 
