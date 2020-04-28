@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
     public Canvas canvas;
+    [SerializeField] private GameObject audio;
 
     // Start is called before the first frame update
     void Start()
@@ -41,8 +42,9 @@ public class MenuButtons : MonoBehaviour
     private IEnumerator Wait()
     {
         print("waiting");
-        yield return new WaitForSeconds(29f);
+        yield return new WaitForSeconds(30.75f);
         print("waited");
+        audio.SetActive(true);
         canvas.GetComponent<Canvas>().enabled = true;
         
     }

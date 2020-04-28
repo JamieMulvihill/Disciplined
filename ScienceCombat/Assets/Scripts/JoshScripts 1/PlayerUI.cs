@@ -133,43 +133,106 @@ public class PlayerUI : MonoBehaviour
     //}
 }
 
+/*void Start()
+    {
+        manager = GameObject.FindGameObjectWithTag("Manager");
+        UIMan = manager.GetComponent<UIManager>();
+        health = connectedPlayer.GetComponent<Health>();
+        cd1 = cd1UI.GetComponent<Image>();
+        cd2 = cd2UI.GetComponent<Image>();
+        healthbar = healthUI.GetComponent<Image>();
+        //cooldownSpeed = 5;
+        cd1ready = true;
+        cd2ready = true;
+        healthValue = 1;
+        attackOnCooldown = false;
+        engineer = false;
+        physicist = false;
+        Setup();
+    }
 
-//if (cd1ready == false)
-//{
-//    cd1.fillAmount += 1 / cooldownSpeed * Time.deltaTime;
+    void Setup()
+    {
+        //setting up the engineer attack cooldown
+        if(connectedPlayer.tag == "Engineer")
+        {
+            engineerAttack = connectedPlayer.GetComponent<Flammenwerfer>();
+            engineerAttack.overheat = new Overheat();
+            engineer = true;
+        }
 
-//    if (cd1.fillAmount >= 1)
-//    {
-//        cd1ready = true;
-//    }
-//}
+        //setting up physicist attack cooldown
+        if (connectedPlayer.tag == "Physicist")
+        {
+            physicistAttack = connectedPlayer.GetComponent<Laser>();
+            physicistAttack.overheat = new Overheat();
+            physicist = true;
+        }
+    }
 
-//if (cd2ready == false)
-//{
-//    cd2.fillAmount += 1 / cooldownSpeed * Time.deltaTime;
 
-//    if (cd2.fillAmount >= 1)
-//    {
-//        cd2ready = true;
-//    }
-//}
+    void Update()
+    {
+        //updating health value
+        SetHealth();
 
-//if(UIMan.cooldown1)
-//{
-//    UIMan.cooldown1 = false;
-//    if (cd1ready)
-//    {
-//        cd1.fillAmount = 0;
-//        cd1ready = false;
-//    }
-//}
+        //setting cooldown value to actual cooldown value in flammenwerfer script
+        if (engineer == true)
+        {
+            if (!attackOnCooldown)
+            {
+                cd1.fillAmount = engineerAttack.overheat.GetHeatFraction();
+            }
+        }
 
-//if (UIMan.cooldown2)
-//{
-//    UIMan.cooldown2 = false;
-//    if (cd2ready)
-//    {
-//        cd2.fillAmount = 0;
-//        cd2ready = false;
-//    }
-//}
+        //same but for physicist
+        if (physicist == true)
+        {
+            if (!attackOnCooldown)
+            {
+                cd1.fillAmount = physicistAttack.overheat.GetHeatFraction();
+            }
+        }
+    }
+
+    public void UIAbilityCooldown1(float _duration) //passing in the duration of the cooldown from the different possible abilities respective scripts
+    { 
+        //setting cooldown value to 0
+        cd1.fillAmount = 0;
+        while (!cd1ready)
+        {
+            // fill based on the duration in the other script
+            cd1.fillAmount += 1 / _duration * Time.deltaTime;
+
+            if (cd1.fillAmount >= 1)
+            {
+                cd1ready = true;
+            }
+        }
+    }
+
+    public void UIAbilityCooldown2(float _duration) //exact same for the second cooldown
+    {
+        cd2.fillAmount = 0;
+        while (cd2ready == false)
+        {
+            cd2.fillAmount += 1 / _duration * Time.deltaTime;
+
+            if (cd2.fillAmount >= 1)
+            {
+                cd2ready = true;
+            }
+        }
+    }
+
+    void SetHealth()
+    {
+        // set value to reflect the connected player's health
+        healthbar.fillAmount = health.health / 100;
+    }
+
+    //public void ConnectPlayer()
+    //{
+    //    health = connectedPlayer.GetComponent<Health>();
+    //}
+    */
