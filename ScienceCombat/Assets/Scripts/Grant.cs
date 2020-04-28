@@ -16,6 +16,13 @@ public class Grant : MonoBehaviour
     public Canvas winCan;
     [SerializeField] private GameObject WinChar;
     public GameObject winner = null;
+    bool winnerDeclared = false;
+    int numberOfPlayers;
+    private void Start()
+    {
+        numberOfPlayers = FindObjectsOfType<Scientist>().Length;
+    }
+
 
     // Update is called once per frame
     void Update() {
@@ -56,37 +63,47 @@ public class Grant : MonoBehaviour
     }
     
     private void MaxedOutGrant() {
-        if (grantValue <= 0) {
-            // Get all the Scientists in the game
-            // iterate through them and find which has best score
-            // store the winning scor and postion in array
-            Scientist[] scientistis = FindObjectsOfType<Scientist>();
-            float winnerScore = 0;
-            int winnerIndex = 0;
-            for (int i = 0; i < scientistis.Length; i++) {
-                scientistis[i].isCaptured = true;
-                float playerScore = scientistis[i].grantEarnings;
-                if (playerScore > winnerScore)
+        if (grantValue <= 0)
+        {
+            StartCoroutine("WinnerCheck");      
+        }  
+    }
+    IEnumerator WinnerCheck()
+    {
+
+        Scientist[] scientistis;
+        while (!winnerDeclared)
+        {
+            scientistis = FindObjectsOfType<Scientist>();
+
+            if (numberOfPlayers == scientistis.Length)
+            {
+                winnerDeclared = true;
+                float winnerScore = 0;
+                int winnerIndex = 0;
+                for (int i = 0; i < scientistis.Length; i++)
                 {
-                    winnerScore = playerScore;
-                    winnerIndex = i;
+                    scientistis[i].isCaptured = true;
+                    float playerScore = scientistis[i].grantEarnings;
+                    if (playerScore > winnerScore)
+                    {
+                        winnerScore = playerScore;
+                        winnerIndex = i;
+                    }
                 }
+
+                winner = scientistis[winnerIndex].gameObject;
+                winCan.enabled = true;
+                winner.GetComponent<Animator>().Play("dance");
+               
             }
-
-            winner = scientistis[winnerIndex].gameObject;
-            winCan.enabled = true;
-            winner.GetComponent<Animator>().Play("dance");
-            scientist.hasGrant = false;
-            //isPossessed = false;
-            scientist = null;
-            Destroy(gameObject);
-
-            //End the round and load next scene, this will be scoreboard of rounds or win screen if end game
-            //SceneManager.LoadScene("WinState");
-
-            
-
+                yield return null;
         }
+
+        scientist.hasGrant = false;
+        scientist = null;
+        Destroy(gameObject);
+
     }
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
