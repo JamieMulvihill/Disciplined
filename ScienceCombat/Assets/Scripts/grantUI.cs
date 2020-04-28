@@ -8,7 +8,7 @@ public class grantUI : MonoBehaviour
     [SerializeField] private Text grantText;
 
     public int playerIndex;
-
+    public Image portrait;
     public bool firstUpdate = true;
     GameObject scientist;
 
@@ -38,15 +38,24 @@ public class grantUI : MonoBehaviour
                 scientist = scientists[i].gameObject;
                 break;
             }
+            else 
+            {
+                grantText.enabled = false;
+                portrait.enabled = false;
+            }
+            
         }
         firstUpdate = false;
     }
     
     private void UpdateScientist()
     {
-        string asdf = scientist.GetComponent<Scientist>().grantEarnings.ToString();
-        grantText.text = ((int)scientist.GetComponent<Scientist>().grantEarnings).ToString() + "K";
-        Debug.Log(grantText.text);
+        if (grantText.enabled)
+        {
+            string asdf = scientist.GetComponent<Scientist>().grantEarnings.ToString();
+            grantText.text = ((int)scientist.GetComponent<Scientist>().grantEarnings).ToString() + "K";
+            Debug.Log(grantText.text);
+        }
     }
 
     private void Start()
