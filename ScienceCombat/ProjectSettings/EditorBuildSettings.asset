@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharacterSelectScreen.unity
     guid: e491063f8927ed64b8dc0fa200d41bcb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jamie.unity
     guid: 93ed5d00e4f66be448dea3e037a0c088
   - enabled: 1
