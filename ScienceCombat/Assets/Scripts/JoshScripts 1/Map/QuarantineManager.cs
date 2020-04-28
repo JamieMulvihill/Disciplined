@@ -226,10 +226,11 @@ public class QuarantineManager : MonoBehaviour
 
         yield return new WaitForSeconds(delay);
         navZones[zone].SetActive(false);
-        if (zone < 5)
-        {
-            wallForces[zone].SetActive(false);
+        for (int i = 0; i < 5; i++) {
+            wallForces[i].SetActive(false);
         }
+           
+        
     }
 
     // Co-Routine to set the Camera to shake for a period then set the Quarantine wall to raise
