@@ -373,7 +373,7 @@ MonoBehaviour:
   playerContainer: {fileID: 1451118706}
   MenuChar: {fileID: 0}
   characterPosition: {fileID: 1653788124}
-  playerNum: 2
+  playerNum: 1
   selectButton: A
   startButton: B
 --- !u!1 &265791996
@@ -717,7 +717,7 @@ MonoBehaviour:
   playerContainer: {fileID: 1451118706}
   MenuChar: {fileID: 0}
   characterPosition: {fileID: 720285628}
-  playerNum: 3
+  playerNum: 2
   selectButton: A
   startButton: B
 --- !u!1 &345723366
@@ -1684,6 +1684,6 @@ MonoBehaviour:
   playerContainer: {fileID: 1451118706}
   MenuChar: {fileID: 0}
   characterPosition: {fileID: 1504384860}
-  playerNum: 4
+  playerNum: 3
   selectButton: A
   startButton: B
