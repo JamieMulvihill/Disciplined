@@ -115,11 +115,7 @@ public class Scientist : MonoBehaviour
             //item.transform.SetPositionAndRotation(transform.position + relativeSpawnPosition, transform.rotation);
         }
         // ----------------------------------------------
-
-        if(grant.winner != null) 
-        {
-            isCaptured = true;
-        }
+       
     }
 
     private void OnCollisionEnter(Collision collision)

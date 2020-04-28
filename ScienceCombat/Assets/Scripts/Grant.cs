@@ -64,6 +64,7 @@ public class Grant : MonoBehaviour
             float winnerScore = 0;
             int winnerIndex = 0;
             for (int i = 0; i < scientistis.Length; i++) {
+                scientistis[i].isCaptured = true;
                 float playerScore = scientistis[i].grantEarnings;
                 if (playerScore > winnerScore)
                 {
@@ -74,7 +75,7 @@ public class Grant : MonoBehaviour
 
             winner = scientistis[winnerIndex].gameObject;
             winCan.enabled = true;
-            scientist.GetComponent<Animator>().Play("dance");
+            winner.GetComponent<Animator>().Play("dance");
             scientist.hasGrant = false;
             //isPossessed = false;
             scientist = null;
