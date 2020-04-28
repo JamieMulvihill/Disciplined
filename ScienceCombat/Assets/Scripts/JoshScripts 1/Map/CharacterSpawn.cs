@@ -89,6 +89,7 @@ public class CharacterSpawn : MonoBehaviour
     public void SpawnPlayer() // for spawning different scientists, just pass in player desired
     {
         newestPlayer = Instantiate(managerScript.queuedRespawns.Dequeue());
+        float deadMansScore = 0;
         // Update UI Here!
         for (int j = 0; j < 4; j++)
         {
@@ -100,7 +101,28 @@ public class CharacterSpawn : MonoBehaviour
             string text = "Player ";
             text += j + 1;
             UICanvas.transform.Find(text + " Grant").GetComponent<grantUI>().firstUpdate = true;
+            if (newestPlayer.tag == "Chemist" && j == 0)
+            {
+                deadMansScore = UICanvas.transform.Find(text + " Grant").GetComponent<grantUI>().GetScore();
+            }
+            else if (newestPlayer.tag == "Engineer" && j == 1)
+            {
+                deadMansScore = UICanvas.transform.Find(text + " Grant").GetComponent<grantUI>().GetScore();
+            }
+            else if (newestPlayer.tag == "Biologist" && j == 2)
+            {
+                deadMansScore = UICanvas.transform.Find(text + " Grant").GetComponent<grantUI>().GetScore();
+            }
+            else if (newestPlayer.tag == "Physicist" && j == 3)
+            {
+                deadMansScore = UICanvas.transform.Find(text + " Grant").GetComponent<grantUI>().GetScore();
+            }
+            else
+            {
+                Debug.Log("CharacterSpawn.cs has made an oopsy.");
+            }
         }
+        newestPlayer.GetComponent<Scientist>().grantEarnings = deadMansScore;
         realT = newestPlayer.transform;
         //scoreboard.scientists.Add(newestPlayer.GetComponent<Scientist>());
         //newestPlayer.GetComponent<Rigidbody>().useGravity = false;
