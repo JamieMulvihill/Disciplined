@@ -575,18 +575,11 @@ MonoBehaviour:
   magnitude: 100
   radius: 0
   laserDamage: 40
-  playerFire: RT
   scientist: {fileID: 4541228889225816936, guid: 52465b71ad2580b4097cba71226a9a1e,
     type: 3}
-  laserBeam: {fileID: 8128173818677469542, guid: 0cc90c9d253fe2f48b0ecb8a07243b58,
-    type: 3}
-  laserSpawn: {fileID: 4835831033698525903, guid: 1e57723b5b9abcb4c92817eb79853eca,
-    type: 3}
-  laserHit: {fileID: 4835831033698525903, guid: 1e57723b5b9abcb4c92817eb79853eca,
-    type: 3}
-  laserSpeed: 200
-  enemy: {fileID: 0}
+  playerFire: RT
   laser: {fileID: 565093320624771221, guid: be13af76e8796024cb953b1d429ca3df, type: 3}
+  enemy: {fileID: 0}
   timeToChill: 0.333
 --- !u!114 &-238998170322175997
 MonoBehaviour:
@@ -606,6 +599,10 @@ MonoBehaviour:
   playerAlt1: B
   meshSize: 0.5
   scientist: {fileID: 4541228889225816936, guid: 52465b71ad2580b4097cba71226a9a1e,
+    type: 3}
+  wormholeEntrance: {fileID: 3668877186188494171, guid: eac2c0a27ca2b99458120c3820f4b050,
+    type: 3}
+  wormholeExit: {fileID: 3668877186188494171, guid: eac2c0a27ca2b99458120c3820f4b050,
     type: 3}
 --- !u!95 &6067794673193858019
 Animator:
@@ -640,10 +637,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   maxHealth: 100
-  red: {fileID: 0}
-  redValue: 0
-  healthSegment: 0
-  greenGuiValue: 0
   isPoisioned: 0
   healthBar: {fileID: 851348341}
   lastAcidDamageTime: 0
@@ -685,6 +678,7 @@ MonoBehaviour:
   holdingGloves: 0
   holdingGoggles: 0
   holdingLabCoat: 0
+  test: 0
 --- !u!114 &2111835809520097270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,7 +786,6 @@ MonoBehaviour:
   triggerButton: RB
   damage: 1
   cooldown: 2
-  anim: {fileID: 0}
 --- !u!1 &996595508961776083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +1929,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4233138299716148889}
     m_Modifications:
+    - target: {fileID: 5345917229019240601, guid: 20d3c991dcd2d78499aee83418c98c79,
+        type: 3}
+      propertyPath: m_Name
+      value: LaserGun
+      objectReference: {fileID: 0}
     - target: {fileID: 8965499991544294026, guid: 20d3c991dcd2d78499aee83418c98c79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2006,11 +2004,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5345917229019240601, guid: 20d3c991dcd2d78499aee83418c98c79,
-        type: 3}
-      propertyPath: m_Name
-      value: LaserGun
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20d3c991dcd2d78499aee83418c98c79, type: 3}
 --- !u!4 &8227923032318298934 stripped
@@ -2026,6 +2019,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4233138299716148889}
     m_Modifications:
+    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
+        type: 3}
+      propertyPath: m_Name
+      value: Punch Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 4233639113174386865, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2080,11 +2078,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1967937380037163424, guid: 75924fb149fe82348947c7b1da35bbb1,
-        type: 3}
-      propertyPath: m_Name
-      value: Punch Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 6699842662239036542, guid: 75924fb149fe82348947c7b1da35bbb1,
         type: 3}
